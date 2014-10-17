@@ -1,0 +1,2628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0040)http://www.codechef.com/problems/MARBLES -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en" dir="ltr" __fvdsurfcanyoninserted="1" class="js clickberry-extension clickberry-extension-standalone"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript" async="" src="./Marbles   CodeChef_files/ga.js"></script><script src="./Marbles   CodeChef_files/4e7c8fce06a9ab05530008e5.js" async=""></script><script type="text/javascript" async="" src="./Marbles   CodeChef_files/ga.js"></script><script>
+            (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+            c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+            c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+            _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+            (window,document,"script","4e7c8fce06a9ab05530008e5");
+        </script>
+
+		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <title>Marbles | CodeChef</title>
+        
+<meta name="keywords" content="programming, language, algorithm, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+<link rel="shortcut icon" href="http://www.codechef.com/misc/favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" media="all" href="./Marbles   CodeChef_files/css_fe8a8bd120c51c8e2cc65336eb3f4d3e.css">
+        <link rel="stylesheet" type="text/css" href="./Marbles   CodeChef_files/acmkanpurproblem.css">
+        <script type="text/javascript" src="./Marbles   CodeChef_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/drupal.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/fbconnect.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/fivestar.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/lightbox.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/nice_menus.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/common.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/tableofcontents.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/codechef_recent_comments.js"></script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/textarea.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fbconnect":{"user_pictures":"allow","language_code":"en_US","app_id":"191217060453","debug":0,"connect_js":"document.location.protocol + '\/\/connect.facebook.net\/en_US\/all.js'","loginout_mode":"manual","invite_name":"CodeChef","fast_reg_mode":0,"fast_reg_autoname":0,"fbuid":"100002167399451","user":{"uid":"440238","fbuid":"100002167399451"}},"fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)sites\/default\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"eeedec","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":true,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":500,"iframe_height":70,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+        <meta property="og:title" content="Marbles">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.codechef.com/problems/MARBLES">
+        <meta property="og:image" content="http://www.codechef.com/misc/fb-chef.gif">
+        <meta property="og:site_name" content="CodeChef">
+        <meta property="fb:app_id" content="155442717838457">
+
+		<script type="text/javascript">
+				</script>
+
+    <meta content="clickberry-extension-here"><style>@-webkit-keyframes popvoncpqqfflxrkalucqxscayvixtwdadfqtt {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popvoncpqqfflxrkalucqxscayvixtwdadfqtt {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#voncpqqfflxrkalucqxscayvixtwdadfqtt{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.voncpqqfflxrkalucqxscayvixtwdadfqtt-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#777 !important;display:inline !important;text-decoration:line-through !important;}#voncpqqfflxrkalucqxscayvixtwdadfqtt br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#voncpqqfflxrkalucqxscayvixtwdadfqtt span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#voncpqqfflxrkalucqxscayvixtwdadfqtt div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#voncpqqfflxrkalucqxscayvixtwdadfqtt a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#voncpqqfflxrkalucqxscayvixtwdadfqtt-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#voncpqqfflxrkalucqxscayvixtwdadfqtt-gear:hover{-webkit-animation-name:popvoncpqqfflxrkalucqxscayvixtwdadfqtt !important;animation-name:popvoncpqqfflxrkalucqxscayvixtwdadfqtt !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#voncpqqfflxrkalucqxscayvixtwdadfqtt:hover #voncpqqfflxrkalucqxscayvixtwdadfqtt-gear{text-decoration:none !important;display:inline-block !important;}@media print{#voncpqqfflxrkalucqxscayvixtwdadfqtt{display:none !important;}}</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style><script type="text/javascript" src="./Marbles   CodeChef_files/loader.js"></script><script type="text/javascript" src="./Marbles   CodeChef_files/coupons_support2.js"></script><style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style></head>
+    <body class="sidebar-right lightbox-processed"><center>
+
+            <div id="header" class="wrapper">
+                <div class="inner-wrapper">
+                    <!-- Header -->
+                    <div id="logo-floater" class="cols-2">
+                        <a href="http://www.codechef.com/" title=""><img src="./Marbles   CodeChef_files/logo.png" alt="CodeChef is a non-commercial competitive programming community" id="logo"><span></span></a>                    </div>
+                    <div class="cols-2">
+                        <div id="custom-login">
+                                <!--Hello <strong>Admin</strong>, Check your <strong><a href="">Account</a></strong> or <a href="/logout">Log Out</a>-->
+                            <!--facebook--><div class="login-user login-name">
+                    <table id="logged-in-user-fb-pic" cellpadding="5" cellspacing="0">
+                        <tbody><tr>
+                            <td><div class="picture"><img src="./Marbles   CodeChef_files/picture" width="35px" heigth="35px"></div></td>
+                            <td>
+        <span>
+            Hello Himansu Rathi! 
+            <a href="http://www.codechef.com/users/Himansu%20Rathi" title="Edit Your Account">Account</a>
+            or <a href="http://www.codechef.com/logout">Log Out</a>
+        </span></td>
+                        </tr>
+                     </tbody></table>
+                 </div>                        </div>
+
+                        <div id="block-nice_menus-1" class="block block-nice_menus block-header">
+  <div class="content">
+    <h2><span class="nice-menu-hide-title">Site Navigation</span></h2>    <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li id="menu-302" class="menuparent menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">PRACTICE</a><ul><li id="menu-303" class="menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">Easy</a></li>
+<li id="menu-304" class="menu-path-problems-medium"><a href="http://www.codechef.com/problems/medium" title="">Medium</a></li>
+<li id="menu-305" class="menu-path-problems-hard"><a href="http://www.codechef.com/problems/hard" title="">Hard</a></li>
+<li id="menu-1819" class="menu-path-problems-challenge"><a href="http://www.codechef.com/problems/challenge" title="">Challenge</a></li>
+<li id="menu-1376" class="menu-path-problems-extcontest"><a href="http://www.codechef.com/problems/extcontest" title="">Peer</a></li>
+<li id="menu-2602" class="menu-path-problems-school"><a href="http://www.codechef.com/problems/school" title="">School</a></li>
+</ul>
+</li>
+<li id="menu-309" class="menuparent menu-path-contests"><a href="http://www.codechef.com/contests" title="">COMPETE</a><ul><li id="menu-2203" class="menu-path-www.codechef.com-contests"><a href="http://www.codechef.com/contests" title="">All Contests</a></li>
+<li id="menu-4875" class="menu-path-www.codechef.com-LTIME12"><a href="http://www.codechef.com/LTIME12" title="">May Lunchtime 2014</a></li>
+<li id="menu-4873" class="menu-path-www.codechef.com-COOK46"><a href="http://www.codechef.com/COOK46" title="">May Cook-Off 2014</a></li>
+<li id="menu-4872" class="menu-path-www.codechef.com-MAY14"><a href="http://www.codechef.com/MAY14" title=""> May Challenge 2014</a></li>
+</ul>
+</li>
+<li id="menu-138" class="menuparent menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">DISCUSS</a><ul><li id="menu-139" class="menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">Forums</a></li>
+<li id="menu-140" class="menu-path-blog.codechef.com-"><a href="http://blog.codechef.com/" title="">Blog</a></li>
+<li id="menu-920" class="menu-path-wiki-"><a href="http://www.codechef.com/wiki/" title="">Wiki</a></li>
+<li id="menu-2202" class="menu-path-https--www.facebook.com-CodeChef"><a href="https://www.facebook.com/CodeChef" title="">Facebook</a></li>
+<li id="menu-141" class="menu-path-www.twitter.com-codechef"><a href="http://www.twitter.com/codechef" title="">Twitter</a></li>
+</ul>
+</li>
+<li id="menu-143" class="menuparent menu-path-node-124098"><a href="http://www.codechef.com/community" title="">COMMUNITY</a><ul><li id="menu-733" class="menu-path-node-157517"><a href="http://www.codechef.com/hostyourcontest" title="Hosting Contest on CodeChef">Host your Contest</a></li>
+<li id="menu-2310" class="menu-path-www.codechef.com-goforgold"><a href="http://www.codechef.com/goforgold" title="">Go for Gold</a></li>
+<li id="menu-3830" class="menu-path-www.codechef.com-campus_chapter-about"><a href="http://www.codechef.com/campus_chapter/about" title="">Campus Chapter</a></li>
+</ul>
+</li>
+<li id="menu-147" class="menuparent menu-path-node-3"><a href="http://www.codechef.com/help" title="">HELP</a><ul><li id="menu-643" class="menu-path-www.codechef.com-wiki-faq"><a href="http://www.codechef.com/wiki/faq" title="">Frequently Asked Questions</a></li>
+<li id="menu-710" class="menu-path-www.codechef.com-wiki-faq-problem-setters"><a href="http://www.codechef.com/wiki/faq-problem-setters" title="">FAQ for problem setters</a></li>
+<li id="menu-1389" class="menu-path-node-313543"><a href="http://www.codechef.com/problemsetting" title="Codechef Problem Creation">Problem Setting</a></li>
+<li id="menu-850" class="menu-path-www.codechef.com-wiki-tutorials"><a href="http://www.codechef.com/wiki/tutorials" title="">Tutorials</a></li>
+<li id="menu-2200" class="menu-path-www.codechef.com-long-ranklist-AX"><a href="http://www.codechef.com/long/ranklist/AX" title="Long contest rankings list">Long Contest Ranks</a></li>
+<li id="menu-2199" class="menu-path-www.codechef.com-short-ranklist-AX"><a href="http://www.codechef.com/short/ranklist/AX" title="Short contest rankings list">Short Contest Ranks</a></li>
+<li id="menu-1820" class="menu-path-node-503865"><a href="http://www.codechef.com/event-calendar" title="Event Calendar">Event Calendar</a></li>
+<li id="menu-2372" class="menu-path-discuss.ww2.codechef.com-top-users-"><a href="http://discuss.ww2.codechef.com/top/users/" title="">Top Contributors on Discuss</a></li>
+</ul>
+</li>
+<li id="menu-150" class="menuparent menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">ABOUT</a><ul><li id="menu-151" class="menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">About CodeChef</a></li>
+<li id="menu-849" class="menu-path-node-178314"><a href="http://www.codechef.com/team" title="Team CodeChef">Team CodeChef</a></li>
+<li id="menu-708" class="menu-path-node-157468"><a href="http://www.codechef.com/press" title="Press Room">Press Room</a></li>
+<li id="menu-1312" class="menu-path-www.codechef.com-financials-"><a href="http://www.codechef.com/financials/" title="">CodeChef Financials</a></li>
+<li id="menu-1313" class="menu-path-www.codechef.com-sponsorships"><a href="http://www.codechef.com/sponsorships" title="">CodeChef Sponsorships</a></li>
+<li id="menu-709" class="menu-path-node-157470"><a href="http://www.codechef.com/ceoscorner" title="CEO&#39;s Corner">CEO's Corner</a></li>
+<li id="menu-1858" class="menu-path-node-614485"><a href="http://www.codechef.com/contactus" title="">Contact Us</a></li>
+<li id="menu-152" class="menu-path-www.directi.com-"><a href="http://www.directi.com/" title="">About Directi</a></li>
+</ul>
+</li>
+</ul>
+  </div>
+</div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /HEADER -->
+            <center>
+                <table cellspacing="0" cellpadding="10" id="maintable" class="maintable">
+                    <tbody><tr>
+                        <td class="content" width="99%">
+                            <div class="wrapper" id="content-regions">
+                                <div class="inner-wrapper rounded-cr-body">
+                                    <div class="rounded-cr-header">
+                                        <div class="rounded-cr-footer">
+                                            <div id="breadcrumb"><div class="breadcrumb"><a href="http://www.codechef.com/">Home</a>&nbsp;»&nbsp;<a href="http://www.codechef.com/problems/medium/">Practice(medium)</a>&nbsp;»&nbsp;Marbles</div></div>
+                                            <div id="primary-colum-pad">
+                                                <div id="primary-colum-wrapper">
+                                                    <img class="content-wrapper-header" src="./Marbles   CodeChef_files/content-wrapper-top-big.gif">
+                                                    <div id="problem-page">
+                                                        <div class="prob">
+                                                            <div class="primary-col-wrapper">
+                                                                                                                                                                                                                                                                                                                                <table class="pagetitle-prob" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                                    <tbody><tr>
+                                                                        <td width="55%">
+                                                                            <h1>Marbles</h1>
+                                                                            <p>Problem code: MARBLES</p>
+																			                                                                            <fb:like send="true" width="450" show_faces="false" action="recommend" font="verdana" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=191217060453&amp;font=verdana&amp;href=http%3A%2F%2Fwww.codechef.com%2Fproblems%2FMARBLES&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450"><span style="vertical-align: bottom; width: 450px; height: 28px;"><iframe name="f22a764154" width="450px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Marbles   CodeChef_files/like.htm" class="" style="border: none; visibility: visible; width: 450px; height: 28px;"></iframe></span></fb:like>
+                                                                        </td>
+                                                                        <td>
+                                                                            <ul class="button-list">
+                                                                                <li style="display:&lt;?php print $node-&gt;answerDisplay; ?&gt;"><a href="http://www.codechef.com/submit/MARBLES">Submit</a></li>                                                                                <li><a href="http://www.codechef.com/status/MARBLES,Himansu%20Rathi">My Submissions</a></li>                                                                                <li><a href="http://www.codechef.com/status/MARBLES">All Submissions</a></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                                <div class="primary-colum-width-left">
+                                                                    <div id="node-1618" class="node clear-block">
+        
+    <div class="meta">
+        
+            </div>
+
+    <div class="content">
+<h3>All submissions for this problem are available.</h3>
+<p></p><p align="justify"><br>
+Rohit dreams he is in a shop with an infinite amount of marbles. He is allowed to select n marbles. There are marbles of k different colors. From each color there are also infinitely many marbles. Rohit wants to have at least one marble of each color, but still there are a lot of possibilities for his selection. In his effort to make a decision he wakes up.<br>
+Now he asks you how many possibilities for his selection he would have had.<br>
+Assume that marbles of equal color can't be distinguished, and the order of the marbles is irrelevant.
+</p>
+<p></p><h3>Input</h3>
+<p></p><p></p><p align="justify"><br>
+The first line of input contains a number T &lt;= 100 that indicates the number of test cases to follow. Each test case consists of one line containing n and k, where n is the number of marbles Rohit selects and k is the number of different colors of the marbles. You can assume that 1&lt;=k&lt;=n&lt;=1000000.
+</p>
+<p></p><h3>Output</h3>
+<p></p><p></p><p align="justify"><br>
+For each test case print the number of possibilities that Rohit would have had.<br>
+You can assume that this number fits into a signed 64 bit integer.
+</p>
+<p></p><h3>Example</h3>
+<pre><b><tt>Input:</tt></b>
+2
+10 10
+30 7
+
+<b><tt>Output:</tt></b>
+1
+475020
+</pre><p></p>    </div>
+    <hr>
+    <table cellspacing="0" cellpadding="0" align="left">
+        <tbody><tr>
+            <td width="14%">Author:</td>
+            <td><a href="http://www.codechef.com/users/admin">admin</a></td>
+		</tr>
+				                <tr>
+            <td width="14%">Tags</td>
+            <td><a class="problem-tag-small " href="http://www.codechef.com/tags/problems/admin">
+                    admin
+                </a></td>
+        </tr>
+        		<tr>
+            <td width="14%">Date Added:</td>
+            <td>1-12-2008</td>
+        </tr>
+        <tr>
+            <td width="14%">Time Limit:</td>
+            <td>1 sec</td>
+        </tr>
+        <tr>
+            <td width="14%">Source Limit:</td>
+            <td>10000 Bytes</td>
+        </tr>
+        <tr>
+            <td width="14%">Languages:</td>
+            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.8.1, CPP11, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAR, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PHP, PIKE, PRLG, PYTH, PYTH 3.1.2, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>
+        </tr>
+    </tbody></table>
+    <p style="clear:left;"><br></p>
+    <ul class="button-list button-list-left">
+        <li style="display:block"><a href="http://www.codechef.com/submit/MARBLES">Submit</a></li>
+    </ul>
+    <hr>
+    <h2 style="text-decoration: none;">Comments</h2>
+</div>
+<div id="comments">
+  <a id="comment-406"></a>
+<div id="c406" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-406" class="active"></a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/chang">chang</a></strong><span style="color:#828282"> @ 13 Jul 2009 09:29 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>hi ! does this prblm require numbers to be calculated in array form or int64 can work ?<br>
+thanx</p>
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-443"></a>
+<div id="c443" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-443" class="active"></a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/bvlobx">bvlobx</a></strong><span style="color:#828282"> @ 20 Jul 2009 04:24 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@Kushagra - i think it fits 64bit integer is sufficient.</p>
+<p>M nt gerttin wht is gng wrong... wen i run it on my machine code gives correct results..</p>
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-444"></a>
+<div id="c444" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-444" class="active"></a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/bvlobx">bvlobx</a></strong><span style="color:#828282"> @ 20 Jul 2009 04:24 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>but m gettin WA</p>
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-445"></a>
+<div id="c445" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-445" class="active"></a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/chang">chang</a></strong><span style="color:#828282"> @ 20 Jul 2009 05:19 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>yes...it works fine with int64. :)</p>
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-693"></a>
+<div id="c693" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-693" class="active"></a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/varora_mnnit">varora_mnnit</a></strong><span style="color:#828282"> @ 6 Aug 2009 06:31 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>hi admin, can you tell me whats goin wrong with my code..<br>
+getting correct solution when i am running code on my machine</p>
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1102"></a>
+<div id="c1102" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1102" class="active">hi i'm new here. i tried</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/indianapple89">indianapple89</a></strong><span style="color:#828282"> @ 20 Aug 2009 11:39 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">hi i'm new here. i tried submitting my answer in python but it gave me a runtime error, how do i see the error code? it works fine in my machine</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1107"></a>
+<div id="c1107" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1107" class="active">You can't. You'll need to</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 21 Aug 2009 06:59 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You can't. You'll need to figure out what kinds of input could cause your program to crash yourself.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1122"></a>
+<div id="c1122" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1122" class="active">You might get a runtime error</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 21 Aug 2009 01:10 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You might get a runtime error if you are going wrong with the way you take input. You might want to check that. </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1229"></a>
+<div id="c1229" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1229" class="active">I need to find a combination</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sheki">sheki</a></strong><span style="color:#828282"> @ 24 Aug 2009 10:32 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">I need to find a combination (nCm) but am not able to calculate in a 64 bit int. Any suggestions</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1231"></a>
+<div id="c1231" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1231" class="active">You cannot just calculate N!</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/kunaljain">kunaljain</a></strong><span style="color:#828282"> @ 24 Aug 2009 11:37 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">You cannot just calculate N! and then calculate (nCm) because the factorial value is very very large for the input limit, so you should find some other way to compute the combination without actually computing the whole factorial.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1236"></a>
+<div id="c1236" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1236" class="active">i am getting results in</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rangudu">rangudu</a></strong><span style="color:#828282"> @ 25 Aug 2009 01:00 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">i am getting results in devc++ but while submitting it is giving wrong ans
+i used  n=n-k ; (n+k-1)C(n) for the given n and k pls help me</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1237"></a>
+<div id="c1237" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1237" class="active">Look at the limit on N and K.</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 25 Aug 2009 01:19 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Look at the limit on N and K. </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1244"></a>
+<div id="c1244" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1244" class="active">ya u mean to say that</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rangudu">rangudu</a></strong><span style="color:#828282"> @ 25 Aug 2009 04:08 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">ya u mean to say that factorial is greater to be in the long  integer is that</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1245"></a>
+<div id="c1245" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1245" class="active">The answer will fit in a</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 25 Aug 2009 04:18 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>The answer will fit in a 64bit integer, but the intermediate values while calculating the answer might not. Are you taking care of that?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1248"></a>
+<div id="c1248" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1248" class="active">ya actually i am dividing it</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rangudu">rangudu</a></strong><span style="color:#828282"> @ 25 Aug 2009 05:11 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">ya actually i am dividing it when ever i am multiplying so it wont excede</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1249"></a>
+<div id="c1249" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1249" class="active">It can still cause overflows.</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 25 Aug 2009 05:15 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>It can still cause overflows. You might want to use assert()&nbsp;to check if you are overflowing the limit for integers. </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1252"></a>
+<div id="c1252" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1252" class="active">is this assert() a C library</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rangudu">rangudu</a></strong><span style="color:#828282"> @ 25 Aug 2009 06:59 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">is this assert() a C library function</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1309"></a>
+<div id="c1309" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1309" class="active">actully i canged&nbsp; long to</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rangudu">rangudu</a></strong><span style="color:#828282"> @ 30 Aug 2009 12:59 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>actully i canged&nbsp; long to long long so that it will support the output&nbsp; but still i am getting wrong answer and i am able to get answers in my system please help me</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1324"></a>
+<div id="c1324" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1324" class="active">Yes it is a function in the C</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 31 Aug 2009 01:48 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Yes it is a function in the C library. Did you use assert to check if you are getting negative answers? </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1497"></a>
+<div id="c1497" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1497" class="active">CodeChef shows wrong answer</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/vaibhavgupta_iitd">vaibhavgupta_iitd</a></strong><span style="color:#828282"> @ 4 Sep 2009 03:05 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>CodeChef shows wrong answer status to my submission. It would be really helpful if which case failed could be shown with the status. The code is working fine in my system. Under what circumstances does one get wrong answer? I have included some checks and caught some exceptions too. Can this lead to wrong answer? </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1498"></a>
+<div id="c1498" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1498" class="active">You get wrong answer if you</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 4 Sep 2009 07:13 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You get wrong answer if you don't produce an output file exactly like the judges output file.</p>
+<p>You'll have to figure out why yourself, that is the point of problems like these :)</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1507"></a>
+<div id="c1507" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1507" class="active">This my first time here. So</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/vaibhavgupta_iitd">vaibhavgupta_iitd</a></strong><span style="color:#828282"> @ 4 Sep 2009 12:57 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>This my first time here. So sorry if this question is naive. Doesn't the input come from command line arguments using "public static void main (String[] args)" and we print the solution in console itself. Do I have to use any file?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-1510"></a>
+<div id="c1510" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-1510" class="active">@Vaibhav No, you read input</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 4 Sep 2009 01:51 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@Vaibhav No, you read input from stdin and output your answers to stdout. </p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-2206"></a>
+<div id="c2206" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-2206" class="active">Hi,
+I am getting NZEC error</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/nandish_83">nandish_83</a></strong><span style="color:#828282"> @ 4 Oct 2009 08:15 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi,</p>
+<p>I am getting NZEC error when I submit the solution in Ruby. My program runs fine on my system which has ruby 1.8 , Can some one help .</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-2221"></a>
+<div id="c2221" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-2221" class="active">You are probably not taking</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 4 Oct 2009 06:35 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You are probably not taking input in accordance with the input specs.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-2360"></a>
+<div id="c2360" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-2360" class="active">hey guys , i m getting</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rscrbv">rscrbv</a></strong><span style="color:#828282"> @ 9 Oct 2009 06:03 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>hey guys , i m getting compiler error . although i compiled in java(netbeans jdk5) and there it was working correctly</p>
+<p>&nbsp;</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-2364"></a>
+<div id="c2364" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-2364" class="active">Please check the FAQ and the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 9 Oct 2009 06:37 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Please check the <a href="http://www.codechef.com/freelinking/FAQ" class="freelinking">FAQ</a> and the <a href="http://www.codechef.com/freelinking/Sample%20Solutions" class="freelinking">Sample Solutions</a></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3176"></a>
+<div id="c3176" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3176" class="active">Hi Team,
+I write a solution</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 11 Nov 2009 07:42 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Team,</p>
+<p>I write a solution for this problem in Visual C++ platform using only ansi c++ library. I am pretty sure that it will compile and run on linux g++ library. I ran it for given test cases. It gave&nbsp;correct result. But when I was submitting it shows wrong result.</p>
+<p>My guess there is some problem in my logic.</p>
+<p>Can I get some more test cases or if you permit I can start discussion about my logic.</p>
+<p>Eagerly waiting for your response.</p>
+<p>Thanks</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3178"></a>
+<div id="c3178" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3178" class="active">Sure, you can use our forums</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 11 Nov 2009 08:54 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Sure, you can use our forums to discuss your approach and ask questions.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3179"></a>
+<div id="c3179" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3179" class="active">Hi Aniruddha,
+Thanks for your</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 11 Nov 2009 09:36 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Aniruddha,</p>
+<p>Thanks for your kind response.</p>
+<p>I will place my approach tommorrow.</p>
+<p>Before that one non-technical but very essential question.:-)</p>
+<p>Can I make my profile invisible to everybody?</p>
+<p>more specifically the email-id.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3180"></a>
+<div id="c3180" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3180" class="active">Your email id is not visible</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 11 Nov 2009 10:49 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Your email id is not visible to anyone but the admin.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3193"></a>
+<div id="c3193" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3193" class="active">Thanks Aniruddha.
+My</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 12 Nov 2009 03:45 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Thanks Aniruddha.</p>
+<p>My Approach:</p>
+<p>It is very simple.As order or permutaion is not been cosidered,&nbsp;number of possiblity/case rohit have had is the</p>
+<p>summation of kCi&nbsp;* (diff-1)C(i-1) for i=2 to min(k,diff)</p>
+<p>+ kCi for i=1</p>
+<p>or 1 if n=k</p>
+<p>nCr stands for combination of r element&nbsp;from n distinct element.</p>
+<p>My logic is number of way i distinct marble can be selected from k distinct type * number of way i-1 marble placed diff-1 place(except 2 terminal place)</p>
+<p>The solution giving correct result for both test case.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3199"></a>
+<div id="c3199" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3199" class="active">Hi All,
+I am waiting for your</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 12 Nov 2009 07:41 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi All,</p>
+<p>I am waiting for your valuable comments.</p>
+<p>&nbsp;</p>
+<p>Thanks</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3204"></a>
+<div id="c3204" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3204" class="active">How are you calculating nCr?</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 13 Nov 2009 06:07 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>How are you calculating nCr? If you don't do this in a clever way, you could end up with overflow (even though the final result fits in a 64 bit integer.)</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3210"></a>
+<div id="c3210" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3210" class="active">Hi Stephen,
+I am calculating</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 13 Nov 2009 04:43 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Stephen,</p>
+<p>I am calculating the loop=min(n,r)</p>
+<p>then upto loop calculating the numerator and denomerator (both long).</p>
+<p>then return num/deno</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3211"></a>
+<div id="c3211" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3211" class="active">Don't you think that would be</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 13 Nov 2009 04:57 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Don't you think that would be larger than the value a long long could store in some cases?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3224"></a>
+<div id="c3224" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3224" class="active">Hey Anuradha,
+On my box it is</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/stoneboy">stoneboy</a></strong><span style="color:#828282"> @ 14 Nov 2009 01:03 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hey Anuradha,</p>
+<p>On my box it is showing me time &lt; 1 sec but still on portal it's saying time limit exceeded :(</p>
+<p>&nbsp;</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3225"></a>
+<div id="c3225" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3225" class="active">It's Aniruddha and not</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 14 Nov 2009 02:01 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>It's Aniruddha and not Anuradha.</p>
+<p>The time limit is for all the 100 test cases combined. Plus, the system on which the judge runs might be slower than the system on which you are running the code.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3300"></a>
+<div id="c3300" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3300" class="active">Hi Aniruddha,
+I am using long</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 16 Nov 2009 02:55 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Aniruddha,</p>
+<p>I am using long long</p>
+<p>&nbsp;</p>
+<p>Hi Stephen,</p>
+<p>I am optimising the combination calcualtion.</p>
+<p>&nbsp;</p>
+<p>But still I am getting wrong answare</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3301"></a>
+<div id="c3301" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3301" class="active">You can't be optimising it</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 16 Nov 2009 03:54 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You can't be optimising it well enough. It is very easy for intermediate calculations to overflow a long long if you don't do it correctly.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3303"></a>
+<div id="c3303" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3303" class="active">Hi Stephen,
+I am calculating</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 01:05 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Stephen,</p>
+<p>I am calculating combination by below mentioned method.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+</p><p><span><span><font size="2" color="#0000ff"><font size="2" color="#0000ff">
+</font></font></span></span></p><p><font size="2" color="#0000ff"><font size="2" color="#0000ff">long</font></font></p><font size="2" color="#0000ff"><font size="2" color="#0000ff">
+</font></font><font size="2" color="#0000ff">
+<p>&nbsp;</p>
+</font>
+<p></p><p>&nbsp;</p>
+<span> </span><span><span>long</span></span><span> combination(</span><span><span>int</span></span><span> n, </span><span><span>int</span></span>
+<p><span> k)
+</span></p><p>{</p>
+<font size="2">
+<p>&nbsp;</p>
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>if</span></span><span>(n==k) </span><span><span>return</span></span>
+<p><span> 1;<font size="2">
+</font></span></p><p><font size="2">&nbsp;</font></p><font size="2">
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>int</span></span>
+<p><span> loop=((n-k)&lt;k)?(n-k):k;<font size="2">
+</font></span></p><p><font size="2">&nbsp;</font></p><font size="2">
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>long</span></span><span> </span><span><span>long</span></span>
+<p><span> result=n-loop+1;<font size="2">
+</font></span></p><p><font size="2">&nbsp;</font></p><font size="2">
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>int</span></span>
+<p><span> temp=result;<font size="2">
+</font></span></p><p><font size="2">&nbsp;</font></p><font size="2">
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>for</span></span><span>(</span><span><span>int</span></span>
+<p><span> i=2; i&lt;=loop; i++)
+</span></p><p>{</p>
+<font size="2">
+<p>result=(</p>
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>long</span></span>
+<p><span>)(result*(++temp)/i);
+</span></p><p>}</p>
+<p>&nbsp;</p>
+<font size="2">
+<p>&nbsp;</p>
+</font><p></p>
+<p>&nbsp;</p>
+<span><span>return</span></span>
+<p><span> result;</span></p>
+<p><span>}</span></p>
+<p><span>I don't think there is any chance to overflow.</span></p>
+
+</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3304"></a>
+<div id="c3304" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3304" class="active">I</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 01:33 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I changed</p>
+<p>result=(long)...</p>
+<p>to</p>
+<p>result=(long long)...</p>
+<p>but still getting the wrong answare.</p>
+<p>&nbsp;</p>
+<p>Can any one please help me</p>
+<p>&nbsp;</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3306"></a>
+<div id="c3306" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3306" class="active">Hi all,
+I am retyping</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 03:09 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi all,</p>
+<p>I am retyping my&nbsp;combination calculation&nbsp;again.</p>
+<p>long long combination(int n, int k)</p>
+<p>{</p>
+<p>if(n==k) return 1;</p>
+<p>int loop=(n-k)&lt;k?(n-k):k;</p>
+<p>long long result=n-loop+1;</p>
+<p>int temp=result;</p>
+<p>for(int i=2; i&lt;=loop; i++)</p>
+<p>result=(long long)(result*(++temp)/i);</p>
+<p>return result;</p>
+<p>}</p>
+<p>Is there any chance to overflow??</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3307"></a>
+<div id="c3307" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3307" class="active">hi stephen,
+
+do u find any</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 05:46 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">hi stephen,
+
+do u find any flaw in the above combination calculation</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3308"></a>
+<div id="c3308" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3308" class="active">Is it always necessary for</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 17 Nov 2009 06:11 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Is it always necessary for temp to be divisible by 'i' ?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3309"></a>
+<div id="c3309" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3309" class="active">result is multiplication of i</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 07:27 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>result is multiplication of i consecutive number. so it is always divisible by i.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3311"></a>
+<div id="c3311" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3311" class="active">Hi Aniruddha,
+I tried steps</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 17 Nov 2009 09:25 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Aniruddha,</p>
+<p>I tried steps by splitting</p>
+<p>result*=(++temp);</p>
+<p>result/=i;</p>
+<p>&nbsp;</p>
+<p>but still it is not working</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3325"></a>
+<div id="c3325" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3325" class="active">Hi Aniruddha/stephen/all,
+Do</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 18 Nov 2009 03:28 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Aniruddha/stephen/all,</p>
+<p>Do you find any flaw.</p>
+<p>I am waiting for your comments.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3328"></a>
+<div id="c3328" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3328" class="active">Make sure that at any</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 18 Nov 2009 05:27 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Make sure that at any iteration you are not overflowing the limit. For e.g. consider 99C94. You start off with result = 95. This is divisible by 5 but you don't do this till the last loop. For higher values, these calculations in between could overflow the limit and you will end up getting a wrong answer.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3329"></a>
+<div id="c3329" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3329" class="active">hi i got right submission.</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sayan_pakhi">sayan_pakhi</a></strong><span style="color:#828282"> @ 18 Nov 2009 07:21 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">hi i got right submission. Thanks all.
+Special thanks to stephen and aniruddha</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3668"></a>
+<div id="c3668" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3668" class="active">hey .. can u plz tell if the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/abhayjit">abhayjit</a></strong><span style="color:#828282"> @ 25 Nov 2009 04:36 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>hey .. can u plz tell if the case n=88885 k=6 would work even for the correct solution ??</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3671"></a>
+<div id="c3671" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3671" class="active">The answer for that case is</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 25 Nov 2009 04:52 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>The answer for that case is much greater than a 64 bit integer, so a correct solution does not need to give the correct answer for that case. Some correct solutions might, others might not.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3756"></a>
+<div id="c3756" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3756" class="active">Hi,
+I need to know the input</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/kadam.shakeel">kadam.shakeel</a></strong><span style="color:#828282"> @ 29 Nov 2009 05:58 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi,</p>
+<p>I need to know the input for which it is failing.</p>
+<p>my first time in here.</p>
+<p>Thanks</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3759"></a>
+<div id="c3759" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3759" class="active">You're meant to figure that</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 30 Nov 2009 01:53 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You're meant to figure that out yourself. Try coming up with some useful test cases.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3918"></a>
+<div id="c3918" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3918" class="active">hi!!!
+as i'm solvin problems</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/karthikheb">karthikheb</a></strong><span style="color:#828282"> @ 4 Dec 2009 04:23 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>hi!!!</p>
+<p>as i'm solvin problems on cc, i'm not gettin how this execution time works, k consider these two solutions</p>
+<p><a href="http://www.codechef.com/viewsolution/1475" title="http://www.codechef.com/viewsolution/1475">http://www.codechef.com/viewsolution/1475</a> : admin's solution tht has perfect timing.</p>
+<p><a href="http://www.codechef.com/viewsolution/143304" title="http://www.codechef.com/viewsolution/143304">http://www.codechef.com/viewsolution/143304</a> : my solution!</p>
+<p>well the logic is same but then y is there a diff of .7s... i mean i smaller diff can be accounted for multiple assignments and stuff like tht... or am i missin sumthin big?</p>
+<p>TIA</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3920"></a>
+<div id="c3920" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3920" class="active">Simple. You use cin/cout.</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 4 Dec 2009 06:03 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Simple. You use cin/cout. These are extremely slow methods of getting input / writing output.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3929"></a>
+<div id="c3929" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3929" class="active">oh i c... Thanks a lot :) hey</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/karthikheb">karthikheb</a></strong><span style="color:#828282"> @ 4 Dec 2009 02:14 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>oh i c... Thanks a lot :) hey jus curious here, where can i get such kinda info abt time taken by such methods? or is every programmer supposed to know it by default!!!</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-3934"></a>
+<div id="c3934" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-3934" class="active">One is supposed to know that</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 4 Dec 2009 03:12 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>One is supposed to know that cin,cout are much slower than scanf() , printf()</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4030"></a>
+<div id="c4030" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4030" class="active">I m using this function to</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/achin">achin</a></strong><span style="color:#828282"> @ 9 Dec 2009 08:11 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I m using this function to find out ncm...but everytime its showing wrong answer... Please help me out...I am using dev c++</p>
+<p>long double func(long double n,long double k)<br>{<br> long double z;<br> if(k==0)<br> return 1;<br> z=(double)n/k*(func(n-1,k-1));<br> return z;<br>}</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4087"></a>
+<div id="c4087" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4087" class="active">@Aniruddha...Its giving</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/achin">achin</a></strong><span style="color:#828282"> @ 13 Dec 2009 09:03 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@Aniruddha...Its giving correct result on my machine but its showing wrong anser when I submit it...My submission ID is 148252..Pls see to it</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4096"></a>
+<div id="c4096" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4096" class="active">"You can assume that this</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sheki">sheki</a></strong><span style="color:#828282"> @ 14 Dec 2009 11:53 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>"You can assume that this number fits into a signed 64 bit integer."</p>
+<p>&nbsp;</p>
+<p>There are some inputs which will produce answers which need not fit into 64 bit integers, so those inputs will not be given?<br><br></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4097"></a>
+<div id="c4097" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4097" class="active">That is exactly what that</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 14 Dec 2009 12:19 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>That is exactly what that sentence says, yes.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4111"></a>
+<div id="c4111" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4111" class="active">Getting a time limit exceeded</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/awesomeness">awesomeness</a></strong><span style="color:#828282"> @ 15 Dec 2009 11:47 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Getting a time limit exceeded on this..</p>
+<p>def perm_calc(n,k):<br> if n==k:<br> print 1<br> return<br> if k==1:<br> print 1<br> return<br> n=n-k<br> numr=range(n+1,n+k)<br> divr=range(2,k)<br> i=2;<br> for x in numr:<br> <br> <br> res = reduce(operator.mul,numr)<br> print res</p>
+<p>&nbsp;</p>
+<p>Any suggestions?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4234"></a>
+<div id="c4234" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4234" class="active">will it be OK if i use long</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Dalchand">Dalchand</a></strong><span style="color:#828282"> @ 22 Dec 2009 04:48 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>will it be OK if i use long long int for output??</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4235"></a>
+<div id="c4235" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4235" class="active">on my pc i'm getting this</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Dalchand">Dalchand</a></strong><span style="color:#828282"> @ 22 Dec 2009 04:51 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>on my pc i'm getting this output</p>
+<p>1000000 4</p>
+<p><br>166665666668499999</p>
+<p>&nbsp;</p>
+<p>is this correct?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4236"></a>
+<div id="c4236" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4236" class="active">"For each test case print the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 22 Dec 2009 04:57 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p align="justify"><br>"For each test case print the number of possibilities that Rohit would have had.<br> You can assume that this number fits into a signed 64 bit integer."</p>
+<p>Please read the problem statement carefully.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4237"></a>
+<div id="c4237" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4237" class="active">@thanks Aniruddha ... thats</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Dalchand">Dalchand</a></strong><span style="color:#828282"> @ 22 Dec 2009 05:03 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@thanks Aniruddha ... thats not the way im taking input ... have a look on this</p>
+<p>scanf("%d",&amp;t);<br> while(t &gt; 0){<br> scanf("%d%d",&amp;n,&amp;k);<br> printf("%ldn",marb(n,k));<br> t--;<br> }</p>
+<p>i think it should give the desired output format...</p>
+<p>&nbsp;</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4248"></a>
+<div id="c4248" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4248" class="active">%ld is a 32 bit integer.</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 23 Dec 2009 03:30 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>%ld is a 32 bit integer.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4260"></a>
+<div id="c4260" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4260" class="active">I have written a function</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/hunters">hunters</a></strong><span style="color:#828282"> @ 23 Dec 2009 11:20 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I have written a function whick calculates (n)C(k) ... But for calculating the exact value i have use floating point numbers ... so i am using a long double ... the function returns a long double ... is it wrong to do so ... is it constrained that my function should return a long long integer ??</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4263"></a>
+<div id="c4263" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4263" class="active">You won't be able to</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 24 Dec 2009 02:31 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>You won't be able to calculate the exact value with floating point numbers, they aren't accurate enough. You need the exact answer.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4265"></a>
+<div id="c4265" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4265" class="active">thanks @stephen got it :)</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Dalchand">Dalchand</a></strong><span style="color:#828282"> @ 24 Dec 2009 03:01 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>thanks @stephen got it :)</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4285"></a>
+<div id="c4285" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4285" class="active">Hi chef
+My code is working</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/tpk1024">tpk1024</a></strong><span style="color:#828282"> @ 25 Dec 2009 11:47 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi chef</p>
+<p>My code is working fine on my machine .. but is giving a WA when submitted :(</p>
+<p>I've taken care of the intermediate value overflows mentiioned in the above comments</p>
+<p>could you please tell me the problem with my code ?</p>
+<p><a target="_self" title="My Solution" href="http://www.codechef.com/viewsolution/154145">http://www.codechef.com/viewsolution/154145</a></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4415"></a>
+<div id="c4415" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4415" class="active">@Aniruddha or @stephen...
+I</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/josh">josh</a></strong><span style="color:#828282"> @ 1 Jan 2010 10:42 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@Aniruddha or @stephen...</p>
+<p>I have done this problem by recursion ...by it shows time limit exceeded while submitting in codechef....</p>
+<p>please see my code and suggest some alternative or any improvement...</p>
+<p><a href="http://www.codechef.com/viewsolution/156322" title="http://www.codechef.com/viewsolution/156322">http://www.codechef.com/viewsolution/156322</a></p>
+<p>...................</p>
+<p>please reply soon.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4672"></a>
+<div id="c4672" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4672" class="active">Hello</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/ndesk1900">ndesk1900</a></strong><span style="color:#828282"> @ 10 Jan 2010 09:35 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hello admin;</p>
+<p><a href="http://www.codechef.com/viewsolution/163417">http://www.codechef.com/viewsolution/163417</a> Keep getting 'wrong answer'. Tried lots of possible test cases. Could you comment on where the problem could be? Hope i am outputting correctly i.e. n after every result.</p>
+<p>Thanks.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-4708"></a>
+<div id="c4708" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-4708" class="active">Please ignore last post. Had</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/ndesk1900">ndesk1900</a></strong><span style="color:#828282"> @ 11 Jan 2010 05:27 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Please ignore last post. Had an issue with overflow from variable types i was using.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-5123"></a>
+<div id="c5123" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-5123" class="active">Hi,
+Has there ever been a</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/nvijayap">nvijayap</a></strong><span style="color:#828282"> @ 29 Jan 2010 05:48 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi,</p>
+<p>Has there ever been a successful submission in Java?&nbsp; I am trying to submit a solution in Java which works perfectly fine on my boxes and is highly performant with use of cache, but fails on CodeChef's boxes with the message "Time Limit Exceeded" when I try to submit my solution (ofcourse, via web interface).</p>
+<p>Cheers,</p>
+<p>Naga</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-5124"></a>
+<div id="c5124" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-5124" class="active">Yes. My solution was accepted</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 29 Jan 2010 06:03 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Yes. My solution was accepted in 0.44 seconds.</p>
+<p>Have you considered a test case where k or n-k in your program is very large, yet the answer is very small?</p>
+<p>(Also, the HashMap in your program is only going to slow things down, not speed things up. The chances of it ever helping are very low since it is unlikely a factorial is ever needed twice; so you are only losing time using it.)</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-5130"></a>
+<div id="c5130" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-5130" class="active">Thanks for the hint.&nbsp; I now</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/nvijayap">nvijayap</a></strong><span style="color:#828282"> @ 30 Jan 2010 01:00 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Thanks for the hint.&nbsp; I now have a successful submission in Java with 0.29 seconds.</p>
+<p>Regards,</p>
+<p>Naga</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-5371"></a>
+<div id="c5371" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-5371" class="active">please have a look at my</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/nikunjyadav">nikunjyadav</a></strong><span style="color:#828282"> @ 2 Feb 2010 11:48 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>please have a look at my problem,</p>
+<p>m getting a TLE, i tried two ways,</p>
+<p>to calculate n-1 C r-1</p>
+<p>1) multiplying from a range a to range b but with divide and conquer and everytime diving the result from one of the 2..r-1 by keeping a track of used numbers. i guess this must be slow</p>
+<p>2) i tried with the iteratiosn = n-k&lt;k?n-k:k. and every time i start with the high end of i and divide by gcd. if possible can anybody give a hint</p>
+<p>inline ui combination(unsigned long long n,unsigned long long k)<br>{<br>if(n==k) return 1;<br>int loop=(n-k)&lt;k?(n-k):k;<br>unsigned long long result=n-loop+1;<br>unsigned long long a=result;<br>ui prod=1;<br>for(int i=loop; i&gt;=2;i--)<br>{<br>result=result*(++a);<br>ui b=gcd(result,i);<br>result/=b;<br>prod*=i/b;<br>if(result%prod==0)<br>result=result/prod;<br>}<br>return result;<br>}</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-6158"></a>
+<div id="c6158" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-6158" class="active">I am very frustrated now</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/prajot">prajot</a></strong><span style="color:#828282"> @ 2 Mar 2010 12:21 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I am very frustrated now :|</p>
+<p>Could tell me what wrong i am doing ??</p>
+<p>Code is pasted below,</p>
+<p>&nbsp;</p>
+<p>import java.io.BufferedReader;<br>import java.io.IOException;<br>import java.io.InputStreamReader;<br><br>/**<br> * <br> * @author Prajot Naik<br> * @version 1.0 Problem code: MARBLES<br> */<br><br>public class Main {<br><br> /**<br> * @param args<br> * @throws IOException<br> */<br><br> public static void main(String[] args) {<br> BufferedReader stream = new BufferedReader(new InputStreamReader(<br> System.in));<br> int t = 0;<br> try {<br> t = Integer.parseInt(stream.readLine());<br> if (t &gt; 100) {<br> return;<br> }<br> } catch (Exception e) {<br> return;<br> }<br> long[][] inpArr = new long[t][2];<br> for (int i = 0; i &lt; t; ++i) {<br> try {<br> inpArr[i][0] = Long.parseLong(stream.readLine()); // n<br> inpArr[i][1] = Long.parseLong(stream.readLine()); // k<br> } catch (Exception e) {<br> System.out.println("Input Too Large to store");<br> inpArr[i][0] = 0;<br> inpArr[i][1] = 0;<br> continue;<br> }<br> }<br> for (int i = 0; i &lt; t; ++i) {<br> System.out.println(nCr(inpArr[i][0], inpArr[i][1]));<br> }<br><br> }<br><br> /**<br> * <br> * Calculating nCr<br> * <br> * @param n<br> * <br> * @param r<br> * @return<br> */<br><br> private static double nCr(long n, long r) {<br><br> if (n == 0 || r == 0) {<br> return 0;<br> }<br> if (n == r) {<br> return 1;<br> }<br> if (1 &gt; r || n &lt; r || n &gt; 1000000) {<br> return 0;<br> }<br> return factorial(n, r);<br><br> }<br><br> /**<br> * <br> * Calculating factorial<br> * <br> * @param x<br> * @param y<br> * @return<br> */<br> public static double factorial(long x, long y) {<br> double retX = 1;<br><br> long i = (x - y &gt;= y) ? (x - y + 1) : y + 1;<br> long j = (x - y &gt;= y) ? (y) : (x - y);<br><br> for (; i &lt; x || j &gt;= 1; --j) {<br> retX = (i &lt;= x) ? retX * i : retX;<br> retX = (j &gt;= 1) ? retX / j : retX;<br> }<br> return retX;<br> }<br>}</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-7721"></a>
+<div id="c7721" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-7721" class="active">Hi I am getting runtime error</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sachingupta85">sachingupta85</a></strong><span style="color:#828282"> @ 7 Apr 2010 05:23 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p><br>Hi I am getting runtime error after submitting my solution while it runs perfectly fine at my end with whatever test cases I tried with.<br><br>My solution is posted here...<br><a href="http://www.codechef.com/viewsolution/223990" title="http://www.codechef.com/viewsolution/223990">http://www.codechef.com/viewsolution/223990</a><br><br>I would appreciate if anybody can guide me in this regard about what am I doin wrong?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8029"></a>
+<div id="c8029" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8029" class="active">I have been getting Runtime</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/imperiumsage">imperiumsage</a></strong><span style="color:#828282"> @ 25 Apr 2010 05:44 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I have been getting Runtime Errors (No other info) for this problem for quite some time. I'm using Python 2.5 and I'm trying my best to ensure that size of the numbers does not get out of hand. I tried submitting my solution to the corresponding problem&nbsp; in SPOJ and recieved a Runtime Error (NZEC) on Python 2.5 and an AC on Python 2.6.2. The solution is not ideal (takes 0.21 seconds), but nevertheless runs without errors (possibly due to automatic bignum conversion in Python 2.5+) Any ideas if that is why I continue to get runtime errors here? My approach is definitely not naive, I maintain 2 lists numerator_list and denominator_list and keep picking values from denominator_list and multiplying with denominator (and performing division using fractions.gcd) till num &lt; den, at which time I multiply in a number from the numerator_list. My number size only really gets out of hand when i have exhausted the denominator_list.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8217"></a>
+<div id="c8217" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8217" class="active">Hi Admin,
+&nbsp;
+Can you please</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/jainbikash">jainbikash</a></strong><span style="color:#828282"> @ 2 May 2010 05:33 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Hi Admin,</p>
+<p>&nbsp;</p>
+<p>Can you please look into my last submission and let me know what is wrong with it. It is not causing overflow as BigInteger is used, but somehow I am getting a Wrong Answer message.</p>
+<p>&nbsp;</p>
+<p>Thanks,</p>
+<p>Bikash</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8475"></a>
+<div id="c8475" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8475" class="active">http://www.codechef.com/views</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/indraneel">indraneel</a></strong><span style="color:#828282"> @ 19 May 2010 10:05 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p><a href="http://www.codechef.com/viewsolution/243926">http://www.codechef.com/viewsolution/243926</a></p>
+<p>&nbsp;</p>
+<p>please</p>
+<p>can anyone tell me whats wrong with this code.Its throwing a wrong answer,but I don't see anything wrong in the logic.</p>
+<p>Thanks</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8505"></a>
+<div id="c8505" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8505" class="active">anyone
+please see my previous</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/indraneel">indraneel</a></strong><span style="color:#828282"> @ 21 May 2010 11:12 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>anyone</p>
+<p>please see my previous comment<span> </span></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8506"></a>
+<div id="c8506" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8506" class="active">An unsigned long can only</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/triplem">triplem</a></strong><span style="color:#828282"> @ 21 May 2010 11:37 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>An unsigned long can only store a 32 bit integer; the problem says you will be dealing with 64 bit ones. A double isn't precise enough to deal with integers of that size either.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8534"></a>
+<div id="c8534" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8534" class="active">please can anyone suggest</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/indraneel">indraneel</a></strong><span style="color:#828282"> @ 24 May 2010 12:55 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>please can anyone suggest anything?</p>
+<p>I'm getting a TLE</p>
+<p><a href="http://www.codechef.com/viewsolution/245045">http://www.codechef.com/viewsolution/245045</a></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8543"></a>
+<div id="c8543" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8543" class="active">I'm not able to find the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/indraneel">indraneel</a></strong><span style="color:#828282"> @ 25 May 2010 10:54 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I'm not able to find the difference in cases with large outputs and that of small ones.</p>
+<p>Anyone help.</p>
+<p>see my code in previous post, I improved it</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-8571"></a>
+<div id="c8571" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-8571" class="active">Although i solved question in</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/gunjanbansal">gunjanbansal</a></strong><span style="color:#828282"> @ 29 May 2010 10:13 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Although i solved question in less than 0.15 , i am looking for a better algo for factorials (basicaly fr nCr) or for caluclating last few digits for such a number . Can any guide me in right direction ?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-9625"></a>
+<div id="c9625" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-9625" class="active">@prajot I don't know if</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/keghani">keghani</a></strong><span style="color:#828282"> @ 24 Jul 2010 01:36 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@<b>prajot I don't know if you've found some answers yet, I thought I'd point out some (not all) things I see you'd overlooked in that code:</b></p>
+<p><br><b>1) nCr where r=0 is always 1; there is exactly 1 way to choose nothing out of a bag of n items.</b></p>
+<p><b>2) Division loses precision, even when using doubles (not all real numbers can be represented in bits, even when in range).</b></p>
+<p><b>3) Did you mean to iterate over i as well as over j?<br></b></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-10080"></a>
+<div id="c10080" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-10080" class="active">pls help me
+i am new on</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/codedecoder">codedecoder</a></strong><span style="color:#828282"> @ 18 Aug 2010 02:18 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>pls help me</p>
+<p>i am new on codechef so can anyone tell me how we are gtng the desired result just the mathematics part</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-10091"></a>
+<div id="c10091" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-10091" class="active">http://www.codechef.com/vie</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/amirkg">amirkg</a></strong><span style="color:#828282"> @ 19 Aug 2010 12:31 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>
+
+<a href="http://www.codechef.com/viewsolution/309839">http://www.codechef.com/viewsolution/309839</a></p>
+<p>This is my solution to this one.</p>
+<p>I just used brute force approach with some tiny optimizations.</p>
+<p>I calculated nCk directly from the formula containing n!</p>
+<p>but i did it tricky enough to get accepted!</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-10258"></a>
+<div id="c10258" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-10258" class="active">it was not working on my comp</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/coolsainideepak">coolsainideepak</a></strong><span style="color:#828282"> @ 28 Aug 2010 06:43 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>it was not working on my comp bt when i submitted the ans it was right yipeee!!</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12228"></a>
+<div id="c12228" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12228" class="active">can any one help me out in</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/dine950">dine950</a></strong><span style="color:#828282"> @ 4 Dec 2010 06:37 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>can any one help me out in explaining how&nbsp;<span>475020 comes.</span></p>
+<p><span><br></span></p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12358"></a>
+<div id="c12358" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12358" class="active">Can anyone plz explain why we</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/ambujpandey">ambujpandey</a></strong><span style="color:#828282"> @ 14 Dec 2010 11:43 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Can anyone plz explain why we are taking (n-1)C(k-1).</p>
+<p>As in 30 7, why is the ans 29C6.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12427"></a>
+<div id="c12427" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12427" class="active">@ambuj:If you look at the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/living">living</a></strong><span style="color:#828282"> @ 18 Dec 2010 03:56 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@ambuj:If you look at the fomula i.e x1 + x2 +x3 + x4 .......+xk = n. where x1,x2,x3.........,xn&gt;=1.</p>
+<p>so formula is (n-1)C(k-1) not nCk......</p>
+<p>i think it's enough...........to clear your doubts</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12586"></a>
+<div id="c12586" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12586" class="active">its giving WA for this</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sanchit_h">sanchit_h</a></strong><span style="color:#828282"> @ 28 Dec 2010 04:00 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>its giving WA for this one:</p>
+<p><a href="http://www.codechef.com/viewsolution/408221" title="http://www.codechef.com/viewsolution/408221">http://www.codechef.com/viewsolution/408221</a></p>
+<p>its working perfectly fine on my computer and the algorithm is also optimal... please help</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12587"></a>
+<div id="c12587" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12587" class="active">i downloaded some of the top</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sanchit_h">sanchit_h</a></strong><span style="color:#828282"> @ 28 Dec 2010 04:42 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>i downloaded some of the top correct solutions and cross checked my answers and there isn't any discrepancy</p>
+<p>between any of the answers. still i am getting WA ..</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12611"></a>
+<div id="c12611" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12611" class="active">thanks alot to pakhi
+the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/iiit">iiit</a></strong><span style="color:#828282"> @ 30 Dec 2010 12:16 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>thanks alot to pakhi</p>
+<p>the simple fact posted by him that n consecutive nos product is divisible by n is the crux of the problem</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12657"></a>
+<div id="c12657" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12657" class="active">Plz figure out if am doing</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/mygaurav">mygaurav</a></strong><span style="color:#828282"> @ 1 Jan 2011 10:13 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Plz figure out if am doing correct as i am getting time limit exceeded</p>
+<p><a href="http://www.codechef.com/viewsolution/410603">http://www.codechef.com/viewsolution/410603</a></p>
+<p>Also tell about "long long int" or 64 bit integer and other things that are different from turbo c</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-12703"></a>
+<div id="c12703" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-12703" class="active">plz somebody reply</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/mygaurav">mygaurav</a></strong><span style="color:#828282"> @ 2 Jan 2011 07:10 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>plz somebody reply !!!!!!!!!!!</p>
+<p>does somebody listen here?</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-13466"></a>
+<div id="c13466" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-13466" class="active">@Gaurav: You should not use</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/manoharsingh23">manoharsingh23</a></strong><span style="color:#828282"> @ 3 Feb 2011 08:15 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@Gaurav: You should not use so much iteration . You are using pre computations for ncr but it is increasing time not decreasing as it has to call recursive function until it is less than or equal to that value for which you already have computed ncr.</p></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-16747"></a>
+<div id="c16747" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-16747" class="active">dunno why i'm getting runtime</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/prakash_01">prakash_01</a></strong><span style="color:#828282"> @ 9 Jun 2011 01:15 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">dunno why i'm getting runtime error...</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-19299"></a>
+<div id="c19299" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-19299" class="active">can anyone tell me why 689152</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/digo">digo</a></strong><span style="color:#828282"> @ 6 Oct 2011 11:54 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">can anyone tell me why 689152 solution gives wrong ans?? Works fine for all cases that I have tried on my machine.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-19300"></a>
+<div id="c19300" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-19300" class="active">http://www.codechef.com/views</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/digo">digo</a></strong><span style="color:#828282"> @ 6 Oct 2011 11:55 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><a href="http://www.codechef.com/viewsolution/689152" title="http://www.codechef.com/viewsolution/689152">http://www.codechef.com/viewsolution/689152</a> - the link to the above post.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-24501"></a>
+<div id="c24501" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-24501" class="active">Can i use this algo to find</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/nikhilsv92">nikhilsv92</a></strong><span style="color:#828282"> @ 18 Mar 2012 10:45 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Can i use this algo to find nCr ?
+combination(long n, long r)
+
+		if (r &lt; 0 || r &gt; n)
+			return 0;
+		if (r == 0)
+			return 1;
+		if (r == n)
+			return 1;
+		else 
+			return combination(n - 1, r) + combination(n - 1, r - 1);</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-27023"></a>
+<div id="c27023" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-27023" class="active">Good question...</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/avinashnb141">avinashnb141</a></strong><span style="color:#828282"> @ 22 May 2012 08:13 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Good question...</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-28217"></a>
+<div id="c28217" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-28217" class="active">range of unsigned 64 bit int</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/samewal">samewal</a></strong><span style="color:#828282"> @ 7 Jun 2012 05:55 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">range of unsigned 64 bit int is [0, 18446744073709551615]
+while if n = 100 and k = 18 answer is 30664510800000000000</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-40573"></a>
+<div id="c40573" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-40573" class="active">i m getting wrong answer in</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/shlok">shlok</a></strong><span style="color:#828282"> @ 7 Apr 2013 12:49 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">i m getting wrong answer in problem id 2000541,why?</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-44752"></a>
+<div id="c44752" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-44752" class="active">phew!! got accepted
+Dont do</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/shek092036">shek092036</a></strong><span style="color:#828282"> @ 9 Jun 2013 06:50 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">phew!! got accepted
+Dont do anything silly
+simple ans straight forward :)</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-51015"></a>
+<div id="c51015" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-51015" class="active">ppl like me who 're getting</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/samkit">samkit</a></strong><span style="color:#828282"> @ 6 Aug 2013 10:14 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">ppl like me who 're getting WA instead of correct run at ur own computer. Try long long instead of just long.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-56431"></a>
+<div id="c56431" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-56431" class="active">Hey can anyone tell me what</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/cool_techie">cool_techie</a></strong><span style="color:#828282"> @ 27 Sep 2013 05:03 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Hey can anyone tell me what the ans should be for the test case n=11, k=10 
+I am a little confused here.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-68145"></a>
+<div id="c68145" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-68145" class="active">@admin
+please see my code i</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/tryingtocode">tryingtocode</a></strong><span style="color:#828282"> @ 20 Dec 2013 03:46 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">@admin
+please see my code i have used memoization to increase the speed of the program. but it is giving runtime error please help ASAP</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="comment-68893"></a>
+<div id="c68893" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-68893" class="active">@cool_techie, for 11 10</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/s1h33p">s1h33p</a></strong><span style="color:#828282"> @ 30 Dec 2013 11:41 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">@cool_techie, for 11 10 ,Answer is 10. Procedure- 11-10 =1 . that is 1 extra marble. Now apply the formula (n+r-1)C(r), where n=1 , r=10(colors) . therefore, (1+10-1) C (10) ==&gt; 10.  For more details refer to combinations with repetetion, y can also follow this link.
+<a href="http://www.cs.sfu.ca/~ggbaker/zju/math/perm-comb-more.html" title="http://www.cs.sfu.ca/~ggbaker/zju/math/perm-comb-more.html">http://www.cs.sfu.ca/~ggbaker/zju/math/perm-comb-more.html</a></div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<a id="new"></a>
+<a id="comment-78325"></a>
+<div id="c78325" class="comment comment-new clear-block">
+  
+  <a id="new"></a>
+  <span class="new">new</span>
+
+  <h3><a href="http://www.codechef.com/problems/MARBLES#comment-78325" class="active">why for the test case the</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/helix">helix</a></strong><span style="color:#828282"> @ 20 May 2014 12:08 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">why for the test case the answer is not 7^23?
+i mean, there are 7 different colors and out of 30, these 7 are fixed so that leaves us 23 places to fill.
+each time one marble can be picked up in 7 different ways(since 7 colors) which makes that the remaining blocks can be filled in 7^23 ways. I am not understanding as to why people are calculating the combination because there is no limit to the number of marbles of each color?!
+please explain.</div>
+      
+    <div class="comment-moderation-links"></div>
+  </div>
+  
+</div>
+<div class="box">
+  <h2 class="title"><hr></h2>  <div class="content"><span style="font-weight:bold;color:#777;">Need help? Post a comment. But before that please spare a moment to read the <a href="http://discuss.codechef.com/questions/855/what-kind-of-comment-should-i-post-on-the-problem-page" target="_blank">guidelines</a>.</span><form action="http://www.codechef.com/comment/reply/1618" accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item">
+ <label>Your name: </label>
+ Himansu Rathi
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <div class="resizable-textarea"><span><textarea cols="60" rows="5" name="comment" id="edit-comment" class="form-textarea resizable required textarea-processed"></textarea><div class="grippie" style="margin-right: -2px;"></div></span></div>
+</div>
+<input type="hidden" name="form_build_id" id="form-131bfc765a934db5f684b62a85ae91f0" value="form-131bfc765a934db5f684b62a85ae91f0">
+<input type="hidden" name="form_token" id="edit-form-token" value="05b14981ac077630807eb700d46c19c5">
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form">
+<input type="submit" name="op" id="edit-submit" value="Save" class="form-submit">
+
+</div></form>
+</div>
+</div>
+</div>
+                                                                </div>
+                                                                <div class="primary-colum-width-right">
+                                                                    <div class="content-spacer-b">
+                                                                        <div id="block-problem_status-1" class="block block-problem_status">
+  <div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>
+  <div class="content">
+        <div class="center topbox-small-1" style="margin-left:0px;"><h3>SUCCESSFUL SUBMISSIONS</h3><h3></h3></div><br>
+		<div id="rankContentDiv" class="table-results maintable"><div class="table-questions" id="rankContentDiv">
+<div class="tablebox-section-small l-float">
+
+    <link href="./Marbles   CodeChef_files/submission.css" rel="stylesheet" type="text/css">
+
+    <table width="333" border="0" align="left" cellpadding="0" cellspacing="0" style="border:#E0E0E0 solid 1px; ">
+        <tbody>
+        <tr class="headerrow">
+                        <th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;">User</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="25">Time</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="25">Mem</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="80">Lang</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered">Solution</th>        </tr>
+
+        <tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/opelhoward" title="opelhoward" target="_blank">opelhoward</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.2M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/610961" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/vlad107" title="vlad107" target="_blank">vlad107</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.2M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/933457" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/golfinekatria" title="golfinekatria" target="_blank">golfinekatria</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.2M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/663087" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/nikolai" title="nikolai" target="_blank">nikolai</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.2M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/837970" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/anurag_p" title="anurag_p" target="_blank">anurag_p</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.2M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/861731" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/pc1ang" title="pc1ang" target="_blank">pc1ang</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">0.6M</td><td class="centered" width="80">PAS fpc</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/610469" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/john_galt" title="john_galt" target="_blank">john_galt</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/19891" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/akhurange" title="akhurange" target="_blank">akhurange</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/21106" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/setugupta" title="setugupta" target="_blank">setugupta</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/71062" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/abhinav1203" title="abhinav1203" target="_blank">abhinav1203</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/83072" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#E0E0E0" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/shoyeb210287" title="shoyeb210287" target="_blank">shoyeb210287</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/87216" target="_blank">View</a></li></ul></td></tr><tr class="kol" bgcolor="#ffffff" style="height:40px;"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/akshay_utkarsh" title="akshay_utkarsh" target="_blank">akshay_utkarsh</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">1.5M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a href="http://www.codechef.com/viewsolution/92833" target="_blank">View</a></li></ul></td></tr>        </tbody>
+    </table>
+    </div>
+
+<div id="hidden">
+                <input type="hidden" id="pcode" value="MARBLES" name="pcode">
+				<input type="hidden" id="next_p" value="1" name="n">
+				<input type="hidden" id="prev_p" value="-1" name="p">
+            </div>
+            <table class="problems" border="0" width="333" style="padding:0px; border-color:white; clear: both;">
+            <tbody>
+                <tr>
+                    <td width="68" style="border-bottom:0;">
+                      
+                    </td>
+                    <td width="204" style="border-bottom:0;">
+                    <div id="loader" align="center" style="height:20px;"><div align="center" class="pageinfo"><center>1 of 124</center></div></div>
+                    </td>
+                    <td width="68" align="right" style="border-bottom:0;">
+                      <a onclick="onload_getpage_ssubmissions(&#39;next&#39;);"><img src="./Marbles   CodeChef_files/page-next-active.gif"></a>
+                    </td>
+                </tr>
+              </tbody>
+             </table>
+           </div></div>  </div>
+  <div class="r5"></div><div class="r4"></div><div class="r3"></div><div class="r2"></div><div class="r1 b"></div>
+</div>
+<div id="block-block-24" class="block block-block">
+  <div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>
+  <div class="content">
+        <div class="center topbox-small-1" style="text-align: center; margin:0;"><h3>HELP</h3></div>
+<pre style="clear : both;"></pre><br>
+<table id="help" style="border: 1px solid #EEEDEC; width:333px;"> 
+<tbody><tr>
+<td style="border-bottom: 0px;">
+<p><br>Program should read from <b>standard input</b> and write to <b>standard output</b>.  After you submit a solution you can see your results by clicking on the <b>[My Submissions]</b> tab on the problem page. Below are the possible results:</p>
+<p>&nbsp;</p>
+<ul>
+    <li><b>Accepted</b><img alt="" src="./Marbles   CodeChef_files/tick-icon.gif"> Your program ran successfully and gave a correct answer. If there is a score for the problem, this will be displayed in parenthesis next to the checkmark.</li><br>
+    <li><b>Time Limit Exceeded</b><img alt="" src="./Marbles   CodeChef_files/clock_error.png"> Your program was compiled successfully, but it didn't stop before time limit. Try optimizing your approach.</li><br>
+    <li><b>Wrong Answer</b><img alt="" src="./Marbles   CodeChef_files/cross-icon.gif"> Your program compiled and ran succesfully but the output did not match the expected output.</li><br>
+    <li><b>Runtime Error</b><img alt="" src="./Marbles   CodeChef_files/runtime-error.png"> Your code compiled and ran but encountered an error. The most common reasons are using too much memory or dividing by zero. For the specific error codes see the help section.</li><br>
+    <li><b>Compilation Error</b><img alt="" src="./Marbles   CodeChef_files/alert-icon.gif"> Your code was unable to compile. When you see this icon, click on it for more information.</li><br>
+    If you are still having problems, see a <a href="http://www.codechef.com/help/#sampleq">sample solution</a> here. </ul>
+</td>
+</tr>
+</tbody></table>
+  </div>
+  <div class="r5"></div><div class="r4"></div><div class="r3"></div><div class="r2"></div><div class="r1 b"></div>
+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img class="content-wrapper-header" src="./Marbles   CodeChef_files/content-wrapper-bootm-big.gif">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+                                    <div id="footer" class="wrapper">
+                        <!--<div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>-->
+                        <div class="content clear-block">
+                            <!-- Footer Contents -->
+                            <div id="block-block-13" class="block block-block block-header">
+  <div class="content">
+        <script language="javascript" type="text/javascript">
+function formatTime(ts) {
+  now = new Date(ts);
+ 
+  localtime = new Date();
+  hour = now.getHours();
+  min = now.getMinutes();
+  sec = now.getSeconds();
+  
+  if (min <= 9) {
+	 min = "0" + min;
+  }
+  if (sec <= 9) {
+	 sec = "0" + sec;
+  }
+  if (hour > 12) {
+	 hour = hour - 12;
+	 add = " PM";
+  } else {
+	 hour = hour;
+	 add = " AM";
+  }
+  if (hour == 12) {
+	 add = " PM";
+  }
+  if (hour == 00) {
+	 hour = "12";
+  }
+	
+  $('#server-time').html(((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add);
+  
+  nextSec = (now.getTime() + 1000);
+  
+  setTimeout("formatTime("+nextSec+")", 1000);
+}
+function getDtTimeZone() 
+{
+var rightNow = new Date();
+var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+var temp = toDay.toGMTString();
+var date2 = new Date(temp.substring(0, temp.lastIndexOf(" ") -1));
+var stdTime = (toDay - date2) / (1000 * 60 * 60);
+return stdTime;
+}
+/*var d=new Date();
+$.ajax({
+url: '/umtza',
+type:'POST',
+data: 'umtza='+d.toString(),
+});
+*/
+</script>
+<div id="disclaimer">CodeChef is a non-commercial competitive programming community</div>
+<div class="inner-wrapper">
+<div class="cols-2">
+<div id="secondary-nav">
+<ul>
+    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+    <li><a target="_blank" href="http://www.directi.com/">About Directi</a></li>
+    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+    <li><a href="http://www.codechef.com/c-programming">C-Programming</a></li>
+    <li><a href="http://www.codechef.com/Programming-Languages">Programming Languages</a></li>
+    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+</ul>
+</div>
+<div id="copyright" class="cols-2">© 2009 <a style="color: rgb(0, 0, 0);" href="http://www.directi.com/">Directi Group</a>.  All Rights Reserved.  CodeChef uses SPOJ © by <a style="color: rgb(0, 0, 0);" href="http://www.sphere-research.com/">Sphere Research Labs</a></div>
+<div id="copyright-msg">In order to report copyright violations of any kind, send in an email to <a href="mailto:copyright@codechef.com">copyright@codechef.com</a></div>
+</div>
+<div align="right" class="cols-2-right" style="float:right;">
+<div id="sponsor-strip"><a target="_blank" href="http://www.directi.com/"><img alt="CodeChef a product of Directi" src="./Marbles   CodeChef_files/footer-sponsor-strip.gif"></a><br>
+<span>The time now is: <span id="server-time">01:20:06 PM</span></span>
+				<script language="javascript">
+						formatTime('May 20, 2014 13:19:01');
+					</script></div>
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-53602-42']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- Google Code for Visitors that do not sign-up Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1066618556;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "gbUUCPTlhAIQvJ3N_AM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="http://www.googleadservices.com/pagead/conversion/1066618556/?random=1400572412361&cv=7&fst=1400572412361&num=1&fmt=3&value=0&label=gbUUCPTlhAIQvJ3N_AM&bg=666666&hl=en&guid=ON&u_h=768&u_w=1366&u_ah=728&u_aw=1366&u_cd=24&u_his=1&u_tz=330&u_java=true&u_nplug=15&u_nmime=57&frm=0&url=http%3A//www.codechef.com/problems/MARBLES&ref=http%3A//www.codechef.com/problems/medium/%3Fsort_by%3DSuccessfulSubmission%26sorting_order%3Ddesc">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1066618556/?label=gbUUCPTlhAIQvJ3N_AM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<!-- Google Code for RM codechef Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 968176136;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "iDk7CPDZ7wMQiOTUzQM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Marbles   CodeChef_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="http://www.googleadservices.com/pagead/conversion/968176136/?random=1400572412367&cv=7&fst=1400572412361&num=2&fmt=3&value=0&label=iDk7CPDZ7wMQiOTUzQM&bg=ffffff&hl=en&guid=ON&u_h=768&u_w=1366&u_ah=728&u_aw=1366&u_cd=24&u_his=1&u_tz=330&u_java=true&u_nplug=15&u_nmime=57&frm=0&url=http%3A//www.codechef.com/problems/MARBLES&ref=http%3A//www.codechef.com/problems/medium/%3Fsort_by%3DSuccessfulSubmission%26sorting_order%3Ddesc">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/968176136/?label=iDk7CPDZ7wMQiOTUzQM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<div class="cc-footer-seo">
+<span><a href="http://www.codechef.com/">CodeChef</a> - A Platform for Aspiring Programmers</span>
+<p>CodeChef was created as a platform to help programmers make it big in the world of algorithms, <strong>computer programming</strong> and <strong>programming contests</strong>. At CodeChef we work hard to revive the geek in you by hosting a <strong>programming contest</strong> at the start of the month and another smaller programming challenge in the middle of the month. We also aim to have training sessions and discussions related to <strong>algorithms, binary search</strong>, technicalities like <strong>array size</strong> and the likes. Apart from providing a platform for <strong>programming competitions</strong>, CodeChef also has various algorithm tutorials and forum discussions to help those who are new to the world of <strong>computer programming</strong>.</p>
+<p></p>
+<span><a href="http://www.codechef.com/problems/easy">Practice Section</a> - A Place to hone your 'Computer Programming Skills'</span>
+<p>Try your hand at one of our many practice problems and submit your solution in a language of your choice. Our <strong>programming contest</strong> judge accepts solutions in over 35+ programming languages. Preparing for coding contests were never this much fun! Receive points, and move up through the CodeChef ranks. Use our practice section to better prepare yourself for the multiple <strong>programming challenges</strong> that take place through-out the month on CodeChef. </p>
+<p></p>
+<span><a href="http://www.codechef.com/contests/">Compete</a> - Monthly Programming Contests and Cook-offs</span>
+<p>Here is where you can show off your <strong>computer programming</strong> skills. Take part in our 10 day long monthly <strong>coding contest</strong> and the shorter format Cook-off <strong>coding contest</strong>. Put yourself up for recognition and win great prizes. Our <strong>programming contests</strong> have prizes worth up to Rs.20,000 and $700lots more CodeChef goodies up for grabs. </p>
+<p></p>
+<span><a href="http://discuss.codechef.com/">Discuss</a></span>
+<p>Are you new to <strong>computer programming</strong>? Do you need help with algorithms? Then be a part of CodeChef's Forums and interact with all our programmers - they love helping out other programmers and sharing their ideas. Have discussions around <strong>binary search, array size, branch-and-bound, Dijkstra's algorithm, Encryption algorithm</strong> and more by visiting the CodeChef Forums and Wiki section.</p>
+<p></p>
+<span><a href="http://www.codechef.com/community">CodeChef Community</a></span>
+<p>As part of our Educational initiative, we give institutes the opportunity to associate with CodeChef in the form of Campus Chapters. Hosting <strong>online programming competitions</strong> is not the only feature on CodeChef. You can also host a <strong>coding contest</strong> for your institute on CodeChef, organize an <strong>algorithm</strong> event and be a guest author on our blog. </p>
+<p></p>
+<span><a href="http://www.codechef.com/goforgold">Go For Gold</a></span>
+<p>The Go for Gold Initiative was launched about a year after CodeChef was incepted, to help prepare Indian students for the <strong>ACM ICPC</strong> World Finals competition. In the run up to the <strong>ACM ICPC</strong> competition, the Go for Gold initiative uses CodeChef as a platform to train students for the <strong>ACM ICPC</strong> competition via multiple warm up contests. As an added incentive the Go for Gold initiative is also offering over Rs.8 lacs to the Indian team that beats the 29th position at the <strong>ACM ICPC</strong> world finals. Find out more about the Go for Gold and the <strong>ACM ICPC</strong> competition <a href="http://www.codechef.com/goforgold">here</a>.</p>
+</div>  </div>
+</div>
+<div id="block-block-48" class="block block-block block-header">
+  <div class="content">
+        <script type="text/javascript" src="./Marbles   CodeChef_files/jquery.cookie.js">  </script><script type="text/javascript" src="./Marbles   CodeChef_files/contest-notification.js">  </script>  </div>
+</div>
+                        </div>
+                    </div>
+                                      <div id="fb-root" class=" fb_reset"><script src="./Marbles   CodeChef_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Marbles   CodeChef_files/dgdTycPTSRj.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Marbles   CodeChef_files/dgdTycPTSRj(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+      <script type="text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId  : '191217060453',
+            status : true, // check login status
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml  : true,
+            logging: '0',
+            channelURL: 'http://www.codechef.com/sites/all/modules/fbconnect/channel.html',
+            oauth : true
+          });
+
+          jQuery(document).trigger('fb:init');
+        };
+
+        (function() {
+          var e = document.createElement('script');
+          e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+          e.async = true;
+          document.getElementById('fb-root').appendChild(e);
+        }());
+      </script>            </center>
+    
+
+</center><div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-orig-layout">        <div id="outerImageContainer" style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);"><div id="modalContainer" style="display: none; padding: 10px;"></div><div id="frameContainer" style="display: none; padding: 10px;"></div><div id="imageContainer" style="display: none; padding: 10px;"><img id="lightboxImage" alt=""><div id="hoverNav"><a id="prevLink" title="Previous" href="http://www.codechef.com/problems/MARBLES#" style="padding-top: 10px;"></a><a id="nextLink" title="Next" href="http://www.codechef.com/problems/MARBLES#" style="padding-top: 10px;"></a></div></div><div id="loading"><a href="http://www.codechef.com/problems/MARBLES#" id="loadingLink"></a></div></div>        <div id="imageDataContainer" class="clearfix" style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);">          <div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><div id="frameHoverNav"><a id="framePrevLink" title="Previous" href="http://www.codechef.com/problems/MARBLES#" style="padding-top: 10px;"></a><a id="frameNextLink" title="Next" href="http://www.codechef.com/problems/MARBLES#" style="padding-top: 10px;"></a></div><a id="bottomNavClose" title="Close" href="http://www.codechef.com/problems/MARBLES#" style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);"></a><a id="bottomNavZoom" href="http://www.codechef.com/problems/MARBLES#"></a><a id="bottomNavZoomOut" href="http://www.codechef.com/problems/MARBLES#"></a><a id="lightshowPause" title="Pause Slideshow" href="http://www.codechef.com/problems/MARBLES#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="http://www.codechef.com/problems/MARBLES#" style="display: none;"></a></div></div>        </div>      </div><iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Marbles   CodeChef_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>

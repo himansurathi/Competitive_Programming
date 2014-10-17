@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators -->
+<html lang="en-US" dir="ltr" class="redesign  clickberry-extension clickberry-extension-standalone" __fvdsurfcanyoninserted="1"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Bitwise operators - JavaScript   MDN_files/ga.js"></script><script type="text/javascript" async="" src="./Bitwise operators - JavaScript   MDN_files/geo.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+          <script src="./Bitwise operators - JavaScript   MDN_files/237572123.js"></script>
+  
+    <title>Bitwise operators - JavaScript | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#copyright">
+
+  <link rel="stylesheet" href="https://mozorg.cdn.mozilla.net/media/css/tabzilla-min.css">
+              <link rel="stylesheet" media="all" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=37ef594">
+      
+    <link rel="stylesheet" media="all" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=37ef594">
+
+          <link rel="stylesheet" type="text/css" href="./Bitwise operators - JavaScript   MDN_files/Template-CustomCSS">
+    
+    
+  <!-- common social tags -->
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://developer.mozilla.org/media/redesign/img/opengraph-logo.png">
+  <meta name="twitter:site" content="@NewOnMDN">
+  <meta name="twitter:creator" content="@NewOnMDN">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/media/redesign/img/favicon144.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/media/redesign/img/favicon114.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/media/redesign/img/favicon72.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/media/redesign/img/favicon57.png">
+  <!-- basic favicon -->
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/redesign/img/favicon32.png">
+
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script src="https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+    <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+
+            <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_binaires" title="Opérateurs binaires">
+          <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="ビット演算子">
+          <link rel="alternate" hreflang="ko" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" title="Bitwise Operators">
+          <link rel="alternate" hreflang="pl" href="https://developer.mozilla.org/pl/docs/Dokumentacja_j%C4%99zyka_JavaScript_1.5/Operatory/Operatory_bitowe" title="Operatory bitowe">
+      
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Bitwise operators">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+  <meta name="twitter:title" content="Bitwise operators">
+    <meta property="og:description" content="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">
+  <meta name="description" content="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">
+  <meta name="twitter:description" content="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">
+  
+      <script type="text/javascript">
+  // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+  var removeUtms  =   function(){
+      var location = window.location;
+      if (location.hash.indexOf('utm') != -1) {
+          var anchor = location.hash.match(/#(?!utm)[^&]+/);
+          anchor  =   anchor ? anchor[0] : '';
+          if(!anchor && window.history.replaceState){
+              history.replaceState({}, '', location.pathname + location.search);
+          } else {
+              location.hash = anchor;
+          }
+      }
+  };
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5'],
+            ['_setAllowAnchor', true],
+            ['_setCustomVar', 8, 'docs navigator', 'Yes', 1],
+            ['_setCustomVar', 10, 'top contributors', 'Yes', 1],
+            ['_trackPageview']);
+  _gaq.push(removeUtms);
+
+  
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><link type="text/css" rel="stylesheet" href="./Bitwise operators - JavaScript   MDN_files/syntax-prism-min.css"><style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><meta content="clickberry-extension-here"><style>@-webkit-keyframes popkylmcrikwispxmvyujttqmvjqyzehtyr {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popkylmcrikwispxmvyujttqmvjqyzehtyr {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#kylmcrikwispxmvyujttqmvjqyzehtyr{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.kylmcrikwispxmvyujttqmvjqyzehtyr-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#777 !important;display:inline !important;text-decoration:line-through !important;}#kylmcrikwispxmvyujttqmvjqyzehtyr br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#kylmcrikwispxmvyujttqmvjqyzehtyr span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#kylmcrikwispxmvyujttqmvjqyzehtyr div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#kylmcrikwispxmvyujttqmvjqyzehtyr a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#kylmcrikwispxmvyujttqmvjqyzehtyr-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#kylmcrikwispxmvyujttqmvjqyzehtyr-gear:hover{-webkit-animation-name:popkylmcrikwispxmvyujttqmvjqyzehtyr !important;animation-name:popkylmcrikwispxmvyujttqmvjqyzehtyr !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#kylmcrikwispxmvyujttqmvjqyzehtyr:hover #kylmcrikwispxmvyujttqmvjqyzehtyr-gear{text-decoration:none !important;display:inline-block !important;}@media print{#kylmcrikwispxmvyujttqmvjqyzehtyr{display:none !important;}}</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+<body data-slug="Web/JavaScript/Reference/Operators/Bitwise_Operators" contextmenu="edit-history-menu" class="document  "><div id="tabzilla-panel" class="tabzilla-closed" tabindex="-1">  <div id="tabzilla-contents">    <div id="tabzilla-promo">      <div class="snippet" id="tabzilla-promo-webwewant">        <a href="https://webwewant.mozilla.org/?icn=tabz">          <h4>What kind of Web do you want?</h4>          <p>Share your vision</p>        </a>      </div>    </div>    <div id="tabzilla-nav">      <ul>        <li><h2>Mozilla</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/mission/?icn=tabz">Mission</a></li>              <li><a href="https://www.mozilla.org/about/?icn=tabz">About</a></li>              <li><a href="https://www.mozilla.org/projects/?icn=tabz">Projects</a></li>              <li><a href="https://support.mozilla.org/?icn=tabz">Support</a></li>              <li><a href="https://developer.mozilla.org/?icn=tabz">Developer Network</a></li>            </ul>          </div>        </li>        <li><h2>Products</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/firefox/?icn=tabz">Firefox</a></li>              <li><a href="https://www.mozilla.org/thunderbird/?icn=tabz">Thunderbird</a></li>              <li><a href="https://www.mozilla.org/firefox/os/?icn=tabz">Firefox OS</a></li>            </ul>          </div>        </li>        <li><h2>Innovations</h2>          <div>            <ul>              <li><a href="https://webmaker.org/?icn=tabz">Webmaker</a></li>              <li><a href="https://www.mozilla.org/research/?icn=tabz">Research</a></li>            </ul>          </div>        </li>        <li><h2>Get Involved</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/contribute/?icn=tabz">Volunteer</a></li>              <li><a href="https://careers.mozilla.org/?icn=tabz">Careers</a></li>              <li><a href="https://www.mozilla.org/en-US/about/mozilla-spaces/?icn=tabz">Find us</a></li>              <li><a href="https://sendto.mozilla.org/page/contribute/EOYFR2013-newdefault?icn=tabz&source=tabzilla_textlink" class="donate">Donate</a></li>              <li><a href="https://www.mozilla.org/about/partnerships/?icn=tabz">Partner</a></li>            </ul>          </div>        </li>        <li id="tabzilla-search">          <a href="https://www.mozilla.org/community/directory.html?icn=tabz">Website Directory</a>          <form title="Search Mozilla sites" role="search" action="https://www.google.com/cse">            <input type="hidden" value="002443141534113389537:ysdmevkkknw" name="cx">            <input type="hidden" value="FORID:0" name="cof">            <label for="q">Search</label>            <input type="search" placeholder="Search" id="q" name="q">          </form>        </li>      </ul>    </div>  </div></div>
+
+  <script type="text/javascript">
+    (function(){
+  var FLAGS = {
+    'derby_closed': true,'ga_outbound_links': true,'kumaediting': false,'page_move': false,'promote_script': false,'search_doc_navigator': true,'top_contributors': true
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+      // This represents the site configuration
+  window.mdn = {
+    build: '37ef594',
+    // Properties and settings for CKEditor will go here
+    ckeditor: {},
+    // Feature test results and methods will be placed here
+    features: {},
+    // Ensures gettext always returns something, is always set
+    gettext: function(x) { return x; },
+    // The path to media (images, CSS, JS) in MDN
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    // Wiki-specific settings will be placed here
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+</script>
+    <div class="global-notice">
+    <div class="wrap center">
+              <p><bdi>Help us improve the quality of our code samples by answering this brief survey: http://bit.ly/sample-demo</bdi></p>
+          </div>
+  </div>
+
+
+  
+  <ul id="nav-access">
+    <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#language">Select language</a></li>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#q" id="skip-search">Skip to search</a></li>
+      </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div class="clear header-login">
+      <a href="https://www.mozilla.org/" id="tabzilla" class="no-track" aria-label="Mozilla links">mozilla</a>
+              
+    <form class="browserid" action="https://developer.mozilla.org/en-US/users/browserid_verify" method="POST">
+    <input id="next" name="next" type="hidden" value="/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+    <input required="required" type="hidden" name="assertion" id="id_assertion">
+            </form>
+
+                    <ul class="user-state signed-out">
+                <li class="user-signin menu">
+
+                    <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#" class="persona-button persona-login persona-loaded" data-next="/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+                        <span class="persona-icon"><i aria-hidden="true"></i></span>
+                        <span class="signin">Sign in with Persona</span>
+                    </a>
+                </li>
+            </ul>
+                  </div>
+
+    <a href="https://developer.mozilla.org/en-US/" class="logo">Mozilla Developer Network</a>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="https://developer.mozilla.org/en-US/docs/Zones">Zones<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-single" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/Add-ons">Add-ons</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Apps">App Center</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Marketplace">Firefox Marketplace</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Persona">Persona</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Apps">Apps</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References &amp; Guides</div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="https://developer.mozilla.org/en-US/docs/Tools">Tools</a></li><li><a href="https://developer.mozilla.org/en-US/demos/">Demos</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Connect">Connect</a></li><li class="main-nav-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" data-placeholder="SEARCH" data-value="" value="">
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main" role="main"><div class="center">
+            <div class="article-meta">
+        <!-- action buttons -->
+                  <ul class="page-buttons"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+
+        <div class="submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+                                                <li><bdi><a rel="internal" href="https://developer.mozilla.org/fr/docs/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_binaires" title="Opérateurs binaires">Français</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/JavaScript/Reference/Operators/Bitwise_Operators" title="ビット演算子">日本語</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" title="Bitwise Operators">한국어</a></bdi></li>
+                                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pl/docs/Dokumentacja_j%C4%99zyka_JavaScript_1.5/Operatory/Operatory_bitowe" title="Operatory bitowe">Polski</a></bdi></li>
+                              
+                              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators$locales">Add a translation</a></li>
+                          </ul>
+          </div>
+        </div></li><li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators$edit" class="button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+
+        <div class="submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators$history">History</a></li>
+                                                                
+                
+                                
+                                                                <li class="page-print"><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#" onclick="return window.print();" title="Print page">Print this page</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="v:url" property="v:title">JavaScript</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" rel="v:url" property="v:title">JavaScript reference</a></li>
+          <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" rel="v:url" property="v:title">Expressions and operators</a></li>
+        <li class="crumb" typeof="v:Breadcrumb" property="v:title">Bitwise operators</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+                  <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+                  <h1>Bitwise operators</h1>
+                <div class="contributor-avatars">
+            <span class="quickstat">
+            by 24 contributors:            </span>
+            <ul>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Mgjbot" title="View profile: Mgjbot">
+                <img src="./Bitwise operators - JavaScript   MDN_files/cde356a1ca3e38301f29fda3dbd5de53" class="avatar loaded" alt="Mgjbot"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <img src="./Bitwise operators - JavaScript   MDN_files/945076feb88f2d7003891ffbf06f32bf" class="avatar loaded" alt="Sheppy"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Nick_Rizzolo" title="View profile: Nick_Rizzolo">
+                <img src="./Bitwise operators - JavaScript   MDN_files/c41eac2259731a8e9aadb433a2596f92" class="avatar loaded" alt="Nick_Rizzolo"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Tezza" title="View profile: Tezza">
+                <img src="./Bitwise operators - JavaScript   MDN_files/9d147ce02a779116d783c2a26fa5d98f" class="avatar loaded" alt="Tezza"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/fscholz" title="View profile: fscholz">
+                <img src="./Bitwise operators - JavaScript   MDN_files/e24391c9174352988d819a9b9ea77c9e" class="avatar loaded" alt="fscholz"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/harshkothari410" title="View profile: harshkothari410">
+                <img src="./Bitwise operators - JavaScript   MDN_files/f75bfe4cf45caede5d850a2387ca51fe" class="avatar loaded" alt="harshkothari410"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Agamemnus" title="View profile: Agamemnus">
+                <img src="./Bitwise operators - JavaScript   MDN_files/d25dd0a8ebf8e7050752fc5615b170c5" class="avatar loaded" alt="Agamemnus"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/BrianDiPalma" title="View profile: BrianDiPalma">
+                <img src="./Bitwise operators - JavaScript   MDN_files/b9d1a2d2be04d97a91cea414a4140eec" class="avatar loaded" alt="BrianDiPalma"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/sunfish" title="View profile: sunfish">
+                <img src="./Bitwise operators - JavaScript   MDN_files/9a3784b62b5d1b14f7ccb5b9c3810ce7" class="avatar loaded" alt="sunfish"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/forest51690" title="View profile: forest51690">
+                <img src="./Bitwise operators - JavaScript   MDN_files/024ca42cf79ed90cd18eec585986629c" class="avatar loaded" alt="forest51690"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/J-Mackerel" title="View profile: J-Mackerel">
+                <img src="./Bitwise operators - JavaScript   MDN_files/92375bc285d986bb5a084f488bf56b7b" class="avatar loaded" alt="J-Mackerel"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Havvy" title="View profile: Havvy">
+                <img src="./Bitwise operators - JavaScript   MDN_files/e799a79441c7543be48562403411cd13" class="avatar loaded" alt="Havvy"></a>
+                </li>
+                        <li>
+                <a href="https://developer.mozilla.org/en-US/profiles/Noitidart" title="View profile: Noitidart">
+                <img src="./Bitwise operators - JavaScript   MDN_files/2c6478c7a329876d0a887c37c28db7e8" class="avatar loaded" alt="Noitidart"></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Inimino" title="View profile: Inimino">
+                <noscript data-class="avatar" data-alt="Inimino" data-src="https://secure.gravatar.com/avatar/e4e997037a6341e7881816db5ef23ba7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Inimino</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/ethertank" title="View profile: ethertank">
+                <noscript data-class="avatar" data-alt="ethertank" data-src="https://secure.gravatar.com/avatar/abac73ba2093b500bf7599c76d80280c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">ethertank</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Maian" title="View profile: Maian">
+                <noscript data-class="avatar" data-alt="Maian" data-src="https://secure.gravatar.com/avatar/f3589ad1aadbcba8e9eaffc046dcff90?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Maian</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Dria" title="View profile: Dria">
+                <noscript data-class="avatar" data-alt="Dria" data-src="https://secure.gravatar.com/avatar/c6c044311a2c98b383718e00964cda72?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Dria</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/gb2048" title="View profile: gb2048">
+                <noscript data-class="avatar" data-alt="gb2048" data-src="https://secure.gravatar.com/avatar/c22c077d94802c8b27fc32a401d1ac58?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">gb2048</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/AdmiralNovia" title="View profile: AdmiralNovia">
+                <noscript data-class="avatar" data-alt="AdmiralNovia" data-src="https://secure.gravatar.com/avatar/e91a2eea00e8ea66275c4e61b300e62e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">AdmiralNovia</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Maxim" title="View profile: Maxim">
+                <noscript data-class="avatar" data-alt="Maxim" data-src="https://secure.gravatar.com/avatar/2b35b7348156b5a0a9222003650fe95a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Maxim</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Nickolay" title="View profile: Nickolay">
+                <noscript data-class="avatar" data-alt="Nickolay" data-src="https://secure.gravatar.com/avatar/ea331e778d54effc15b5fbc694bc8232?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Nickolay</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/fusionchess" title="View profile: fusionchess">
+                <noscript data-class="avatar" data-alt="fusionchess" data-src="https://secure.gravatar.com/avatar/46d112721eef52c4c389be201c151bbf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">fusionchess</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/Orinoco" title="View profile: Orinoco">
+                <noscript data-class="avatar" data-alt="Orinoco" data-src="https://secure.gravatar.com/avatar/5bff6952e02bd99e5f60562993813a1a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">Orinoco</noscript></a>
+                </li>
+                        <li class="hidden">
+                <a href="https://developer.mozilla.org/en-US/profiles/brianblakely" title="View profile: brianblakely">
+                <noscript data-class="avatar" data-alt="brianblakely" data-src="https://secure.gravatar.com/avatar/9481d4984e85f636fd5911554c4ef885?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2F%2Fimg%2Favatar.png">brianblakely</noscript></a>
+                </li>
+                    </ul><button type="button" class="transparent">Show all…<span class="hidden"> contributors</span></button>
+        </div>
+        
+          
+      </div>
+      
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+                    <!-- additional controls row; hidden unless needed -->
+          <div id="wiki-controls" class="column-container column-container-reverse">
+            <div class="column-strip">
+              <!-- Show TOC "show" link -->
+            </div>
+            <div class="column-half">
+            </div>
+            <div class="column-strip quick-links hidden">
+              <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#show-quick-links" class="title smaller" id="show-quick-links"><i aria-hidden="true" class="icon-caret-down"></i>Show Sidebar</a>
+            </div>
+          </div>
+          
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+                          <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+                            <!-- table of contents -->
+              <div id="toc" class="toc toggleable fixed" style="width: 266px; max-height: 560px;">
+                <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus" aria-haspopup="true">In This Article<i class="icon-minus"></i></a>
+                <ol class="toggle-container">
+                  <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Summary" rel="internal">Summary</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Signed_32-bit_integers" rel="internal">Signed 32-bit integers</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_logical_operators" rel="internal">Bitwise logical operators</a><ol><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#.26_(Bitwise_AND)" rel="internal">&amp; (Bitwise AND)</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#.7C_(Bitwise_OR)" rel="internal">| (Bitwise OR)</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#.5E_(Bitwise_XOR)" rel="internal">^ (Bitwise XOR)</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#.7E_(Bitwise_NOT)" rel="internal">~ (Bitwise NOT)</a></li></ol></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_shift_operators" rel="internal">Bitwise shift operators</a><ol><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#<<_(Left_shift)" rel="internal">&lt;&lt; (Left shift)</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#>>_(Sign-propagating_right_shift)" rel="internal">&gt;&gt; (Sign-propagating right shift)</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#>>>_(Zero-fill_right_shift)" rel="internal">&gt;&gt;&gt; (Zero-fill right shift)</a></li></ol></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Examples" rel="internal">Examples</a><ol><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Example.3A_Flags_and_bitmasks" rel="internal">Example: Flags and bitmasks</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Conversion_snippets" rel="internal">Conversion snippets</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Automatize_the_creation_of_a_mask" rel="internal">Automatize the creation of a mask</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Reverse_algorithm.3A_an_array_of_booleans_from_a_mask" rel="internal">Reverse algorithm: an array of booleans from a mask</a></li></ol></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Specifications" rel="internal">Specifications</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#See_also" rel="internal">See also</a>
+                </li></ol>
+              </div>
+                            </div>
+            
+                                                  
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+              
+                                                                                          
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                                                      <div>
+ <section class="Quick_links" id="Quick_Links"><!-- --></section></div>
+<h2 id="Summary" name="Summary">Summary</h2>
+<p><strong>Bitwise operators</strong> treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="/en-US/docs/JavaScript/Reference/Global_Objects/Number">numbers</a></code>. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.</p>
+<p>The following table summarizes JavaScript's bitwise operators:</p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Operator</th>
+   <th>Usage</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND</a></td>
+   <td style="white-space: nowrap;"><code>a &amp; b</code></td>
+   <td>Returns a one in each bit position for which the corresponding bits of both operands are ones.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">Bitwise OR</a></td>
+   <td style="white-space: nowrap;"><code>a | b</code></td>
+   <td>Returns a one in each bit position for which the corresponding bits of either or both operands are ones.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">Bitwise XOR</a></td>
+   <td style="white-space: nowrap;"><code>a ^ b</code></td>
+   <td>Returns a one in each bit position for which the corresponding bits of either but not both operands are ones.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">Bitwise NOT</a></td>
+   <td style="white-space: nowrap;"><code>~ a</code></td>
+   <td>Inverts the bits of its operand.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift">Left shift</a></td>
+   <td style="white-space: nowrap;"><code>a &lt;&lt; b</code></td>
+   <td>Shifts <code>a</code> in binary representation <code>b</code> (&lt; 32) bits to the left, shifting in zeros from the right.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift">Sign-propagating right shift</a></td>
+   <td style="white-space: nowrap;"><code>a &gt;&gt; b</code></td>
+   <td>Shifts <code>a</code> in binary representation <code>b</code> (&lt; 32) bits to the right, discarding bits shifted off.</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Unsigned_right_shift">Zero-fill right shift</a></td>
+   <td style="white-space: nowrap;"><code>a &gt;&gt;&gt; b</code></td>
+   <td>Shifts <code>a</code> in binary representation <code>b</code> (&lt; 32) bits to the right, discarding bits shifted off, and shifting in zeros from the left.</td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Signed_32-bit_integers">Signed 32-bit integers</h2>
+<p>The operands of all bitwise operators are converted to signed 32-bit integers in big-endian order and in two's complement format. Big-endian order means that the most significant bit (the bit position with the greatest value) is the left-most bit if the 32 bits are arranged in a horizontal line. Two's complement format means that a number's negative counterpart (e.g. 5 vs. -5) is all the number's bits inverted (bitwise NOT of the number, a.k.a. ones' complement of the number) plus one. For example, the following encodes the integer 314 (base 10):</p>
+<pre class="language-html">00000000000000000000000100111010
+</pre>
+<p>The following encodes <code>~314</code>, i.e. the ones' complement of <code>314</code>:</p>
+<pre class="language-html">11111111111111111111111011000101
+</pre>
+<p>Finally, the following encodes <code>-314,</code> i.e. the two's complement of <code>314</code>:</p>
+<pre class="language-html">11111111111111111111111011000110
+</pre>
+<p>The two's complement guarantees that the left-most bit is 0 when the number is positive and 1 when the number is negative. Thus, it is called the <em>sign bit</em>.</p>
+<p>The number <code>0</code> is the integer that is composed completely of 0 bits.</p>
+<pre class="language-html">0 (base 10) = 00000000000000000000000000000000 (base 2)
+</pre>
+<p>The number <code>-1</code> is the integer that is composed completely of 1 bits.</p>
+<pre class="language-html">-1 (base 10) = 11111111111111111111111111111111 (base 2)
+</pre>
+<p>The number <code>-2147483648</code> (hexadecimal representation: <code>-0x80000000</code>) is the integer that is composed completely of 0 bits except the first (left-most) one.</p>
+<pre class="language-html">-2147483648 (base 10) = 10000000000000000000000000000000 (base 2)
+</pre>
+<p>The number <code>2147483647</code> (hexadecimal representation: <code>0x7fffffff</code>) is the integer that is composed completely of 1 bits except the first (left-most) one.</p>
+<pre class="language-html">2147483647 (base 10) = 01111111111111111111111111111111 (base 2)
+</pre>
+<p>The numbers <code>-2147483648</code> and <code>2147483647</code> are the minimum and the maximum integers representable throught a 32bit signed number.</p>
+<h2 id="Bitwise_logical_operators">Bitwise logical operators</h2>
+<p>Conceptually, the bitwise logical operators work as follows:</p>
+<ul>
+ <li>The operands are converted to 32-bit integers and expressed by a series of bits (zeros and ones).</li>
+ <li>Each bit in the first operand is paired with the corresponding bit in the second operand: first bit to first bit, second bit to second bit, and so on.</li>
+ <li>The operator is applied to each pair of bits, and the result is constructed bitwise.</li>
+</ul>
+<h3 id=".26_(Bitwise_AND)"><a name="Bitwise_AND">&amp; (Bitwise AND)</a></h3>
+<p>Performs the AND operation on each pair of bits. <code>a</code> AND <code>b</code> yields 1 only if both <code>a</code> and <code>b</code> are 1. The truth table for the AND operation is:</p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">a</td>
+   <td class="header">b</td>
+   <td class="header">a AND b</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>1</td>
+   <td>0</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>1</td>
+   <td>1</td>
+  </tr>
+ </tbody>
+</table>
+<pre class="language-html">     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 &amp; 9 (base 10) = 00000000000000000000000000001000 (base 2) = 8 (base 10)
+</pre>
+<p>Bitwise ANDing any number x with 0 yields 0. Bitwise ANDing any number x with -1 yields x.</p>
+<h3 id=".7C_(Bitwise_OR)"><a name="Bitwise_OR">| (Bitwise OR)</a></h3>
+<p>Performs the OR operation on each pair of bits. <code>a</code> OR <code>b</code> yields 1 if either <code>a</code> or <code>b</code> is 1. The truth table for the OR operation is:</p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">a</td>
+   <td class="header">b</td>
+   <td class="header">a OR b</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>1</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>0</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>1</td>
+   <td>1</td>
+  </tr>
+ </tbody>
+</table>
+<pre class="language-html">     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 | 9 (base 10) = 00000000000000000000000000001111 (base 2) = 15 (base 10)
+</pre>
+<p>Bitwise ORing any number x with 0 yields x. Bitwise ORing any number x with -1 yields -1.</p>
+<h3 id=".5E_(Bitwise_XOR)"><a name="Bitwise_XOR">^ (Bitwise XOR)</a></h3>
+<p>Performs the XOR operation on each pair of bits. <code>a</code> XOR <code>b</code> yields 1 if <code>a</code> and <code>b</code> are different. The truth table for the XOR operation is:</p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">a</td>
+   <td class="header">b</td>
+   <td class="header">a XOR b</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>1</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>0</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>1</td>
+   <td>0</td>
+  </tr>
+ </tbody>
+</table>
+<pre class="language-html">     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 ^ 9 (base 10) = 00000000000000000000000000000111 (base 2) = 7 (base 10)
+</pre>
+<p>Bitwise XORing any number x with 0 yields x. Bitwise XORing any number x with -1 yields ~x.</p>
+<h3 id=".7E_(Bitwise_NOT)"><a name="Bitwise_NOT">~ (Bitwise NOT)</a></h3>
+<p>Performs the NOT operator on each bit. NOT <code>a</code> yields the inverted value (a.k.a. one's complement) of <code>a</code>. The truth table for the NOT operation is:</p>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">a</td>
+   <td class="header">NOT a</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>0</td>
+  </tr>
+ </tbody>
+</table>
+<pre class="language-html"> 9 (base 10) = 00000000000000000000000000001001 (base 2)
+               --------------------------------
+~9 (base 10) = 11111111111111111111111111110110 (base 2) = -10 (base 10)
+</pre>
+<p>Bitwise NOTing any number x yields -(x + 1). For example, ~5 yields -6.</p>
+<p>Example with indexOf:</p>
+<pre class="language-html">var str = 'rawr';
+var searchFor = 'a';
+
+// this is alternative way of typing if (-1*str.indexOf('a') &lt;= -1)
+if (~str.indexOf(searchFor)) {
+  // searchFor is in the string
+} else {
+  // searchFor is not in the string
+}
+
+// here are the values returend by (~str.indexOf(searchFor))
+// r == -1
+// a == -2
+// w == -3
+</pre>
+<h2 id="Bitwise_shift_operators">Bitwise shift operators</h2>
+<p>The bitwise shift operators take two operands: the first is a quantity to be shifted, and the second specifies the number of bit positions by which the first operand is to be shifted. The direction of the shift operation is controlled by the operator used.</p>
+<p>Shift operators convert their operands to 32-bit integers in big-endian order and return a result of the same type as the left operand. The right operand should be less than 32, but if not only the low five bits will be used.</p>
+<h3 id="&lt;&lt;_(Left_shift)"><a name="Left_shift">&lt;&lt; (Left shift)</a></h3>
+<p>This operator shifts the first operand the specified number of bits to the left. Excess bits shifted off to the left are discarded. Zero bits are shifted in from the right.</p>
+<p>For example, <code>9 &lt;&lt; 2</code> yields 36:</p>
+<pre class="language-html">     9 (base 10): 00000000000000000000000000001001 (base 2)
+                  --------------------------------
+9 &lt;&lt; 2 (base 10): 00000000000000000000000000100100 (base 2) = 36 (base 10)
+</pre>
+<p>Bitwise shifting any number <strong>x</strong> to the left by <strong>y</strong> bits yields <strong>x * 2^y</strong>.</p>
+<h3 id="&gt;&gt;_(Sign-propagating_right_shift)"><a name="Right_shift">&gt;&gt; (Sign-propagating right shift)</a></h3>
+<p>This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Copies of the leftmost bit are shifted in from the left. Since the new leftmost bit has the same value as the previous leftmost bit, the sign bit (the leftmost bit) does not change. Hence the name "sign-propagating".</p>
+<p>For example, <code>9 &gt;&gt; 2</code> yields 2:</p>
+<pre class="language-html">     9 (base 10): 00000000000000000000000000001001 (base 2)
+                  --------------------------------
+9 &gt;&gt; 2 (base 10): 00000000000000000000000000000010 (base 2) = 2 (base 10)
+</pre>
+<p>Likewise, <code>-9 &gt;&gt; 2</code> yields -3, because the sign is preserved:</p>
+<pre class="language-html">     -9 (base 10): 11111111111111111111111111110111 (base 2)
+                   --------------------------------
+-9 &gt;&gt; 2 (base 10): 11111111111111111111111111111101 (base 2) = -3 (base 10)
+</pre>
+<h3 id="&gt;&gt;&gt;_(Zero-fill_right_shift)"><a name="Unsigned_right_shift">&gt;&gt;&gt; (Zero-fill right shift)</a></h3>
+<p>This operator shifts the first operand the specified number of bits to the right. Excess bits shifted off to the right are discarded. Zero bits are shifted in from the left. The sign bit becomes 0, so the result is always non-negative.</p>
+<p>For non-negative numbers, zero-fill right shift and sign-propagating right shift yield the same result. For example, <code>9 &gt;&gt;&gt; 2</code> yields 2, the same as <code>9 &gt;&gt; 2</code>:</p>
+<pre class="language-html">      9 (base 10): 00000000000000000000000000001001 (base 2)
+                   --------------------------------
+9 &gt;&gt;&gt; 2 (base 10): 00000000000000000000000000000010 (base 2) = 2 (base 10)
+</pre>
+<p>However, this is not the case for negative numbers. For example, <code>-9 &gt;&gt;&gt; 2</code> yields 1073741821, which is different than <code>-9 &gt;&gt; 2</code> (which yields -3):</p>
+<pre class="language-html">      -9 (base 10): 11111111111111111111111111110111 (base 2)
+                    --------------------------------
+-9 &gt;&gt;&gt; 2 (base 10): 00111111111111111111111111111101 (base 2) = 1073741821 (base 10)
+</pre>
+<h2 id="Examples">Examples</h2>
+<h3 id="Example.3A_Flags_and_bitmasks">Example: Flags and bitmasks</h3>
+<p>The bitwise logical operators are often used to create, manipulate, and read sequences of <em>flags</em>, which are like binary variables. Variables could be used instead of these sequences, but binary flags take much less memory (by a factor of 32).</p>
+<p>Suppose there are 4 flags:</p>
+<ul>
+ <li>flag A: we have an ant problem</li>
+ <li>flag B: we own a bat</li>
+ <li>flag C: we own a cat</li>
+ <li>flag D: we own a duck</li>
+</ul>
+<p>These flags are represented by a sequence of bits: DCBA. When a flag is <em>set</em>, it has a value of 1. When a flag is <em>cleared</em>, it has a value of 0. Suppose a variable <code>flags</code> has the binary value 0101:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> flags <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"> // binary 0101</span><div class="line-number" data-start="1" style="top: 0px;"></div></code></pre>
+<p>This value indicates:</p>
+<ul>
+ <li>flag A is true (we have an ant problem);</li>
+ <li>flag B is false (we don't own a bat);</li>
+ <li>flag C is true (we own a cat);</li>
+ <li>flag D is false (we don't own a duck);</li>
+</ul>
+<p>Since bitwise operators are 32-bit, 0101 is actually 00000000000000000000000000000101, but the preceding zeroes can be neglected since they contain no meaningful information.</p>
+<p>A <em>bitmask</em> is a sequence of bits that can manipulate and/or read flags. Typically, a "primitive" bitmask for each flag is defined:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> FLAG_A <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0001
+</span><span class="token keyword">var</span> FLAG_B <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0010
+</span><span class="token keyword">var</span> FLAG_C <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0100
+</span><span class="token keyword">var</span> FLAG_D <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 1000</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div></code></pre>
+<p>New bitmasks can be created by using the bitwise logical operators on these primitive bitmasks. For example, the bitmask 1011 can be created by ORing FLAG_A, FLAG_B, and FLAG_D:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> mask <span class="token operator">=</span> FLAG_A <span class="token operator">|</span> FLAG_B <span class="token operator">|</span> FLAG_D<span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0001 | 0010 | 1000 =&gt; 1011</span><div class="line-number" data-start="1" style="top: 0px;"></div></code></pre>
+<p>Individual flag values can be extracted by ANDing them with a bitmask, where each bit with the value of one will "extract" the corresponding flag. The bitmask <em>masks</em> out the non-relevant flags by ANDing with zeros (hence the term "bitmask"). For example, the bitmask 0100 can be used to see if flag C is set:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// if we own a cat
+</span><span class="token keyword">if</span> <span class="token punctuation">(</span>flags <span class="token operator">&amp;</span> FLAG_C<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true"> // 0101 &amp; 0100 =&gt; 0100 =&gt; true
+</span>  <span class="token comment" spellcheck="true"> // do stuff
+</span><span class="token punctuation">}</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div></code></pre>
+<p>A bitmask with multiple set flags acts like an "either/or". For example, the following two are equivalent:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// if we own a bat or we own a cat
+</span><span class="token comment" spellcheck="true">// (0101 &amp; 0010) || (0101 &amp; 0100) =&gt; 0000 || 0100 =&gt; true
+</span><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>flags <span class="token operator">&amp;</span> FLAG_B<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>flags <span class="token operator">&amp;</span> FLAG_C<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true"> // do stuff
+</span><span class="token punctuation">}</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div></code></pre>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// if we own a bat or cat
+</span><span class="token keyword">var</span> mask <span class="token operator">=</span> FLAG_B <span class="token operator">|</span> FLAG_C<span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0010 | 0100 =&gt; 0110
+</span><span class="token keyword">if</span> <span class="token punctuation">(</span>flags <span class="token operator">&amp;</span> mask<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true"> // 0101 &amp; 0110 =&gt; 0100 =&gt; true
+</span>  <span class="token comment" spellcheck="true"> // do stuff
+</span><span class="token punctuation">}</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div></code></pre>
+<p>Flags can be set by ORing them with a bitmask, where each bit with the value one will set the corresponding flag, if that flag isn't already set. For example, the bitmask 1100 can be used to set flags C and D:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// yes, we own a cat and a duck
+</span><span class="token keyword">var</span> mask <span class="token operator">=</span> FLAG_C <span class="token operator">|</span> FLAG_D<span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 0100 | 1000 =&gt; 1100
+</span>flags <span class="token operator">|</span><span class="token operator">=</span> mask<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"> // 0101 | 1100 =&gt; 1101</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div></code></pre>
+<p>Flags can be cleared by ANDing them with a bitmask, where each bit with the value zero will clear the corresponding flag, if it isn't already cleared. This bitmask can be created by NOTing primitive bitmasks. For example, the bitmask 1010 can be used to clear flags A and C:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// no, we don't have an ant problem or own a cat
+</span><span class="token keyword">var</span> mask <span class="token operator">=</span> <span class="token operator">~</span><span class="token punctuation">(</span>FLAG_A <span class="token operator">|</span> FLAG_C<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // ~0101 =&gt; 1010
+</span>flags <span class="token operator">&amp;</span><span class="token operator">=</span> mask<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"> // 1101 &amp; 1010 =&gt; 1000</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div></code></pre>
+<p>The mask could also have been created with <code>~FLAG_A &amp; ~FLAG_C</code> (De Morgan's law):</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// no, we don't have an ant problem, and we don't own a cat
+</span><span class="token keyword">var</span> mask <span class="token operator">=</span> <span class="token operator">~</span>FLAG_A <span class="token operator">&amp;</span> <span class="token operator">~</span>FLAG_C<span class="token punctuation">;</span>
+flags <span class="token operator">&amp;</span><span class="token operator">=</span> mask<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"> // 1101 &amp; 1010 =&gt; 1000</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div></code></pre>
+<p>Flags can be toggled by XORing them with a bitmask, where each bit with the value one will toggle the corresponding flag. For example, the bitmask 0110 can be used to toggle flags B and C:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// if we didn't have a bat, we have one now, 
+</span><span class="token comment" spellcheck="true">// and if we did have one, bye-bye bat
+</span><span class="token comment" spellcheck="true">// same thing for cats
+</span><span class="token keyword">var</span> mask <span class="token operator">=</span> FLAG_B <span class="token operator">|</span> FLAG_C<span class="token punctuation">;</span>
+flags <span class="token operator">=</span> flags <span class="token operator">^</span> mask<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"> // 1100 ^ 0110 =&gt; 1010</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div></code></pre>
+<p>Finally, the flags can all be flipped with the NOT operator:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token comment" spellcheck="true">// entering parallel universe...
+</span>flags <span class="token operator">=</span> <span class="token operator">~</span>flags<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true"> // ~1010 =&gt; 0101</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div></code></pre>
+<h3 id="Conversion_snippets">Conversion snippets</h3>
+<p>Convert a binary <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" title="/en-US/docs/JavaScript/Reference/Global_Objects/String">String</a></code> to a decimal <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="/en-US/docs/JavaScript/Reference/Global_Objects/Number">Number</a></code>:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> sBinString <span class="token operator">=</span> <span class="token string">"1011"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> nMyNumber <span class="token operator">=</span> <span class="token function">parseInt<span class="token punctuation">(</span></span>sBinString<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">alert<span class="token punctuation">(</span></span>nMyNumber<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // prints 11, i.e. 1011</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div></code></pre>
+<p>Convert a decimal <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="/en-US/docs/JavaScript/Reference/Global_Objects/Number">Number</a></code> to a binary <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" title="/en-US/docs/JavaScript/Reference/Global_Objects/String">String</a></code>:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> nMyNumber <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sBinString <span class="token operator">=</span> nMyNumber<span class="token punctuation">.</span><span class="token function">toString<span class="token punctuation">(</span></span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">alert<span class="token punctuation">(</span></span>sBinString<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // prints 1011, i.e. 11</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div></code></pre>
+<h3 id="Automatize_the_creation_of_a_mask">Automatize the creation of a mask</h3>
+<p>If you have to create many masks from some <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="/en-US/docs/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code> values, you can automatize the process:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">function</span> createMask <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> nMask <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nFlag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nLen <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length &gt; <span class="token number">32</span> <span class="token operator">?</span> <span class="token number">32</span> <span class="token punctuation">:</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>nFlag<span class="token punctuation">;</span> nFlag <span class="token operator">&lt;</span> nLen<span class="token punctuation">;</span> nMask <span class="token operator">|</span><span class="token operator">=</span> arguments<span class="token punctuation">[</span>nFlag<span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> nFlag<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> nMask<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> mask1 <span class="token operator">=</span> <span class="token function">createMask<span class="token punctuation">(</span></span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 11, i.e.: 1011
+</span><span class="token keyword">var</span> mask2 <span class="token operator">=</span> <span class="token function">createMask<span class="token punctuation">(</span></span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 4, i.e.: 0100
+</span><span class="token keyword">var</span> mask3 <span class="token operator">=</span> <span class="token function">createMask<span class="token punctuation">(</span></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 1, i.e.: 0001
+</span><span class="token comment" spellcheck="true">// etc.
+</span>
+<span class="token function">alert<span class="token punctuation">(</span></span>mask1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // prints 11, i.e.: 1011</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div><div class="line-number" data-start="6" style="top: 95px;"></div><div class="line-number" data-start="7" style="top: 114px;"></div><div class="line-number" data-start="8" style="top: 133px;"></div><div class="line-number" data-start="9" style="top: 152px;"></div><div class="line-number" data-start="10" style="top: 171px;"></div><div class="line-number" data-start="11" style="top: 190px;"></div></code></pre>
+<h3 id="Reverse_algorithm.3A_an_array_of_booleans_from_a_mask">Reverse algorithm: an array of booleans from a mask</h3>
+<p>If you want to create an <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="/en-US/docs/JavaScript/Reference/Global_Objects/Array">Array</a></code> of <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="/en-US/docs/JavaScript/Reference/Global_Objects/Boolean">Booleans</a></code> from a mask you can use this code:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">function</span> arrayFromMask <span class="token punctuation">(</span>nMask<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true"> // nMask must be between -2147483648 and 2147483647
+</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span>nMask &gt; <span class="token number">0x7fffffff</span> <span class="token operator">||</span> nMask <span class="token operator">&lt;</span> <span class="token operator">-</span><span class="token number">0x80000000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    throw <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"arrayFromMask - out of range"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> nShifted <span class="token operator">=</span> nMask<span class="token punctuation">,</span> aFromMask <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> nShifted<span class="token punctuation">;</span> 
+       aFromMask<span class="token punctuation">.</span><span class="token function">push<span class="token punctuation">(</span></span><span class="token function">Boolean<span class="token punctuation">(</span></span>nShifted <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nShifted &gt;&gt;&gt;<span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> aFromMask<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> array1 <span class="token operator">=</span> <span class="token function">arrayFromMask<span class="token punctuation">(</span></span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array2 <span class="token operator">=</span> <span class="token function">arrayFromMask<span class="token punctuation">(</span></span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array3 <span class="token operator">=</span> <span class="token function">arrayFromMask<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">alert<span class="token punctuation">(</span></span><span class="token string">"["</span> <span class="token operator">+</span> array1<span class="token punctuation">.</span><span class="token function">join<span class="token punctuation">(</span></span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">
+// prints "[true, true, false, true]", i.e.: 11, i.e.: 1011</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div><div class="line-number" data-start="6" style="top: 95px;"></div><div class="line-number" data-start="7" style="top: 114px;"></div><div class="line-number" data-start="8" style="top: 133px;"></div><div class="line-number" data-start="9" style="top: 152px;"></div><div class="line-number" data-start="10" style="top: 171px;"></div><div class="line-number" data-start="11" style="top: 190px;"></div><div class="line-number" data-start="12" style="top: 209px;"></div><div class="line-number" data-start="13" style="top: 228px;"></div><div class="line-number" data-start="14" style="top: 247px;"></div><div class="line-number" data-start="15" style="top: 266px;"></div><div class="line-number" data-start="16" style="top: 285px;"></div></code></pre>
+<p>You can test both algorithms at the same time…</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">var</span> nTest <span class="token operator">=</span> <span class="token number">19</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // our custom mask
+</span><span class="token keyword">var</span> nResult <span class="token operator">=</span> createMask<span class="token punctuation">.</span><span class="token function">apply<span class="token punctuation">(</span></span>this<span class="token punctuation">,</span> <span class="token function">arrayFromMask<span class="token punctuation">(</span></span>nTest<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">alert<span class="token punctuation">(</span></span>nResult<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // 19</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div></code></pre>
+<p>For didactic purpose only (since there is the <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString" title="/en-US/docs/JavaScript/Reference/Global_Objects/Number/toString">Number.toString(2)</a></code> method), we show how it is possible to modify the <code>arrayFromMask</code> algorithm in order to create a <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" title="/en-US/docs/JavaScript/Reference/Global_Objects/String">String</a></code> containing the binary representation of a <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="/en-US/docs/JavaScript/Reference/Global_Objects/Number">Number</a></code>, rather than an <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="/en-US/docs/JavaScript/Reference/Global_Objects/Array">Array</a></code> of <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="/en-US/docs/JavaScript/Reference/Global_Objects/Boolean">Booleans</a></code>:</p>
+<pre class="brush: js  language-js" data-number=""><code class=" language-js"><span class="token keyword">function</span> createBinaryString <span class="token punctuation">(</span>nMask<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true"> // nMask must be between -2147483648 and 2147483647
+</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> nFlag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nShifted <span class="token operator">=</span> nMask<span class="token punctuation">,</span> sMask <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> nFlag <span class="token operator">&lt;</span> <span class="token number">32</span><span class="token punctuation">;</span>
+       nFlag<span class="token operator">++</span><span class="token punctuation">,</span> sMask <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">String<span class="token punctuation">(</span></span>nShifted &gt;&gt;&gt; <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nShifted <span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> sMask<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> string1 <span class="token operator">=</span> <span class="token function">createBinaryString<span class="token punctuation">(</span></span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> string2 <span class="token operator">=</span> <span class="token function">createBinaryString<span class="token punctuation">(</span></span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> string3 <span class="token operator">=</span> <span class="token function">createBinaryString<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">alert<span class="token punctuation">(</span></span>string1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">
+// prints 00000000000000000000000000001011, i.e. 11</span><div class="line-number" data-start="1" style="top: 0px;"></div><div class="line-number" data-start="2" style="top: 19px;"></div><div class="line-number" data-start="3" style="top: 38px;"></div><div class="line-number" data-start="4" style="top: 57px;"></div><div class="line-number" data-start="5" style="top: 76px;"></div><div class="line-number" data-start="6" style="top: 95px;"></div><div class="line-number" data-start="7" style="top: 114px;"></div><div class="line-number" data-start="8" style="top: 133px;"></div><div class="line-number" data-start="9" style="top: 152px;"></div><div class="line-number" data-start="10" style="top: 171px;"></div><div class="line-number" data-start="11" style="top: 190px;"></div><div class="line-number" data-start="12" style="top: 209px;"></div><div class="line-number" data-start="13" style="top: 228px;"></div></code></pre>
+<h2 id="Specifications">Specifications</h2>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1st Edition.</td>
+   <td>Standard</td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a class="external external-icon" href="http://www.ecma-international.org/ecma-262/5.1/#sec-11.4.8" hreflang="en" lang="en">ECMAScript 5.1 (ECMA-262)<br><small>The definition of 'Bitwise NOT operator' in that specification.</small></a><br>
+    <a class="external external-icon" href="http://www.ecma-international.org/ecma-262/5.1/#sec-11.7" hreflang="en" lang="en">ECMAScript 5.1 (ECMA-262)<br><small>The definition of 'Bitwise shift operators' in that specification.</small></a><br>
+    <a class="external external-icon" href="http://www.ecma-international.org/ecma-262/5.1/#sec-11.10" hreflang="en" lang="en">ECMAScript 5.1 (ECMA-262)<br><small>The definition of 'Binary bitwise operators' in that specification.</small></a></td>
+   <td><span class="spec-Standard">Standard</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a class="external external-icon" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-bitwise-not-operator" hreflang="en" lang="en">ECMAScript 6 (ECMA-262)<br><small>The definition of 'Bitwise NOT operator' in that specification.</small></a><br>
+    <a class="external external-icon" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-bitwise-shift-operators" hreflang="en" lang="en">ECMAScript 6 (ECMA-262)<br><small>The definition of 'Bitwise shift operators' in that specification.</small></a><br>
+    <a class="external external-icon" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-binary-bitwise-operators" hreflang="en" lang="en">ECMAScript 6 (ECMA-262)<br><small>The definition of 'Binary bitwise operators' in that specification.</small></a></td>
+   <td><span class="spec-Draft">Draft</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table>
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+<p></p><div class="htab"> 
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li class="selected"><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+<div id="compat-desktop" style="display: block;">
+ <table class="compat-table">
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">Bitwise NOT (<code>~</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND (<code>&amp;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">Bitwise OR (<code>|</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">Bitwise XOR (<code>^</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift">Left shift (<code>&lt;&lt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift">Right shift (<code>&gt;&gt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Unsigned_right_shift">Unsigned right shift (<code>&gt;&gt;&gt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div><div id="compat-mobile" style="display: none;">
+ <table class="compat-table">
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Chrome for Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Mobile</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">Bitwise NOT (<code>~</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND (<code>&amp;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR">Bitwise OR (<code>|</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR">Bitwise XOR (<code>^</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift">Left shift (<code>&lt;&lt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift">Right shift (<code>&gt;&gt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+   <tr>
+    <td><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Unsigned_right_shift">Unsigned right shift (<code>&gt;&gt;&gt;</code>)</a></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div></div><p></p>
+
+
+<h2 id="See_also" name="See_also">See also</h2>
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators">Logical operators</a></li>
+</ul>
+                                                </article>
+
+              
+                <!-- attachments list -->
+                
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                                                      <!-- tags if present -->
+                  <div class="tag-attach-list tags contributor-sub">
+                    <i aria-hidden="true" class="icon-tags"></i><strong>Tags:</strong>
+                    <ul class="tag-list"><li><a href="https://developer.mozilla.org/en-US/docs/tag/Operator">Operator</a></li><li><a href="https://developer.mozilla.org/en-US/docs/tag/JavaScript">JavaScript</a></li></ul>
+                  </div>
+                                    <div class="contributor-sub"> <i aria-hidden="true" class="icon-group"></i><strong>Contributors to this page:</strong> <a href="https://developer.mozilla.org/en-US/profiles/Orinoco">Orinoco</a>, <a href="https://developer.mozilla.org/en-US/profiles/Maxim">Maxim</a>, <a href="https://developer.mozilla.org/en-US/profiles/AdmiralNovia">AdmiralNovia</a>, <a href="https://developer.mozilla.org/en-US/profiles/Tezza">Tezza</a>, <a href="https://developer.mozilla.org/en-US/profiles/Nick_Rizzolo">Nick_Rizzolo</a>, <a href="https://developer.mozilla.org/en-US/profiles/Agamemnus">Agamemnus</a>, <a href="https://developer.mozilla.org/en-US/profiles/Noitidart">Noitidart</a>, <a href="https://developer.mozilla.org/en-US/profiles/BrianDiPalma">BrianDiPalma</a>, <a href="https://developer.mozilla.org/en-US/profiles/forest51690">forest51690</a>, <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, <a href="https://developer.mozilla.org/en-US/profiles/gb2048">gb2048</a>, <a href="https://developer.mozilla.org/en-US/profiles/fscholz">fscholz</a>, <a href="https://developer.mozilla.org/en-US/profiles/Nickolay">Nickolay</a>, <a href="https://developer.mozilla.org/en-US/profiles/brianblakely">brianblakely</a>, <a href="https://developer.mozilla.org/en-US/profiles/fusionchess">fusionchess</a>, <a href="https://developer.mozilla.org/en-US/profiles/Inimino">Inimino</a>, <a href="https://developer.mozilla.org/en-US/profiles/harshkothari410">harshkothari410</a>, <a href="https://developer.mozilla.org/en-US/profiles/ethertank">ethertank</a>, <a href="https://developer.mozilla.org/en-US/profiles/sunfish">sunfish</a>, <a href="https://developer.mozilla.org/en-US/profiles/Havvy">Havvy</a>, <a href="https://developer.mozilla.org/en-US/profiles/J-Mackerel">J-Mackerel</a>, <a href="https://developer.mozilla.org/en-US/profiles/Mgjbot">Mgjbot</a>, <a href="https://developer.mozilla.org/en-US/profiles/Maian">Maian</a>, <a href="https://developer.mozilla.org/en-US/profiles/Dria">Dria</a> </div>                                      <div class="contributor-sub">
+                      <i aria-hidden="true" class="icon-time"></i><strong>Last updated by:</strong>
+                      <a href="https://developer.mozilla.org/en-US/profiles/fscholz">fscholz</a>,
+                      <time datetime="2014-05-22T08:06:06-07:00">May 22, 2014 8:06:06 AM</time>
+                    </div>
+                                  </div>
+                          </div>
+
+                          <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+                <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#quick-links" class="title smaller" id="quick-links-toggle"><i aria-hidden="true" class="icon-caret-up"></i>Hide Sidebar</a>
+
+                
+                                  <!-- quick links -->
+                    <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+     
+    <ol> 
+        <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">JavaScript reference</a></strong></li> 
+        <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">Expressions &amp; operators</a></strong> 
+        </li><li data-default-state="close" class="toggleable" data-closed="true"><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-right"></i><strong>By name</strong></a> 
+            <ol class="toggle-container" style="display: none;"> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Addition_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Addition assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).">Addition operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Array_comprehensions" title="The documentation about this has not yet been written; please consider contributing!">Array comprehensions</a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="The JavaScript Array global object is a constructor for arrays, which are high-level, list-like objects.">Array literal</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Assignment operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise AND</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_AND_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Bitwise AND assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise left shift operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise NOT</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise OR</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_OR_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Bitwise OR assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise right shift operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Unsigned_right_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise unsigned right shift operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.">Bitwise XOR</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_XOR_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Bitwise XOR assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator" title="The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand.">Comma operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" title="The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement.">Conditional (ternary) operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete" title="The delete operator removes a property from an object."><code>delete</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructing_assignment" title="The documentation about this has not yet been written; please consider contributing!">Destructing assignment</a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Devision_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Devision assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Devision" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).">Devision operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Equality" title="The documentation about this has not yet been written; please consider contributing!">Equality operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" title="The function keyword can be used to define a function inside an expression."><code>function</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Generator_comprehensions" title="The documentation about this has not yet been written; please consider contributing!">Generator comprehensions</a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison.">Greater than operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_or_equal_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison.">Greater than or equal operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions.">Grouping operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Identity" title="The documentation about this has not yet been written; please consider contributing!">Identity operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in" title="The in operator returns true if the specified property is in the specified object."><code>in</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Inequality" title="The documentation about this has not yet been written; please consider contributing!">Inequality operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" title="The instanceof operator tests whether an object has in its prototype chain the prototype property of a constructor."><code>instanceof</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Left_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Left shift assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison.">Less than operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_or_equal_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison.">Less than or equal operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_AND" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.">Logical AND</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.">Logical NOT</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.">Logical OR</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Multiplication_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Multiplication assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Multiplication" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).">Multiplication operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><code>new</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Nonidentity" title="The documentation about this has not yet been written; please consider contributing!">Nonidentity operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" title="The Object constructor creates an object wrapper.">Object literal</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Postfix_decrement" title="The documentation about this has not yet been written; please consider contributing!">Postfix decrement operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Postfix_increment" title="The documentation about this has not yet been written; please consider contributing!">Postfix increment operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Prefix_decrement" title="The documentation about this has not yet been written; please consider contributing!">Prefix decrement operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Prefix_increment" title="The documentation about this has not yet been written; please consider contributing!">Prefix increment operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors" title="Property accessors provide access to an object&#39;s properties by using the dot notation or the bracket notation.">Property accessors</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="The RegExp constructor creates a regular expression object for matching text with a pattern.">RegExp literal</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Remainder_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Remainder assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).">Remainder operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Right_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Right shift assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" title="The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.">Spread operator</a>  <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Subtraction_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Subtraction assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).">Subtraction operator</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" title="The documentation about this has not yet been written; please consider contributing!"><code>super</code></a><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" title="A function&#39;s this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode."><code>this</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" title="The typeof operator returns a string indicating the type of the unevaluated operand."><code>typeof</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus_minuns#Unary_minus" title="The documentation about this has not yet been written; please consider contributing!">Unary minus</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus_minuns#Unary_plus" title="The documentation about this has not yet been written; please consider contributing!">Unary plus</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Unsigned_right_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand.">Unsigned right shift assignment</a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void" title="The void operator evaluates the given expression and then returns undefined."><code>void</code></a></li> 
+            </ol> 
+        </li> 
+        <li data-default-state="close" class="toggleable" data-closed="true"><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-right"></i><strong>By syntax</strong></a> 
+            <ol class="toggle-container" style="display: none;"> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>^</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_XOR_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>^=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>~</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison."><code>&lt;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>&lt;&lt;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Left_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>&lt;&lt;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_or_equal_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison."><code>&lt;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Equality" title="The documentation about this has not yet been written; please consider contributing!"><code>==</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Identity" title="The documentation about this has not yet been written; please consider contributing!"><code>===</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Identity" title="The documentation about this has not yet been written; please consider contributing!"><code>===</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison."><code>&gt;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Greater_than_or_equal_operator" title="JavaScript has both strict and Type–converting (abstract) comparisons. A strict comparison (e.g., ===) is only true if the operands are the same Type. The more commonly used abstract comparison (e.g., ==) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., &lt;=), the operands are first converted to primitives, then the same Type, before comparison."><code>&gt;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>&gt;&gt;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Right_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>&gt;&gt;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Unsigned_right_shift" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>&gt;&gt;&gt;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Unsigned_right_shift_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>&gt;&gt;&gt;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_OR" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>|</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_OR_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>|=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value."><code>||</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><code>-</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Subtraction_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>-=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator" title="The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand."><code>,</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value."><code>!</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Inequality" title="The documentation about this has not yet been written; please consider contributing!"><code>!=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality#Nonidentity" title="The documentation about this has not yet been written; please consider contributing!"><code>!==</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Devision" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><code>/</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Devision_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>/=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" title="The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected."><code>...</code></a>  <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping" title="The grouping operator ( ) controls the precedence of evaluation in expressions."><code>()</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="The JavaScript Array global object is a constructor for arrays, which are high-level, list-like objects."><code>[]</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" title="The Object constructor creates an object wrapper."><code>{}</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Multiplication" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><code>*</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Multiplication_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>*=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND" title="Bitwise operators treat their operands as a sequence of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values."><code>&amp;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Bitwise_AND_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>&amp;=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_AND" title="Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the &amp;&amp; and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value."><code>&amp;&amp;</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><code>%</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Remainder_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>%=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition" title="Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value. The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/)."><code>+</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators#Addition_assignment" title="An assignment operator assigns a value to its left operand based on the value of its right operand."><code>+=</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Prefix_decrement" title="The documentation about this has not yet been written; please consider contributing!"><code>--A</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Prefix_increment" title="The documentation about this has not yet been written; please consider contributing!"><code>++A</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Postfix_decrement" title="The documentation about this has not yet been written; please consider contributing!"><code>A--</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment_decrement#Postfix_increment" title="The documentation about this has not yet been written; please consider contributing!"><code>A++</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="The RegExp constructor creates a regular expression object for matching text with a pattern."><code>/ab+c/i</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" title="The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement."><code>(condition ? ifTrue : ifFalse)</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete" title="The delete operator removes a property from an object."><code>delete</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Array_comprehensions" title="The documentation about this has not yet been written; please consider contributing!"><code>[for (x of y) x]</code></a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Generator_comprehensions" title="The documentation about this has not yet been written; please consider contributing!"><code>(for (x of y) y)</code></a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" title="The function keyword can be used to define a function inside an expression."><code>function</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in" title="The in operator returns true if the specified property is in the specified object."><code>in</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" title="The instanceof operator tests whether an object has in its prototype chain the prototype property of a constructor."><code>instanceof</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" title="The new operator creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function."><code>new</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors" title="Property accessors provide access to an object&#39;s properties by using the dot notation or the bracket notation."><code>object.property &amp; object[property]</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" title="The documentation about this has not yet been written; please consider contributing!"><code>super</code></a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" title="A function&#39;s this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode."><code>this</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" title="The typeof operator returns a string indicating the type of the unevaluated operand."><code>typeof</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus_minuns#Unary_minus" title="The documentation about this has not yet been written; please consider contributing!"><code>unary -</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus_minuns#Unary_plus" title="The documentation about this has not yet been written; please consider contributing!"><code>unary +</code></a></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructing_assignment" title="The documentation about this has not yet been written; please consider contributing!"><code>var [a, b] = [1, 2]</code></a> <span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span></li> 
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void" title="The void operator evaluates the given expression and then returns undefined."><code>void</code></a></li> 
+            </ol> 
+        </li> 
+        <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" title="Technical review completed.">Operator precedence</a></strong></li> 
+    </ol> 
+
+  </div>
+                
+                <!-- approvals -->
+                
+              
+              </div>
+                      </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="$edit" label="Edit page"></menuitem>
+    <menuitem data-action="$history" label="View page history"></menuitem>
+  </menu>
+  </div></main>
+
+  <!-- Footer -->
+  <footer><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+                <p>
+          <bdi>© 2005-2014 Mozilla Developer Network and individual contributors<br> Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About#Copyrights_and_licenses">these licenses</a> · <a href="https://developer.mozilla.org/en-US/docs/Project:MDN/About">About MDN</a> · <a href="https://github.com/mozilla/kuma">Contribute to the code</a> · <a href="https://www.mozilla.org/privacy/websites/">Privacy policy</a></bdi>        </p>
+              </div>
+      <div class="column-strip">
+                        <form class="languages go" method="get" action="https://developer.mozilla.org/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" selected="">
+          English (US)
+        </option>
+                  <option value="/fr/docs/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_binaires">
+            Français
+          </option>          <option value="/ja/docs/JavaScript/Reference/Operators/Bitwise_Operators">
+            日本語
+          </option>          <option value="/ko/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">
+            한국어
+          </option>          <option value="/pl/docs/Dokumentacja_j%C4%99zyka_JavaScript_1.5/Operatory/Operatory_bitowe">
+            Polski
+          </option>      </select>
+      <noscript>&lt;button type="submit"&gt;Go&lt;/button&gt;</noscript>
+    </form>
+                </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+    <script src="./Bitwise operators - JavaScript   MDN_files/build-37ef594"></script>
+    <script src="./Bitwise operators - JavaScript   MDN_files/tabzilla.js" async=""></script>
+
+      <!--[if lte IE 8]><script src="/media/redesign/js/libs/selectivizr-1.0.2/selectivizr-build.js?build=37ef594"></script><![endif]-->
+
+    <script src="./Bitwise operators - JavaScript   MDN_files/main-min.js"></script>
+
+          <script>
+        mdn.analytics.trackOutboundLinks(document.body);
+      </script>
+    
+          <script src="./Bitwise operators - JavaScript   MDN_files/wiki-min.js"></script><script data-manual="" async="" src="./Bitwise operators - JavaScript   MDN_files/syntax-prism-min.js"></script>
+      
+      <script type="text/javascript">
+    (function($) {
+      $('.from-search-toc').mozSearchResults('');
+    })(jQuery);
+  </script>
+  
+  <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-3.newrelic.com","42869b6ed3","3172075","b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdFFtTWEsTUFEUFwlcXQBHVVQLEQ==",1,440,new Date().getTime(),"","","","",""]);</script>
+<iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Bitwise operators - JavaScript   MDN_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe><script type="text/javascript" src="./Bitwise operators - JavaScript   MDN_files/nr-100.js"></script><script type="text/javascript" src="./Bitwise operators - JavaScript   MDN_files/42869b6ed3"></script></body></html>

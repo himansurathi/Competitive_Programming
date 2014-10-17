@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0067)http://compoasso.free.fr/primelistweb/page/prime/eratosthene_en.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Implementations of the Sieve of Eratosthenes</title>
+	<meta name="Description" content="Explanations and optimized implementations of the Sieve of Eratosthenes in java, especially, a segmented version to avoid memory size limits">
+	<meta name="Keywords" content="prime numbers list, sieve of eratosthenes, sieve of atkin, sieve, eratosthenes, atkin, eratosthenes in java, atkin in java, prime numbers, cpas, composants associes">
+	<meta name="Author" content="Les composants associes">
+	<meta http-equiv="Content-Language" content="en">
+	
+	<meta http-equiv="Pragma" content="no-cache">
+
+	<link href="./Implementations of the Sieve of Eratosthenes_files/style.css" rel="stylesheet" type="text/css">
+	<script src="./Implementations of the Sieve of Eratosthenes_files/script.js" type="text/javascript"></script>
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+<body>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+	<td>&nbsp;</td>
+	<td width="95%" align="center">
+		<table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+	<td>
+		<ul id="onglet">
+			<li><a href="http://compoasso.free.fr/primelistweb/page/prime/accueil_en.php">Home</a></li><li><a href="http://compoasso.free.fr/primelistweb/page/prime/liste_online_en.php">Prime numbers list</a></li><li class="actif"><a href="./Implementations of the Sieve of Eratosthenes_files/Implementations of the Sieve of Eratosthenes.htm">Eratosthenes</a></li><li><a href="http://compoasso.free.fr/primelistweb/page/prime/atkin_en.php">Atkin</a></li><li><a href="http://compoasso.free.fr/primelistweb/page/prime/division_en.php">Trial division</a></li><li><a href="http://compoasso.free.fr/primelistweb/page/prime/euclide_en.php">Euclidean division</a></li><li><a href="http://compoasso.free.fr/primelistweb/page/prime/onzeweb_en.php">Web</a></li>		</ul>
+	</td>
+	<td width="1%" align="right" style="vertical-align:top" rowspan="2"><img src="./Implementations of the Sieve of Eratosthenes_files/prime.gif" border="0" alt="logo prime i.t."></td>
+	<td width="1%">
+		<span id="titreSite">Prime&nbsp;I.T.</span>
+	</td>
+</tr>
+<tr style="line-height:5px" align="right">
+	<td style="font-size:7pt">
+		Help Prime I.T. :		<img src="./Implementations of the Sieve of Eratosthenes_files/bitcoin-icon.jpg" border="0" alt="">
+		<a onclick="openModal(&#39;coinModalId&#39;);return false;" href="http://compoasso.free.fr/primelistweb/page/prime/eratosthene_en.php#">Bitcoin</a>
+		<img src="./Implementations of the Sieve of Eratosthenes_files/litecoin-icon.jpg" border="0" alt="">
+		<a onclick="openModal(&#39;coinModalId&#39;);return false;" href="http://compoasso.free.fr/primelistweb/page/prime/eratosthene_en.php#">Litecoin</a>
+		<img src="./Implementations of the Sieve of Eratosthenes_files/dodgecoin-icon.jpg" border="0" alt="">
+		<a onclick="openModal(&#39;coinModalId&#39;);return false;" href="http://compoasso.free.fr/primelistweb/page/prime/eratosthene_en.php#">Dodgecoin</a>
+	</td>
+	<td><a href="http://compoasso.free.fr/primelistweb/page/prime/eratosthene.php" style="font-size:7pt">
+	<img src="./Implementations of the Sieve of Eratosthenes_files/fr.gif" width="13px" height="7px" border="0" alt="">
+	Version Française
+</a>
+</td>
+</tr>
+</tbody></table>
+
+<div id="coinModalId" class="modal"><div>
+	<div style="text-align:left;">
+		If you find this site interesting, it has learned you 2-3 tips, may be it made you laugh or cry (uh?). Please support it by sending us some coin at the following three addresses, thank you.	</div><br>
+
+	<span>
+		<img src="./Implementations of the Sieve of Eratosthenes_files/bitcoin.png" border="0" alt="Bitcoin icon">
+		Bitcoin adress	</span><br>
+	<input onclick="this.select()" readonly="readonly" type="text" value="1289aC81Lw6sce3S2eaev3pxuHxmBN1Wbo" style="width:290px"><br><br>
+
+	<span>
+		<img src="./Implementations of the Sieve of Eratosthenes_files/litecoin.png" border="0" alt="Litecoin icon">
+		Litecoin adress	</span><br>
+	<input onclick="this.select()" readonly="readonly" type="text" value="LVnatyNoPL5kRz8qkeFDGGx8Gw198aVkM7" style="width:290px"><br><br>
+
+	<span>
+		<img src="./Implementations of the Sieve of Eratosthenes_files/dodgecoin.png" border="0" alt="Litecoin icon">
+		Dodgecoin adress	</span><br>
+	<input onclick="this.select()" readonly="readonly" type="text" value="DTyXrfEb4gtmJdTNAbRuDokZBGd9LM9SYb" style="width:290px"><br><br>
+
+	<div style="text-align:right;margin-top:2px">
+		<a id="button" onclick="closeModal(&#39;coinModalId&#39;);return false;" href="http://compoasso.free.fr/primelistweb/page/prime/eratosthene_en.php#">Close</a>
+	</div>
+</div></div>				<div id="block">
+			<h1>The Sieve of Eratosthenes</h1>
+			<fieldset style="margin: 10px;text-align:left;background-color:#DDDDDD">
+				<legend>Note :</legend>
+				This article has been translated using an automatic translator and one 
+				pass was made to remove biggest errors.<br>
+				If you want to contribute to the readability of this article, you can 
+				notify me translations errors (a word, a sentence, a paragraph) by 
+				contacting me at the email address at the bottom of the page. Thanks
+			</fieldset>			
+			<h2>The principle</h2>
+			<p>
+				The Sieve of Eratosthenes is a method for finding all prime numbers up to a
+				fixed number N.<br>
+				To do this, we must take the numbers from 2 to N and successively eliminate 
+				all those multiples of an integer and so not prime (non-prime number is 
+				called composite).<br>
+				<br>
+				The elimination works in the following way:
+			</p>
+			<ul>
+				<li>Take the first element of the array, ie 2 and eliminate all 
+				multiples of 2 of the table.</li>
+				<li>Then take the next number not eliminated, here 3 and remove 
+				multiples of 3.</li>
+				<li>Then take the next number not eliminated, here 5 (because 4 
+				was eliminated in the first step) and eliminate multiples of 5.</li>
+				<li>and so on...</li>
+			</ul>
+			<p>
+				At the end all non-primes are eliminated
+			</p>
+			<h2>First implementation</h2>
+			<p>
+				From an algorithmic point of view, we need several things :
+			</p>
+			<ul>
+				<li>An array of Boolean 2 to N as to whether a number is removed or not.</li>
+				<li>A loop over this table.</li>
+				<li>A second nested loop eliminating multiple for a selected number.</li>
+			</ul>
+			<p>
+				<br>
+				This gives the first version relatively naive (written in java) :
+			</p>
+			<div id="code" style="width:50%">
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MAX&nbsp;=&nbsp;</font><font color="#990000">100000000</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>boolean</b></font><font color="#000000">[]&nbsp;</font><font color="#000000">array&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#7f0055"><b>boolean</b></font><font color="#000000">[</font><font color="#000000">MAX</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#3f7f5f">//--//</font><br>
+<font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">2</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;MAX;&nbsp;i++</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!array</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">])&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;i&nbsp;+&nbsp;i;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">j&nbsp;&lt;&nbsp;MAX</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">array</font><font color="#000000">[</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;</font><font color="#7f0055"><b>true</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j&nbsp;+=&nbsp;i;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font>
+</div>			<p>
+				<i>Note : </i>Throughout the presentation of the algorithms, 
+				we keep the same formalism for "key" variables, namely :
+			</p>
+			<ul>
+				<li>array represents the array of booleans with true meaning eliminated
+				(it is a composite number) and false not eliminated (this is potentially
+				a prime).</li>
+				<li>MAX is the maximum size of the list of primes that we want to find
+				(the limit set N).</li>
+			</ul>
+			<p>
+				<br>
+				On an old machine 2Ghz AMD 3200+ and java (not necessarily known for its 
+				velocity), we arrive at a speed already interesting. Pi(x) represents the 
+				number of primes up to x.
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time (sec)</th></tr>
+				<tr style="text-align:right;"><td>1 000 000</td><td>78 498</td><td>0.031</td></tr>
+				<tr style="text-align:right;"><td>10 000 000</td><td>664 579</td><td>0.657</td></tr>
+				<tr style="text-align:right;"><td>100 000 000</td><td>5 761 455</td><td>7.578</td></tr>
+			</tbody></table>
+			<p>
+				Which means, we found 5.7 million prime numbers between 2 and 100 milion in 7 seconds.
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/Eratos1.java">source</a> 
+				<br>
+				It's good but not enough...<br>
+			</p>
+			<h2>Second implementation</h2>
+			<p>
+				This first version of the algorithm is widely optimizable. Indeed 
+				it is possible to work on two areas of improvement namely, find the numbers 
+				faster by accelerating the processing speed (double loop should be faster) 
+				and/or expand the range to find more prime number (enlarge the limit N)<br>
+				<br>
+				For processing speed, it "simply" that the 2 loops do not test the numbers 
+				that are already trivially eliminated... Ok but how ?<br>
+				If we unfold The algorithm by hand, we have :
+			</p>
+			<ul style="list-style-type:decimal">
+				<li>Take the number 2 and eliminate multiple : 2*2, 2*3, 2*4, 2*5, 2*6...</li>
+				<li>Take the number 3 and eliminate multiple : 3*2, 3*3, 3*4, 3*5, 3*6...</li>
+				<li>Take the number 5 and eliminate multiple : 5*2, 5*3, 5*4, 5*5, 5*6...</li>
+				<li>Take the number n and eliminate multiple : n*2, n*3, n*4, n*5, n*6...</li>
+			</ul>
+			<p>
+				<br>
+				We see that the algorithm tries to remove too many multiples, for example 3*2 of 
+				step 2 has been removed in step 1 (2*3), and 5*2, 5*3 of step 3 with 2*5 of step 1 
+				and 3*5 of step 2. In conclusion, for a given number n, it is useless to try to 
+				eliminate multiple below its square (n*n) because they have already been eliminated 
+				in previous rounds.
+				This will result in an increase of the lower bound of the second loop that goes 
+				"i+i" to "i*i" and a lowering of the upper limit of the first loop that passes to
+				square root of N.<br><br>
+				For the second point optimization of the expansion of the limit N, we will not 
+				save even numbers. Indeed, except for the number 2 all other even numbers are 
+				composite. With this obvious trick we divide the storage by two.<br><br>
+				This gives the second version : 
+			</p>
+			<div id="code" style="width:50%">
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MAX&nbsp;=&nbsp;</font><font color="#990000">100000000</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">SQRT_MAX&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;</font><font color="#000000">Math.sqrt</font><font color="#000000">(</font><font color="#000000">MAX</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MEMORY_SIZE&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">MAX&nbsp;/&nbsp;</font><font color="#990000">2</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>boolean</b></font><font color="#000000">[]&nbsp;</font><font color="#000000">array&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#7f0055"><b>boolean</b></font><font color="#000000">[</font><font color="#000000">MEMORY_SIZE</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#3f7f5f">//--//</font><br>
+<font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">3</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SQRT_MAX;&nbsp;i&nbsp;+=&nbsp;</font><font color="#990000">2</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!array</font><font color="#000000">[(</font><font color="#000000">i&nbsp;/&nbsp;</font><font color="#990000">2</font><font color="#000000">)])&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#000000">i&nbsp;*&nbsp;i</font><font color="#000000">)&nbsp;</font><font color="#000000">/&nbsp;</font><font color="#990000">2</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">j&nbsp;&lt;&nbsp;MEMORY_SIZE</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">array</font><font color="#000000">[</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;</font><font color="#7f0055"><b>true</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j&nbsp;+=&nbsp;i;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font>
+</div>			<p>
+				Overall we divide the time by 2.
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time (sec)</th></tr>
+				<tr style="text-align:right;"><td>1 000 000</td><td>78 497</td><td>0.016</td></tr>
+				<tr style="text-align:right;"><td>10 000 000</td><td>664 578</td><td>0.281</td></tr>
+				<tr style="text-align:right;"><td>100 000 000</td><td>5 761 454</td><td>3.063</td></tr>
+			</tbody></table>
+			<p>
+				Most assiduous note that we lose one prime number compared to the first implementation 
+				(column Pi). Just because this algorithm does not store the even numbers and so 2 is 
+				omitted.
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/Eratos2.java">source</a>
+			</p>			
+			<h2>Third implementation</h2>
+			<p>
+				With this second implementation, we see that we reach a fundamental limit 
+				of the Sieve of Eratosthenes.
+				Without touching java jvm parameters, if we try to reach 1 billion, we get :
+			</p>
+			<div id="code" style="width:50%">
+<font color="#000000">java.lang.OutOfMemoryError:&nbsp;Java&nbsp;heap&nbsp;space</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">at&nbsp;org.cpas.prime.Eratos2.&lt;clinit&gt;</font><font color="#000000">(</font><font color="#000000">Eratos2.java:</font><font color="#990000">12</font><font color="#000000">)</font><br>
+<font color="#000000">Exception&nbsp;in&nbsp;thread&nbsp;</font><font color="#2a00ff">"main"&nbsp;</font>
+</div>			<p>
+				The algorithm needs a lot of memory to run because we need to store N booleans 
+				(or N/2 in version 2). The memory complexity of the Sieve of Eratosthenes is O(n).<br>
+				Therefore try to store more intelligently. Instead of having an array of booleans 
+				we can pass to a binary representation where each bit represents a number removed 
+				or not removed. The support binary will be a byte java equal to 8 bits.				
+			</p>			
+			<div id="code" style="width:50%">
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">MAX&nbsp;=&nbsp;</font><font color="#990000">1000000000L</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">SQRT_MAX&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>long</b></font><font color="#000000">)&nbsp;</font><font color="#000000">Math.sqrt</font><font color="#000000">(</font><font color="#000000">MAX</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MEMORY_SIZE&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">MAX&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">4</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#7f0055"><b>private&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>byte</b></font><font color="#000000">[]&nbsp;</font><font color="#000000">array&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#7f0055"><b>byte</b></font><font color="#000000">[</font><font color="#000000">MEMORY_SIZE</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#3f7f5f">//--//</font><br>
+<font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">3</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SQRT_MAX;&nbsp;i&nbsp;+=&nbsp;</font><font color="#990000">2</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!getBit</font><font color="#000000">(</font><font color="#000000">i</font><font color="#000000">))&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#000000">i&nbsp;*&nbsp;i</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">j&nbsp;&lt;&nbsp;MAX</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setBit</font><font color="#000000">(</font><font color="#000000">j</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j&nbsp;+=&nbsp;</font><font color="#000000">(</font><font color="#990000">2&nbsp;</font><font color="#000000">*&nbsp;i</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font><br>
+<font color="#3f7f5f">//--//</font><br>
+<font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>boolean&nbsp;</b></font><font color="#000000">getBit</font><font color="#000000">(</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">i</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>byte&nbsp;</b></font><font color="#000000">block&nbsp;=&nbsp;array</font><font color="#000000">[(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">i&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">4</font><font color="#000000">)]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>byte&nbsp;</b></font><font color="#000000">mask&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>byte</b></font><font color="#000000">)&nbsp;(</font><font color="#990000">1&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;</font><font color="#000000">((</font><font color="#000000">i&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">&amp;&nbsp;</font><font color="#990000">7</font><font color="#000000">))</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">((</font><font color="#000000">block&nbsp;&amp;&nbsp;mask</font><font color="#000000">)&nbsp;</font><font color="#000000">!=&nbsp;</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setBit</font><font color="#000000">(</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">i</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">index&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">i&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">4</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>byte&nbsp;</b></font><font color="#000000">block&nbsp;=&nbsp;array</font><font color="#000000">[</font><font color="#000000">index</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>byte&nbsp;</b></font><font color="#000000">mask&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>byte</b></font><font color="#000000">)&nbsp;(</font><font color="#990000">1&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;</font><font color="#000000">((</font><font color="#000000">i&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">&amp;&nbsp;</font><font color="#990000">7</font><font color="#000000">))</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">array</font><font color="#000000">[</font><font color="#000000">index</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>byte</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">block&nbsp;|&nbsp;mask</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#000000">}</font>
+</div>			<p>
+				And we reach a billion....
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time (sec)</th></tr>
+				<tr style="text-align:right;"><td>1 000 000</td><td>78 497</td><td>0.031</td></tr>
+				<tr style="text-align:right;"><td>10 000 000</td><td>664 578</td><td>0.203</td></tr>
+				<tr style="text-align:right;"><td>100 000 000</td><td>5 761 454</td><td>3.047</td></tr>
+				<tr style="text-align:right;"><td>1 000 000 000</td><td>50 847 533</td><td>35.625</td></tr>
+			</tbody></table>
+			<p>
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/Eratos3.java">source</a>
+			</p>
+			<h2>Fourth implémentation</h2>
+			<p>
+				This is all well and good but this limit space is always present. As clever as we 
+				can be, we still have to allocate an array of N elements for N large enough exceed
+				the memory size of the computer.<br>
+				Do not go buying memory in computer shop, the solution is segmented sieve of
+				Eratosthenes.<br><br>
+
+				The idea is to split the table into X pieces (segments) and run the algorithm 
+				of the sieve on each of these pieces. Not only it is possible but it does not more 
+				"leaden" too performance of the application (the processing time of each segment is 
+				roughly equivalent to the computation time of the third implementations).
+				<br>
+				Following optimization of the second implementation, we know that to find all prime 
+				numbers from 2 to N, we can simply apply the sieve from 2 to square root of N. This is 
+				not trivial because for finding all primes between 2 and 10 billion, we need only go up 
+				to 100 miles. The purpose of segmented Eratosthenes is to compute the list of prime numbers 
+				up to the square root of N (initiation) and "sieve different segments" with this initiation.<br>
+				By cons optimization on the course numbers in the second loop changes. In the case of a 
+				segmented Eratosthenes is more difficult to implement because the beginning of the "sieve" 
+				starts at the beginning of the segment that is a number chosen arbitrarily (and not the fixed 
+				value "3" like in version 2 or 3). So we pass a "i*i" to "i+i" but it should be possible to 
+				do better. Too many neurons are involved to optimize this part, I leave the reader to 
+				find the solution...
+				<br><br>
+				Interesting note : the  segments are independent, it is not mandatory to first calculate the 
+				first segment to derive the second. This means that it is possible to calculate the prime 
+				numbers between any two thresholds (as long as the initiation is large enough to reach the 
+				square root of the upper bound of the segment), it also means that it is quite possible to 
+				create a distributed Eratosthenes across multiple computers (each seeking its segment).				
+			</p>
+			<div id="code" style="width:50%">
+<font color="#ffffff"></font><font color="#000000">Arrays.fill</font><font color="#000000">(</font><font color="#000000">segment,&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>byte</b></font><font color="#000000">)&nbsp;</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">debut&nbsp;=&nbsp;numSegment&nbsp;*&nbsp;MAX_SEGMENT;</font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">fin&nbsp;=&nbsp;debut&nbsp;+&nbsp;MAX_SEGMENT;</font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">finSqrt&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>long</b></font><font color="#000000">)&nbsp;</font><font color="#000000">Math.sqrt</font><font color="#000000">(</font><font color="#000000">fin</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">p&nbsp;=&nbsp;-</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">p&nbsp;&lt;&nbsp;finSqrt</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">p&nbsp;=&nbsp;amorce</font><font color="#000000">[</font><font color="#000000">i++</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;p&nbsp;-&nbsp;</font><font color="#000000">(</font><font color="#000000">debut&nbsp;%&nbsp;p</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">j&nbsp;+=&nbsp;</font><font color="#000000">((</font><font color="#000000">j&nbsp;&amp;&nbsp;</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">?&nbsp;p&nbsp;:&nbsp;</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">p2&nbsp;=&nbsp;p&nbsp;*&nbsp;</font><font color="#990000">2</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">j&nbsp;&lt;&nbsp;MAX_SEGMENT</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">segment</font><font color="#000000">[(</font><font color="#7f0055"><b>int</b></font><font color="#000000">)&nbsp;(</font><font color="#000000">j&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">4</font><font color="#000000">)]&nbsp;</font><font color="#000000">|=&nbsp;</font><font color="#000000">(</font><font color="#990000">1&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;</font><font color="#000000">((</font><font color="#000000">j&nbsp;&gt;&gt;&nbsp;</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">&amp;&nbsp;</font><font color="#990000">7</font><font color="#000000">))</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j&nbsp;+=&nbsp;p2;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><font color="#000000">}</font>
+</div>			<p>
+				numSegment represents the segment number and MAX_SEGMENT the segment size, we conclude with 
+				the beginning and end of the segment.<br><br>
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time</th></tr>
+				<tr style="text-align:right;"><td>10 000 000 000</td><td>455 052 511</td><td>5mn 24s</td></tr>
+				<tr style="text-align:right;"><td>100 000 000 000</td><td>4 118 054 813</td><td>1h06mn</td></tr>
+			</tbody></table>
+			<p>
+				Finally it should be noted that the calculation of primes for the initiation in Eratos4 is 
+				made with trial division. It would have been quicker to do with Eratosthenes (a handful of 
+				milliseconds against 500ms) but you have to vary the pleasures ...				
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/Eratos4.java">source</a><br><br>
+				This implementation generates a dump segments and writes files in the form
+				prime_{N° segment}_{start segment}.bin<br>  
+				Here is an example of how to read these files :
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/SegmentReader.java">source</a>
+			</p>
+			<h2>Fourth implementation (bis)</h2>
+			<p>
+				By analyzing the code Sieve of Eratosthenes segmented we see that it is 
+				expensive in computation time at the beginning of the sieve of a segment, 
+				when we apply the elimination with small numbers from the initiation. This is 
+				because... precisely the numbers are too small and need a lot of "i+i" to reach 
+				the end of the segment.<br>
+				See :				
+			</p>
+			<ul>
+				<li>On a segment of one billion, we must 333 million loop turn to eliminate 
+				all multiples of 3.</li>
+				<li>For 5, it takes 200 million loop turn.</li>
+				<li>For 17, we have 58 million.</li>
+			</ul>
+			<p>
+				<br>
+				We'll do a little optimization by computing one time all the "i+i" for small numbers 
+				of initiation (called the mask) then we will apply unchanged during the sieve of a segment.
+				Note that for "apply as is" it will require that the segment size is divisible by all these 
+				small numbers. For Eratos4bis we precompute a mask up to 17 and we will locate the segment
+				size to 1000089090 = 3 * 5 * 7 * 11 * 13 * 17 * 3918.<br>
+				With this optimization algorithm loses 4 seconds at startup (time to calculate the mask) 
+				then win back this time for each calculated segment. At the end the performance gain is of 
+				the order of 15%.<br>
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time</th></tr>
+				<tr style="text-align:right;"><td>10 000 890 900</td><td>455 091 136</td><td>4mn 35s</td></tr>
+				<tr style="text-align:right;"><td>100 008 909 000</td><td>-To verify-</td><td>54mn</td></tr>
+			</tbody></table>
+			<p>
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/Eratos4bis.java">source</a>
+			</p>
+			<h2>Fourth implementation (ter)</h2>
+			<p>
+				Since Java is a bit slow, try to transcribe Eratos4bis in C.
+			</p>
+			<table class="tableau">
+				<tbody><tr><th>MAX</th><th>Pi(MAX)</th><th>Time</th></tr>
+				<tr style="text-align:right;"><td>10 000 890 900</td><td>455 091 136</td><td>3mn 35s</td></tr>
+				<tr style="text-align:right;"><td>100 008 909 000</td><td>-To verify-</td><td>35mn</td></tr>
+			</tbody></table>
+			<p>
+				Actually it is much faster !<br>
+				Tested under Windows 32-bit machine with a simple core, apparently this gain is not so 
+				important on modern machines. Maybe java can use the fully machine resources unlike C and 
+				so improve performance ?
+				<a id="button" href="http://compoasso.free.fr/primelistweb/ressource/main.c">source</a>
+			</p>
+			<h2>And now ?</h2>
+			<p>
+				It's nice to have calculated billion prime numbers but now what do we do ? One segment 
+				of 1 billion represents about a file of 60MB (26MB zipped in). So in less than an hour 
+				of computing time, we find all the prime numbers from 1 to 100 billion (there are 4 billion),
+				but above we have 6GB of data (compressed or 2GB).<br>
+				This algorithm shows that it is relatively fast to generate linearly all primes between 
+				2 thresholds, for against the store and/or use them is another challenge...
+				<br><br><br>
+			</p>
+		</div>
+	</td>
+	<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<div id="basPageLong"><div id="basPage"><i>
+A website created by<a href="javascript:melMe();" title="Les composants associés (cpas)" style="text-decoration:none;">
+	<span style="border-bottom: solid 1px blue;">
+		Les composants associés (cpas)	</span>
+	<img src="./Implementations of the Sieve of Eratosthenes_files/lcpas2020.gif" width="13px" height="13px" border="0" alt="logo cpas">
+</a>
+</i></div>
+</div>
+</body></html>

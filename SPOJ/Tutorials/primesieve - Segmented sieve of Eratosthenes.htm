@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://primesieve.org/segmented_sieve.html -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Simple implementation of the segmented sieve of Eratosthenes (in C++) with explanation of how it works.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Use stylesheet.css if javascript is disabled -->
+    <noscript>
+      &lt;link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" /&gt;
+      &lt;link rel="stylesheet" type="text/css" href="stylesheets/navigation_menu.css"&gt;
+    </noscript>
+
+    <!-- Use non default stylesheets if on Mac OS X -->
+    <script async="" src="./primesieve - Segmented sieve of Eratosthenes_files/analytics.js"></script><script type="text/javascript">
+      function appendStylesheetToHead(name)
+      {
+        var osId = "";
+        if (navigator.appVersion.indexOf("Mac") != -1) {
+          osId = "_mac";
+        }
+        var el = document.createElement("link");
+        el.type  = "text/css";
+        el.rel   = "stylesheet";
+        el.media = "screen";
+        el.href  = "stylesheets/" + name + osId + ".css";
+        document.getElementsByTagName("head")[0].appendChild(el);
+      }
+      appendStylesheetToHead("stylesheet");
+      appendStylesheetToHead("navigation_menu");
+    </script><link type="text/css" rel="stylesheet" media="screen" href="./primesieve - Segmented sieve of Eratosthenes_files/stylesheet.css"><link type="text/css" rel="stylesheet" media="screen" href="./primesieve - Segmented sieve of Eratosthenes_files/navigation_menu.css">
+
+    <link rel="stylesheet" type="text/css" href="./primesieve - Segmented sieve of Eratosthenes_files/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./primesieve - Segmented sieve of Eratosthenes_files/print.css" media="print">
+
+    <script src="./primesieve - Segmented sieve of Eratosthenes_files/jquery-1.11.0.min.js" type="text/javascript"></script> 
+    <script src="./primesieve - Segmented sieve of Eratosthenes_files/modernizr-2.7.1.min.js" type="text/javascript"></script>
+    <script src="./primesieve - Segmented sieve of Eratosthenes_files/custom.js" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>primesieve - Segmented sieve of Eratosthenes</title>
+  <style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>@-webkit-keyframes popmytjrfpbepitehieplrqktoewfuuqsemi {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popmytjrfpbepitehieplrqktoewfuuqsemi {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#mytjrfpbepitehieplrqktoewfuuqsemi{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.mytjrfpbepitehieplrqktoewfuuqsemi-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#777 !important;display:inline !important;text-decoration:line-through !important;}#mytjrfpbepitehieplrqktoewfuuqsemi br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#mytjrfpbepitehieplrqktoewfuuqsemi span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#mytjrfpbepitehieplrqktoewfuuqsemi div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#mytjrfpbepitehieplrqktoewfuuqsemi a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#mytjrfpbepitehieplrqktoewfuuqsemi-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#mytjrfpbepitehieplrqktoewfuuqsemi-gear:hover{-webkit-animation-name:popmytjrfpbepitehieplrqktoewfuuqsemi !important;animation-name:popmytjrfpbepitehieplrqktoewfuuqsemi !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#mytjrfpbepitehieplrqktoewfuuqsemi:hover #mytjrfpbepitehieplrqktoewfuuqsemi-gear{text-decoration:none !important;display:inline-block !important;}@media print{#mytjrfpbepitehieplrqktoewfuuqsemi{display:none !important;}}</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>primesieve</h1>
+        <h2 style="display: block;">Fast C/C++ prime number generator</h2>
+        <a href="https://github.com/kimwalisch/primesieve" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+<div id="container">
+  <nav id="navigation">
+    <ul>
+      <li><a href="http://primesieve.org/">Home</a></li>
+      <li><a href="http://primesieve.org/downloads">Downloads</a></li>
+      <li><a href="http://primesieve.org/build.html">Build From Source</a></li>
+      <li><a href="./primesieve - Segmented sieve of Eratosthenes_files/primesieve - Segmented sieve of Eratosthenes.htm">Segmented Sieve</a></li>
+      <li><a href="http://primesieve.org/api">API Documentation</a></li>
+      <li><a href="http://primesieve.org/links.html">Links</a></li>
+    </ul>
+  </nav>
+</div>
+
+<h2 style="display: block;">
+<a name="about" class="anchor" href="http://primesieve.org/segmented_sieve.html#about"><span class="octicon octicon-link"></span></a>Segmented sieve of Eratosthenes</h2>
+<p>Further down is a simple C++ implementation of the segmented sieve
+of Eratosthenes that generates the primes below n using
+<img src="./primesieve - Segmented sieve of Eratosthenes_files/Onloglogn.svg" alt="O(n log log n)" class="formula">
+operations and
+<img src="./primesieve - Segmented sieve of Eratosthenes_files/Osqrtn.svg" alt="O(sqrt(n))" class="formula">
+space. It runs significantly faster than a
+<a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Implementation">traditional
+sieve of Eratosthenes implementation</a> due to its more efficient
+CPU cache usage i.e. it uses the CPU's L1 data cache size as its sieve
+array size. This ensures that less than 2 percent of the memory
+accesses will be cache misses. This implementation generates the
+primes below 10^9 in just 0.9 seconds (single-threaded) on an Intel
+Core i7-4770 3.4GHz CPU from 2013.</p>
+
+<p></p>Any code on this page is free software released into the public
+domain. At the end of each code section, you will find instructions on
+how to download, compile and run the implementations.<p>
+
+</p><h2 style="display: block;">
+<a name="how" class="anchor" href="http://primesieve.org/segmented_sieve.html#how"><span class="octicon octicon-link"></span></a>How it works</h2>
+<p>Suppose we want to sieve the primes below 10^9. We chose the size
+of the sieve array (named segment_size) to be the same size as the CPU's L1
+data cache size per core e.g. 32768 bytes. We first generate the
+sieving primes below sqrt(10^9) which are needed to cross-off
+multiples. Then we start crossing-off the multiples of the first prime
+2 until we reach a multiple of 2&nbsp;&gt;=&nbsp;segment_size, if this
+happens we calculate the index of that multiple in the next segment
+using (multiple&nbsp;-&nbsp;segment_size) and store it in a separate
+array (next[]). We then cross-off the multiples of the next sieving
+primes using the same procedure. Once we have crossed-off the multiples
+of all sieving primes in the first segment we iterate over the sieve array
+and print out (or count) the primes.</p>
+
+<p>In order to sieve the next segment we reset the sieve array and we
+increment the lower offset by segment_size. Then we start
+crossing-off multiples again, for each sieving prime we retrieve the
+sieve index from the next array and we start crossing-off multiples
+from there on...</p>
+
+<div class="highlight highlight-C++"><pre><span class="c1">/// Generate primes using the segmented sieve of Eratosthenes.</span>
+<span class="c1">/// This algorithm uses O(n log log n) operations and O(sqrt(n)) space.</span>
+<span class="c1">/// @param limit         Sieve primes &lt;= limit.</span>
+<span class="c1">/// @param segment_size  Size of the sieve array in bytes.</span>
+<span class="c1">///</span>
+<span class="kt">void</span> <span class="nf">segmented_sieve</span><span class="p">(</span><span class="kt">int64_t</span> <span class="n">limit</span><span class="p">,</span> <span class="kt">int</span> <span class="n">segment_size</span> <span class="o">=</span> <span class="n">L1D_CACHE_SIZE</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">sqrt</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="n">limit</span><span class="p">);</span>
+  <span class="kt">int64_t</span> <span class="n">count</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int64_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">int64_t</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+  <span class="c1">// vector used for sieving</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">sieve</span><span class="p">(</span><span class="n">segment_size</span><span class="p">);</span>
+
+  <span class="c1">// generate small primes &lt;= sqrt</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">sqrt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">is_prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">primes</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">next</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int64_t</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">;</span> <span class="n">low</span> <span class="o">+=</span> <span class="n">segment_size</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">sieve</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">sieve</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// current segment = interval [low, high]</span>
+    <span class="kt">int64_t</span> <span class="n">high</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">segment_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="p">);</span>
+
+    <span class="c1">// store small primes needed to cross off multiples</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span> <span class="n">s</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">s</span><span class="p">])</span>
+      <span class="p">{</span>
+        <span class="n">primes</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span> <span class="n">s</span><span class="p">);</span>
+          <span class="n">next</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="n">low</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// sieve the current segment</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">primes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">segment_size</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">segment_size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span> <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">sieve</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">low</span><span class="p">]) <span class="c1">// n is a prime</span></span>
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">" primes found."</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 style="display: block;">
+<a name="build-and-run" class="anchor" href="http://primesieve.org/segmented_sieve.html#build-and-run"><span class="octicon octicon-link"></span></a>How to run it</h2>
+<p>Download <a href="http://primesieve.org/segmented_sieve.cpp">segmented_sieve.cpp</a>, open a terminal and run:</p>
+<div class="highlight highlight-bash"><pre><span class="c"># Compile using default C++ compiler</span>
+<span class="nv">$ </span>c++ -O2 segmented_sieve.cpp -o segmented_sieve
+
+<span class="c"># Count the primes below 10^9 using a segment size of 32 kilobytes</span>
+<span class="nv">$ </span>time ./segmented_sieve <span class="k">$((</span><span class="m">10</span><span class="o">**</span><span class="m">9</span><span class="k">))</span> 32768
+</pre></div>
+
+<h2 style="display: block;">
+<a name="using-a-bit-array" class="anchor" href="http://primesieve.org/segmented_sieve.html#using-a-bit-array"><span class="octicon octicon-link"></span></a>Using a bit array</h2>
+
+<p>One issue with the segmented sieve of Eratosthenes when sieving the
+primes below n is that its performance and run-time complexity
+deteriorate if the segment size is smaller than
+<img src="./primesieve - Segmented sieve of Eratosthenes_files/sqrtn.svg" alt="sqrt(n)" class="formula">.
+But ideally one wants to use a sieve array size that matches the CPU's
+L1 data cache size. By using a bit array it is possible to use a
+larger segment size without changing the sieve array size. Below is an
+implementation of the segmented sieve of Eratosthenes which uses a bit
+array with 16 numbers per byte for sieving. Each bit corresponds to an
+odd integer, the bits of the i-th byte correspond to the numbers
+(i * 16) + k, with k = { 1, 3, 5, 7, 9, 11, 13, 15 }. This
+implementation runs at least twice as fast as the segmented byte sieve
+(further up) when sieving up to 10^11 because the latter's performance
+deteriorates above 10^9.</p>
+
+<div class="highlight highlight-C++"><pre><span class="c1">/// Generate primes using the segmented sieve of Eratosthenes.</span>
+<span class="c1">/// This implementation uses a bit array with 16 numbers per byte.</span>
+<span class="c1">/// @param limit       Sieve primes &lt;= limit.</span>
+<span class="c1">/// @param sieve_size  Size of the sieve array in bytes.</span>
+<span class="c1">///</span>
+<span class="kt">void</span> <span class="nf">segmented_bit_sieve</span><span class="p">(</span><span class="kt">int64_t</span> <span class="n">limit</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sieve_size</span> <span class="o">=</span> <span class="n">L1D_CACHE_SIZE</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">segment_size</span> <span class="o">=</span> <span class="n">sieve_size</span> <span class="o">*</span> <span class="mi">16</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">sqrt</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="n">limit</span><span class="p">);</span>
+  <span class="kt">int64_t</span> <span class="n">count</span> <span class="o">=</span> <span class="p">(</span><span class="n">limit</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int64_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">int64_t</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// vector used for sieving</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">sieve</span><span class="p">(</span><span class="n">sieve_size</span><span class="p">);</span>
+
+  <span class="c1">// generate small primes &lt;= sqrt</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">sqrt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">is_prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">primes</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">next</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int64_t</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">;</span> <span class="n">low</span> <span class="o">+=</span> <span class="n">segment_size</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">sieve</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">sieve</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mh">0xff</span><span class="p">);</span>
+
+    <span class="c1">// unset bits &gt; limit</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">segment_size</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">)</span>
+      <span class="n">sieve</span><span class="p">[(</span><span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">]</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mh">0xff</span> <span class="o">&lt;&lt;</span> <span class="p">((</span><span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">2</span><span class="p">));</span>
+
+    <span class="c1">// current segment = interval [low, high]</span>
+    <span class="kt">int64_t</span> <span class="n">high</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">segment_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="p">);</span>
+
+    <span class="c1">// store small primes needed to cross off multiples</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span> <span class="n">s</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">s</span><span class="p">])</span>
+      <span class="p">{</span>
+        <span class="n">primes</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span> <span class="n">s</span><span class="p">);</span>
+          <span class="n">next</span><span class="p">.</span><span class="n">push_back</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="n">low</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// sieve the current segment</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">primes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">segment_size</span><span class="p">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">sieve</span><span class="p">[</span><span class="n">j</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">]</span> <span class="o">&amp;=</span> <span class="n">unset_bit</span><span class="p">[</span><span class="n">j</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">];</span>
+      <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">segment_size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">;</span> <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="n">popcnt</span><span class="p">[</span><span class="n">sieve</span><span class="p">[(</span><span class="n">n</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">]];</span>
+  <span class="p">}</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">" primes found."</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 style="display: block;">
+<a name="build-and-run" class="anchor" href="http://primesieve.org/segmented_sieve.html#build-and-run"><span class="octicon octicon-link"></span></a>How to run it</h2>
+<p>Download <a href="http://primesieve.org/segmented_bit_sieve.cpp">segmented_bit_sieve.cpp</a>, open a terminal and run:</p>
+<div class="highlight highlight-bash"><pre><span class="c"># Compile using default C++ compiler</span>
+<span class="nv">$ </span>c++ -O2 segmented_bit_sieve.cpp -o segmented_bit_sieve
+
+<span class="c"># Count the primes below 10^10 using a segment size of 32 kilobytes</span>
+<span class="nv">$ </span>time ./segmented_bit_sieve <span class="k">$((</span><span class="m">10</span><span class="o">**</span><span class="m">10</span><span class="k">))</span> 32768
+</pre></div>
+
+        </section>
+
+        <aside id="sidebar">
+          <a href="http://dl.bintray.com/kimwalisch/primesieve/primesieve-5.2.zip" class="download_zip button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="http://dl.bintray.com/kimwalisch/primesieve/primesieve-5.2.tar.gz" class="download_targz button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/kimwalisch/primesieve"></a> is maintained by <a href="https://github.com/kimwalisch">kimwalisch</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com/">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+
+<div id="mytjrfpbepitehieplrqktoewfuuqsemi" title="Click to dismiss alert bubble" style="right: 20px !important; bottom: 15px !important; background-color: rgb(51, 0, 51) !important; cursor: pointer; background-position: initial initial !important; background-repeat: initial initial !important;"><div style="background-color: rgb(51, 0, 51) !important; background-position: initial initial !important; background-repeat: initial initial !important;"><a href="http://primesieve.org/segmented_sieve.html#" id="mytjrfpbepitehieplrqktoewfuuqsemi-gear" title="Click to configure alert bubble" style="right: 0px !important; bottom: 0px !important; border-top-left-radius: 3px !important; border-bottom-right-radius: 3px !important;">&nbsp;</a><span>Google Analytics</span><br></div></div></body></html>

@@ -1,0 +1,292 @@
+
+<!-- saved from url=(0051)http://mathforum.org/library/drmath/view/52707.html -->
+<html __fvdsurfcanyoninserted="1" class=" clickberry-extension clickberry-extension-standalone"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Math Forum - Ask Dr. Math</title>
+
+<meta name="title" content="Sum of Fibonacci Series">
+
+<meta name="description" content="Is there a formula for the sum of the first n numbers in the Fibonacci
+   sequence?">
+
+<meta name="author" content="Barton">
+
+<meta name="date" content="05/23/2000">
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><meta content="clickberry-extension-here"><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+
+<body bgcolor="#FFFFFF">
+
+<!-- Snippet begins -->
+<!-- /var/www/html/snippets/drexel_top.drmath -->
+
+<!-- No special banner for now - get rid of this -->
+<table align="center" bgcolor="#ffffff" width="100%">
+<tbody><tr align="center">
+<td>
+<a href="http://mathforum.org/redirect-tutor.html"><img border="0" src="http://mathforum.org/images/tutor.gif" style="display: none !important;"></a>
+</td>
+</tr>
+</tbody></table>
+<!-- End of banner code -->
+
+<center>
+<p><nobr><a href="http://www.drexel.edu/"><img border="0" src="./Math Forum - Ask Dr. Math_files/dragon_line4.jpg" alt="Drexel dragon"></a><img border="0" src="./Math Forum - Ask Dr. Math_files/drexel_line4.jpg" alt="The Math Forum"><a href="http://deptapp.drexel.edu/ia/GOL/giftsonline1_MF.asp"><img border="0" src="./Math Forum - Ask Dr. Math_files/donate_line4.gif" alt="Donate to the Math Forum"></a></nobr></p>
+</center>
+<!-- /var/www/html/snippets/drexel_top.drmath -->
+<!-- Snippet ends -->
+
+
+<center><img src="./Math Forum - Ask Dr. Math_files/dr.mathQA.gif" alt="Ask Dr. Math - Questions and Answers from our Archives">
+</center>
+<center>
+<img src="./Math Forum - Ask Dr. Math_files/forum.blueline.gif" alt="_____________________________________________"><br>
+
+<a href="http://mathforum.org/library/drmath/view/52707.html#assoc">Associated Topics</a> ||
+<a href="http://mathforum.org/dr.math/">Dr. Math Home</a> ||
+<a href="http://mathforum.org/library/drmath/view/52707.html#search">Search Dr. Math</a><br>
+
+<img src="./Math Forum - Ask Dr. Math_files/forum.blueline.gif" alt="_____________________________________________"><br>
+
+<br>
+<table width="580" border="0">
+<tbody><tr>
+<td>
+
+<h3>Sum of Fibonacci Series</h3>
+
+<pre>
+Date: 05/23/2000 at 04:40:14
+From: Edward Barton
+Subject: Fibonacci sequence
+
+Is there any formula for the sum of the first n numbers in the 
+Fibonacci sequence? I've been looking for one without success. I did 
+find a quartic equation that worked for the first few (five or six), 
+but it got progressively more inaccurate. I have also tried plotting 
+them against the respective terms of the Fibonacci sequence, which 
+almost gave a straight line, but it was not quite close enough.
+</pre>
+
+<hr>
+
+<pre>
+Date: 05/23/2000 at 05:36:14
+From: Doctor Mitteldorf
+Subject: Re: Fibonacci sequence
+
+Dear Edward,
+
+Believe it or not, the Fibonacci series is the sum of two geometric 
+series, each one of which separately is not even an integer. Given the 
+formula, it's not too hard to prove that it works (use proof by 
+induction). But where does the formula come from?
+
+The formula involves the square root of 5, which I write as sqrt[5]. 
+The nth Fibonacci is:
+
+     a*x^n + (1-a)*y^n
+
+where a = (3+sqrt[5])/(5+sqrt[5])
+      x = (1+ sqrt[5])/2
+      y = (1- sqrt[5])/2
+
+
+So my challenges to you are: first, to prove that the formula works, 
+and second, to derive the equation you want for the sum of the first n 
+terms, using the formula for the sum of a geometric series.
+
+Read more about Fibonacci series at our FAQ page at:
+
+   Golden Ratio, Fibonacci Sequence
+   <a href="http://mathforum.org/dr.math/faq/faq.golden.ratio.html">http://mathforum.org/dr.math/faq/faq.golden.ratio.html</a>   
+
+- Doctor Mitteldorf, The Math Forum
+  <a href="http://mathforum.org/dr.math/">http://mathforum.org/dr.math/</a>   
+</pre>
+
+<hr>
+
+<pre>
+Date: 05/23/2000 at 05:51:52
+From: Doctor Floor
+Subject: Re: Fibonacci sequence
+
+Hi, Edward,
+
+Thanks for writing.
+
+We know that the nth Fibonacci number
+
+     F(n) = (PHI^n - (1 - PHI)^n) / sqrt[5]
+
+where PHI = (1+sqrt[5])/2 = 'Golden ratio'
+
+See, for instance, "Fibonacci Formula Inductive Proof" from the Dr. 
+Math archives:
+
+   <a href="http://mathforum.org/dr.math/problems/joly11.5.97.html">http://mathforum.org/dr.math/problems/joly11.5.97.html</a>   
+
+I will use the value of F(0) in my sum of the first n Fibonacci 
+numbers. That doesn't matter because F(0) = 0.
+
+So we can derive the following:
+
+     SUM{i = 0 to n} F(n)
+
+   = SUM{i = 0 to n} (PHI^i - (1 - PHI)^i) / sqrt5
+
+   = (1/sqrt5)*{[SUM{i = 0 to n} PHI^i] - [SUM{j = 0 to n} (1-PHI)^j]}
+
+Using the formula for a geometric series we know:
+
+     SUM{i = 0 to n} PHI^i = (PHI^(n+1)-1)/(PHI - 1)
+
+and
+
+     SUM{j = 0 to n} (1-PHI)^j = ((1-PHI)^(n+1) - 1)/-PHI
+
+so we conclude:
+
+   (1/sqrt[5])*{[SUM{i = 0 to n} PHI^i] - [SUM{j = 0 to n} (1-PHI)^j]}
+
+     ( PHI^(n+1) - 1   (1-PHI)^(n+1) - 1 )    1
+   = ( ------------- + ----------------- )* -------
+     (    PHI-1               PHI        )  sqrt[5]
+
+
+     PHI^(n+2) - PHI - (1-PHI)^(n+2) - PHI + 1
+   = -----------------------------------------   [use PHI*(PHI-1) = 1]
+                 sqrt5*PHI*(PHI-1)
+
+     PHI^(n+2) - (1-PHI)^(n+2)   1 - 2*PHI
+   = ------------------------- + ---------
+              sqrt[5]             sqrt[5]
+
+   = F(n+2)                    - 1
+
+We see that there comes a very simple formula
+
+     {F(0) +} F(1) + F(2) + ... + F(n) = F(n+2) - 1
+    _^^^^^^^^_
+    not needed
+
+Now that we found the formula, it seems that you can prove it more 
+easily by mathematical induction. Try it!
+
+If you need more help, just write back.
+
+Best regards,
+- Doctor Floor, The Math Forum
+  <a href="http://mathforum.org/dr.math/">http://mathforum.org/dr.math/</a>   
+    </pre>
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<center>
+<a name="assoc"><b>Associated Topics</b>:</a><br>
+
+
+
+
+<a href="http://mathforum.org/library/drmath/sets/high_fibonacci-golden.html">High School Fibonacci Sequence/Golden Ratio</a><br>
+<a href="http://mathforum.org/library/drmath/sets/high_seq_series.html">High School Sequences, Series</a><br>
+</center>
+<p>
+
+<a name="search"></a>
+<table align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td align="center"><a name="search"><p><img src="./Math Forum - Ask Dr. Math_files/forum.greenline.gif"></p></a>
+<p align="center"><font size="4" color="#33CC33"><b>Search the Dr. Math Library:</b></font></p>
+</td>
+</tr>
+ <tr>
+  <td>
+        <form action="http://mathforum.org/library/drmath/results.html" method="get">                 
+
+    <table align="center" border="0" cellpadding="3" cellspacing="1">
+        <tbody><tr>
+        <td colspan="4">
+<center><nobr>
+</nobr></center><br>
+                Find items containing (put spaces between keywords):<br>
+                        <input type="TEXT" name="textsearch" size="50" value="">
+&nbsp; 
+<br>
+<b><font color="red">Click only once for faster results:</font></b>
+                        <input type="SUBMIT" value="SEARCH" valign="middle"><br>
+<p>
+                <font size="-1">[ Choose "whole words" when searching for a word
+ like <i>age.</i>]</font>
+     </p></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+ <center><nobr>
+
+       <input type="radio" name="textsearch_bool_type" value="and" checked="">all keywords, in any order
+<input type="radio" name="textsearch_bool_type" value="or">at least one,
+<input type="radio" name="textsearch_bool_type" value="phrase">that exact phrase
+
+        <br>
+
+        <input type="radio" name="textsearch_whole_words" value="no" checked="">parts of words 
+<input type="radio" name="textsearch_whole_words" value="yes">whole words 
+
+</nobr></center>
+        <p>
+       </p></td>
+      </tr>
+      <tr>
+       <td align="center" valign="middle" colspan="4">
+         <center>
+          <p> 
+       </p></center></td>
+      </tr>
+
+</tbody></table>
+
+</form></td></tr></tbody></table>
+
+
+
+
+</p><center>
+<b><a href="http://mathforum.org/dr.math/ask.html">Submit your own question to Dr. Math</a></b>
+
+<p>[<b><a href="http://mathforum.org/announce/privacy.html">Privacy Policy</a></b>]
+[<b><a href="http://mathforum.org/announce/terms.html">Terms of Use</a></b>]</p>
+
+<img src="./Math Forum - Ask Dr. Math_files/forum.blueline(1).gif" alt="_____________________________________"><br>
+
+<a href="http://mathforum.org/">Math Forum Home</a>  ||
+
+<a href="http://mathforum.org/library/">Math Library</a> ||
+
+<a href="http://mathforum.org/special.html">Quick Reference</a> ||
+
+<a href="http://mathforum.org/grepform.html">Math Forum Search</a>
+
+<br>
+
+<img src="./Math Forum - Ask Dr. Math_files/forum.blueline(1).gif" alt="_____________________________________"><p>
+
+<font size="-1">Ask Dr. Math</font><font size="1"><sup>TM</sup></font><br>
+<font size="-1">© 1994-2013 The Math Forum<br>
+http://mathforum.org/dr.math/<br></font>
+
+<a href="http://mathforum.org/drexel/"><img border="0" src="./Math Forum - Ask Dr. Math_files/small_dragon.gif"></a>
+
+</p></center>
+
+
+<p>
+
+
+
+
+
+
+</p><iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Math Forum - Ask Dr. Math_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>

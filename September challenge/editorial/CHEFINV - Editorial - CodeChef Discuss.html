@@ -1,0 +1,1583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://discuss.codechef.com/questions/50948/chefinv-editorial -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>CHEFINV - Editorial - CodeChef Discuss</title>
+        <meta name="description" content="Problem link : contest practiceDifficulty : MediumPre-requisites : Fenwick treeSolution:Unlike the version when we swap the elements permamently, this one has an O(M log N) solution. The simplest solution is the offline one. That means that we&#39;ll first read all the queries at once, then we&#39;ll do">
+        <meta name="keywords" content="chefinv,medium,fenwick,editorial,inversions,sept14">
+        
+        <link rel="canonical" href="./CHEFINV - Editorial - CodeChef Discuss_files/CHEFINV - Editorial - CodeChef Discuss.html">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://discuss.codechef.com/questions/50948/chefinv-editorial?type=rss">
+
+        
+        
+        <link rel="shortcut icon" href="http://discuss.codechef.com/upfiles/favicon_1.ico">
+        <link href="./CHEFINV - Editorial - CodeChef Discuss_files/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="./CHEFINV - Editorial - CodeChef Discuss_files/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./CHEFINV - Editorial - CodeChef Discuss_files/jquery-ui.css">
+        <!--[if IE 6]>
+        <style type="text/css">
+        img, div, a { behavior: url(/m/default/media/iepngfix/iepngfix.htc) }
+        </style>
+        <![endif]-->
+        
+
+        <script type="text/javascript" async="" src="./CHEFINV - Editorial - CodeChef Discuss_files/atrk.js"></script><script src="./CHEFINV - Editorial - CodeChef Discuss_files/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+        /*<![CDATA[*/
+            google.load("jquery", "1.4.2");
+            google.load("jqueryui", "1", {autoload:true});
+
+            var i18nLang = 'en';
+            var appUrl = 'http://discuss.codechef.com'
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: 'Himansu Rathi',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok",
+                matching_tags_url: "/matching_tags/",
+                word: "word",
+                words: "words",
+                character: "character",
+                characters: "characters"
+            }
+        /*]]>*/
+        </script><script src="./CHEFINV - Editorial - CodeChef Discuss_files/jquery.min.js" type="text/javascript"></script><script src="./CHEFINV - Editorial - CodeChef Discuss_files/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/osqa.main.js"></script>
+        
+        
+        
+        
+        
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/osqa.question.js"></script>
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/jquery.caret.js"></script>
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/showdown.js"></script>
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/wmd.js"></script>
+        <link rel="stylesheet" type="text/css" href="./CHEFINV - Editorial - CodeChef Discuss_files/wmd.css">
+
+        
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/viewbox_min.js"></script>
+        <script type="text/javascript" src="./CHEFINV - Editorial - CodeChef Discuss_files/youtube.js"></script>
+        <link rel="stylesheet" type="text/css" href="./CHEFINV - Editorial - CodeChef Discuss_files/viewbox.css">
+        
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+
+        function submitClicked(e, f) {
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            window.removeEventListener('beforeunload', beforeUnload, true);
+            if (f) {
+                f.submit();
+            }
+        }
+
+        function beforeUnload(e) {
+
+            if($("textarea#editor")[0].value != "") {
+                return yourWorkWillBeLost(e);
+            }
+
+            var commentBoxes = $("textarea.commentBox");
+            for(var index = 0; index < commentBoxes.length; index++) {
+                if(commentBoxes[index].value != "") {
+                    return yourWorkWillBeLost(e);
+                }
+            }
+        }
+        window.addEventListener('beforeunload', beforeUnload, true);
+        </script>
+        <noscript>
+            &lt;style&gt;
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            &lt;/style&gt;
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="http://discuss.codechef.com/opensearch.xml" title="CodeChef Discuss Search">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+        
+        <!-- template header.html -->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        initSearchBoxValue();
+    })
+
+
+    function initSearchBoxValue()
+    {
+        var searchKeyword= $("#keywords").val();
+            if (searchKeyword=="")
+            {
+                $("#keywords").val("Search Here...");
+            }
+   }
+
+    function searchBoxOnBlur(){
+        $("#keyword").className="searchInput";
+        if ($("#keywords").val()=="")
+                $("#keywords").val("Search Here...");
+    }
+
+    function searchBoxOnFocus(){
+        $("#keyword").className="searchInputFocused";
+        if ($("#keywords").val()=="Search Here...")
+            $("#keywords").val("");
+   }
+
+    function about(){
+        if (document.URL=="http://osqa.codechef.local/about/")
+        {
+            $("")
+        }
+    }
+
+</script>
+
+
+
+ 
+
+	<div id="roof">
+
+
+
+		<div id="logo">
+			<a href="http://discuss.codechef.com/">
+				<img src="./CHEFINV - Editorial - CodeChef Discuss_files/site-logo_21.png" title="back to home page" alt="CodeChef Discuss logo">
+			</a>
+		</div>
+	  
+		<div id="top">
+		     <a href="http://discuss.codechef.com/users/38996/himansu-rathi">Himansu Rathi</a> <span class="score" title="1 karma">1</span> <a href="http://discuss.codechef.com/logout/">Log Out</a> 
+
+            <div id="nav">
+                <a id="nav_questions" class="on" href="http://discuss.codechef.com/questions/">questions</a><a id="nav_tags" href="http://discuss.codechef.com/tags/">tags</a><a id="nav_users" href="http://discuss.codechef.com/users/">users</a><a id="nav_badges" href="http://discuss.codechef.com/badges/">badges</a><a id="nav_unanswered" href="http://discuss.codechef.com/questions/unanswered/">unanswered</a>
+                <a id="horiSeparator">
+                </a><a id="nav_ask" href="http://discuss.codechef.com/questions/ask/" class="special">ask a question</a>
+                <a id="nav_about" href="http://discuss.codechef.com/about" class="off" onclick="about()">about</a>
+                <a id="nav_faq" href="http://discuss.codechef.com/faq">faq</a>
+
+            </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="clear"></div>
+	<div id="searchBar">
+
+
+
+
+        <table id="searchBarTable">
+            <tbody><tr>
+                <td class="left">
+                    CodeChef Discussion
+                </td>
+                <td class="right">
+                    <form action="http://discuss.codechef.com/search/" method="get">
+                    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <input type="text" class="searchInput" value="" name="q" id="keywords" onfocus="searchBoxOnFocus()" onblur="searchBoxOnBlur()">
+                                </td>
+                                <td>
+                                    <div class="options">
+                                        <input id="type-question" type="radio" value="question" name="t" checked="checked"><label for="type-question">questions</label>
+                                        <input id="type-tag" type="radio" value="tag" name="t"><label for="type-tag">tags</label>
+                                        <input id="type-user" type="radio" value="user" name="t"><label for="type-user">users</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </form>
+                </td>
+            </tr>
+        </tbody></table>
+        <h1 id="separator">
+        </h1>
+	</div>
+
+
+	
+
+<!-- end template header.html -->
+
+        
+
+
+
+<div id="wrapper">
+    
+    
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1>CHEFINV - Editorial</h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table">
+                <tbody><tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-50948-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50948/up/" rel="nofollow"> </a>
+<div id="post-50948-score" class="post-score" title="current number of votes">
+    2
+</div>
+<a id="post-50948-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50948/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)" class="ajax-command favorite-mark " href="http://discuss.codechef.com/mark_favorite/50948/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   1
+</div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <p><strong>Problem link</strong> : <a href="http://www.codechef.com/SEPT14/problems/CHEFINV/">contest</a> <a href="http://www.codechef.com/problems/CHEFINV/">practice</a></p>
+<p><strong>Difficulty</strong> : Medium</p>
+<p><strong>Pre-requisites</strong> : Fenwick tree</p>
+<p><strong>Solution</strong>:</p>
+<p>Unlike the version when we swap the elements permamently, this one has an <strong>O(M log N)</strong> solution. The simplest solution is the offline one. That means that we'll first read all the queries at once, then we'll do something and then we'll output all the answers at once. The online solution is also possible, and it involves persistent data structures.</p>
+<p>At first we need to calculate the number of inversions in the initial array.</p>
+<p>Consider the situation when we have to swap two elements of the array, say the <strong>L</strong>-th and the <strong>R</strong>-th one. In order to deal with such a query, we will act in two steps:</p>
+<ul>
+<li>First, we will decrease the number of inversions by the number of inversions that has the <strong>L</strong>-th element of the initial array. Then, we will decrease the number of inversions by the number of inversions that has the <strong>R</strong>-th element of the initial array. Note that if the pair <strong>(L, R)</strong> forms the inversion then it will be considered twice. So, we need to handle this case;</li>
+<li>Second, we can swap the <strong>L</strong>-th and the <strong>R</strong>-th elements and then add the number of inversions that contain these elements.</li>
+</ul>
+<p>So now, the problem is to count the number of inversions that contain some exact element. Let it be the <strong>X</strong>-th element. This number will be equal to the amount of the numbers that has indexes that are smaller than <strong>X</strong> but are greater than <strong>a<sub>X</sub></strong> plus the amount of numbers that has indexes greater than <strong>X</strong> but are smaller than <strong>a<sub>X</sub></strong>. Here we denote the <strong>X</strong>-th element of the array by <strong>a<sub>X</sub></strong>.</p>
+<p>How to do it quickly? We can reduce this problem to another one. Consider a set of <strong>N</strong> points on a plane. Let the coordinates of the <strong>i</strong>-th point be (<strong>i</strong>, <strong>a<sub>i</sub></strong>). Then, the amount of 
+numbers that has smaller indexes than <strong>X</strong> and are greater than <strong>a<sub>X</sub></strong> equals to the number of points in the axes-parallel rectangle with the following bottom-left and top-right corners: <strong>(1, a<sub>X</sub>+1)</strong> and <strong>(X-1, N)</strong>. Similarly, the amount of numbers that has indexes that are greater than <strong>X</strong> and are smaller than <strong>a<sub>X</sub></strong> is the amount of points in the axes-parallel rectangle with the following corner points: <strong>(X+1, 1)</strong> and <strong>(N, a<sub>X</sub>-1)</strong>.</p>
+<p>How to calculate the number of points inside of the rectangle fast? </p>
+<p>Here is the offline approach key points:</p>
+<ul>
+<li>The amount of points in the axes-parallel rectangle with the bottom-left and top-right points with the coordinates <strong>(x1, y1)</strong> and <strong>(x2, y2)</strong> respectively (let's call it <strong>F(x1, y1, x2, y2)</strong>) equals to <strong>F(1, 1, x2, y2)-F(1, 1, x1-1, y2)-F(1, 1, x2, y1-1)+F(1, 1, x1-1, y1-1)</strong>, so now we can operate only in rectangles that has <strong>(1, 1)</strong> as the bottom-left corner.</li>
+<li>Since we always have the bottom-left corner equal to <strong>(1, 1)</strong>, we can iterate through all the possible <strong>X</strong>-coordinates and add all the points that has the current <strong>X</strong>-coordinate - there will be only one point for each <strong>X</strong>-coordinate, in fact. By <em>add</em> we mean adding the point's <strong>Y</strong>-coordinate in the Fenwick tree. Then, before we add the points with the greater <strong>X</strong>-coordinates, we can answer all the queries that has this <strong>X</strong>-coordinate and the <strong>X</strong>-coordinate of the top-right corner. For the reasons, similar to the described above, the answer will be equal to some prefix-sum in the fenwick tree.</li>
+</ul>
+<p>The complexity of above solution is <strong>O(N log N)</strong>.</p>
+<p>But there is also an online solution that has the same complexity. The key idea is the same, but we count the amount of points inside the rectangles in the different way. <a href="http://discuss.codechef.com/questions/22492/sorting-editorial">Here</a> you can find a very comprehensive tutorial, related to calculation the number of points inside axes-parallel rectangle in <strong>O(log N)</strong> time on-line.</p>
+<p><strong>Setter's solution:</strong> <a href="http://www.codechef.com/download/Solutions/2014/September/Setter/CHEFINV.cpp">link</a></p>
+<p><strong>Tester's solution:</strong> <a href="http://www.codechef.com/download/Solutions/2014/September/Tester/CHEFINV.cpp">link</a></p>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="http://discuss.codechef.com/tags/chefinv/" class="post-tag tag-link-chefinv" title="see questions tagged &#39;chefinv&#39;" rel="tag">chefinv</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/medium/" class="post-tag tag-link-medium" title="see questions tagged &#39;medium&#39;" rel="tag">medium</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/fenwick/" class="post-tag tag-link-fenwick" title="see questions tagged &#39;fenwick&#39;" rel="tag">fenwick</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/editorial/" class="post-tag tag-link-editorial" title="see questions tagged &#39;editorial&#39;" rel="tag">editorial</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/inversions/" class="post-tag tag-link-inversions" title="see questions tagged &#39;inversions&#39;" rel="tag">inversions</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/sept14/" class="post-tag tag-link-sept14" title="see questions tagged &#39;sept14&#39;" rel="tag">sept14</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">
+                                
+
+                                
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        asked
+        <strong>8 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/4d2e2cb3a637b8923ab5bdb95e54b08e.jpg" alt="xcwgf666&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/10879/xcwgf666">xcwgf666 ♦♦</a><br>
+    <span class="score" title="359 karma">359</span><span title="37 badges"><span class="badge1">●</span><span class="badgecount">37</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="xcwgf666 has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/50948/">
+                edited
+                <strong>7 hours ago</strong>
+            </a>
+        </p>
+        
+            <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/2fad4a5d870e2f1f3558bce1e55fccc9.jpg" alt="pushkarmishra&#39;s gravatar image">
+            <p><a href="http://discuss.codechef.com/users/8082/pushkarmishra">pushkarmishra</a><br>
+            <span class="score" title="554 karma">554</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span></p>
+        
+    </div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-50948">
+    
+</div>
+<div id="comment-tools-50948" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50948-form-container" class="comment-form-container">
+    
+    <form id="comment-50948-form" method="post" action="http://discuss.codechef.com/comment/50948/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" id="csrfmiddlewaretoken" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50948-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50948">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+            
+            
+                <hr>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    6 Answers:
+                    </div>
+                    
+<div class="tabsA"><a href="http://discuss.codechef.com/questions/50948/chefinv-editorial?sort=oldest" title="oldest answers will be shown first">oldest</a><a href="http://discuss.codechef.com/questions/50948/chefinv-editorial?sort=newest" title="newest answers will be shown first">newest</a><a href="http://discuss.codechef.com/questions/50948/chefinv-editorial?sort=votes" class="on" title="most voted answers will be shown first">most voted</a></div>
+
+                </div>
+                
+
+                
+                    <a name="50951"></a>
+                    <div id="answer-container-50951" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-50951-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50951/up/" rel="nofollow"> </a>
+<div id="post-50951-score" class="post-score" title="current number of votes">
+    2
+</div>
+<a id="post-50951-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50951/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>A better and shorter method to do it is using Fractional Cascading on Segment tree (to be precise merge sort tree).</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/50951/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to pushkarmishra" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/8082/answer/50951/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>7 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/2fad4a5d870e2f1f3558bce1e55fccc9.jpg" alt="pushkarmishra&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/8082/pushkarmishra">pushkarmishra</a><br>
+    <span class="score" title="554 karma">554</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="pushkarmishra has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/50951/">
+                edited
+                <strong>7 hours ago</strong>
+            </a>
+        </p>
+        
+    </div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-50951">
+    
+</div>
+<div id="comment-tools-50951" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50951-form-container" class="comment-form-container">
+    
+    <form id="comment-50951-form" method="post" action="http://discuss.codechef.com/comment/50951/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50951-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50951">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="50968"></a>
+                    <div id="answer-container-50968" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-50968-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50968/up/" rel="nofollow"> </a>
+<div id="post-50968-score" class="post-score" title="current number of votes">
+    1
+</div>
+<a id="post-50968-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50968/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I solve it by segment tree but i got wrong answer i generate random test case upto 2*10^5 and check it file input output but i could not get any test case where i was wrong 
+Can you please help me where my code fail :( :(
+<a href="http://www.codechef.com/viewsolution/4823968">http://www.codechef.com/viewsolution/4823968</a></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/50968/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to itstimeforme" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/37749/answer/50968/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>7 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/default.jpg" alt="itstimeforme&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/37749/itstimeforme">itstimeforme</a><br>
+    <span class="score" title="84 karma">84</span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="itstimeforme has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-50968">
+    
+</div>
+<div id="comment-tools-50968" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50968-form-container" class="comment-form-container">
+    
+    <form id="comment-50968-form" method="post" action="http://discuss.codechef.com/comment/50968/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50968-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50968">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="50991"></a>
+                    <div id="answer-container-50991" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-50991-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50991/up/" rel="nofollow"> </a>
+<div id="post-50991-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-50991-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50991/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I used extended merge sort and segment tree for this where each of my query was logn^2 (4<em>logn^2 to be precise). So overall solution was of M</em>lgN^2 . This seems acceptable given 1 sec time limit. why I got tle???? 
+<a href="http://www.codechef.com/viewsolution/4806941">http://www.codechef.com/viewsolution/4806941</a></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/50991/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to ashwini007k" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/25805/answer/50991/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>5 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/default.jpg" alt="ashwini007k&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/25805/ashwini007k">ashwini007k</a><br>
+    <span class="score" title="456 karma">456</span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="10 badges"><span class="silver">●</span><span class="badgecount">10</span></span><span title="20 badges"><span class="bronze">●</span><span class="badgecount">20</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ashwini007k has 2 accepted answers">8%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-50991">
+    
+        <a name="51000"></a>
+        <div class="comment" id="comment-51000">
+            <div id="post-51000-score" class="comment-score"></div>
+            <div class="comment-text"><p>Because MlogN was expected. That is the very reason why I used fractional cascading along with merge sort tree. Mergesort tree alone wouldnt do...</p></div>
+            <div class="comment-info" id="comment-51000-info">
+                
+                    <a id="post-51000-upvote" href="http://discuss.codechef.com/like_comment/51000/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(5 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/8082/pushkarmishra">pushkarmishra</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-50991" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50991-form-container" class="comment-form-container">
+    
+    <form id="comment-50991-form" method="post" action="http://discuss.codechef.com/comment/50991/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50991-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50991">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="51002"></a>
+                    <div id="answer-container-51002" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-51002-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/51002/up/" rel="nofollow"> </a>
+<div id="post-51002-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-51002-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/51002/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>It was possible with a Fenwick tree I guess also. So you do two updates and get the new inversion count. Then discard the updates. Two updates would be to change A[x] to A[y] and A[y] to old A[x]. Then start fresh on new query.</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/51002/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to elasolova35" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/48547/answer/51002/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>5 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/default.jpg" alt="elasolova35&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/48547/elasolova35">elasolova35</a><br>
+    <span class="score" title="52 karma">52</span><span title="4 badges"><span class="bronze">●</span><span class="badgecount">4</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="elasolova35 has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/51002/">
+                edited
+                <strong>5 hours ago</strong>
+            </a>
+        </p>
+        
+    </div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-51002">
+    
+        <a name="51004"></a>
+        <div class="comment" id="comment-51004">
+            <div id="post-51004-score" class="comment-score"></div>
+            <div class="comment-text"><p>what will be the complexity for that? and space requirements?</p></div>
+            <div class="comment-info" id="comment-51004-info">
+                
+                    <a id="post-51004-upvote" href="http://discuss.codechef.com/like_comment/51004/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(5 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/8082/pushkarmishra">pushkarmishra</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-51002" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-51002-form-container" class="comment-form-container">
+    
+    <form id="comment-51002-form" method="post" action="http://discuss.codechef.com/comment/51002/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-51002-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-51002">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="51009"></a>
+                    <div id="answer-container-51009" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-51009-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/51009/up/" rel="nofollow"> </a>
+<div id="post-51009-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-51009-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/51009/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I have one (off topic) question.</p>
+<p>To count the no. of inversion in array I am using BIT. This algorithm is well known and shown in this <a href="http://pavelsimo.blogspot.in/2012/09/counting-inversions-in-array-using-BIT.html">link</a></p>
+<p>Suppose we have A={9,6,8,1000}. For this we need an array (say BIT) of length N, where N is the maximum number in array A (1000 here). But this algo requires the memory O(N). What what if A consist of very big number say 10^9. I am getting 'java.lang.OutOfMemoryError' while declaring BIT[10^9]. Is there any way to overcome with this?</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/51009/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to ajaytank" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/66268/answer/51009/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>4 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/default.jpg" alt="ajaytank&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/66268/ajaytank">ajaytank</a><br>
+    <span class="score" title="1 karma">1</span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ajaytank has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-51009">
+    
+        <a name="51011"></a>
+        <div class="comment" id="comment-51011">
+            <div id="post-51011-score" class="comment-score">1</div>
+            <div class="comment-text"><p>map these to shorter range i.e. A= {9,6,8,1000} can be mapped to B={3,1,2,4}.
+What you can do is sort A to get intermediate array = {6,8,9,1000} then map 6 to 1, 8 to 2, 9 to 3 and 1000 to 4 and then use this map and A to get B</p></div>
+            <div class="comment-info" id="comment-51011-info">
+                
+                    <a id="post-51011-upvote" href="http://discuss.codechef.com/like_comment/51011/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(4 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/7610/deepsaggas">deepsaggas</a>
+                
+            </div>
+        </div>
+    
+        <a name="51013"></a>
+        <div class="comment" id="comment-51013">
+            <div id="post-51013-score" class="comment-score"></div>
+            <div class="comment-text"><p><a href="http://discuss.codechef.com/users/66268/ajaytank"></a><a href="http://discuss.codechef.com/users/66268/ajaytank">@ajaytank</a> try for compression thing try to compress the values in range of 2*10^5</p></div>
+            <div class="comment-info" id="comment-51013-info">
+                
+                    <a id="post-51013-upvote" href="http://discuss.codechef.com/like_comment/51013/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(4 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/15312/adijimmy">adijimmy</a>
+                
+            </div>
+        </div>
+    
+        <a name="51023"></a>
+        <div class="comment" id="comment-51023">
+            <div id="post-51023-score" class="comment-score"></div>
+            <div class="comment-text"><p><a href="http://discuss.codechef.com/users/15312/adijimmy">@adijimmy</a> I would be thankful to you if you post any link related to compress the values :)</p></div>
+            <div class="comment-info" id="comment-51023-info">
+                
+                    <a id="post-51023-upvote" href="http://discuss.codechef.com/like_comment/51023/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(3 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/66268/ajaytank">ajaytank</a>
+                
+            </div>
+        </div>
+    
+        <a name="51024"></a>
+        <div class="comment" id="comment-51024">
+            <div id="post-51024-score" class="comment-score"></div>
+            <div class="comment-text"><p><a href="http://discuss.codechef.com/users/66268/ajaytank"></a><a href="http://discuss.codechef.com/users/66268/ajaytank">@ajaytank</a> <a href="http://pavelsimo.blogspot.in/2012/09/counting-inversions-in-array-using-BIT.html.....">http://pavelsimo.blogspot.in/2012/09/counting-inversions-in-array-using-BIT.html.....</a>
+compression is explained in this link</p></div>
+            <div class="comment-info" id="comment-51024-info">
+                
+                    <a id="post-51024-upvote" href="http://discuss.codechef.com/like_comment/51024/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(3 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/4915/ravifrmiem">ravifrmiem</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-51009" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-51009-form-container" class="comment-form-container">
+    
+    <form id="comment-51009-form" method="post" action="http://discuss.codechef.com/comment/51009/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-51009-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-51009">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="51019"></a>
+                    <div id="answer-container-51019" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-51019-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/51019/up/" rel="nofollow"> </a>
+<div id="post-51019-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-51019-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/51019/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>Can segment tree work..I got wa with segment tree..??</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/51019/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to prongs7" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/50295/answer/51019/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>3 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./CHEFINV - Editorial - CodeChef Discuss_files/default.jpg" alt="prongs7&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/50295/prongs7">prongs7</a><br>
+    <span class="score" title="1 karma">1</span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="prongs7 has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-51019">
+    
+        <a name="51027"></a>
+        <div class="comment" id="comment-51027">
+            <div id="post-51027-score" class="comment-score"></div>
+            <div class="comment-text"><p>Fenwick Tree or Binary Indexed Tree are more useful in such cases and require less memory.They are easy to understand nad learn than segment tree also.</p></div>
+            <div class="comment-info" id="comment-51027-info">
+                
+                    <a id="post-51027-upvote" href="http://discuss.codechef.com/like_comment/51027/" title="I like this comment (click again to cancel)" class="ajax-command comment-like" rel="nofollow"> </a>
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(2 hours ago)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/23465/thechamp103">thechamp103</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-51019" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50948/chefinv-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-51019-form-container" class="comment-form-container">
+    
+    <form id="comment-51019-form" method="post" action="http://discuss.codechef.com/comment/51019/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-51019-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-51019">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    
+                </div>
+            
+        <form id="fmanswer" action="http://discuss.codechef.com/questions/50948/answer/" method="post"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="clear:both">
+            </div>
+
+            
+                <div style="padding:10px 0 0 0;">
+                    <div class="headNormal">
+                        
+                            Your answer
+                        
+                    </div>
+                </div>
+                
+
+                <div id="description" class="">
+                    <div id="wmd-button-bar" class="wmd-panel"><ul id="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl+B" style="background-position: 0px 0px;"></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl+I" style="background-position: -20px 0px;"></li><li class="wmd-spacer" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl+L" style="background-position: -40px 0px;"></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote &lt;blockquote&gt; Ctrl+Q" style="background-position: -60px 0px;"></li><li class="wmd-button" id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" style="background-position: -80px 0px;"></li><li class="wmd-button" id="wmd-image-button" title="Image &lt;img&gt; Ctrl+G" style="background-position: -100px 0px;"></li><li class="wmd-spacer" id="wmd-spacer2"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl+O" style="background-position: -120px 0px;"></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl+U" style="background-position: -140px 0px;"></li><li class="wmd-button" id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" style="background-position: -160px 0px;"></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl+R" style="background-position: -180px 0px;"></li><li class="wmd-spacer" id="wmd-spacer3"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="background-position: -200px -20px;"></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Y" style="background-position: -220px -20px;"></li><li class="wmd-button" id="wmd-help-button" style="background-position: -240px 0px;"><a href="http://wmd-editor.com/" target="_blank" title="WMD website"></a></li></ul></div>
+                    <div class="resizable-textarea"><span><textarea rows="10" cols="40" name="text" id="editor" class="processed"></textarea><div class="grippie" style="margin-right: -6px;"></div></span></div>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tbody><tr>
+                                <td>
+                                    <span id="pre-collapse" title="Toggle the real time Markdown editor preview">[hide preview]</span>
+                                </td>
+                                <td style="text-align: right;" id="editor-metrics"></td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki">
+                                    <span style="font-weight:normal;cursor:help" title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+
+                        </tbody></table>
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>
+                </div>
+
+	            
+
+                <p><span class="form-error"></span></p>
+                
+                <input type="button" value="Post Your Answer" class="submit" style="float:left" onclick="submitClicked(event, this.form)">
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    <h3 class="subtitle">Follow this question</h3><strong>By Email:</strong><div class="subscription-status"><p>You are not subscribed to this question.</p></div><p><a class="ajax-command sidebar_button subscription_switch" href="http://discuss.codechef.com/subscribe/50948/">
+        
+            subscribe me
+        
+    </a></p><p>
+        
+            (you can adjust your notification settings on your <a href="http://discuss.codechef.com/users/38996/himansu-rathi/subscriptions/">profile</a>)
+        
+    </p><strong>By RSS:</strong><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/50948/chefinv-editorial?type=rss" title="subscribe to answers"></a>
+    Answers
+</p><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/50948/chefinv-editorial?type=rss&comments=yes" title="subscribe to comments and answers"></a>
+    Answers and Comments
+</p>
+
+</div>
+
+
+<div class="boxC" id="editor_side_bar" style="display: none;">
+    <p class="subtitle darkred">Markdown Basics</p>
+    <ul class="list-item">
+        <li>
+            *italic* or _italic_
+        </li>
+        <li>
+			**bold** or __bold__
+        </li>
+        <li>
+            <b>link</b>:[text](http://url.com/ "title")
+
+        </li>
+
+        <li>
+            <b>image</b>?![alt text](/path/img.jpg "title")
+
+        </li>
+        <li>
+			numbered list:
+            1.  Foo
+            2.  Bar
+        </li>
+        <li>
+			to add a line break simply add two spaces to where you would like the new line to be.
+        </li>
+        <li>
+			basic HTML tags are also supported
+        </li>
+    </ul>
+    <p class="info-box-follow-up-links">
+        <a href="http://discuss.codechef.com/markdown_help/" target="_blank">learn more about Markdown </a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags">
+        
+        	<a href="http://discuss.codechef.com/tags/editorial/" class="tag-link-editorial" title="see questions tagged&#39;editorial&#39;using tags" rel="tag">editorial</a> <span class="tag-number">×13,393</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/sept14/" class="tag-link-sept14" title="see questions tagged&#39;sept14&#39;using tags" rel="tag">sept14</a> <span class="tag-number">×5,596</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/medium/" class="tag-link-medium" title="see questions tagged&#39;medium&#39;using tags" rel="tag">medium</a> <span class="tag-number">×2,883</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/fenwick/" class="tag-link-fenwick" title="see questions tagged&#39;fenwick&#39;using tags" rel="tag">fenwick</a> <span class="tag-number">×1,286</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/inversions/" class="tag-link-inversions" title="see questions tagged&#39;inversions&#39;using tags" rel="tag">inversions</a> <span class="tag-number">×853</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/chefinv/" class="tag-link-chefinv" title="see questions tagged&#39;chefinv&#39;using tags" rel="tag">chefinv</a> <span class="tag-number">×852</span><br>
+        
+    </p>
+    <p>
+        Asked: <strong title="Sept. 15, 2014, 3:29 p.m.">8 hours ago</strong>
+    </p>
+    <p>
+     	Seen: <strong>786 times</strong>
+    </p>
+    <p>
+        Last updated: <strong title="Sept. 15, 2014, 8:35 p.m.">2 hours ago</strong>
+    </p>
+</div>
+
+
+
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/38913/lfeb14a-editorial" title="Problem Link: contest, practiceDifficulty: MediumPre-requisites: Maths, Inversions, Fenwick TreeProblem:We are given two arrays A[] and B[]. At first, we shuffle B[] randomly, then we merge A[] and B[] into array C[] also at random. Our task is to count the expected number of inversions in C[].">LFEB14A - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/27362/pplucky-editorial" title="PROBLEM LINK:PracticeContestAuthor: Vitaliy HerasymivTester: Tasnim Imran Sunny Editorialist: Tuan AnhDIFFICULTY:MEDIUMPREREQUISITES:Data Structures: Binary Index Tree Segment TreePROBLEM:Given a lucky string which contains only &#39;4&#39; and/or &#39;7&#39; characters. The following process is repeate">PPLUCKY - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/20571/seabal-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMPREREQUISITESSegment Tree, Fenwick TreePROBLEMYou are given an ordered list of N integers that represents the number of ballons at each position.Also, you are given M pairs of integers that represent ranges, or segments, within [1, N].You perform">SEABAL - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/29661/numpath-editorial" title="PROBLEM LINK:PracticeContestAuthor: Vineet Paliwal Tester: Roman Rubanenko Editorialist: Jingbo ShangDIFFICULTY:MediumPREREQUISITES:Dynamic Programming, Suffix Sum, Fenwick TreePROBLEM:Given a Directed-Acyclic-Graph (DAG) G = (V, E) in which node i has edges to nodes in [i + 1, i + N[i]],">NUMPATH - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50958/seabub-editorial" title="Problem link : contest practiceDifficulty : MediumPre-requisites : DPSolution : Let&#39;s start with the following DP: F[Inv][R]. Its&#39; value is the minimal possible value of the mathemathical expectation if the current array has Inv inversions and you have R actions left. Basically, in this problem ">SEABUB - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50954/qrect-editorial" title="Problem link : contest practiceDifficulty : HardPre-requisites : 2D data structures, segment treesSolution :Let&#39;s start with the following claim: two rectangles intersect if and only if their projections on the coordinate axes intersect. This is an observation that isn&#39;t hard to come up with, an">QRECT - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/38243/cdz14e-editorial" title="PROBLEM LINKS:PracticeContestAuthor: sikander_nsit Tester: sikander_nsit Editorialist: sikander_nsitDIFFICULTY:MEDIUMPROBLEM:In the problem we had to find the sum of the smallest k elements in the given array range. EXPLANATION:Brute force solution would not work because of the constraint">CDZ14E - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/4154/cookoff2-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMEXPLANATIONIt seems paradoxical that if 99 chefs start with 1 token each, it&#39;s just as likely that in the final cook-off one chef will have 98 tokens and the other will have 1 as it is that one will have 49 and the other 50. In fact, if we ask the qu">COOKOFF2 - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/3615/luckycom-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMEXPLANATIONLet make some observations. First of all, the resulting strings will contain no more than k digits, where k equals to the minimal length through all input strings. Sure, k*n is not greater than 100000. Consider some CNS. In common case, it">LUCKYCOM - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/4091/kchips-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMEXPLANATIONWe can answer queries off-line. A very high-level explanation is below.Let&#39;s have a S ( data structure ) where we store some indices, one for each village. We process villages in increasing order of indices ( as will be explained below ) ">KCHIPS - Editorial</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            
+            <div id="ground">
+                
+                    <p>
+
+<link rel="stylesheet" type="text/css" href="./CHEFINV - Editorial - CodeChef Discuss_files/cc.css">
+</p>
+<div id="cc-footer" class="cc-wrapper">
+    <div class="cc-inner-wrapper">
+        <!-- SECOND NAV -->
+        <div class="cc-cols-2">
+            <div id="cc-secondary-nav">
+                <ul>
+                    <!-- <li><a href="http://blog.corp.pw/" target="_blank">.pw Corp Blog</a></li>
+                    <li><a href="http://start.pw/" target="_blank">Vision</li> -->
+                    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+                    <li><a href="http://www.directi.com/" target="_blank">About Directi</a></li>
+                    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+                    <!-- <li><a href="http://wiki.directi.com/" target="_blank">Wiki</a></li>
+                    <li><a href="http://wiki.directi.com/display/corp/Home" target="_blank">About</a></li> -->
+                </ul>
+                <ul>
+                    <li><a href="http://www.codechef.com/campus/">CodeChef Campus Chapters</a></li>
+                    <li><a href="http://www.codechef.com/school/">CodeChef For Schools</a></li>
+                    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="cc-fineprint">
+                <p>© 2009, Directi Group. All Rights Reserved.</p>
+                <p><small>Powered by OSQA<br> </small></p>
+            </div>
+        </div>
+        <!-- /SECOND NAV -->
+        <!-- LEGAL & COPYRIGHT -->
+        <div>
+            <div id="cc-sponsor-strip">
+                <a href="http://www.directi.com/" target="_blank"><img src="./CHEFINV - Editorial - CodeChef Discuss_files/footer-sponsor-strip.gif" alt="Sponsors" title="Sponsors"></a>
+            </div>
+        </div>
+        <!-- /LEGAL & COPYRIGHT -->
+    </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./CHEFINV - Editorial - CodeChef Discuss_files/ga.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4090524-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"q16Cj1a8gN00iz", domain:"codechef.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+
+<noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=q16Cj1a8gN00iz" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+
+<!-- End Alexa Certify Javascript -->
+                
+            </div>
+            
+        
+        
+
+        
+        </div>
+
+        <!-- Put all elements with fixed position here, IE6 fixed position fix: http://ryanfait.com/position-fixed-ie6/ -->
+        <div class="notify" style="display:none">
+            
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">×</a>
+        </div>
+
+    
+
+<!-- end template base_content.html -->
+</body></html>

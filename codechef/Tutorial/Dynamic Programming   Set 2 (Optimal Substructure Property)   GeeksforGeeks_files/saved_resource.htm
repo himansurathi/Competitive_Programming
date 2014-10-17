@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<!-- saved from url=(0523)http://disqus.com/embed/comments/?base=default&disqus_version=7a601677&f=geeksforgeeks&t_i=12819%20http%3A%2F%2Fgeeksforgeeks.org%2F%3Fp%3D12819&t_u=http%3A%2F%2Fwww.geeksforgeeks.org%2Fdynamic-programming-set-2-optimal-substructure-property%2F&t_e=Dynamic%20Programming%20%7C%20Set%202%20(Optimal%20Substructure%20Property)&t_d=Dynamic%20Programming%20%7C%20Set%202%20(Optimal%20Substructure%20Property)%20%7C%20GeeksforGeeks&t_t=Dynamic%20Programming%20%7C%20Set%202%20(Optimal%20Substructure%20Property)&s_o=default&l=#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<style type="text/css"></style><link rel="stylesheet" href="http://a.disquscdn.com/next/styles/lounge.7533ef566663bc409d3f83743599eff7.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.e4a74d9879b8256217239ef94a8514c5.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.152d63363d0ab216b56194fd80f0191c.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://www.google-analytics.com/ga.js" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://b.scorecardresearch.com/beacon.js" src="beacon.js"></script><style id="css_1402392557562"></style><!--<base target="_parent" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script></head>
+<body style="">
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1402355965/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1402355965/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/7a601677"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{},"forum":{"name":"GeeksforGeeks","founder":"65619083","settings":{"canEnableSponsoredComments":false,"hasCustomAvatar":false,"allowAnonPost":true,"allowMedia":false,"moderatorText":"","typeface":"auto","promotedDiscoveryEnabled":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"organicDiscoveryEnabled":false,"backplaneEnabled":false,"discoveryThumbnailsEnabled":false,"colorScheme":"auto","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":false},"url":"http://www.geeksforgeeks.org/","favicon":{"permalink":"http://disqus.com/api/forums/favicons/geeksforgeeks.jpg","cache":"//a.disquscdn.com/1402355965/images/favicon-default.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/geeksforgeeks.jpg?size=32","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/geeksforgeeks.jpg?size=92","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"}},"pk":2480709,"id":"geeksforgeeks"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"total":9,"prev":null,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1397328922,"posts":[{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"shiwakant.bharti","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":true,"dislikes":0,"raw_message":"Example from wiki where the substructure may not be optimal.\nhttp://en.wikipedia.org/wiki/Optimal_substructure\n\nLeast-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":1,"createdAt":"2013-08-16T13:20:00","isEdited":false,"message":"\u003cp>Example from wiki where the substructure may not be optimal.\u003cbr>\u003ca href=\"http://en.wikipedia.org/wiki/Optimal_substructure\" rel=\"nofollow\">http://en.wikipedia.org/wiki/O...\u003c/a>\u003c/p>\u003cp>Least-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)\u003c/p>","id":"1016407511","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"SDK","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Please can somebody clarify the difference between Greedy and Dp..solutions..\n\ni.e how to decide which technique to use when by providing examples. I think that would be nice post :)\n Thank u","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":0,"createdAt":"2011-09-08T08:38:58","isEdited":false,"message":"\u003cp>Please can somebody clarify the difference between Greedy and Dp..solutions..\u003c/p>\u003cp>i.e how to decide which technique to use when by providing examples. I think that would be nice post :)\u003cbr> Thank u\u003c/p>","id":"1016407503","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Anand","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Here is blog that has all solved DP problem frequently asked in interviews.\r\n\r\n\u003ca href=\"http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\u003c/a>","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":0,"createdAt":"2011-06-07T07:45:15","isEdited":false,"message":"\u003cp>Here is blog that has all solved DP problem frequently asked in interviews.\u003c/p>\u003cp>\u003ca href=\"http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\u003c/a>\u003c/p>","id":"1016407498","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"tk","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"As far as I know, most of the optimization problems have optimal substructure property.  It is mainly Overlapping subproblem property that helps us in deciding to choose DP.  Does anyone know any example optimization problem - other than the longest path - that doesn't have the optimal substructure property?","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":0,"createdAt":"2011-06-06T10:54:13","isEdited":false,"message":"\u003cp>As far as I know, most of the optimization problems have optimal substructure property.  It is mainly Overlapping subproblem property that helps us in deciding to choose DP.  Does anyone know any example optimization problem - other than the longest path - that doesn't have the optimal substructure property?\u003c/p>","id":"1016407496","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":1016407496,"author":{"name":"shiwakant.bharti","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"Example from wiki where the substructure may not be optimal.\nhttp://en.wikipedia.org/wiki/Optimal_substructure\n\nLeast-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)","isApproved":true,"isSpam":false,"thread":"1639425908","depth":1,"numReports":0,"createdAt":"2013-08-16T13:19:08","isEdited":false,"message":"\u003cp>Example from wiki where the substructure may not be optimal.\u003cbr>\u003ca href=\"http://en.wikipedia.org/wiki/Optimal_substructure\" rel=\"nofollow\">http://en.wikipedia.org/wiki/O...\u003c/a>\u003c/p>\u003cp>Least-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)\u003c/p>","id":"1016407506","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Venki","url":"http://www.linkedin.com/in/ramanawithu","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":0,"isFlagged":false,"dislikes":0,"raw_message":"The \"Optimal Substructure Property\" also called as \"principle of optimality\". In order to apply DP, solution to the problem should satisfy principle of optimality. However, determining the Principle of Optimality is little difficult task, hope some of the upcoming examples will clarify.\n\nFor example finding optimal solution to one sub-instance may prevent choosing optimal solution to another instance, i.e. the optimal instances are not independent.","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":0,"createdAt":"2011-06-05T11:55:08","isEdited":false,"message":"\u003cp>The \"Optimal Substructure Property\" also called as \"principle of optimality\". In order to apply DP, solution to the problem should satisfy principle of optimality. However, determining the Principle of Optimality is little difficult task, hope some of the upcoming examples will clarify.\u003c/p>\u003cp>For example finding optimal solution to one sub-instance may prevent choosing optimal solution to another instance, i.e. the optimal instances are not independent.\u003c/p>","id":"1016407495","isDeleted":false,"likes":0},{"isHighlighted":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"rocky","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":1,"isFlagged":false,"dislikes":0,"raw_message":"Nice Post! What about the Dijekstra Algorithm. Dijekstra also follow optimal substructure property.  Isn't it a DP algo?","isApproved":true,"isSpam":false,"thread":"1639425908","depth":0,"numReports":0,"createdAt":"2011-06-03T10:48:58","isEdited":false,"message":"\u003cp>Nice Post! What about the Dijekstra Algorithm. Dijekstra also follow optimal substructure property.  Isn't it a DP algo?\u003c/p>","id":"1016407486","isDeleted":false,"likes":1},{"isHighlighted":false,"forum":"geeksforgeeks","parent":1016407486,"author":{"name":"Jagat","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":4,"isFlagged":false,"dislikes":0,"raw_message":"In case of Disjkstra, you evaluate a specific decision that moves you directly towards the optimal solution, and that is the property of a greedy algorithm. \n\nOn the other hand, when using DP, you've no idea what the optimal solution is till you've evaluated the optimal solution to all the possible sub problems.","isApproved":true,"isSpam":false,"thread":"1639425908","depth":1,"numReports":0,"createdAt":"2013-01-03T06:05:20","isEdited":false,"message":"\u003cp>In case of Disjkstra, you evaluate a specific decision that moves you directly towards the optimal solution, and that is the property of a greedy algorithm.\u003c/p>\u003cp>On the other hand, when using DP, you've no idea what the optimal solution is till you've evaluated the optimal solution to all the possible sub problems.\u003c/p>","id":"1016407505","isDeleted":false,"likes":4},{"isHighlighted":false,"forum":"geeksforgeeks","parent":1016407486,"author":{"name":"Shiraj Pokharel","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"points":1,"isFlagged":false,"dislikes":0,"raw_message":"No its greedy my dear.","isApproved":true,"isSpam":false,"thread":"1639425908","depth":1,"numReports":0,"createdAt":"2011-06-03T19:53:04","isEdited":false,"message":"\u003cp>No its greedy my dear.\u003c/p>","id":"1016422715","isDeleted":false,"likes":1}],"thread":{"feed":"http://geeksforgeeks.disqus.com/dynamic_programming_set_2_optimal_substructure_property/latest.rss","uploadAdd":"//geeksforgeeks.disqus.com/thread/dynamic_programming_set_2_optimal_substructure_property/async_media_upload/","identifiers":["12819 http://geeksforgeeks.org/?p=12819"],"dislikes":0,"likes":0,"message":"","id":"1639425908","isDeleted":false,"category":"2517633","author":"65619083","userScore":0,"moderators":[65619083],"createdAt":"2013-08-24T19:13:37","hasStreaming":false,"uploadRemove":"//geeksforgeeks.disqus.com/thread/dynamic_programming_set_2_optimal_substructure_property/async_media_remove/","isClosed":false,"link":"http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/","slug":"dynamic_programming_set_2_optimal_substructure_property","forum":"geeksforgeeks","clean_title":"Dynamic Programming | Set 2 (Optimal Substructure Property)","posts":9,"userSubscription":false,"title":"Dynamic Programming | Set 2 (Optimal Substructure Property)","highlightedPost":null}},"order":"desc"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.js"></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="discovery-top" data-tracking-area="discovery-north"></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-role="post-count" class="publisher-nav-color" data-nav="conversation">
+
+<span class="comment-count">
+
+9 comments
+
+</span>
+
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="publisher-nav-color" data-nav="community" id="community-tab">
+
+
+<span class="community-name">
+
+<strong>GeeksforGeeks</strong>
+
+</span>
+
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout">
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+
+<span>
+Login
+</span>
+
+
+</span> <span class="caret"></span>
+</a>
+
+<ul class="dropdown-menu">
+
+
+
+
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="auth:google">Google</a>
+</li>
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="notification-menu" data-role="notification-menu">
+
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="notification-container" data-action="auth:disqus">
+<span class="notification-icon icon-disqus"></span>
+
+
+</a></li>
+</ul>
+</nav>
+
+</header>
+
+
+
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+
+<li data-role="post-sort" class="dropdown sorting">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+
+Sort by Newest
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="sort" data-sort="popular">Best</a>
+</li>
+
+<li class="selected">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="sort" data-sort="desc">Newest</a>
+</li>
+
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="sort" data-sort="asc">Oldest</a>
+</li>
+</ul>
+</li>
+
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div class="thread-likes" data-role="vote-button">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a>
+</div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="posts">
+
+<div id="form"><form class="reply">
+<div class="alert error" style="display:none" role="alert">
+<a class="close" data-action="dismiss-alert" title="Dismiss">×</a>
+<span></span>
+</div>
+
+<div class="postbox">
+<div class="avatar">
+
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.d1dee965677e7cc8d58afe004a6d8282.png">
+</span>
+
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="-1" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;">
+<ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+
+
+</ul>
+
+
+</div>
+</div>
+
+
+<div data-role="login-form"><div>
+
+<section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+
+<ul data-role="login-menu" class="services login-buttons">
+
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+<li class="auth-signup">
+<button type="button" data-action="auth:disqus" title="Disqus">Sign up for Disqus</button>
+</li>
+</ul>
+
+</div>
+
+<div class="guest">
+<h6 class="guest-form-title">
+
+or pick a name
+
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" placeholder="Password" name="password">
+</p>
+
+<div class="guest-checkbox">
+<label>
+<input type="checkbox" name="author-guest">
+I'd rather post as guest
+</label>
+</div>
+
+
+</div>
+</div>
+<div class="proceed">
+
+<button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span></button>
+<button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span></button>
+
+</div>
+
+</section>
+
+
+
+
+</div></div>
+
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+
+</button>
+
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-1016407511">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">shiwakant.bharti</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407511" data-role="relative-time" class="time-ago" title="Friday, August 16 2013 6:50 PM">
+10 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Example from wiki where the substructure may not be optimal.<br><a href="http://en.wikipedia.org/wiki/Optimal_substructure" rel="nofollow">http://en.wikipedia.org/wiki/O...</a></p><p>Least-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407511">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407511">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016407503">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">SDK</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407503" data-role="relative-time" class="time-ago" title="Thursday, September 8 2011 2:08 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Please can somebody clarify the difference between Greedy and Dp..solutions..</p><p>i.e how to decide which technique to use when by providing examples. I think that would be nice post :)<br> Thank u</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407503">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407503">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016407498">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anand</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407498" data-role="relative-time" class="time-ago" title="Tuesday, June 7 2011 1:15 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Here is blog that has all solved DP problem frequently asked in interviews.</p><p><a href="http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html" rel="nofollow">http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407498">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407498">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016407496">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">tk</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407496" data-role="relative-time" class="time-ago" title="Monday, June 6 2011 4:24 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>As far as I know, most of the optimization problems have optimal substructure property.  It is mainly Overlapping subproblem property that helps us in deciding to choose DP.  Does anyone know any example optimization problem - other than the longest path - that doesn't have the optimal substructure property?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407496">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407496">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016407506">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">shiwakant.bharti</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407496" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> tk</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407506" data-role="relative-time" class="time-ago" title="Friday, August 16 2013 6:49 PM">
+10 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Example from wiki where the substructure may not be optimal.<br><a href="http://en.wikipedia.org/wiki/Optimal_substructure" rel="nofollow">http://en.wikipedia.org/wiki/O...</a></p><p>Least-cost airline fare. (Using on online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407506">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407506">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016407495">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Venki</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407495" data-role="relative-time" class="time-ago" title="Sunday, June 5 2011 5:25 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>The "Optimal Substructure Property" also called as "principle of optimality". In order to apply DP, solution to the problem should satisfy principle of optimality. However, determining the Principle of Optimality is little difficult task, hope some of the upcoming examples will clarify.</p><p>For example finding optimal solution to one sub-instance may prevent choosing optimal solution to another instance, i.e. the optimal instances are not independent.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407495">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407495">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016407486">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">rocky</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407486" data-role="relative-time" class="time-ago" title="Friday, June 3 2011 4:18 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Nice Post! What about the Dijekstra Algorithm. Dijekstra also follow optimal substructure property.  Isn't it a DP algo?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407486">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407486">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016407505">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Jagat</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407486" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> rocky</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407505" data-role="relative-time" class="time-ago" title="Thursday, January 3 2013 11:35 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>In case of Disjkstra, you evaluate a specific decision that moves you directly towards the optimal solution, and that is the property of a greedy algorithm.</p><p>On the other hand, when using DP, you've no idea what the optimal solution is till you've evaluated the optimal solution to all the possible sub problems.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-4" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">4</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407505">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016407505">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016422715">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Shiraj Pokharel</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016407486" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> rocky</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016422715" data-role="relative-time" class="time-ago" title="Saturday, June 4 2011 1:23 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>No its greedy my dear.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#comment-1016422715">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016422715">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" data-tracking-area="main" style="display:none" data-role="main" data-outbound-link="embed:community" class="loading">
+
+</section>
+
+<section id="dashboard" style="display:none" data-role="main" data-tracking-area="main">
+
+
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main" data-tracking-area="main">
+</section>
+
+<div id="discovery" data-tracking-area="discovery-south"></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=geeksforgeeks&utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

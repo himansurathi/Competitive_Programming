@@ -1,0 +1,128 @@
+/*
+** style.css
+**
+** Tomás Oliveira e Silva, November 2004
+*/
+
+.al { text-align: left }
+.ac { text-align: center }
+.ar { text-align: right }
+.at { vertical-align: top }
+.am { vertical-align: middle }
+.ab { vertical-align: bottom }
+
+.cr { background: #DD3333 }
+.cR { background: #AA2222 }
+.cy { background: #DDDD33 }
+.cY { background: #AAAA22 }
+.cg { background: #33DD33 }
+.cG { background: #22AA22 }
+.cd { background: #B0B0B0 }
+.cw { background: #FFFFFF }
+.ch { background: #BBFFBB }
+.ce { background: #AADDBB }
+
+.lc { list-style-type: circle }
+.ld { list-style-type: disk }
+
+a:link { color: #000088 }
+a:visited { color: #4444CC }
+a:active, a:hover { color: #5555FF }
+
+body { font-family: sans-serif; font-style: normal; font-weight: normal; font-size: 100% }
+body { text-align: justify; white-space: normal }
+body { margin-left: 2em; margin-right: 2em; margin-top: 0.2em; margin-bottom: 0.2em }
+body { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+body { color: #000000; background: #88AAAA }
+
+h1 { font-family: sans-serif; font-style: normal; font-weight: bold; font-size: 160% }
+h1 { text-align: center; white-space: nowrap }
+h1 { margin-left: 0em; margin-right: 0em; margin-top: 0.5em; margin-bottom: 0.5em }
+h1 { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+h1 { color: white }
+
+h2 { font-family: sans-serif; font-style: normal; font-weight: bold; font-size: 120% }
+h2 { text-align: justify; white-space: normal }
+h2 { margin-left: -1em; margin-right: 0em; margin-top: 0.3em; margin-bottom: 0.3em }
+h2 { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+h2.a { margin-top: 0.7em }
+
+h3 { font-family: sans-serif; font-style: normal; font-weight: bold; font-size: 100% }
+h3 { text-align: justify; white-space: normal }
+h3 { margin-left: 0em; margin-right: 0em; margin-top: 0.7em; margin-bottom: 0.3em }
+h3 { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+address { font-style: italic }
+
+b { font-weight: bold }
+
+big { font-size: 120% }
+
+blockquote { margin-left: 2em; margin-right: 2em; margin-top: 0.3em; margin-bottom: 0.3em }
+blockquote { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+div.a { margin-left: -1em }
+
+hr { width: 100%; height: 3px; }
+hr { margin-left: 0em; margin-right: 0em; margin-top: 0.2em; margin-bottom: 0.2em }
+hr { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+i { font-style: italic }
+
+ol { list-style: decimal outside }
+ul { list-style: disc outside }
+ul { margin-left: 2em; margin-right: 0em; margin-top: 0.6em; margin-bottom: 0.6em }
+ul { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+li { margin-left: 0em; margin-right: 0em; margin-top: 0.1em; margin-bottom: 0.1em }
+li { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+p { text-align: justify; white-space: normal }
+p { margin-left: 0em; margin-right: 0em; margin-top: 0.4em; margin-bottom: 0.4em }
+p { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+pre { font-family: monospace; font-style: normal; font-weight: normal; font-size: 90% }
+pre { text-align: left; white-space: pre }
+pre { margin-left: 0em; margin-right: 0em; margin-top: 0.6em; margin-bottom: 0.6em }
+pre { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+pre.a { margin-left: 2em }
+
+small { font-size: 80% }
+
+table { border: none }
+table { margin-left: 2em; margin-right: 0em; margin-top: 0.2em; margin-bottom: 0.2em }
+table { padding-left: 0em; padding-right: 0em; padding-top: 0em; padding-bottom: 0em }
+
+th { font-weight: bold }
+th,td { border: solid 1px black }
+th,td { text-align: right; vertical-align: top; white-space: nowrap }
+th,td { margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px }
+th,td { padding-left: 2px; padding-right: 2px; padding-top: 1px; padding-bottom: 1px }
+.al th,.al td { text-align: left }
+.ac th,.ac td { text-align: center }
+.ar th,.ar td { text-align: right }
+.am th,.am td { vertical-align: middle }
+
+th.empty,td.empty,.empty td { border: none }
+
+tt { font-family: monospace }
+
+.footer table { border: none }
+.footer table { margin-left: 0em }
+.footer td { border: none }
+.footer td { text-align: left; vertical-align: top; white-space: nowrap }
+.footer td { padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px }
+.footer td.a { text-align: right; vertical-align: bottom; white-space: nowrap }
+.footer td.b { padding-top: 0.4em }
+.footer td.c { text-align: right; vertical-align: top; white-space: nowrap }
+
+.ref table { border: none; margin-left: -1em }
+.ref td { border: none }
+.ref td { margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px }
+.ref td { padding-left: 0.5em; padding-right: 0.5em; padding-top: 1px; padding-bottom: 1px }
+.ref td.a { width: 2em; text-align: right; vertical-align: top; white-space: nowrap }
+.ref td.b { text-align: justify; vertical-align: top; white-space: normal }
+
+/*
+** That's all!
+*/

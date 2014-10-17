@@ -1,0 +1,1119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://discuss.codechef.com/questions/27057/standup-editorial -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>STANDUP - Editorial - CodeChef Discuss</title>
+        <meta name="description" content="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMPREREQUISITESDynamic Programming, Simple MathPROBLEM(Although the problem is stated slightly differently, I believe this interpretation of the problem is much easier to discuss. The main insight used here is that the students may be seated in rows,">
+        <meta name="keywords" content="dynamic-prog,probability,acmkan13,simple-math,editorial,dp">
+        
+        <link rel="canonical" href="./STANDUP - Editorial - CodeChef Discuss_files/STANDUP - Editorial - CodeChef Discuss.html">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://discuss.codechef.com/questions/27057/standup-editorial?type=rss">
+
+        
+        
+        <link rel="shortcut icon" href="http://discuss.codechef.com/upfiles/favicon_1.ico">
+        <link href="./STANDUP - Editorial - CodeChef Discuss_files/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="./STANDUP - Editorial - CodeChef Discuss_files/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./STANDUP - Editorial - CodeChef Discuss_files/jquery-ui.css">
+        <!--[if IE 6]>
+        <style type="text/css">
+        img, div, a { behavior: url(/m/default/media/iepngfix/iepngfix.htc) }
+        </style>
+        <![endif]-->
+        
+
+        <script type="text/javascript" async="" src="./STANDUP - Editorial - CodeChef Discuss_files/atrk.js"></script><script src="./STANDUP - Editorial - CodeChef Discuss_files/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+        /*<![CDATA[*/
+            google.load("jquery", "1.4.2");
+            google.load("jqueryui", "1", {autoload:true});
+
+            var i18nLang = 'en';
+            var appUrl = 'http://discuss.codechef.com'
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: '',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok",
+                matching_tags_url: "/matching_tags/",
+                word: "word",
+                words: "words",
+                character: "character",
+                characters: "characters"
+            }
+        /*]]>*/
+        </script><script src="./STANDUP - Editorial - CodeChef Discuss_files/jquery.min.js" type="text/javascript"></script><script src="./STANDUP - Editorial - CodeChef Discuss_files/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/osqa.main.js"></script>
+        
+        
+            <style type="text/css">
+                body { margin-top:2.7em; }
+            </style>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    var element = $('#validate_email_alert');
+                    element.click(function(){notify.close(true);})
+                    notify.show();
+                });
+            </script>
+        
+        
+        
+        
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/osqa.question.js"></script>
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/jquery.caret.js"></script>
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/showdown.js"></script>
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/wmd.js"></script>
+        <link rel="stylesheet" type="text/css" href="./STANDUP - Editorial - CodeChef Discuss_files/wmd.css">
+
+        
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/viewbox_min.js"></script>
+        <script type="text/javascript" src="./STANDUP - Editorial - CodeChef Discuss_files/youtube.js"></script>
+        <link rel="stylesheet" type="text/css" href="./STANDUP - Editorial - CodeChef Discuss_files/viewbox.css">
+        
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+
+        function submitClicked(e, f) {
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            window.removeEventListener('beforeunload', beforeUnload, true);
+            if (f) {
+                f.submit();
+            }
+        }
+
+        function beforeUnload(e) {
+
+            if($("textarea#editor")[0].value != "") {
+                return yourWorkWillBeLost(e);
+            }
+
+            var commentBoxes = $("textarea.commentBox");
+            for(var index = 0; index < commentBoxes.length; index++) {
+                if(commentBoxes[index].value != "") {
+                    return yourWorkWillBeLost(e);
+                }
+            }
+        }
+        window.addEventListener('beforeunload', beforeUnload, true);
+        </script>
+        <noscript>
+            &lt;style&gt;
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            &lt;/style&gt;
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="http://discuss.codechef.com/opensearch.xml" title="CodeChef Discuss Search">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+        
+        <!-- template header.html -->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        initSearchBoxValue();
+    })
+
+
+    function initSearchBoxValue()
+    {
+        var searchKeyword= $("#keywords").val();
+            if (searchKeyword=="")
+            {
+                $("#keywords").val("Search Here...");
+            }
+   }
+
+    function searchBoxOnBlur(){
+        $("#keyword").className="searchInput";
+        if ($("#keywords").val()=="")
+                $("#keywords").val("Search Here...");
+    }
+
+    function searchBoxOnFocus(){
+        $("#keyword").className="searchInputFocused";
+        if ($("#keywords").val()=="Search Here...")
+            $("#keywords").val("");
+   }
+
+    function about(){
+        if (document.URL=="http://osqa.codechef.local/about/")
+        {
+            $("")
+        }
+    }
+
+</script>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+     <div class="notify">
+         
+         <p>You are not logged in. Please login at <a target="_blank" href="http://www.codechef.com/">www.codechef.com</a> to post your questions!</p>
+         <a id="close-notifycustom" onclick="notify.close(true)">×</a>
+        
+     </div>
+ 
+
+	<div id="roof">
+
+
+
+		<div id="logo">
+			<a href="http://discuss.codechef.com/">
+				<img src="./STANDUP - Editorial - CodeChef Discuss_files/site-logo_21.png" title="back to home page" alt="CodeChef Discuss logo">
+			</a>
+		</div>
+	  
+		<div id="top">
+		    
+
+            <div id="nav">
+                <a id="nav_questions" class="on" href="http://discuss.codechef.com/questions/">questions</a><a id="nav_tags" href="http://discuss.codechef.com/tags/">tags</a><a id="nav_users" href="http://discuss.codechef.com/users/">users</a><a id="nav_badges" href="http://discuss.codechef.com/badges/">badges</a><a id="nav_unanswered" href="http://discuss.codechef.com/questions/unanswered/">unanswered</a>
+                <a id="horiSeparator">
+                </a><a id="nav_ask" href="http://discuss.codechef.com/questions/ask/" class="special">ask a question</a>
+                <a id="nav_about" href="http://discuss.codechef.com/about" class="off" onclick="about()">about</a>
+                <a id="nav_faq" href="http://discuss.codechef.com/faq">faq</a>
+
+            </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="clear"></div>
+	<div id="searchBar">
+
+
+
+
+        <table id="searchBarTable">
+            <tbody><tr>
+                <td class="left">
+                    CodeChef Discussion
+                </td>
+                <td class="right">
+                    <form action="http://discuss.codechef.com/search/" method="get">
+                    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <input type="text" class="searchInput" value="" name="q" id="keywords" onfocus="searchBoxOnFocus()" onblur="searchBoxOnBlur()">
+                                </td>
+                                <td>
+                                    <div class="options">
+                                        <input id="type-question" type="radio" value="question" name="t" checked="checked"><label for="type-question">questions</label>
+                                        <input id="type-tag" type="radio" value="tag" name="t"><label for="type-tag">tags</label>
+                                        <input id="type-user" type="radio" value="user" name="t"><label for="type-user">users</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </form>
+                </td>
+            </tr>
+        </tbody></table>
+        <h1 id="separator">
+        </h1>
+	</div>
+
+
+	
+
+<!-- end template header.html -->
+
+        
+
+
+
+<div id="wrapper">
+    
+    
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1>STANDUP - Editorial</h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table">
+                <tbody><tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-27057-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/27057/up/" rel="nofollow"> </a>
+<div id="post-27057-score" class="post-score" title="current number of votes">
+    3
+</div>
+<a id="post-27057-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/27057/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)" class="ajax-command favorite-mark " href="http://discuss.codechef.com/mark_favorite/27057/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   
+</div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <h1>PROBLEM LINKS</h1>
+<p><a href="http://www.codechef.com/problems/STANDUP">Practice</a><br>
+<a href="http://www.codechef.com/ACMKAN13/problems/STANDUP">Contest</a></p>
+<h1>DIFFICULTY</h1>
+<p>MEDIUM</p>
+<h1>PREREQUISITES</h1>
+<p>Dynamic Programming, Simple Math</p>
+<h1>PROBLEM</h1>
+<p>(Although the problem is stated slightly differently, I believe this interpretation of the problem is much easier to discuss. The main insight used here is that the students may be seated in rows, but that is <strong>irrelevant</strong>, since <strong>rows don't affect the outcome at all</strong>.)</p>
+<p>You are playing a game of <strong>Memory</strong>. There are <strong>N</strong> cards face down on the table. There are an <strong>even number of cards</strong>. Each card has a <strong>unique matched pair</strong>.</p>
+<p>You play the game step by step.</p>
+<ul>
+<li>Open a card face up. Now you know the <strong>rank</strong> on the card.</li>
+<li>Open another card face up. Now you know the <strong>rank</strong> on the card.</li>
+<li>If both the cards have the <strong>same rank</strong>, they remain face up.</li>
+<li>Otherwise, they both go face down.</li>
+</ul>
+<p>You have <strong>infinite memory</strong>. You also employ an <strong>optimal strategy</strong> - optimising it as ranks get revealed to you during a move.</p>
+<p>What is the <strong>expected number of moves</strong> in which you will have all the cards face up.</p>
+<h1>EXPLANATION</h1>
+<p>The key insight in this problem is deriving the <strong>optimal strategy</strong>.</p>
+<p>Since the cards are shuffled <strong>uniformly randomly</strong> among all possible <strong>permutations</strong>, the order in which you will consider cards does not matter. Hence, let us assume that the cards are kept in a <strong>horizontal line and you pick them up from left to right</strong>.</p>
+<p>When we are playing by the optimal strategy, at any point in the game, we will have a total of <strong>T cards</strong>, out of which <strong>K are known</strong>. Also, <strong>all of the K known cards are unique</strong>.</p>
+<p>The optimal strategy employed at any state is</p>
+<ol>
+<li>Pick a card from the set of <strong>unknown cards</strong>.</li>
+<li>If the card matches a <strong>known card</strong>, <strong>always pick the known card</strong> as the <strong>second card</strong>.</li>
+<li>Otherwise, pick another <strong>unknown card</strong>.</li>
+<li>If the second <strong>unknown card</strong> matches a <strong>known card</strong>, in the next move, select that <strong>pair of known cards</strong> to make them face up.</li>
+<li>Begin with <strong>Step 1</strong> again.</li>
+</ol>
+<p>Hints to this strategy lie in the <strong>Explanation Section</strong> of the problem statement, but getting here may not be intuitive (but getting here is in itself about half the work done).</p>
+<p>Let us dissect the strategy and see why it would be optimal.</p>
+<p>Step 1 is obvious. <strong>We would never risk picking a known card first</strong> since we will be reducing our odds of completing the game faster.</p>
+<p>We can see that Step 3 is also obvious. If we picked a first card whose pair is not known yet, then <strong>we will never pick a known card as the second card</strong>.</p>
+<p>Although Step 4 is not compulsory to guarantee the minimum number of moves, but we know that this known pair has to be eliminated. We can do it later, but there is no harm (that is, <strong>we will not be increasing the expected number of moves</strong>) in doing it now.</p>
+<p>The only step that might not be immediately intuitive is Step 2. Note that if we do not immediately select the matching pair, <strong>we will always incur an additional move</strong> - the move to eliminate this known pair of cards.</p>
+<p>To implement this strategy we can maintain a Dynamic Programming state</p>
+<p><strong>D[T,K] = expected number of moves with T cards and K known</strong></p>
+<pre>// probability that first card matches a known card
+P1 = K / (T-K)
+
+// probability that first card did not match a known card
+// and the second card matched the first card
+P2 = (1-P1) / (T-K-1)
+
+// probability that first card did not match a known card
+// and the second card matched a previous known card
+P3 = (1-P1) * K / (T-K-1)
+
+// probability that neither the first, nor the second card
+// match any known cards
+P4 = (1-P1) * (1-P2-P3)
+
+D[T,K] =
+P1 * (1 + D[T-2,K-1]) + // we pick the known pair (STEP 2)
+P2 * (1 + D[T-2,K]) + // we eliminate the first and the second card we pick!
+P3 * (2 + D[T-2,K]) + // we make another move to eliminate the new pair
+P4 * (1 + D[T,K+2]) // we only make more knowns, no elimination
+</pre>
+
+<p>Implementing this recursion solves the problem in <strong>O(N<sup>2</sup>) time</strong>. The maximum value of <strong>N</strong> from the problem statement is <strong>2500</strong>. Hence, this will solve the problem.</p>
+<h1>CODE COMMENTARY</h1>
+<p>Dynamic Programming with recursion requires very <strong>careful implementation</strong>. All the <strong>stopping conditions</strong> must be carefully met, otherwise the program would easily go out of <strong>index bounds</strong> for the <strong>DP array</strong>.</p>
+<p>In the tester's solution, you can notice that there are <strong>guards</strong> in place to avoid recursing to undesirable values of <strong>T</strong> and <strong>K</strong>.</p>
+<h1>SETTER'S SOLUTION</h1>
+<p>Can be found <a href="http://www.codechef.com/download/Solutions/2013/ACMKANPUR/Setter/STANDUP.cpp">here</a>.</p>
+<h1>TESTER'S SOLUTION</h1>
+<p>Can be found <a href="http://www.codechef.com/download/Solutions/2013/ACMKANPUR/Tester/STANDUP.cpp">here</a>.</p>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="http://discuss.codechef.com/tags/dynamic-prog/" class="post-tag tag-link-dynamic-prog" title="see questions tagged &#39;dynamic-prog&#39;" rel="tag">dynamic-prog</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/probability/" class="post-tag tag-link-probability" title="see questions tagged &#39;probability&#39;" rel="tag">probability</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/acmkan13/" class="post-tag tag-link-acmkan13" title="see questions tagged &#39;acmkan13&#39;" rel="tag">acmkan13</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/simple-math/" class="post-tag tag-link-simple-math" title="see questions tagged &#39;simple-math&#39;" rel="tag">simple-math</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/editorial/" class="post-tag tag-link-editorial" title="see questions tagged &#39;editorial&#39;" rel="tag">editorial</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/dp/" class="post-tag tag-link-dp" title="see questions tagged &#39;dp&#39;" rel="tag">dp</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">
+                                
+
+                                
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        asked
+        <strong>19 Oct '13, 14:00</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./STANDUP - Editorial - CodeChef Discuss_files/83393c46e258fb44adb843ec3a292c94.png" alt="gamabunta&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/387/gamabunta">gamabunta ♦♦</a><br>
+    <span class="score" title="1922 karma"><span class="">1.9k</span></span><span title="128 badges"><span class="badge1">●</span><span class="badgecount">128</span></span><span title="182 badges"><span class="silver">●</span><span class="badgecount">182</span></span><span title="169 badges"><span class="bronze">●</span><span class="badgecount">169</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="gamabunta has one accepted answer">14%</span>
+    </p>
+</div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-27057">
+    
+</div>
+<div id="comment-tools-27057" class="comment-tools">
+    
+    
+</div>
+<div id="comment-27057-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+            
+            
+                <hr>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    4 Answers:
+                    </div>
+                    
+<div class="tabsA"><a href="http://discuss.codechef.com/questions/27057/standup-editorial?sort=oldest" title="oldest answers will be shown first">oldest</a><a href="http://discuss.codechef.com/questions/27057/standup-editorial?sort=newest" title="newest answers will be shown first">newest</a><a href="http://discuss.codechef.com/questions/27057/standup-editorial?sort=votes" class="on" title="most voted answers will be shown first">most voted</a></div>
+
+                </div>
+                
+
+                
+                    <a name="27103"></a>
+                    <div id="answer-container-27103" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-27103-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/27103/up/" rel="nofollow"> </a>
+<div id="post-27103-score" class="post-score" title="current number of votes">
+    1
+</div>
+<a id="post-27103-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/27103/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>P4 should be (1-P1-P2-P3)</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/27103/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>20 Oct '13, 00:14</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./STANDUP - Editorial - CodeChef Discuss_files/default.jpg" alt="pseudocode&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/38543/pseudocode">pseudocode</a><br>
+    <span class="score" title="16 karma">16</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="pseudocode has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-27103">
+    
+        <a name="27106"></a>
+        <div class="comment" id="comment-27106">
+            <div id="post-27106-score" class="comment-score"></div>
+            <div class="comment-text"><p>No. I think the definition of P4 implies it should be (1-P1)*(1-P2-P3).</p></div>
+            <div class="comment-info" id="comment-27106-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(20 Oct '13, 01:11)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/387/gamabunta">gamabunta ♦♦</a>
+                
+            </div>
+        </div>
+    
+        <a name="27109"></a>
+        <div class="comment" id="comment-27109">
+            <div id="post-27109-score" class="comment-score">1</div>
+            <div class="comment-text"><p>The given definition of P4 is not correct.
+P1 is when First card matches with a previous card. P2 is when First and second card are same (then they obviously don't match with any previous card). P3 is when only second card matches with a previous card. P4 is when First and Second Cards are different and they don't match with any previous cards.
+P4 is when neither of P1, P2 and P3 occurs.
+That is
+P1+P2+P3+P4=1</p></div>
+            <div class="comment-info" id="comment-27109-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(20 Oct '13, 01:36)</span>
+                <a class="comment-user userinfo" href="http://discuss.codechef.com/users/38543/pseudocode">pseudocode</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-27103" class="comment-tools">
+    
+    
+</div>
+<div id="comment-27103-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="28083"></a>
+                    <div id="answer-container-28083" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-28083-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/28083/up/" rel="nofollow"> </a>
+<div id="post-28083-score" class="post-score" title="current number of votes">
+    1
+</div>
+<a id="post-28083-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/28083/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>P4=(1-P1)*(1-a-b) where a=1/(t-k-1) and b=k/(t-k-1).</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/28083/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>30 Oct '13, 23:46</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./STANDUP - Editorial - CodeChef Discuss_files/default.jpg" alt="siddharth_l&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/4095/siddharth_l">siddharth_l</a><br>
+    <span class="score" title="16 karma">16</span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="siddharth_l has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-28083">
+    
+</div>
+<div id="comment-tools-28083" class="comment-tools">
+    
+    
+</div>
+<div id="comment-28083-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="27200"></a>
+                    <div id="answer-container-27200" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-27200-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/27200/up/" rel="nofollow"> </a>
+<div id="post-27200-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-27200-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/27200/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I think we have to take two moves for the first case, because we have to pick the know card again.</p>
+<p>so , "P1 * (1 + D[T-2,K-1])"  should be  "P1 * (2 + D[T-2,K-1])"</p>
+<p>similarly with step2, step4</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/27200/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>20 Oct '13, 21:03</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./STANDUP - Editorial - CodeChef Discuss_files/54166acc7c1ee44870fd48b7d3ef34b2.jpg" alt="sakhineti&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/3109/sakhineti">sakhineti</a><br>
+    <span class="score" title="1 karma">1</span><span title="1 badges"><span class="bronze">●</span><span class="badgecount">1</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="sakhineti has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/27200/">
+                edited
+                <strong>20 Oct '13, 21:29</strong>
+            </a>
+        </p>
+        
+    </div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-27200">
+    
+</div>
+<div id="comment-tools-27200" class="comment-tools">
+    
+    
+</div>
+<div id="comment-27200-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="52103"></a>
+                    <div id="answer-container-52103" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-52103-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/52103/up/" rel="nofollow"> </a>
+<div id="post-52103-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-52103-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/52103/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p><a href="http://discuss.codechef.com/users/4095/siddharth_l"></a><a href="http://discuss.codechef.com/users/4095/siddharth_l">@siddharth_l</a>
+yes i also think p4 should be p4=(1-p1)*(1-a-b) where a=1/(t-k-1) and b=k/(t-k-1).</p>
+<p>the given definition of p4 in editorial is wrong</p>
+<p>because probability that the second card do not match any known cards</p>
+<p>is = (1-a-b)</p>
+<p>where a=probab. that second card matches with first card in the move</p>
+<p>and    b=probab. that second card matches with the k known cards</p>
+<p>which is also equal to p4=(1-p1-p2-p3)</p>
+<p>as  p4 = (1-p1)*(1-a-b)</p>
+<pre><code>   = 1-p1 - a*(1-p1) - b*(1-p1)
+
+   = 1-p1 - p2 -p3
+
+   = (1-p1 -p2-p3)
+</code></pre>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/52103/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>01 Oct, 19:21</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./STANDUP - Editorial - CodeChef Discuss_files/default.jpg" alt="abhishek0004&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/59364/abhishek0004">abhishek0004</a><br>
+    <span class="score" title="1 karma">1</span><span title="2 badges"><span class="bronze">●</span><span class="badgecount">2</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="abhishek0004 has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/52103/">
+                edited
+                <strong>01 Oct, 19:29</strong>
+            </a>
+        </p>
+        
+    </div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-52103">
+    
+</div>
+<div id="comment-tools-52103" class="comment-tools">
+    
+    
+</div>
+<div id="comment-52103-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    
+                </div>
+            
+        <form id="fmanswer" action="http://discuss.codechef.com/questions/27057/answer/" method="post"><div style="display:none;"><input type="hidden" id="csrfmiddlewaretoken" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="clear:both">
+            </div>
+
+            
+                <div style="padding:10px 0 0 0;">
+                    
+                </div>
+                
+
+                <div id="description" class="">
+                    <div id="wmd-button-bar" class="wmd-panel"><ul id="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl+B" style="background-position: 0px 0px;"></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl+I" style="background-position: -20px 0px;"></li><li class="wmd-spacer" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl+L" style="background-position: -40px 0px;"></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote &lt;blockquote&gt; Ctrl+Q" style="background-position: -60px 0px;"></li><li class="wmd-button" id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" style="background-position: -80px 0px;"></li><li class="wmd-button" id="wmd-image-button" title="Image &lt;img&gt; Ctrl+G" style="background-position: -100px 0px;"></li><li class="wmd-spacer" id="wmd-spacer2"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl+O" style="background-position: -120px 0px;"></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl+U" style="background-position: -140px 0px;"></li><li class="wmd-button" id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" style="background-position: -160px 0px;"></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl+R" style="background-position: -180px 0px;"></li><li class="wmd-spacer" id="wmd-spacer3"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="background-position: -200px -20px;"></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Y" style="background-position: -220px -20px;"></li><li class="wmd-button" id="wmd-help-button" style="background-position: -240px 0px;"><a href="http://wmd-editor.com/" target="_blank" title="WMD website"></a></li></ul></div>
+                    <div class="resizable-textarea"><span><textarea rows="10" cols="40" name="text" id="editor" class="processed"></textarea><div class="grippie" style="margin-right: -6px;"></div></span></div>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tbody><tr>
+                                <td>
+                                    <span id="pre-collapse" title="Toggle the real time Markdown editor preview">[hide preview]</span>
+                                </td>
+                                <td style="text-align: right;" id="editor-metrics"></td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki">
+                                    <span style="font-weight:normal;cursor:help" title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+
+                        </tbody></table>
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>
+                </div>
+
+	            
+
+                <p><span class="form-error"></span></p>
+                
+                <input type="button" disabled="disabled" value="Post Your Answer" class="submit" style="float:left" onclick="submitClicked(event, this.form)">
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    <h3 class="subtitle">Follow this question</h3><strong>By Email:</strong><p>Once you sign in you will be able to subscribe for any updates here</p><strong>By RSS:</strong><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/27057/standup-editorial?type=rss" title="subscribe to answers"></a>
+    Answers
+</p><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/27057/standup-editorial?type=rss&comments=yes" title="subscribe to comments and answers"></a>
+    Answers and Comments
+</p>
+
+</div>
+
+
+<div class="boxC" id="editor_side_bar" style="display: none;">
+    <p class="subtitle darkred">Markdown Basics</p>
+    <ul class="list-item">
+        <li>
+            *italic* or _italic_
+        </li>
+        <li>
+			**bold** or __bold__
+        </li>
+        <li>
+            <b>link</b>:[text](http://url.com/ "title")
+
+        </li>
+
+        <li>
+            <b>image</b>?![alt text](/path/img.jpg "title")
+
+        </li>
+        <li>
+			numbered list:
+            1.  Foo
+            2.  Bar
+        </li>
+        <li>
+			to add a line break simply add two spaces to where you would like the new line to be.
+        </li>
+        <li>
+			basic HTML tags are also supported
+        </li>
+    </ul>
+    <p class="info-box-follow-up-links">
+        <a href="http://discuss.codechef.com/markdown_help/" target="_blank">learn more about Markdown </a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags">
+        
+        	<a href="http://discuss.codechef.com/tags/editorial/" class="tag-link-editorial" title="see questions tagged&#39;editorial&#39;using tags" rel="tag">editorial</a> <span class="tag-number">×1,077</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/dp/" class="tag-link-dp" title="see questions tagged&#39;dp&#39;using tags" rel="tag">dp</a> <span class="tag-number">×201</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/dynamic-prog/" class="tag-link-dynamic-prog" title="see questions tagged&#39;dynamic-prog&#39;using tags" rel="tag">dynamic-prog</a> <span class="tag-number">×95</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/simple-math/" class="tag-link-simple-math" title="see questions tagged&#39;simple-math&#39;using tags" rel="tag">simple-math</a> <span class="tag-number">×57</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/probability/" class="tag-link-probability" title="see questions tagged&#39;probability&#39;using tags" rel="tag">probability</a> <span class="tag-number">×24</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/acmkan13/" class="tag-link-acmkan13" title="see questions tagged&#39;acmkan13&#39;using tags" rel="tag">acmkan13</a> <span class="tag-number">×8</span><br>
+        
+    </p>
+    <p>
+        Asked: <strong title="Oct. 19, 2013, 2 p.m.">19 Oct '13, 14:00</strong>
+    </p>
+    <p>
+     	Seen: <strong>5,151 times</strong>
+    </p>
+    <p>
+        Last updated: <strong title="Oct. 1, 2014, 7:46 p.m.">01 Oct, 19:46</strong>
+    </p>
+</div>
+
+
+
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/20311/shiro-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYEASYPREREQUISITESSimple Math, Dynamic ProgrammingPROBLEMShiro has to pass through N levels to save the princess. Levels are labeled from 1 to N.At each level he encounters flags, which he always picks up. At level i there are Ai flags.The probability ">SHIRO - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/27056/cardinal-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYMEDIUMPREREQUISITESDynamic ProgrammingPROBLEMYou are given a set of N positive integers A1, A2 .., AN. You wish to find a special subset of this set such thatThe numbers in the set have mutually exclusive set of digitsThe sum of the numbers is maximum">CARDINAL - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50335/numbers-which-have-atleast-one-prime-digit-less-than-or-equal-to-n" title="Little Aaryan loves going to the magic shows, One fine day after attending a magic show, he thought randomly of some numbers, He introduced some magic in them, The magic was each number had atleast one prime digit in it. He called those numbers as magical numbers. Too excited next day, he went to th">numbers which have atleast one prime digit less than or equal to n.</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/3927/lemagic-editorial" title="PROBLEM LINKPracticeContestDIFFICULTYEASY-MEDIUMPREREQUISITESDynamic ProgrammingPROBLEMYou are given a M by N matrix of integers, say A. Each value is between 0 and 9, inclusive.You select a number P, at the beginning, such that you can optimize your goal (which will be described later).No">LEMAGIC - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/8116/fcbarca-editorial" title="PROBLEM LINK:PracticeContestAuthor: Bruno OliveiraTester: Hiroto SekidoEditorialist: Anton LunyovDIFFICULTY:SIMPLEPREREQUISITES:Simple MathPROBLEM:Let Messi have index 0, while all other players have indexes from 1 to K.Denote as f[n][x] the number of sequences {a[0], a[1], ..., a[n]} o">FCBARCA - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/7320/lecoins-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYHARDPREREQUISITESSimple Math, Dynamic Programming, Shortest Path ProblemPROBLEMYou are given N types of coins. The ith type of coin has the value Vi and the color Ci. You have an infinite number of each type of coin. You have to answer several queries of">LECOINS - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/42898/exam-editorial-ncc-2014" title="PROBLEM LINK:ContestPracticeAuthors: Vaibhav Tulsyan, Aditya SarodeTester: Vaibhav TulsyanEditorialist: Vaibhav TulsyanDIFFICULTY:EASYPREREQUISITES:Knapsack ProblemPROBLEM:Given the marks for N questions and the corresponding time to solve, find the maximum marks that can be scored in giv">EXAM - Editorial ( NCC 2014 )</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/27053/lineprob-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYEASYPREREQUISITESSimple MathPROBLEMOn a standard 2D grid, you draw a line between two lattice points, (x1, y1) and (x2, y2) respectively.You wish to find the number of grid cells that the line crosses over. Ignore the grid cell if the line never actuall">LINEPROB - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/9724/ftrip-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYSIMPLEPREREQUISITESSimple MathPROBLEMIn your class of S students, N students are being selected to go on a trip. Your friend circle has M students in the class, including you. You will only enjoy the trip if you have at least K other friends with you.Wh">FTRIP - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/3248/tournam-editorial" title="PROBLEM LINKPracticeContestDIFFICULTYEASYPREREQUISITESSimple Math, Dynamic ProgrammingPROBLEMTwo types of players are competing in an elimination tournament between 2k players.Type 1 beats Type 1 by 50 %Type 2 beats Type 2 by 50 %Type 1 beats Type 2 by P %Type 2 beats Type 1 by (100 - P)">TOURNAM - Editorial</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            
+            <div id="ground">
+                
+                    <p>
+
+<link rel="stylesheet" type="text/css" href="./STANDUP - Editorial - CodeChef Discuss_files/cc.css">
+</p>
+<div id="cc-footer" class="cc-wrapper">
+    <div class="cc-inner-wrapper">
+        <!-- SECOND NAV -->
+        <div class="cc-cols-2">
+            <div id="cc-secondary-nav">
+                <ul>
+                    <!-- <li><a href="http://blog.corp.pw/" target="_blank">.pw Corp Blog</a></li>
+                    <li><a href="http://start.pw/" target="_blank">Vision</li> -->
+                    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+                    <li><a href="http://www.directi.com/" target="_blank">About Directi</a></li>
+                    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+                    <!-- <li><a href="http://wiki.directi.com/" target="_blank">Wiki</a></li>
+                    <li><a href="http://wiki.directi.com/display/corp/Home" target="_blank">About</a></li> -->
+                </ul>
+                <ul>
+                    <li><a href="http://www.codechef.com/campus/">CodeChef Campus Chapters</a></li>
+                    <li><a href="http://www.codechef.com/school/">CodeChef For Schools</a></li>
+                    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="cc-fineprint">
+                <p>© 2009, Directi Group. All Rights Reserved.</p>
+                <p><small>Powered by OSQA<br> </small></p>
+            </div>
+        </div>
+        <!-- /SECOND NAV -->
+        <!-- LEGAL & COPYRIGHT -->
+        <div>
+            <div id="cc-sponsor-strip">
+                <a href="http://www.directi.com/" target="_blank"><img src="./STANDUP - Editorial - CodeChef Discuss_files/footer-sponsor-strip.gif" alt="Sponsors" title="Sponsors"></a>
+            </div>
+        </div>
+        <!-- /LEGAL & COPYRIGHT -->
+    </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./STANDUP - Editorial - CodeChef Discuss_files/ga.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4090524-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"q16Cj1a8gN00iz", domain:"codechef.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+
+<noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=q16Cj1a8gN00iz" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+
+<!-- End Alexa Certify Javascript -->
+                
+            </div>
+            
+        
+        
+
+        
+        </div>
+
+        <!-- Put all elements with fixed position here, IE6 fixed position fix: http://ryanfait.com/position-fixed-ie6/ -->
+        <div class="notify" style="">
+            
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">×</a>
+        </div>
+
+    
+
+<!-- end template base_content.html -->
+</body></html>

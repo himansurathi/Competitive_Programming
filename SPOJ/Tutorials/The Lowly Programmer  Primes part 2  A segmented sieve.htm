@@ -1,0 +1,1399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0076)http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="KX9ZDjM75EwiL7def37LAtnWVVMO1ZQz9-pazvjn-iU" name="google-site-verification">
+<meta content="5D9B503937B2C90493D5727778082B9A" name="msvalidate.01">
+
+<script src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/cb=gapi.loaded_1" async=""></script><script src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript">(function() { var b=window,f="chrome",g="jstiming",k="tick";(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{b.console.timeStamp("CSI/"+a)}catch(h){}};this[k]("start",null,a)}var a;b.performance&&(a=b.performance.timing);var n=a?new d(a.responseStart):new d;b.jstiming={Timer:d,load:n};if(a){var c=a.navigationStart,h=a.responseStart;0<c&&h>=c&&(b[g].srt=h-c)}if(a){var e=b[g].load;0<c&&h>=c&&(e[k]("_wtsrt",void 0,c),e[k]("wtsrt_","_wtsrt",h),e[k]("tbsd_","wtsrt_"))}try{a=null,
+b[f]&&b[f].csi&&(a=Math.floor(b[f].csi().pageT),e&&0<c&&(e[k]("_tbnd",void 0,b[f].csi().startE),e[k]("tbnd_","_tbnd",c))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,e&&0<c&&(e[k]("_tbnd",void 0,b.external.startE),e[k]("tbnd_","_tbnd",c))),a&&(b[g].pt=a)}catch(p){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[g].load[k]("aft")};var l=!1;function m(){l||(l=!0,b[g].load[k]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",m,!1):b.attachEvent("onscroll",m);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://www.thelowlyprogrammer.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/The Lowly Programmer  Primes part 2  A segmented sieve.htm" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="The Lowly Programmer - Atom" href="http://www.thelowlyprogrammer.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="The Lowly Programmer - RSS" href="http://www.thelowlyprogrammer.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="The Lowly Programmer - Atom" href="http://www.blogger.com/feeds/1806360094658697411/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="The Lowly Programmer - Atom" href="http://www.thelowlyprogrammer.com/feeds/4728624078059707982/comments/default">
+<link href="https://plus.google.com/103760168651162106315" rel="publisher">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>The Lowly Programmer: Primes part 2: A segmented sieve</title>
+<link type="text/css" rel="stylesheet" href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/3841957138-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+Updated by: Blogger Team
+----------------------------------------------- */
+/* Hack to remove the navbar */
+#navbar-iframe { display: none !important;}
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="headingcolor" description="Heading Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Side where text starts in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="Side where text ends in blog language"
+type="automatic" default="right">
+<Variable name="postblockquotecolor" description="Post Blockquote Color"
+type="color" default="#fdf8e6">
+*/
+/* Use this with templates/template-twocol.html */
+body {
+background:#ffffff;
+margin:0;
+color:#333333;
+font:x-small Georgia Serif;
+font-size/* */:/**/small;
+font-size: /**/small;
+text-align: center;
+}
+a:link {
+color:#5588aa;
+text-decoration:none;
+}
+a:visited {
+color:#aa55a0;
+text-decoration:none;
+}
+a:hover {
+color:#cc6600;
+text-decoration:underline;
+}
+a img {
+border-width:0;
+}
+/* Header
+-----------------------------------------------
+*/
+#header-wrapper {
+max-width:760px;
+margin:0 auto 10px;
+border:1px solid #cccccc;
+}
+#header-inner {
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+#header {
+margin: 5px;
+border: 1px solid #cccccc;
+text-align: center;
+color:#666666;
+}
+#header h1 {
+margin:5px 5px 0;
+padding:15px 20px .25em;
+line-height:1.2em;
+text-transform:uppercase;
+letter-spacing:.2em;
+font: normal normal 200% Georgia, Serif;
+}
+#header a {
+color:#666666;
+text-decoration:none;
+}
+#header a:hover {
+color:#666666;
+}
+#header .description {
+margin:0 5px 5px;
+padding:0 20px 15px;
+max-width:900px;
+text-transform:uppercase;
+letter-spacing:.2em;
+line-height: 1.4em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+}
+#header img {
+margin-left: auto;
+margin-right: auto;
+}
+/* Outer-Wrapper
+----------------------------------------------- */
+#outer-wrapper {
+max-width: 860px;
+margin:0 auto;
+padding:10px;
+text-align:left;
+font: normal normal 100% Georgia, Serif;
+}
+#main-wrapper {
+max-width: 71%;
+float: left;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+max-width: 224px;
+float: right;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+margin:1.5em 0 .75em;
+font:normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color:#999999;
+}
+/* Posts
+-----------------------------------------------
+*/
+h2.date-header {
+margin:1.5em 0 .5em;
+}
+.post {
+margin:.5em 0 1.5em;
+border-bottom:1px dotted #cccccc;
+padding-bottom:1.5em;
+}
+.post h2 {
+color:#005588;
+font-size:105%;
+}
+.post h3 {
+margin:.25em 0 0;
+padding:0 0 4px;
+font-size:140%;
+font-weight:normal;
+line-height:1.4em;
+color:#cc6600;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+display:block;
+text-decoration:none;
+color:#cc6600;
+font-weight:normal;
+}
+.post h3 strong, .post h3 a:hover {
+color:#333333;
+}
+.post p {
+margin:0 0 .75em;
+line-height:1.6em;
+}
+.post-footer {
+margin: .75em 0;
+color:#999999;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+line-height: 1.4em;
+}
+.comment-link {
+margin-left:.6em;
+}
+.post img {
+padding:4px;
+border:none;
+}
+.post blockquote {
+margin:1em 2em 1em 1em;
+padding:1em 1em 0.5em 1em;
+background: #fff9ee;
+}
+.post ul li, .post ol li {
+padding: 0.25em 0 0.25em 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin:1em 0;
+font-weight: bold;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color: #999999;
+}
+#comments-block {
+margin:1em 0 1.5em;
+line-height:1.6em;
+}
+#comments-block .comment-author {
+margin:.5em 0;
+}
+#comments-block .comment-body {
+margin:.25em 0 0;
+}
+#comments-block .comment-footer {
+margin:-.25em 0 2em;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+#comments-block .comment-body p {
+margin:0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar {
+color: #666666;
+line-height: 1.5em;
+}
+.sidebar ul {
+list-style:none;
+margin:0 0 0;
+padding:0 0 0;
+}
+.sidebar li {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:.25em;
+padding-left:15px;
+text-indent:-15px;
+line-height:1.5em;
+}
+.sidebar .widget, .main .widget {
+border-bottom:1px dotted #cccccc;
+margin:0 0 1.5em;
+padding:0 0 1.5em;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+font-weight: bold;
+line-height: 1.6em;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+.profile-link {
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+text-transform: uppercase;
+letter-spacing: .1em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+width:660px;
+clear:both;
+margin:0 auto;
+padding-top:15px;
+line-height: 1.6em;
+text-align: center;
+}
+/* Custom
+----------------------------------------------- */
+.expandable {
+overflow: hidden;
+display: none;
+}
+.indented {
+padding-left: 50pt;
+padding-right: 50pt;
+}
+.sarcasm {
+-webkit-transform: skew(15deg);
+-moz-transform: skew(15deg);
+display: inline-block;
+}
+
+--></style>
+<script type="text/javascript">var a="indexOf",b="&m=1",e="(^|&)m=",f="?",g="?m=1";function h(){var c=window.location.href,d=c.split(f);switch(d.length){case 1:return c+g;case 2:return 0<=d[1].search(e)?null:c+b;default:return null}}var k=navigator.userAgent;if(-1!=k[a]("Mobile")&&-1!=k[a]("WebKit")&&-1==k[a]("iPad")||-1!=k[a]("Opera Mini")||-1!=k[a]("IEMobile")){var l=h();l&&window.location.replace(l)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/js/google_top_exp.js"></script><script type="text/javascript" async="" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/ga.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>@-webkit-keyframes poprytqzebwbskugzzsattrqwbzgibpenzeor {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes poprytqzebwbskugzzsattrqwbzgibpenzeor {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#rytqzebwbskugzzsattrqwbzgibpenzeor{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.rytqzebwbskugzzsattrqwbzgibpenzeor-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#777 !important;display:inline !important;text-decoration:line-through !important;}#rytqzebwbskugzzsattrqwbzgibpenzeor br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#rytqzebwbskugzzsattrqwbzgibpenzeor span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#rytqzebwbskugzzsattrqwbzgibpenzeor div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#rytqzebwbskugzzsattrqwbzgibpenzeor a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#rytqzebwbskugzzsattrqwbzgibpenzeor-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#rytqzebwbskugzzsattrqwbzgibpenzeor-gear:hover{-webkit-animation-name:poprytqzebwbskugzzsattrqwbzgibpenzeor !important;animation-name:poprytqzebwbskugzzsattrqwbzgibpenzeor !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#rytqzebwbskugzzsattrqwbzgibpenzeor:hover #rytqzebwbskugzzsattrqwbzgibpenzeor-gear{text-decoration:none !important;display:inline-block !important;}@media print{#rytqzebwbskugzzsattrqwbzgibpenzeor{display:none !important;}}</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/navbar.htm"></iframe></div>
+<script type="text/javascript" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0751806360094658697411\46blogName\75The+Lowly+Programmer\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75TAN\46layoutType\75LAYOUTS\46searchRoot\75http://www.thelowlyprogrammer.com/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://www.thelowlyprogrammer.com/\46targetPostID\0754728624078059707982\46blogPostOrPageUrl\75http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html\46blogFollowUrl\75https://plus.google.com/103760168651162106315\46vt\75-7311077864198843499',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<!-- Google Analytics Code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4315841-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+
+</script>
+<script language="JavaScript" type="text/javascript">
+function expandContract(id) {
+  var e = document.getElementById(id);
+  if (e.style.display == 'block') {
+    e.style.display = 'none';
+  } else {
+    e.style.display = 'block';
+  }
+}
+</script>
+<div id="outer-wrapper"><div id="wrap2">
+<!-- skip links for text browsers -->
+<span id="skiplinks" style="display:none;">
+<a href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html#main">skip to main </a> |
+      <a href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html#sidebar">skip to sidebar</a>
+</span>
+<div id="header-wrapper">
+<div class="header section" id="header"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://www.thelowlyprogrammer.com/">The Lowly Programmer</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>Musings in code</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id="content-wrapper">
+<div id="crosscol-wrapper" style="text-align:center">
+<div class="crosscol section" id="crosscol"></div>
+</div>
+<div id="main-wrapper">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>Sunday, August 26, 2012</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry">
+<a name="4728624078059707982"></a>
+<h3 class="post-title entry-title">
+<a href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/The Lowly Programmer  Primes part 2  A segmented sieve.htm">Primes part 2: A segmented sieve</a>
+</h3>
+<div class="post-header-line-1"></div>
+<div class="post-body entry-content">
+<p><script language="JavaScript" type="text/javascript">
+function expandContract(id) {
+  var e = document.getElementById(id);
+  if (e.style.display == "block") {
+    e.style.display = "none";
+  } else {
+    e.style.display = "block";
+  }
+}
+</script></p><p><strong>TL;DR: The sum of all primes &lt;= 1,000,000,000,000 is 18,435,588,552,550,705,911,377</strong></p><p><i>This post is a followup to <a href="http://www.thelowlyprogrammer.com/2010/03/writing-efficient-seive-of-eratosthenes.html">Writing an efficient Sieve of Eratosthenes</a></i></p><p>A while back I wrote a post detailing a memory-efficient <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>. The algorithm I used took advantage of lazy evaluation and a sliding array to reduce the RAM requirement to a fraction of what a 'vanilla' implementation would require, at the cost of a non-trivial increase in CPU time. The resulting code ran at approximately 25% the throughput of the vanilla implementation, and maxed out at 2 billion candidates.</p><p>While researching that post, I noted that the most efficient generators at present use either the <a href="http://en.wikipedia.org/wiki/Sieve_of_Atkin">Sieve of Atkin</a> or a 'segmented sieve'. As an excuse to play with <a href="http://golang.org/">Go</a><sup>[<a href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html#ss_footnote1">1</a>]</sup>, a couple weeks ago I decided to implement a segmented Sieve of Eratosthenes. This post details my results.</p><h2>Implementation</h2><u>Language:</u> Go<u><br>
+Time complexity:</u><b> </b>O(n∙log(log(n)))<br>
+<u>Space complexity</u><b>: </b>O(√n)<br>
+<u>Candidates in 1 sec:</u> ~50,000,000 <br>
+<br>
+<a href="https://gist.github.com/320271#file_segmented_primes.go">Gist</a> <a href="javascript:expandContract('segmented_primes.go')">(expand/contract)</a><br>
+<div id="segmented_primes.go" class="expandable" style="display:none;"><script src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/320271.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-d1006a2c03378524a2bad8f05b286964.css"><div id="gist320271" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-segmented_primes-go-L1" rel="file-segmented_primes-go-L1">1</span>
+            <span class="line-number" id="file-segmented_primes-go-L2" rel="file-segmented_primes-go-L2">2</span>
+            <span class="line-number" id="file-segmented_primes-go-L3" rel="file-segmented_primes-go-L3">3</span>
+            <span class="line-number" id="file-segmented_primes-go-L4" rel="file-segmented_primes-go-L4">4</span>
+            <span class="line-number" id="file-segmented_primes-go-L5" rel="file-segmented_primes-go-L5">5</span>
+            <span class="line-number" id="file-segmented_primes-go-L6" rel="file-segmented_primes-go-L6">6</span>
+            <span class="line-number" id="file-segmented_primes-go-L7" rel="file-segmented_primes-go-L7">7</span>
+            <span class="line-number" id="file-segmented_primes-go-L8" rel="file-segmented_primes-go-L8">8</span>
+            <span class="line-number" id="file-segmented_primes-go-L9" rel="file-segmented_primes-go-L9">9</span>
+            <span class="line-number" id="file-segmented_primes-go-L10" rel="file-segmented_primes-go-L10">10</span>
+            <span class="line-number" id="file-segmented_primes-go-L11" rel="file-segmented_primes-go-L11">11</span>
+            <span class="line-number" id="file-segmented_primes-go-L12" rel="file-segmented_primes-go-L12">12</span>
+            <span class="line-number" id="file-segmented_primes-go-L13" rel="file-segmented_primes-go-L13">13</span>
+            <span class="line-number" id="file-segmented_primes-go-L14" rel="file-segmented_primes-go-L14">14</span>
+            <span class="line-number" id="file-segmented_primes-go-L15" rel="file-segmented_primes-go-L15">15</span>
+            <span class="line-number" id="file-segmented_primes-go-L16" rel="file-segmented_primes-go-L16">16</span>
+            <span class="line-number" id="file-segmented_primes-go-L17" rel="file-segmented_primes-go-L17">17</span>
+            <span class="line-number" id="file-segmented_primes-go-L18" rel="file-segmented_primes-go-L18">18</span>
+            <span class="line-number" id="file-segmented_primes-go-L19" rel="file-segmented_primes-go-L19">19</span>
+            <span class="line-number" id="file-segmented_primes-go-L20" rel="file-segmented_primes-go-L20">20</span>
+            <span class="line-number" id="file-segmented_primes-go-L21" rel="file-segmented_primes-go-L21">21</span>
+            <span class="line-number" id="file-segmented_primes-go-L22" rel="file-segmented_primes-go-L22">22</span>
+            <span class="line-number" id="file-segmented_primes-go-L23" rel="file-segmented_primes-go-L23">23</span>
+            <span class="line-number" id="file-segmented_primes-go-L24" rel="file-segmented_primes-go-L24">24</span>
+            <span class="line-number" id="file-segmented_primes-go-L25" rel="file-segmented_primes-go-L25">25</span>
+            <span class="line-number" id="file-segmented_primes-go-L26" rel="file-segmented_primes-go-L26">26</span>
+            <span class="line-number" id="file-segmented_primes-go-L27" rel="file-segmented_primes-go-L27">27</span>
+            <span class="line-number" id="file-segmented_primes-go-L28" rel="file-segmented_primes-go-L28">28</span>
+            <span class="line-number" id="file-segmented_primes-go-L29" rel="file-segmented_primes-go-L29">29</span>
+            <span class="line-number" id="file-segmented_primes-go-L30" rel="file-segmented_primes-go-L30">30</span>
+            <span class="line-number" id="file-segmented_primes-go-L31" rel="file-segmented_primes-go-L31">31</span>
+            <span class="line-number" id="file-segmented_primes-go-L32" rel="file-segmented_primes-go-L32">32</span>
+            <span class="line-number" id="file-segmented_primes-go-L33" rel="file-segmented_primes-go-L33">33</span>
+            <span class="line-number" id="file-segmented_primes-go-L34" rel="file-segmented_primes-go-L34">34</span>
+            <span class="line-number" id="file-segmented_primes-go-L35" rel="file-segmented_primes-go-L35">35</span>
+            <span class="line-number" id="file-segmented_primes-go-L36" rel="file-segmented_primes-go-L36">36</span>
+            <span class="line-number" id="file-segmented_primes-go-L37" rel="file-segmented_primes-go-L37">37</span>
+            <span class="line-number" id="file-segmented_primes-go-L38" rel="file-segmented_primes-go-L38">38</span>
+            <span class="line-number" id="file-segmented_primes-go-L39" rel="file-segmented_primes-go-L39">39</span>
+            <span class="line-number" id="file-segmented_primes-go-L40" rel="file-segmented_primes-go-L40">40</span>
+            <span class="line-number" id="file-segmented_primes-go-L41" rel="file-segmented_primes-go-L41">41</span>
+            <span class="line-number" id="file-segmented_primes-go-L42" rel="file-segmented_primes-go-L42">42</span>
+            <span class="line-number" id="file-segmented_primes-go-L43" rel="file-segmented_primes-go-L43">43</span>
+            <span class="line-number" id="file-segmented_primes-go-L44" rel="file-segmented_primes-go-L44">44</span>
+            <span class="line-number" id="file-segmented_primes-go-L45" rel="file-segmented_primes-go-L45">45</span>
+            <span class="line-number" id="file-segmented_primes-go-L46" rel="file-segmented_primes-go-L46">46</span>
+            <span class="line-number" id="file-segmented_primes-go-L47" rel="file-segmented_primes-go-L47">47</span>
+            <span class="line-number" id="file-segmented_primes-go-L48" rel="file-segmented_primes-go-L48">48</span>
+            <span class="line-number" id="file-segmented_primes-go-L49" rel="file-segmented_primes-go-L49">49</span>
+            <span class="line-number" id="file-segmented_primes-go-L50" rel="file-segmented_primes-go-L50">50</span>
+            <span class="line-number" id="file-segmented_primes-go-L51" rel="file-segmented_primes-go-L51">51</span>
+            <span class="line-number" id="file-segmented_primes-go-L52" rel="file-segmented_primes-go-L52">52</span>
+            <span class="line-number" id="file-segmented_primes-go-L53" rel="file-segmented_primes-go-L53">53</span>
+            <span class="line-number" id="file-segmented_primes-go-L54" rel="file-segmented_primes-go-L54">54</span>
+            <span class="line-number" id="file-segmented_primes-go-L55" rel="file-segmented_primes-go-L55">55</span>
+            <span class="line-number" id="file-segmented_primes-go-L56" rel="file-segmented_primes-go-L56">56</span>
+            <span class="line-number" id="file-segmented_primes-go-L57" rel="file-segmented_primes-go-L57">57</span>
+            <span class="line-number" id="file-segmented_primes-go-L58" rel="file-segmented_primes-go-L58">58</span>
+            <span class="line-number" id="file-segmented_primes-go-L59" rel="file-segmented_primes-go-L59">59</span>
+            <span class="line-number" id="file-segmented_primes-go-L60" rel="file-segmented_primes-go-L60">60</span>
+            <span class="line-number" id="file-segmented_primes-go-L61" rel="file-segmented_primes-go-L61">61</span>
+            <span class="line-number" id="file-segmented_primes-go-L62" rel="file-segmented_primes-go-L62">62</span>
+            <span class="line-number" id="file-segmented_primes-go-L63" rel="file-segmented_primes-go-L63">63</span>
+            <span class="line-number" id="file-segmented_primes-go-L64" rel="file-segmented_primes-go-L64">64</span>
+            <span class="line-number" id="file-segmented_primes-go-L65" rel="file-segmented_primes-go-L65">65</span>
+            <span class="line-number" id="file-segmented_primes-go-L66" rel="file-segmented_primes-go-L66">66</span>
+            <span class="line-number" id="file-segmented_primes-go-L67" rel="file-segmented_primes-go-L67">67</span>
+            <span class="line-number" id="file-segmented_primes-go-L68" rel="file-segmented_primes-go-L68">68</span>
+            <span class="line-number" id="file-segmented_primes-go-L69" rel="file-segmented_primes-go-L69">69</span>
+            <span class="line-number" id="file-segmented_primes-go-L70" rel="file-segmented_primes-go-L70">70</span>
+            <span class="line-number" id="file-segmented_primes-go-L71" rel="file-segmented_primes-go-L71">71</span>
+            <span class="line-number" id="file-segmented_primes-go-L72" rel="file-segmented_primes-go-L72">72</span>
+            <span class="line-number" id="file-segmented_primes-go-L73" rel="file-segmented_primes-go-L73">73</span>
+            <span class="line-number" id="file-segmented_primes-go-L74" rel="file-segmented_primes-go-L74">74</span>
+            <span class="line-number" id="file-segmented_primes-go-L75" rel="file-segmented_primes-go-L75">75</span>
+            <span class="line-number" id="file-segmented_primes-go-L76" rel="file-segmented_primes-go-L76">76</span>
+            <span class="line-number" id="file-segmented_primes-go-L77" rel="file-segmented_primes-go-L77">77</span>
+            <span class="line-number" id="file-segmented_primes-go-L78" rel="file-segmented_primes-go-L78">78</span>
+            <span class="line-number" id="file-segmented_primes-go-L79" rel="file-segmented_primes-go-L79">79</span>
+            <span class="line-number" id="file-segmented_primes-go-L80" rel="file-segmented_primes-go-L80">80</span>
+            <span class="line-number" id="file-segmented_primes-go-L81" rel="file-segmented_primes-go-L81">81</span>
+            <span class="line-number" id="file-segmented_primes-go-L82" rel="file-segmented_primes-go-L82">82</span>
+            <span class="line-number" id="file-segmented_primes-go-L83" rel="file-segmented_primes-go-L83">83</span>
+            <span class="line-number" id="file-segmented_primes-go-L84" rel="file-segmented_primes-go-L84">84</span>
+            <span class="line-number" id="file-segmented_primes-go-L85" rel="file-segmented_primes-go-L85">85</span>
+            <span class="line-number" id="file-segmented_primes-go-L86" rel="file-segmented_primes-go-L86">86</span>
+            <span class="line-number" id="file-segmented_primes-go-L87" rel="file-segmented_primes-go-L87">87</span>
+            <span class="line-number" id="file-segmented_primes-go-L88" rel="file-segmented_primes-go-L88">88</span>
+            <span class="line-number" id="file-segmented_primes-go-L89" rel="file-segmented_primes-go-L89">89</span>
+            <span class="line-number" id="file-segmented_primes-go-L90" rel="file-segmented_primes-go-L90">90</span>
+            <span class="line-number" id="file-segmented_primes-go-L91" rel="file-segmented_primes-go-L91">91</span>
+            <span class="line-number" id="file-segmented_primes-go-L92" rel="file-segmented_primes-go-L92">92</span>
+            <span class="line-number" id="file-segmented_primes-go-L93" rel="file-segmented_primes-go-L93">93</span>
+            <span class="line-number" id="file-segmented_primes-go-L94" rel="file-segmented_primes-go-L94">94</span>
+            <span class="line-number" id="file-segmented_primes-go-L95" rel="file-segmented_primes-go-L95">95</span>
+            <span class="line-number" id="file-segmented_primes-go-L96" rel="file-segmented_primes-go-L96">96</span>
+            <span class="line-number" id="file-segmented_primes-go-L97" rel="file-segmented_primes-go-L97">97</span>
+            <span class="line-number" id="file-segmented_primes-go-L98" rel="file-segmented_primes-go-L98">98</span>
+            <span class="line-number" id="file-segmented_primes-go-L99" rel="file-segmented_primes-go-L99">99</span>
+            <span class="line-number" id="file-segmented_primes-go-L100" rel="file-segmented_primes-go-L100">100</span>
+            <span class="line-number" id="file-segmented_primes-go-L101" rel="file-segmented_primes-go-L101">101</span>
+            <span class="line-number" id="file-segmented_primes-go-L102" rel="file-segmented_primes-go-L102">102</span>
+            <span class="line-number" id="file-segmented_primes-go-L103" rel="file-segmented_primes-go-L103">103</span>
+            <span class="line-number" id="file-segmented_primes-go-L104" rel="file-segmented_primes-go-L104">104</span>
+            <span class="line-number" id="file-segmented_primes-go-L105" rel="file-segmented_primes-go-L105">105</span>
+            <span class="line-number" id="file-segmented_primes-go-L106" rel="file-segmented_primes-go-L106">106</span>
+            <span class="line-number" id="file-segmented_primes-go-L107" rel="file-segmented_primes-go-L107">107</span>
+            <span class="line-number" id="file-segmented_primes-go-L108" rel="file-segmented_primes-go-L108">108</span>
+            <span class="line-number" id="file-segmented_primes-go-L109" rel="file-segmented_primes-go-L109">109</span>
+            <span class="line-number" id="file-segmented_primes-go-L110" rel="file-segmented_primes-go-L110">110</span>
+            <span class="line-number" id="file-segmented_primes-go-L111" rel="file-segmented_primes-go-L111">111</span>
+            <span class="line-number" id="file-segmented_primes-go-L112" rel="file-segmented_primes-go-L112">112</span>
+            <span class="line-number" id="file-segmented_primes-go-L113" rel="file-segmented_primes-go-L113">113</span>
+            <span class="line-number" id="file-segmented_primes-go-L114" rel="file-segmented_primes-go-L114">114</span>
+            <span class="line-number" id="file-segmented_primes-go-L115" rel="file-segmented_primes-go-L115">115</span>
+            <span class="line-number" id="file-segmented_primes-go-L116" rel="file-segmented_primes-go-L116">116</span>
+            <span class="line-number" id="file-segmented_primes-go-L117" rel="file-segmented_primes-go-L117">117</span>
+            <span class="line-number" id="file-segmented_primes-go-L118" rel="file-segmented_primes-go-L118">118</span>
+            <span class="line-number" id="file-segmented_primes-go-L119" rel="file-segmented_primes-go-L119">119</span>
+            <span class="line-number" id="file-segmented_primes-go-L120" rel="file-segmented_primes-go-L120">120</span>
+            <span class="line-number" id="file-segmented_primes-go-L121" rel="file-segmented_primes-go-L121">121</span>
+            <span class="line-number" id="file-segmented_primes-go-L122" rel="file-segmented_primes-go-L122">122</span>
+            <span class="line-number" id="file-segmented_primes-go-L123" rel="file-segmented_primes-go-L123">123</span>
+            <span class="line-number" id="file-segmented_primes-go-L124" rel="file-segmented_primes-go-L124">124</span>
+            <span class="line-number" id="file-segmented_primes-go-L125" rel="file-segmented_primes-go-L125">125</span>
+            <span class="line-number" id="file-segmented_primes-go-L126" rel="file-segmented_primes-go-L126">126</span>
+            <span class="line-number" id="file-segmented_primes-go-L127" rel="file-segmented_primes-go-L127">127</span>
+            <span class="line-number" id="file-segmented_primes-go-L128" rel="file-segmented_primes-go-L128">128</span>
+            <span class="line-number" id="file-segmented_primes-go-L129" rel="file-segmented_primes-go-L129">129</span>
+            <span class="line-number" id="file-segmented_primes-go-L130" rel="file-segmented_primes-go-L130">130</span>
+            <span class="line-number" id="file-segmented_primes-go-L131" rel="file-segmented_primes-go-L131">131</span>
+            <span class="line-number" id="file-segmented_primes-go-L132" rel="file-segmented_primes-go-L132">132</span>
+            <span class="line-number" id="file-segmented_primes-go-L133" rel="file-segmented_primes-go-L133">133</span>
+            <span class="line-number" id="file-segmented_primes-go-L134" rel="file-segmented_primes-go-L134">134</span>
+            <span class="line-number" id="file-segmented_primes-go-L135" rel="file-segmented_primes-go-L135">135</span>
+            <span class="line-number" id="file-segmented_primes-go-L136" rel="file-segmented_primes-go-L136">136</span>
+            <span class="line-number" id="file-segmented_primes-go-L137" rel="file-segmented_primes-go-L137">137</span>
+            <span class="line-number" id="file-segmented_primes-go-L138" rel="file-segmented_primes-go-L138">138</span>
+            <span class="line-number" id="file-segmented_primes-go-L139" rel="file-segmented_primes-go-L139">139</span>
+            <span class="line-number" id="file-segmented_primes-go-L140" rel="file-segmented_primes-go-L140">140</span>
+            <span class="line-number" id="file-segmented_primes-go-L141" rel="file-segmented_primes-go-L141">141</span>
+            <span class="line-number" id="file-segmented_primes-go-L142" rel="file-segmented_primes-go-L142">142</span>
+            <span class="line-number" id="file-segmented_primes-go-L143" rel="file-segmented_primes-go-L143">143</span>
+            <span class="line-number" id="file-segmented_primes-go-L144" rel="file-segmented_primes-go-L144">144</span>
+            <span class="line-number" id="file-segmented_primes-go-L145" rel="file-segmented_primes-go-L145">145</span>
+            <span class="line-number" id="file-segmented_primes-go-L146" rel="file-segmented_primes-go-L146">146</span>
+            <span class="line-number" id="file-segmented_primes-go-L147" rel="file-segmented_primes-go-L147">147</span>
+            <span class="line-number" id="file-segmented_primes-go-L148" rel="file-segmented_primes-go-L148">148</span>
+            <span class="line-number" id="file-segmented_primes-go-L149" rel="file-segmented_primes-go-L149">149</span>
+            <span class="line-number" id="file-segmented_primes-go-L150" rel="file-segmented_primes-go-L150">150</span>
+            <span class="line-number" id="file-segmented_primes-go-L151" rel="file-segmented_primes-go-L151">151</span>
+            <span class="line-number" id="file-segmented_primes-go-L152" rel="file-segmented_primes-go-L152">152</span>
+            <span class="line-number" id="file-segmented_primes-go-L153" rel="file-segmented_primes-go-L153">153</span>
+            <span class="line-number" id="file-segmented_primes-go-L154" rel="file-segmented_primes-go-L154">154</span>
+            <span class="line-number" id="file-segmented_primes-go-L155" rel="file-segmented_primes-go-L155">155</span>
+            <span class="line-number" id="file-segmented_primes-go-L156" rel="file-segmented_primes-go-L156">156</span>
+            <span class="line-number" id="file-segmented_primes-go-L157" rel="file-segmented_primes-go-L157">157</span>
+            <span class="line-number" id="file-segmented_primes-go-L158" rel="file-segmented_primes-go-L158">158</span>
+            <span class="line-number" id="file-segmented_primes-go-L159" rel="file-segmented_primes-go-L159">159</span>
+            <span class="line-number" id="file-segmented_primes-go-L160" rel="file-segmented_primes-go-L160">160</span>
+            <span class="line-number" id="file-segmented_primes-go-L161" rel="file-segmented_primes-go-L161">161</span>
+            <span class="line-number" id="file-segmented_primes-go-L162" rel="file-segmented_primes-go-L162">162</span>
+            <span class="line-number" id="file-segmented_primes-go-L163" rel="file-segmented_primes-go-L163">163</span>
+            <span class="line-number" id="file-segmented_primes-go-L164" rel="file-segmented_primes-go-L164">164</span>
+            <span class="line-number" id="file-segmented_primes-go-L165" rel="file-segmented_primes-go-L165">165</span>
+            <span class="line-number" id="file-segmented_primes-go-L166" rel="file-segmented_primes-go-L166">166</span>
+            <span class="line-number" id="file-segmented_primes-go-L167" rel="file-segmented_primes-go-L167">167</span>
+            <span class="line-number" id="file-segmented_primes-go-L168" rel="file-segmented_primes-go-L168">168</span>
+            <span class="line-number" id="file-segmented_primes-go-L169" rel="file-segmented_primes-go-L169">169</span>
+            <span class="line-number" id="file-segmented_primes-go-L170" rel="file-segmented_primes-go-L170">170</span>
+            <span class="line-number" id="file-segmented_primes-go-L171" rel="file-segmented_primes-go-L171">171</span>
+            <span class="line-number" id="file-segmented_primes-go-L172" rel="file-segmented_primes-go-L172">172</span>
+            <span class="line-number" id="file-segmented_primes-go-L173" rel="file-segmented_primes-go-L173">173</span>
+            <span class="line-number" id="file-segmented_primes-go-L174" rel="file-segmented_primes-go-L174">174</span>
+            <span class="line-number" id="file-segmented_primes-go-L175" rel="file-segmented_primes-go-L175">175</span>
+            <span class="line-number" id="file-segmented_primes-go-L176" rel="file-segmented_primes-go-L176">176</span>
+            <span class="line-number" id="file-segmented_primes-go-L177" rel="file-segmented_primes-go-L177">177</span>
+            <span class="line-number" id="file-segmented_primes-go-L178" rel="file-segmented_primes-go-L178">178</span>
+            <span class="line-number" id="file-segmented_primes-go-L179" rel="file-segmented_primes-go-L179">179</span>
+            <span class="line-number" id="file-segmented_primes-go-L180" rel="file-segmented_primes-go-L180">180</span>
+            <span class="line-number" id="file-segmented_primes-go-L181" rel="file-segmented_primes-go-L181">181</span>
+            <span class="line-number" id="file-segmented_primes-go-L182" rel="file-segmented_primes-go-L182">182</span>
+            <span class="line-number" id="file-segmented_primes-go-L183" rel="file-segmented_primes-go-L183">183</span>
+            <span class="line-number" id="file-segmented_primes-go-L184" rel="file-segmented_primes-go-L184">184</span>
+            <span class="line-number" id="file-segmented_primes-go-L185" rel="file-segmented_primes-go-L185">185</span>
+            <span class="line-number" id="file-segmented_primes-go-L186" rel="file-segmented_primes-go-L186">186</span>
+            <span class="line-number" id="file-segmented_primes-go-L187" rel="file-segmented_primes-go-L187">187</span>
+            <span class="line-number" id="file-segmented_primes-go-L188" rel="file-segmented_primes-go-L188">188</span>
+            <span class="line-number" id="file-segmented_primes-go-L189" rel="file-segmented_primes-go-L189">189</span>
+            <span class="line-number" id="file-segmented_primes-go-L190" rel="file-segmented_primes-go-L190">190</span>
+            <span class="line-number" id="file-segmented_primes-go-L191" rel="file-segmented_primes-go-L191">191</span>
+            <span class="line-number" id="file-segmented_primes-go-L192" rel="file-segmented_primes-go-L192">192</span>
+            <span class="line-number" id="file-segmented_primes-go-L193" rel="file-segmented_primes-go-L193">193</span>
+            <span class="line-number" id="file-segmented_primes-go-L194" rel="file-segmented_primes-go-L194">194</span>
+            <span class="line-number" id="file-segmented_primes-go-L195" rel="file-segmented_primes-go-L195">195</span>
+            <span class="line-number" id="file-segmented_primes-go-L196" rel="file-segmented_primes-go-L196">196</span>
+            <span class="line-number" id="file-segmented_primes-go-L197" rel="file-segmented_primes-go-L197">197</span>
+            <span class="line-number" id="file-segmented_primes-go-L198" rel="file-segmented_primes-go-L198">198</span>
+            <span class="line-number" id="file-segmented_primes-go-L199" rel="file-segmented_primes-go-L199">199</span>
+            <span class="line-number" id="file-segmented_primes-go-L200" rel="file-segmented_primes-go-L200">200</span>
+            <span class="line-number" id="file-segmented_primes-go-L201" rel="file-segmented_primes-go-L201">201</span>
+            <span class="line-number" id="file-segmented_primes-go-L202" rel="file-segmented_primes-go-L202">202</span>
+            <span class="line-number" id="file-segmented_primes-go-L203" rel="file-segmented_primes-go-L203">203</span>
+            <span class="line-number" id="file-segmented_primes-go-L204" rel="file-segmented_primes-go-L204">204</span>
+            <span class="line-number" id="file-segmented_primes-go-L205" rel="file-segmented_primes-go-L205">205</span>
+            <span class="line-number" id="file-segmented_primes-go-L206" rel="file-segmented_primes-go-L206">206</span>
+            <span class="line-number" id="file-segmented_primes-go-L207" rel="file-segmented_primes-go-L207">207</span>
+            <span class="line-number" id="file-segmented_primes-go-L208" rel="file-segmented_primes-go-L208">208</span>
+            <span class="line-number" id="file-segmented_primes-go-L209" rel="file-segmented_primes-go-L209">209</span>
+            <span class="line-number" id="file-segmented_primes-go-L210" rel="file-segmented_primes-go-L210">210</span>
+            <span class="line-number" id="file-segmented_primes-go-L211" rel="file-segmented_primes-go-L211">211</span>
+            <span class="line-number" id="file-segmented_primes-go-L212" rel="file-segmented_primes-go-L212">212</span>
+            <span class="line-number" id="file-segmented_primes-go-L213" rel="file-segmented_primes-go-L213">213</span>
+            <span class="line-number" id="file-segmented_primes-go-L214" rel="file-segmented_primes-go-L214">214</span>
+            <span class="line-number" id="file-segmented_primes-go-L215" rel="file-segmented_primes-go-L215">215</span>
+            <span class="line-number" id="file-segmented_primes-go-L216" rel="file-segmented_primes-go-L216">216</span>
+            <span class="line-number" id="file-segmented_primes-go-L217" rel="file-segmented_primes-go-L217">217</span>
+            <span class="line-number" id="file-segmented_primes-go-L218" rel="file-segmented_primes-go-L218">218</span>
+            <span class="line-number" id="file-segmented_primes-go-L219" rel="file-segmented_primes-go-L219">219</span>
+            <span class="line-number" id="file-segmented_primes-go-L220" rel="file-segmented_primes-go-L220">220</span>
+            <span class="line-number" id="file-segmented_primes-go-L221" rel="file-segmented_primes-go-L221">221</span>
+            <span class="line-number" id="file-segmented_primes-go-L222" rel="file-segmented_primes-go-L222">222</span>
+            <span class="line-number" id="file-segmented_primes-go-L223" rel="file-segmented_primes-go-L223">223</span>
+            <span class="line-number" id="file-segmented_primes-go-L224" rel="file-segmented_primes-go-L224">224</span>
+            <span class="line-number" id="file-segmented_primes-go-L225" rel="file-segmented_primes-go-L225">225</span>
+            <span class="line-number" id="file-segmented_primes-go-L226" rel="file-segmented_primes-go-L226">226</span>
+            <span class="line-number" id="file-segmented_primes-go-L227" rel="file-segmented_primes-go-L227">227</span>
+            <span class="line-number" id="file-segmented_primes-go-L228" rel="file-segmented_primes-go-L228">228</span>
+            <span class="line-number" id="file-segmented_primes-go-L229" rel="file-segmented_primes-go-L229">229</span>
+            <span class="line-number" id="file-segmented_primes-go-L230" rel="file-segmented_primes-go-L230">230</span>
+            <span class="line-number" id="file-segmented_primes-go-L231" rel="file-segmented_primes-go-L231">231</span>
+            <span class="line-number" id="file-segmented_primes-go-L232" rel="file-segmented_primes-go-L232">232</span>
+            <span class="line-number" id="file-segmented_primes-go-L233" rel="file-segmented_primes-go-L233">233</span>
+            <span class="line-number" id="file-segmented_primes-go-L234" rel="file-segmented_primes-go-L234">234</span>
+            <span class="line-number" id="file-segmented_primes-go-L235" rel="file-segmented_primes-go-L235">235</span>
+            <span class="line-number" id="file-segmented_primes-go-L236" rel="file-segmented_primes-go-L236">236</span>
+            <span class="line-number" id="file-segmented_primes-go-L237" rel="file-segmented_primes-go-L237">237</span>
+            <span class="line-number" id="file-segmented_primes-go-L238" rel="file-segmented_primes-go-L238">238</span>
+            <span class="line-number" id="file-segmented_primes-go-L239" rel="file-segmented_primes-go-L239">239</span>
+            <span class="line-number" id="file-segmented_primes-go-L240" rel="file-segmented_primes-go-L240">240</span>
+            <span class="line-number" id="file-segmented_primes-go-L241" rel="file-segmented_primes-go-L241">241</span>
+            <span class="line-number" id="file-segmented_primes-go-L242" rel="file-segmented_primes-go-L242">242</span>
+            <span class="line-number" id="file-segmented_primes-go-L243" rel="file-segmented_primes-go-L243">243</span>
+            <span class="line-number" id="file-segmented_primes-go-L244" rel="file-segmented_primes-go-L244">244</span>
+            <span class="line-number" id="file-segmented_primes-go-L245" rel="file-segmented_primes-go-L245">245</span>
+            <span class="line-number" id="file-segmented_primes-go-L246" rel="file-segmented_primes-go-L246">246</span>
+            <span class="line-number" id="file-segmented_primes-go-L247" rel="file-segmented_primes-go-L247">247</span>
+            <span class="line-number" id="file-segmented_primes-go-L248" rel="file-segmented_primes-go-L248">248</span>
+            <span class="line-number" id="file-segmented_primes-go-L249" rel="file-segmented_primes-go-L249">249</span>
+            <span class="line-number" id="file-segmented_primes-go-L250" rel="file-segmented_primes-go-L250">250</span>
+            <span class="line-number" id="file-segmented_primes-go-L251" rel="file-segmented_primes-go-L251">251</span>
+            <span class="line-number" id="file-segmented_primes-go-L252" rel="file-segmented_primes-go-L252">252</span>
+            <span class="line-number" id="file-segmented_primes-go-L253" rel="file-segmented_primes-go-L253">253</span>
+            <span class="line-number" id="file-segmented_primes-go-L254" rel="file-segmented_primes-go-L254">254</span>
+            <span class="line-number" id="file-segmented_primes-go-L255" rel="file-segmented_primes-go-L255">255</span>
+            <span class="line-number" id="file-segmented_primes-go-L256" rel="file-segmented_primes-go-L256">256</span>
+            <span class="line-number" id="file-segmented_primes-go-L257" rel="file-segmented_primes-go-L257">257</span>
+            <span class="line-number" id="file-segmented_primes-go-L258" rel="file-segmented_primes-go-L258">258</span>
+            <span class="line-number" id="file-segmented_primes-go-L259" rel="file-segmented_primes-go-L259">259</span>
+            <span class="line-number" id="file-segmented_primes-go-L260" rel="file-segmented_primes-go-L260">260</span>
+            <span class="line-number" id="file-segmented_primes-go-L261" rel="file-segmented_primes-go-L261">261</span>
+            <span class="line-number" id="file-segmented_primes-go-L262" rel="file-segmented_primes-go-L262">262</span>
+            <span class="line-number" id="file-segmented_primes-go-L263" rel="file-segmented_primes-go-L263">263</span>
+            <span class="line-number" id="file-segmented_primes-go-L264" rel="file-segmented_primes-go-L264">264</span>
+            <span class="line-number" id="file-segmented_primes-go-L265" rel="file-segmented_primes-go-L265">265</span>
+            <span class="line-number" id="file-segmented_primes-go-L266" rel="file-segmented_primes-go-L266">266</span>
+            <span class="line-number" id="file-segmented_primes-go-L267" rel="file-segmented_primes-go-L267">267</span>
+            <span class="line-number" id="file-segmented_primes-go-L268" rel="file-segmented_primes-go-L268">268</span>
+            <span class="line-number" id="file-segmented_primes-go-L269" rel="file-segmented_primes-go-L269">269</span>
+            <span class="line-number" id="file-segmented_primes-go-L270" rel="file-segmented_primes-go-L270">270</span>
+            <span class="line-number" id="file-segmented_primes-go-L271" rel="file-segmented_primes-go-L271">271</span>
+            <span class="line-number" id="file-segmented_primes-go-L272" rel="file-segmented_primes-go-L272">272</span>
+            <span class="line-number" id="file-segmented_primes-go-L273" rel="file-segmented_primes-go-L273">273</span>
+            <span class="line-number" id="file-segmented_primes-go-L274" rel="file-segmented_primes-go-L274">274</span>
+            <span class="line-number" id="file-segmented_primes-go-L275" rel="file-segmented_primes-go-L275">275</span>
+            <span class="line-number" id="file-segmented_primes-go-L276" rel="file-segmented_primes-go-L276">276</span>
+            <span class="line-number" id="file-segmented_primes-go-L277" rel="file-segmented_primes-go-L277">277</span>
+            <span class="line-number" id="file-segmented_primes-go-L278" rel="file-segmented_primes-go-L278">278</span>
+            <span class="line-number" id="file-segmented_primes-go-L279" rel="file-segmented_primes-go-L279">279</span>
+            <span class="line-number" id="file-segmented_primes-go-L280" rel="file-segmented_primes-go-L280">280</span>
+            <span class="line-number" id="file-segmented_primes-go-L281" rel="file-segmented_primes-go-L281">281</span>
+            <span class="line-number" id="file-segmented_primes-go-L282" rel="file-segmented_primes-go-L282">282</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-segmented_primes-go-LC1"><span class="c1">// Go implementation of a segmented Sieve of Eratosthenes. Much faster than the lazy</span></div><div class="line" id="file-segmented_primes-go-LC2"><span class="c1">// evaluation variants above. Sieves first 10^12 primes in 1 hour (4 cores); 10^9</span></div><div class="line" id="file-segmented_primes-go-LC3"><span class="c1">// candidates in the region of 10^18 takes about 2 minutes.</span></div><div class="line" id="file-segmented_primes-go-LC4">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC5"><span class="kn">package</span> <span class="nx">main</span></div><div class="line" id="file-segmented_primes-go-LC6">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC7"><span class="kn">import</span> <span class="s">"flag"</span></div><div class="line" id="file-segmented_primes-go-LC8"><span class="kn">import</span> <span class="s">"fmt"</span></div><div class="line" id="file-segmented_primes-go-LC9"><span class="kn">import</span> <span class="s">"log"</span></div><div class="line" id="file-segmented_primes-go-LC10"><span class="kn">import</span> <span class="s">"math"</span></div><div class="line" id="file-segmented_primes-go-LC11"><span class="kn">import</span> <span class="s">"math/big"</span></div><div class="line" id="file-segmented_primes-go-LC12"><span class="kn">import</span> <span class="s">"time"</span></div><div class="line" id="file-segmented_primes-go-LC13"><span class="kn">import</span> <span class="s">"runtime"</span></div><div class="line" id="file-segmented_primes-go-LC14">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC15"><span class="kd">var</span> <span class="nx">min_prime</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Int64</span><span class="p">(</span><span class="s">"min"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC16">	<span class="s">"Generate primes starting at this number."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC17"><span class="kd">var</span> <span class="nx">max_prime</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Int64</span><span class="p">(</span><span class="s">"max"</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC18">	<span class="s">"Generate primes up to and including this number."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC19"><span class="kd">var</span> <span class="nx">processes</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Int</span><span class="p">(</span><span class="s">"processes"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"Number of processes to use. "</span><span class="o">+</span></div><div class="line" id="file-segmented_primes-go-LC20">	<span class="s">"Best depends on the processor itself and the other flags set."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC21">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC22"><span class="kd">var</span> <span class="nx">sum_only</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Bool</span><span class="p">(</span><span class="s">"sum_only"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s">"Output only the sum to the main "</span><span class="o">+</span></div><div class="line" id="file-segmented_primes-go-LC23">	<span class="s">"thread, not every individual prime."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC24"><span class="kd">var</span> <span class="nx">vanilla</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Bool</span><span class="p">(</span><span class="s">"vanilla"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC25">	<span class="s">"Skip the segmenting entirely and use one large array."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC26">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC27"><span class="c1">// Fine tuning nobs; probably don't need to change these.</span></div><div class="line" id="file-segmented_primes-go-LC28"><span class="kd">var</span> <span class="nx">segment_size</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Int64</span><span class="p">(</span><span class="s">"segment_size"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC29">	<span class="s">"Number of values in each segment to check."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC30"><span class="kd">var</span> <span class="nx">segment_buffer</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Int</span><span class="p">(</span><span class="s">"buffer"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC31">	<span class="s">"Optional override for the size of channel buffers to use."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC32">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC33"><span class="kd">var</span> <span class="nx">DEBUG</span> <span class="p">=</span> <span class="kc">false</span></div><div class="line" id="file-segmented_primes-go-LC34">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC35"><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC36">	<span class="nx">flag</span><span class="p">.</span><span class="nx">Parse</span><span class="p">()</span></div><div class="line" id="file-segmented_primes-go-LC37">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC38">	<span class="k">if</span> <span class="o">*</span><span class="nx">max_prime</span> <span class="p">&lt;</span> <span class="o">*</span><span class="nx">min_prime</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC39">		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="s">"Max must be &gt;= min."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC40">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC41">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC42">	<span class="nx">segment_min</span> <span class="o">:=</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="o">*</span><span class="nx">max_prime</span><span class="p">)))</span></div><div class="line" id="file-segmented_primes-go-LC43">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC44">	<span class="k">if</span> <span class="o">*</span><span class="nx">segment_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC45">		<span class="o">*</span><span class="nx">segment_size</span> <span class="p">=</span> <span class="nx">segment_min</span> <span class="o">*</span> <span class="mi">2</span></div><div class="line" id="file-segmented_primes-go-LC46">	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">segment_min</span> <span class="p">&gt;</span> <span class="o">*</span><span class="nx">segment_size</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC47">		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"WARNING: Low segment size detected. Recommend setting "</span><span class="o">+</span></div><div class="line" id="file-segmented_primes-go-LC48">			<span class="s">"--segment_size to at least %v (currently %v)\n"</span><span class="p">,</span></div><div class="line" id="file-segmented_primes-go-LC49">			<span class="nx">segment_min</span><span class="p">,</span> <span class="o">*</span><span class="nx">segment_size</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC50">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC51">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC52">	<span class="k">if</span> <span class="o">*</span><span class="nx">sum_only</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC53">		<span class="nx">size</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="o">*</span><span class="nx">segment_size</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC54">		<span class="nx">max</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="o">*</span><span class="nx">max_prime</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC55">		<span class="nx">size</span><span class="p">.</span><span class="nx">Mul</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC56">		<span class="k">if</span> <span class="nx">size</span><span class="p">.</span><span class="nx">Cmp</span><span class="p">(</span><span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">((</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">62</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC57">			<span class="nx">log</span><span class="p">.</span><span class="nx">Fatalln</span><span class="p">(</span><span class="s">"ERROR: Numbers too large for --sum_only to be safe."</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC58">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC59">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC60">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC61">	<span class="k">if</span> <span class="o">*</span><span class="nx">segment_buffer</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC62">		<span class="o">*</span><span class="nx">segment_buffer</span> <span class="p">=</span> <span class="nb">int</span><span class="p">(</span><span class="o">*</span><span class="nx">segment_size</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC63">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC64">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC65">	<span class="nx">runtime</span><span class="p">.</span><span class="nx">GOMAXPROCS</span><span class="p">(</span><span class="o">*</span><span class="nx">processes</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC66">	<span class="nx">t</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span></div><div class="line" id="file-segmented_primes-go-LC67">	<span class="nx">Run</span><span class="p">(</span><span class="o">*</span><span class="nx">min_prime</span><span class="p">,</span> <span class="o">*</span><span class="nx">max_prime</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC68">	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Took"</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Since</span><span class="p">(</span><span class="nx">t</span><span class="p">))</span></div><div class="line" id="file-segmented_primes-go-LC69"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC70">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC71"><span class="kd">func</span> <span class="nx">Run</span><span class="p">(</span><span class="nx">min</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC72">	<span class="c1">// Schedule worker that fills a channel with segments</span></div><div class="line" id="file-segmented_primes-go-LC73">	<span class="c1">// Each segment does its work then fills a channel with the results</span></div><div class="line" id="file-segmented_primes-go-LC74">	<span class="c1">// Main thread then consumes segments; consumes primes from segment</span></div><div class="line" id="file-segmented_primes-go-LC75">	<span class="nx">primes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int64</span><span class="p">,</span> <span class="o">*</span><span class="nx">segment_buffer</span><span class="o">**</span><span class="nx">processes</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC76">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC77">	<span class="k">go</span> <span class="nx">GenPrimes</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">,</span> <span class="nx">primes</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC78">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC79">	<span class="nx">sum</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC80">	<span class="nx">accumulator</span> <span class="o">:=</span> <span class="nb">int64</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC81">	<span class="k">for</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">primes</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC82">		<span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">62</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC83">			<span class="nx">AddInt</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC84">			<span class="k">continue</span></div><div class="line" id="file-segmented_primes-go-LC85">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC86">		<span class="k">if</span> <span class="nx">accumulator</span> <span class="p">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">62</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC87">			<span class="nx">AddInt</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">accumulator</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC88">			<span class="nx">accumulator</span> <span class="p">=</span> <span class="mi">0</span></div><div class="line" id="file-segmented_primes-go-LC89">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC90">		<span class="nx">accumulator</span> <span class="o">+=</span> <span class="nx">v</span></div><div class="line" id="file-segmented_primes-go-LC91">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC92">	<span class="nx">AddInt</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">accumulator</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC93">	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Sum of primes from %v up to %v is %v\n"</span><span class="p">,</span> <span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC94"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC95">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC96"><span class="c1">// Returns a slice of all primes in [3, max]. Uses a linear array, no segmenting.</span></div><div class="line" id="file-segmented_primes-go-LC97"><span class="kd">func</span> <span class="nx">ArrayPrimes</span><span class="p">(</span><span class="nx">max</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int64</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC98">	<span class="k">if</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC99">		<span class="nx">max</span> <span class="o">-=</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC100">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC101">	<span class="nx">primes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int64</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC102">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC103">	<span class="nx">bits</span> <span class="o">:=</span> <span class="nx">NewBitArray</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC104">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">int64</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC105">		<span class="k">if</span> <span class="nx">bits</span><span class="p">.</span><span class="nx">Bit</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC106">			<span class="c1">// Prime!</span></div><div class="line" id="file-segmented_primes-go-LC107">			<span class="nx">primes</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">primes</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC108">			<span class="k">for</span> <span class="nx">next</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">next</span> <span class="o">&lt;=</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">next</span> <span class="o">+=</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC109">				<span class="nx">bits</span><span class="p">.</span><span class="nx">SetBit</span><span class="p">(</span><span class="nx">next</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC110">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC111">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC112">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC113">	<span class="k">return</span> <span class="nx">primes</span></div><div class="line" id="file-segmented_primes-go-LC114"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC115">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC116"><span class="kd">func</span> <span class="nx">GenPrimes</span><span class="p">(</span><span class="nx">min</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">out</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC117">	<span class="c1">// Pre-calculate first sqrt(n) primes, for all the segments to reference.</span></div><div class="line" id="file-segmented_primes-go-LC118">	<span class="kd">var</span> <span class="nx">pre</span> <span class="kt">int64</span></div><div class="line" id="file-segmented_primes-go-LC119">	<span class="k">if</span> <span class="o">*</span><span class="nx">vanilla</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC120">		<span class="nx">pre</span> <span class="p">=</span> <span class="nx">max</span></div><div class="line" id="file-segmented_primes-go-LC121">	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC122">		<span class="nx">pre</span> <span class="p">=</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">max</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC123">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC124">	<span class="nx">pre_primes</span> <span class="o">:=</span> <span class="nx">ArrayPrimes</span><span class="p">(</span><span class="nx">pre</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC125">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC126">	<span class="k">if</span> <span class="nx">min</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC127">		<span class="nx">out</span> <span class="o">&lt;-</span> <span class="mi">2</span></div><div class="line" id="file-segmented_primes-go-LC128">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC129">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">pre_primes</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC130">		<span class="k">if</span> <span class="nx">v</span> <span class="o">&gt;=</span> <span class="nx">min</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC131">			<span class="nx">out</span> <span class="o">&lt;-</span> <span class="nx">v</span></div><div class="line" id="file-segmented_primes-go-LC132">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC133">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC134">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC135">	<span class="nx">segments</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">chan</span> <span class="kt">int64</span><span class="p">,</span> <span class="o">*</span><span class="nx">processes</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC136">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC137">	<span class="c1">// Copy primes from the individual segments to 'out', closing it when every</span></div><div class="line" id="file-segmented_primes-go-LC138">	<span class="c1">// prime is in.</span></div><div class="line" id="file-segmented_primes-go-LC139">	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC140">		<span class="nx">start_time</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span></div><div class="line" id="file-segmented_primes-go-LC141">		<span class="nx">last_time</span> <span class="o">:=</span> <span class="nx">start_time</span></div><div class="line" id="file-segmented_primes-go-LC142">		<span class="nx">num_segments</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">/</span> <span class="o">*</span><span class="nx">segment_size</span></div><div class="line" id="file-segmented_primes-go-LC143">		<span class="k">if</span> <span class="nx">num_segments</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC144">			<span class="nx">num_segments</span> <span class="p">=</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC145">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC146">		<span class="nx">done_segments</span> <span class="o">:=</span> <span class="nb">int64</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC147">		<span class="k">for</span> <span class="nx">s</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">segments</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC148">			<span class="k">for</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC149">				<span class="nx">out</span> <span class="o">&lt;-</span> <span class="nx">v</span></div><div class="line" id="file-segmented_primes-go-LC150">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC151">			<span class="nx">done_segments</span> <span class="o">+=</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC152">			<span class="k">if</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Since</span><span class="p">(</span><span class="nx">last_time</span><span class="p">)</span> <span class="p">&gt;</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="o">*</span><span class="mi">5</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC153">				<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Elapsed %v Done segments %v/%v (%v%%)\n"</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Since</span><span class="p">(</span><span class="nx">start_time</span><span class="p">),</span></div><div class="line" id="file-segmented_primes-go-LC154">					<span class="nx">done_segments</span><span class="p">,</span> <span class="nx">num_segments</span><span class="p">,</span> <span class="mf">100.0</span><span class="o">*</span><span class="nb">float64</span><span class="p">(</span><span class="nx">done_segments</span><span class="p">)</span><span class="o">/</span><span class="nb">float64</span><span class="p">(</span><span class="nx">num_segments</span><span class="p">))</span></div><div class="line" id="file-segmented_primes-go-LC155">				<span class="nx">last_time</span> <span class="p">=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span></div><div class="line" id="file-segmented_primes-go-LC156">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC157">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC158">		<span class="nb">close</span><span class="p">(</span><span class="nx">out</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC159">	<span class="p">}()</span></div><div class="line" id="file-segmented_primes-go-LC160">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC161">	<span class="c1">// Now setup the segments themselves for calculating the batches.</span></div><div class="line" id="file-segmented_primes-go-LC162">	<span class="c1">// Each outputs to its own channel, to keep ordering intact, although they may</span></div><div class="line" id="file-segmented_primes-go-LC163">	<span class="c1">// be processed in parallel.</span></div><div class="line" id="file-segmented_primes-go-LC164">	<span class="nx">next</span> <span class="o">:=</span> <span class="nx">pre</span> <span class="o">+</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC165">	<span class="k">if</span> <span class="nx">min</span> <span class="p">&gt;</span> <span class="nx">next</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC166">		<span class="nx">next</span> <span class="p">=</span> <span class="nx">min</span></div><div class="line" id="file-segmented_primes-go-LC167">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC168">	<span class="k">for</span> <span class="nx">next</span> <span class="o">&lt;=</span> <span class="nx">max</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC169">		<span class="nx">next_end</span> <span class="o">:=</span> <span class="nx">next</span> <span class="o">+</span> <span class="o">*</span><span class="nx">segment_size</span></div><div class="line" id="file-segmented_primes-go-LC170">		<span class="k">if</span> <span class="nx">max</span> <span class="p">&lt;</span> <span class="nx">next_end</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC171">			<span class="nx">next_end</span> <span class="p">=</span> <span class="nx">max</span></div><div class="line" id="file-segmented_primes-go-LC172">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC173">		<span class="kd">var</span> <span class="nx">c</span> <span class="kd">chan</span> <span class="kt">int64</span></div><div class="line" id="file-segmented_primes-go-LC174">		<span class="k">if</span> <span class="o">*</span><span class="nx">sum_only</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC175">			<span class="nx">c</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int64</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC176">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC177">			<span class="nx">c</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int64</span><span class="p">,</span> <span class="o">*</span><span class="nx">segment_buffer</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC178">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC179">		<span class="k">go</span> <span class="nx">GenSegment</span><span class="p">(</span><span class="nx">next</span><span class="p">,</span> <span class="nx">next_end</span><span class="p">,</span> <span class="nx">pre_primes</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC180">		<span class="nx">segments</span> <span class="o">&lt;-</span> <span class="nx">c</span></div><div class="line" id="file-segmented_primes-go-LC181">		<span class="nx">next</span> <span class="p">=</span> <span class="nx">next_end</span> <span class="o">+</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC182">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC183">	<span class="nb">close</span><span class="p">(</span><span class="nx">segments</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC184"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC185">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC186"><span class="c1">// Generates primes in [min, max] and outputs them to out.</span></div><div class="line" id="file-segmented_primes-go-LC187"><span class="c1">// 'primes' must contain all primes &lt;= sqrt(max) (except 2).</span></div><div class="line" id="file-segmented_primes-go-LC188"><span class="kd">func</span> <span class="nx">GenSegment</span><span class="p">(</span><span class="nx">min</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">primes</span> <span class="p">[]</span><span class="kt">int64</span><span class="p">,</span> <span class="nx">out</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC189">	<span class="k">if</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">min</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC190">		<span class="nx">min</span> <span class="o">+=</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC191">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC192">	<span class="k">if</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC193">		<span class="nx">max</span> <span class="o">-=</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC194">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC195">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC196">	<span class="nx">bits</span> <span class="o">:=</span> <span class="nx">NewBitArray</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC197">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">p</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">primes</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC198">		<span class="nx">start</span> <span class="o">:=</span> <span class="nx">p</span> <span class="o">*</span> <span class="nx">p</span></div><div class="line" id="file-segmented_primes-go-LC199">		<span class="k">if</span> <span class="nx">start</span> <span class="p">&gt;</span> <span class="nx">max</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC200">			<span class="k">break</span></div><div class="line" id="file-segmented_primes-go-LC201">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC202">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC203">		<span class="c1">// Find first value that is a multiple of p, &gt;= min, and odd.</span></div><div class="line" id="file-segmented_primes-go-LC204">		<span class="k">if</span> <span class="nx">start</span> <span class="p">&lt;</span> <span class="nx">min</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC205">			<span class="nx">start</span> <span class="p">=</span> <span class="nx">min</span> <span class="o">-</span> <span class="p">(</span><span class="nx">min</span> <span class="o">%</span> <span class="nx">p</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC206">			<span class="k">if</span> <span class="nx">start</span> <span class="p">&lt;</span> <span class="nx">min</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC207">				<span class="nx">start</span> <span class="o">+=</span> <span class="nx">p</span></div><div class="line" id="file-segmented_primes-go-LC208">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC209">			<span class="k">if</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC210">				<span class="nx">start</span> <span class="o">+=</span> <span class="nx">p</span></div><div class="line" id="file-segmented_primes-go-LC211">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC212">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC213">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC214">		<span class="k">for</span> <span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">max</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC215">			<span class="nx">bits</span><span class="p">.</span><span class="nx">SetBit</span><span class="p">(</span><span class="nx">start</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC216">			<span class="nx">start</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nx">p</span></div><div class="line" id="file-segmented_primes-go-LC217">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC218">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC219">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC220">	<span class="c1">// Output the primes remaining.</span></div><div class="line" id="file-segmented_primes-go-LC221">	<span class="nx">sum</span> <span class="o">:=</span> <span class="nb">int64</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC222">	<span class="nx">sum_only</span> <span class="o">:=</span> <span class="o">*</span><span class="nx">sum_only</span></div><div class="line" id="file-segmented_primes-go-LC223">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nx">min</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC224">		<span class="k">if</span> <span class="nx">bits</span><span class="p">.</span><span class="nx">Bit</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC225">			<span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span></div><div class="line" id="file-segmented_primes-go-LC226">			<span class="k">if</span> <span class="p">!</span><span class="nx">sum_only</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC227">				<span class="nx">out</span> <span class="o">&lt;-</span> <span class="nx">i</span></div><div class="line" id="file-segmented_primes-go-LC228">			<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC229">		<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC230">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC231">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC232">	<span class="k">if</span> <span class="nx">sum_only</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC233">		<span class="nx">out</span> <span class="o">&lt;-</span> <span class="nx">sum</span></div><div class="line" id="file-segmented_primes-go-LC234">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC235">	<span class="nb">close</span><span class="p">(</span><span class="nx">out</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC236"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC237">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC238"><span class="kd">func</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC239">	<span class="k">return</span> <span class="nx">num</span><span class="o">&amp;</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span></div><div class="line" id="file-segmented_primes-go-LC240"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC241">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC242"><span class="kd">func</span> <span class="nx">AddInt</span><span class="p">(</span><span class="nx">z</span> <span class="o">*</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span><span class="p">,</span> <span class="nx">x</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC243">	<span class="nx">x_big</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC244">	<span class="nx">z</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">z</span><span class="p">,</span> <span class="nx">x_big</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC245"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC246">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC247"><span class="c1">// A structure for efficiently addressing odd bits. Similar performance to a</span></div><div class="line" id="file-segmented_primes-go-LC248"><span class="c1">// bool array, except requires much less space.</span></div><div class="line" id="file-segmented_primes-go-LC249"><span class="kd">type</span> <span class="nx">BitArray</span> <span class="kd">struct</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC250">	<span class="nx">Min</span>  <span class="kt">int64</span></div><div class="line" id="file-segmented_primes-go-LC251">	<span class="nx">Max</span>  <span class="kt">int64</span></div><div class="line" id="file-segmented_primes-go-LC252">	<span class="nx">data</span> <span class="p">[]</span><span class="kt">byte</span></div><div class="line" id="file-segmented_primes-go-LC253"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC254">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC255"><span class="kd">func</span> <span class="nx">NewBitArray</span><span class="p">(</span><span class="nx">min</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int64</span><span class="p">)</span> <span class="o">*</span><span class="nx">BitArray</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC256">	<span class="k">if</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">min</span><span class="p">)</span> <span class="o">||</span> <span class="nx">Even</span><span class="p">(</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC257">		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatalf</span><span class="p">(</span><span class="s">"min and max must be odd; got (%v, %v)\n"</span><span class="p">,</span> <span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC258">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC259">	<span class="nx">elements</span> <span class="o">:=</span> <span class="p">((</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span></div><div class="line" id="file-segmented_primes-go-LC260">	<span class="nx">data</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="p">(</span><span class="nx">elements</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">3</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC261">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">BitArray</span><span class="p">{</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">,</span> <span class="nx">data</span><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC262"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC263">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC264"><span class="kd">func</span> <span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">BitArray</span><span class="p">)</span> <span class="nx">Bit</span><span class="p">(</span><span class="nx">index</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC265">	<span class="k">if</span> <span class="nx">DEBUG</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span> <span class="o">||</span> <span class="nx">index</span> <span class="p">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Max</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC266">		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatalf</span><span class="p">(</span><span class="s">"Index out of bounds! %v outside [%v, %v]\n"</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC267">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC268">	<span class="nx">offset</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span></div><div class="line" id="file-segmented_primes-go-LC269">	<span class="nx">offset_byte</span> <span class="o">:=</span> <span class="nx">offset</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span></div><div class="line" id="file-segmented_primes-go-LC270">	<span class="nx">offset_bit</span> <span class="o">:=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">offset</span> <span class="o">&amp;</span> <span class="mh">0x7</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC271">	<span class="k">return</span> <span class="nx">b</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">offset_byte</span><span class="p">]</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="nx">offset_bit</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span></div><div class="line" id="file-segmented_primes-go-LC272"><span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC273">&nbsp;</div><div class="line" id="file-segmented_primes-go-LC274"><span class="kd">func</span> <span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">BitArray</span><span class="p">)</span> <span class="nx">SetBit</span><span class="p">(</span><span class="nx">index</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC275">	<span class="k">if</span> <span class="nx">DEBUG</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span> <span class="o">||</span> <span class="nx">index</span> <span class="p">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Max</span><span class="p">)</span> <span class="p">{</span></div><div class="line" id="file-segmented_primes-go-LC276">		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatalf</span><span class="p">(</span><span class="s">"Index out of bounds! %v outside [%v, %v]\n"</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Max</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC277">	<span class="p">}</span></div><div class="line" id="file-segmented_primes-go-LC278">	<span class="nx">offset</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">Min</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span></div><div class="line" id="file-segmented_primes-go-LC279">	<span class="nx">offset_byte</span> <span class="o">:=</span> <span class="nx">offset</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span></div><div class="line" id="file-segmented_primes-go-LC280">	<span class="nx">offset_bit</span> <span class="o">:=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">offset</span> <span class="o">&amp;</span> <span class="mh">0x7</span><span class="p">)</span></div><div class="line" id="file-segmented_primes-go-LC281">	<span class="nx">b</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">offset_byte</span><span class="p">]</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="nx">offset_bit</span></div><div class="line" id="file-segmented_primes-go-LC282"><span class="p">}</span></div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/EricBurnett/320271/raw/segmented_primes.go" style="float:right">view raw</a>
+            <a href="https://gist.github.com/EricBurnett/320271#file-segmented_primes-go">segmented_primes.go</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+</div><br>
+<p>The algorithm proceeds as follows:<br>
+</p><ol><li>Calculate primes up to √max via a vanilla array sieve</li>
+<li>Slice up segments of about √max candidates for checking</li>
+<li>To check a range,<br>
+<ol><li>For each prime p from 1., find the first multiple within the range that's &gt;= p<sup>2</sup></li>
+<li>Cross off every multiple from there to the end of the range</li>
+</ol></li>
+<li>Merge the results from the processed segments</li></ol><p></p><p>You'll note that other than splitting the full candiate set into segments, this is the standard Sieve of Eratosthenes. Hence, it's the <i>segmented</i> Sieve of Eratosthenes.</p><p>In my Go version this is implemented by starting segments as individual goroutines that output to their own channels. A single worker goroutine is responsible for marshaling the results from these channels to a single channel read by the main thread. This architecture was chosen simply because it fits well with the Go way of doing things, but it also has the side-effect of providing some amount of free parallelism.</p><h2>Results</h2><p>The very first run of this variant was faster than the most optimized version from my previous post. It runs at about 65% the speed of a vanilla implementation, making it about 2.5x as efficient as the previous lazy implementations, with a lower memory footprint. As always, a better algorithm is worth more than any amount of low level code tuning :). I should point out that in the current implementation I also implemented a bit array rather than simply using an array of bools. This reduced the memory footprint somewhat, but did not appear to have any significant impact in either direction on CPU time required, and so could reasonably be dropped to shorten the code.</p><p>With all primes needing to be marshaled back to the main thread parallelism maxes out below 2x linear. If all we care about is an aggregate value computed from the primes (the sum in this case), rather than the primes themselves in order, we can achieve &gt;4x parallelism simply by adding more processes. This is also more efficient in general, and allows &gt;300,000,000 primes to be processed in one second<sup>[<a href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html#ss_footnote2">2</a>]</sup>.</p><p>The net result is an implementation that can sieve 50M candidates in one second on one core or sum 300M on four; sum primes up to one trillion in an hour; or sum primes in a range of one billion (10^9) in the region of one quintillion (10^18) in under a minute. I'm happy with that...for now.</p><h2>Footnotes</h2><ol><li><a name="ss_footnote1">Let me say right now that Go is a fantastic language to work with, being both easy to write and efficient to run. I fully intend to start writing some of my work projects in Go in the near future.</a></li>
+<li><a name="ss_footnote2">As noted in the previous post, we use the generic "primes in one second" metric for making apples-to-oranges comparisons of algorithms and implementations. This is not intended to provide anything more than a rough comparison.</a></li></ol><p></p>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+Posted by
+<span class="fn">Eric Burnett</span>
+</span>
+<span class="post-timestamp">
+at
+<a class="timestamp-link" href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/The Lowly Programmer  Primes part 2  A segmented sieve.htm" rel="bookmark" title="permanent link"><abbr class="published" title="2012-08-26T10:41:00-04:00">10:41 AM</abbr></a>
+</span><span class="post-comment-link">
+</span><span class="post-icons">
+<span class="item-control blog-admin pid-46383476">
+<a href="http://www.blogger.com/post-edit.g?blogID=1806360094658697411&postID=4728624078059707982&from=pencil" title="Edit Post">
+<img alt="" class="icon-action" height="18" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-2"></div>
+<div class="post-footer-line post-footer-line-3"></div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>3 comments</h4>
+<div class="comments-content">
+<script async="async" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/comments.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function() {
+      var items = [{'id': '8742864508514527677', 'body': 'I also wrote an Eratosthenesque prime sieve using Go and channels here a while ago: http://blog.onideas.ws/eratosthenes.go\74br /\76\74br /\76It is slower than yours but is more channel-ish, i.e. lots of communicating over channels.\74br /\76\74br /\76Interesting that your parallel segment filtering design will output primes but not in increasing order, e.g. hard to ask \46quot;which is the 10 millionth prime?\46quot;, but good for summing them I guess.', 'timestamp': '1346495762462', 'permalink': 'http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment\0751346495762462#c8742864508514527677', 'author': {'name': 'Trinh Hai-Anh', 'profileUrl': 'http://www.blogger.com/profile/15497739743932940838'}, 'displayTime': 'September 1, 2012 at 6:36 AM', 'deleteclass': 'item-control blog-admin pid-1281042111'}, {'id': '7018042640160194175', 'parentId': '8742864508514527677', 'body': 'Thanks for the link! The paper your approach is based on was the basis for my original post (linked above), albeit not in Go. Definitely an interesting read (and fun to port to non-Haskell).\74br /\76\74br /\76\46gt; Interesting that your parallel segment filtering design will output primes but not in increasing order [...]\74br /\76\74br /\76It actually does output them in order. Segments are computed in parallel, but writing results to their own buffer channels. The contents of the buffers are later copied to the main output channel in segment order - there is a goroutine specifically dedicated to doing so. This somewhat limits the parallelism achievable (to 1.85x on my machine) since it involves non-trivial serial work, but it also means that all primes are output sequentially.', 'timestamp': '1346515922126', 'permalink': 'http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment\0751346515922126#c7018042640160194175', 'author': {'name': 'Eric Burnett', 'profileUrl': 'http://www.blogger.com/profile/10741882872804697111'}, 'displayTime': 'September 1, 2012 at 12:12 PM', 'deleteclass': 'item-control blog-admin pid-46383476'}, {'id': '3520115077432880440', 'body': 'Eric, a great first post introducing the principles of prime sieving using the Sieve of Eratosthenes and the logical progression of improved performance with gradually improved algorithms along with this follow-up post, but I think you stopped too soon in not considering further improvements to the Array based sieves as in paging, wheel factorization, and multi-threading, not to mention eliminating the enumeration itself for some types of results such as the count, the nth, and the sum of all elements over a range; when the other optimizations are fully utilized, enumeration takes about ten times longer than the process of actually culling composite numbers itself.  Following is a link to a C# program that produces the count of the primes from the first four billion candidates (actually 2 ^ 32) in about a second on about the speed of machine as you likely were using to do these tests (fi7-2700K 3.5 GHz machine I was using), and even numerates them about five times faster than your Array based version:  http://stackoverflow.com/a/18885065/549617.  I\46#39;m not sure how to compute your \46quot;candidates per second\46quot; as this algorithm pre-culls some composite numbers using wheel factorization, but a range of four billion in one second might mean four billion candidates per second or it might mean 718 million candidates per second processed after pre-culling; alternatively it could mean about 515 million composite numbers eliminated per second leaving about 200 million primes.  All of them are much faster than any C# prime sieving code I have seen published and only slower than extremely optimized C code.', 'timestamp': '1386929704036', 'permalink': 'http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment\0751386929704036#c3520115077432880440', 'author': {'name': 'try2bGood', 'profileUrl': 'http://www.blogger.com/profile/12342631770782514910'}, 'displayTime': 'December 13, 2013 at 5:15 AM', 'deleteclass': 'item-control blog-admin pid-859471727'}];
+      var msgs = {'loadMore': 'Load more...', 'loading': 'Loading...', 'loaded': 'No more!', 'addComment': 'Add comment', 'reply': 'Reply', 'delete': 'Delete'};
+      var config = {'blogId': '1806360094658697411', 'postId': '4728624078059707982', 'feed': 'http://www.thelowlyprogrammer.com/feeds/4728624078059707982/comments/default', 'authorName': 'Eric Burnett', 'authorUrl': 'http://www.blogger.com/profile/10741882872804697111', 'baseUri': 'http://www.blogger.com', 'maxThreadDepth': 2};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+</script>
+<div id="comment-holder">
+
+<div id="bc_0_4C" kind="c"><div id="bc_0_4CT"><div id="bc_0_3T" class="comment-thread" kind="r" t="0" u="0"><ol id="bc_0_3TB"><li id="bc_0_1B" class="comment" kind="b"><div class="avatar-image-container"><img src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/anon36.png"></div><div id="c8742864508514527677" class="comment-block"><div id="bc_0_1M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/15497739743932940838">Trinh Hai-Anh</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment=1346495762462#c8742864508514527677">September 1, 2012 at 6:36 AM</a></span></div><p id="bc_0_1MC" class="comment-content">I also wrote an Eratosthenesque prime sieve using Go and channels here a while ago: http://blog.onideas.ws/eratosthenes.go<br><br>It is slower than yours but is more channel-ish, i.e. lots of communicating over channels.<br><br>Interesting that your parallel segment filtering design will output primes but not in increasing order, e.g. hard to ask "which is the 10 millionth prime?", but good for summing them I guess.</p><span id="bc_0_1MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Reply</a><span class="item-control blog-admin pid-1281042111"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=1806360094658697411&postID=8742864508514527677">Delete</a></span></span></div><div id="bc_0_1BR" class="comment-replies"><span id="bc_0_1b+seedOWQgD" kind="d"><div id="bc_0_0T" class="comment-thread inline-thread" kind="t" t="0" u="0"><span id="bc_0_0TT" class="thread-toggle thread-expanded" kind="g"><span id="bc_0_0TA" class="thread-arrow"></span><span id="bc_0_0TN" class="thread-count"><span id="bc_0_0TNT" style="display: none;"></span><span id="bc_0_0TNU" style="display: none;"></span><a href="javascript:;" target="_self">Replies</a><div id="bc_0_0TD" class="thread-dropContainer thread-expanded"><span class="thread-drop"></span></div></span></span><ol id="bc_0_0TC" class="thread-chrome thread-expanded"><div><li id="bc_0_0B" class="comment" kind="b"><div class="avatar-image-container"><img src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/anon36.png"></div><div id="c7018042640160194175" class="comment-block"><div id="bc_0_0M" class="comment-header" kind="m"><cite class="user blog-author"><a rel="nofollow" href="http://www.blogger.com/profile/10741882872804697111">Eric Burnett</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment=1346515922126#c7018042640160194175">September 1, 2012 at 12:12 PM</a></span></div><p id="bc_0_0MC" class="comment-content">Thanks for the link! The paper your approach is based on was the basis for my original post (linked above), albeit not in Go. Definitely an interesting read (and fun to port to non-Haskell).<br><br>&gt; Interesting that your parallel segment filtering design will output primes but not in increasing order [...]<br><br>It actually does output them in order. Segments are computed in parallel, but writing results to their own buffer channels. The contents of the buffers are later copied to the main output channel in segment order - there is a goroutine specifically dedicated to doing so. This somewhat limits the parallelism achievable (to 1.85x on my machine) since it involves non-trivial serial work, but it also means that all primes are output sequentially.</p><span id="bc_0_0MN" class="comment-actions secondary-text" kind="m"><span class="item-control blog-admin pid-46383476"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=1806360094658697411&postID=7018042640160194175">Delete</a></span></span></div><div id="bc_0_0BR" class="comment-replies"></div><div id="bc_0_0B_box" class="comment-replybox-single"></div></li></div><div id="bc_0_0I" class="continue" kind="ci"><a href="javascript:;" target="_self">Reply</a></div></ol><div id="bc_0_0T_box" class="comment-replybox-thread"></div></div></span></div><div id="bc_0_1B_box" class="comment-replybox-single"></div></li><li id="bc_0_2B" class="comment" kind="b"><div class="avatar-image-container"><img src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/anon36.png"></div><div id="c3520115077432880440" class="comment-block"><div id="bc_0_2M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="http://www.blogger.com/profile/12342631770782514910">try2bGood</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html?showComment=1386929704036#c3520115077432880440">December 13, 2013 at 5:15 AM</a></span></div><p id="bc_0_2MC" class="comment-content">Eric, a great first post introducing the principles of prime sieving using the Sieve of Eratosthenes and the logical progression of improved performance with gradually improved algorithms along with this follow-up post, but I think you stopped too soon in not considering further improvements to the Array based sieves as in paging, wheel factorization, and multi-threading, not to mention eliminating the enumeration itself for some types of results such as the count, the nth, and the sum of all elements over a range; when the other optimizations are fully utilized, enumeration takes about ten times longer than the process of actually culling composite numbers itself.  Following is a link to a C# program that produces the count of the primes from the first four billion candidates (actually 2 ^ 32) in about a second on about the speed of machine as you likely were using to do these tests (fi7-2700K 3.5 GHz machine I was using), and even numerates them about five times faster than your Array based version:  http://stackoverflow.com/a/18885065/549617.  I'm not sure how to compute your "candidates per second" as this algorithm pre-culls some composite numbers using wheel factorization, but a range of four billion in one second might mean four billion candidates per second or it might mean 718 million candidates per second processed after pre-culling; alternatively it could mean about 515 million composite numbers eliminated per second leaving about 200 million primes.  All of them are much faster than any C# prime sieving code I have seen published and only slower than extremely optimized C code.</p><span id="bc_0_2MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Reply</a><span class="item-control blog-admin pid-859471727"><a o="d" target="_self" href="http://www.blogger.com/delete-comment.g?blogID=1806360094658697411&postID=3520115077432880440">Delete</a></span></span></div><div id="bc_0_2BR" class="comment-replies"></div><div id="bc_0_2B_box" class="comment-replybox-single"></div></li></ol><div id="bc_0_3I" class="continue" kind="ci" style="display: none;"><a href="javascript:;" target="_self">Add comment</a></div><div id="bc_0_3T_box" class="comment-replybox-thread"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="260px" id="comment-editor" name="comment-editor" src="https://www.blogger.com/comment-iframe.g?blogID=1806360094658697411&postID=4728624078059707982&blogspotRpcToken=3507638#%7B%22color%22%3A%22rgb(51%2C%2051%2C%2051)%22%2C%22backgroundColor%22%3A%22rgb(255%2C%20255%2C%20255)%22%2C%22unvisitedLinkColor%22%3A%22rgb(85%2C%20136%2C%20170)%22%2C%22fontFamily%22%3A%22Georgia%2C%20serif%22%7D" width="100%" style="display: block;"></iframe></div><div id="bc_0_3L" class="loadmore loaded" kind="rb"><a href="javascript:;" target="_self">Load more...</a></div></div></div></div></div>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=1806360094658697411&postID=4728624078059707982&blogspotRpcToken=3507638" id="comment-editor-src"></a>
+
+<script type="text/javascript" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/313381681-comment_from_post_iframe.js"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '09984430287816232967');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://www.thelowlyprogrammer.com/2012/11/hardware-trends-for-datacenter-computing.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://www.thelowlyprogrammer.com/2012/08/the-algorithms-of-memory.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="http://www.thelowlyprogrammer.com/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="http://www.thelowlyprogrammer.com/feeds/4728624078059707982/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
+</div></div>
+</div>
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar"><div class="widget HTML" id="HTML1">
+<h2 class="title">About Me</h2>
+<div class="widget-content">
+<span>
+<img border="0" width="50%" align="right" style="margin: 1px" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/ericburnett.jpg">
+I'm Eric Burnett, a software engineer at Google. I'm interested in studying what makes programmers tick, and writing whatever code strikes my fancy. Read my <a href="http://www.thelowlyprogrammer.com/2008/05/about-me.html">about me</a> for more.
+<br><br>
+*As always, this is my personal blog. The opinions expressed here are my own and not those of my employer.*
+</span>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=1806360094658697411&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML1&quot;));" target="configHTML1" title="Edit">
+<img alt="" height="18" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget BlogArchive" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2013-01-01T00:00:00-05:00&updated-max=2014-01-01T00:00:00-05:00&max-results=1">2013</a>
+<span class="post-count" dir="ltr">(1)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2013_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2012-01-01T00:00:00-05:00&updated-max=2013-01-01T00:00:00-05:00&max-results=5">2012</a>
+<span class="post-count" dir="ltr">(5)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2012_11_01_archive.html">November</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2012_08_01_archive.html">August</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="posts">
+<li><a href="./The Lowly Programmer  Primes part 2  A segmented sieve_files/The Lowly Programmer  Primes part 2  A segmented sieve.htm">Primes part 2: A segmented sieve</a></li>
+<li><a href="http://www.thelowlyprogrammer.com/2012/08/the-algorithms-of-memory.html">The algorithms of memory</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2012_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2011-01-01T00:00:00-05:00&updated-max=2012-01-01T00:00:00-05:00&max-results=2">2011</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2011_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2011_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2010-01-01T00:00:00-05:00&updated-max=2011-01-01T00:00:00-05:00&max-results=12">2010</a>
+<span class="post-count" dir="ltr">(12)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2010_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2010_04_01_archive.html">April</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2010_03_01_archive.html">March</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2010_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2010_01_01_archive.html">January</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2009-01-01T00:00:00-05:00&updated-max=2010-01-01T00:00:00-05:00&max-results=1">2009</a>
+<span class="post-count" dir="ltr">(1)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2009_06_01_archive.html">June</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/search?updated-min=2008-01-01T00:00:00-05:00&updated-max=2009-01-01T00:00:00-05:00&max-results=7">2008</a>
+<span class="post-count" dir="ltr">(7)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2008_09_01_archive.html">September</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.thelowlyprogrammer.com/2008_05_01_archive.html">May</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=1806360094658697411&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive1&quot;));" target="configBlogArchive1" title="Edit">
+<img alt="" height="18" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear">&nbsp;</div>
+</div>
+<!-- end content-wrapper -->
+<div id="footer-wrapper">
+<div class="footer section" id="footer"><div class="widget Text" id="Text2">
+<div class="widget-content">
+<a rel="license" href="http://creativecommons.org/licenses/LGPL/2.1/"><img alt="Creative Commons License" style="border-width: 0pt;" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/somerights20.png"></a><br>All code on this site is licensed under the <a rel="license" href="http://creativecommons.org/licenses/LGPL/2.1/">Creative Commons GNU Lesser General Public License</a> unless otherwise stated.<br>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=1806360094658697411&widgetType=Text&widgetId=Text2&action=editWidget&sectionId=footer" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Text2&quot;));" target="configText2" title="Edit">
+<img alt="" height="18" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/1557544647-widgets.js"></script>
+<script type="text/javascript" src="./The Lowly Programmer  Primes part 2  A segmented sieve_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '1806360094658697411';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d1806360094658697411','//www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html','1806360094658697411');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '1806360094658697411', 'bloggerUrl': 'http://www.blogger.com', 'title': 'The Lowly Programmer', 'pageType': 'item', 'postId': '4728624078059707982', 'url': 'http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html', 'canonicalUrl': 'http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html', 'canonicalHomepageUrl': 'http://www.thelowlyprogrammer.com/', 'homepageUrl': 'http://www.thelowlyprogrammer.com/', 'blogspotFaviconUrl': 'http://www.thelowlyprogrammer.com/favicon.ico', 'enabledCommentProfileImages': false, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Primes part 2: A segmented sieve', 'pageTitle': 'The Lowly Programmer: Primes part 2: A segmented sieve', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42The Lowly Programmer - Atom\42 href\75\42http://www.thelowlyprogrammer.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42The Lowly Programmer - RSS\42 href\75\42http://www.thelowlyprogrammer.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42The Lowly Programmer - Atom\42 href\75\42http://www.blogger.com/feeds/1806360094658697411/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42The Lowly Programmer - Atom\42 href\75\42http://www.thelowlyprogrammer.com/feeds/4728624078059707982/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'googleProfileUrl': 'https://plus.google.com/103760168651162106315', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,f\75\42chrome\42,g\75\42jstiming\42,k\75\42tick\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){var e\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[e,d];if(void 0\75\75c)try{b.console.timeStamp(\42CSI/\42+a)}catch(h){}};this[k](\42start\42,null,a)}var a;b.performance\46\46(a\75b.performance.timing);var n\75a?new d(a.responseStart):new d;b.jstiming\75{Timer:d,load:n};if(a){var c\75a.navigationStart,h\75a.responseStart;0\74c\46\46h\76\75c\46\46(b[g].srt\75h-c)}if(a){var e\75b[g].load;0\74c\46\46h\76\75c\46\46(e[k](\42_wtsrt\42,void 0,c),e[k](\42wtsrt_\42,\42_wtsrt\42,h),e[k](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,\nb[f]\46\46b[f].csi\46\46(a\75Math.floor(b[f].csi().pageT),e\46\0460\74c\46\46(e[k](\42_tbnd\42,void 0,b[f].csi().startE),e[k](\42tbnd_\42,\42_tbnd\42,c))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,e\46\0460\74c\46\46(e[k](\42_tbnd\42,void 0,b.external.startE),e[k](\42tbnd_\42,\42_tbnd\42,c))),a\46\46(b[g].pt\75a)}catch(p){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[g].load[k](\42aft\42)};var l\75!1;function m(){l||(l\75!0,b[g].load[k](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,m,!1):b.attachEvent(\42onscroll\42,m);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/76f25a6f2e06af76', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {'sidebartextcolor': '#666666', 'linkcolor': '#5588aa', 'visitedlinkcolor': '#aa55a0', 'textcolor': '#333333', 'postblockquotecolor': '#fff9ee', 'headerfont': 'normal normal 78% \47Trebuchet MS\47,Trebuchet,Arial,Verdana,Sans-serif', 'pagetitlefont': 'normal normal 200% Georgia, Serif', 'bgcolor': '#ffffff', 'descriptioncolor': '#999999', 'titlecolor': '#cc6600', 'bordercolor': '#cccccc', 'headingcolor': '#005588', 'postfooterfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'pagetitlecolor': '#666666', 'bodyfont': 'normal normal 100% Georgia, Serif', 'endSide': 'right', 'startSide': 'left', 'descriptionfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'sidebarcolor': '#999999'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text2', 'footer', null, document.getElementById('Text2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/4260987307-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/3904812905-lightbox_bundle.css'}, 'displayModeFull'));
+</script>
+
+<div id="rytqzebwbskugzzsattrqwbzgibpenzeor" title="Click to dismiss alert bubble" style="right: 20px !important; bottom: 15px !important; background-color: rgb(51, 0, 51) !important; cursor: pointer; background-position: initial initial !important; background-repeat: initial initial !important;"><div style="background-color: rgb(51, 0, 51) !important; background-position: initial initial !important; background-repeat: initial initial !important;"><a href="http://www.thelowlyprogrammer.com/2012/08/primes-part-2-segmented-sieve.html#" id="rytqzebwbskugzzsattrqwbzgibpenzeor-gear" title="Click to configure alert bubble" style="right: 0px !important; bottom: 0px !important; border-top-left-radius: 3px !important; border-bottom-right-radius: 3px !important;">&nbsp;</a><span>Google Adsense</span><br><span>Google Analytics</span><br><span>Google+ Platform</span><br></div></div></body></html>

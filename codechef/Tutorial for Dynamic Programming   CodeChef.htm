@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0057)http://www.codechef.com/wiki/tutorial-dynamic-programming -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en" dir="ltr" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script src="./Tutorial for Dynamic Programming   CodeChef_files/4e7c8fce06a9ab05530008e5.js" async=""></script><script type="text/javascript" async="" src="./Tutorial for Dynamic Programming   CodeChef_files/ga.js"></script><script>
+    (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+    c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+    c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+    _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+    (window,document,"script","4e7c8fce06a9ab05530008e5");
+</script>
+
+
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+    <title>Tutorial for Dynamic Programming | CodeChef</title>
+    
+<meta name="keywords" content="programming, language, algorithm, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+<link rel="shortcut icon" href="http://www.codechef.com/misc/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" media="all" href="./Tutorial for Dynamic Programming   CodeChef_files/css_ad1246d26d3f8a121785bf37238362ed.css">
+    <script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/drupal.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/fbconnect.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/fivestar.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/lightbox.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/nice_menus.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/common.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/tableofcontents.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/codechef_recent_comments.js"></script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/textarea.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fbconnect":{"user_pictures":"allow","language_code":"en_US","app_id":"191217060453","debug":0,"connect_js":"document.location.protocol + '\/\/connect.facebook.net\/en_US\/all.js'","loginout_mode":"manual","invite_name":"CodeChef","fast_reg_mode":0,"fast_reg_autoname":0,"fbuid":"100002167399451","user":{"uid":"440238","fbuid":"100002167399451"}},"fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)sites\/default\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"eeedec","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":true,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":500,"iframe_height":70,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+  <style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+  <body class="lightbox-processed"><center>
+    <div id="header" class="wrapper">
+      <div class="inner-wrapper">
+        <!-- Header -->
+        <div id="logo-floater" class="cols-2">
+        <a href="http://www.codechef.com/" title=""><img src="./Tutorial for Dynamic Programming   CodeChef_files/logo.png" alt="CodeChef is a non-commercial competitive programming community" id="logo"><span></span></a>        </div>
+		<div class="cols-2">
+			<div id="custom-login">
+				<!--Hello <strong>Admin</strong>, Check your <strong><a href="">Account</a></strong> or <a href="/logout">Log Out</a>-->
+				<!--facebook--><div class="login-user login-name">
+                    <table id="logged-in-user-fb-pic" cellpadding="5" cellspacing="0">
+                        <tbody><tr>
+                            <td><div class="picture"><img src="./Tutorial for Dynamic Programming   CodeChef_files/picture" width="35px" heigth="35px"></div></td>
+                            <td>
+        <span>
+            Hello Himansu Rathi! 
+            <a href="http://www.codechef.com/users/Himansu%20Rathi" title="Edit Your Account">Account</a>
+            or <a href="http://www.codechef.com/logout">Log Out</a>
+        </span></td>
+                        </tr>
+                     </tbody></table>
+                 </div>        	</div>
+        	
+        	<div id="block-nice_menus-1" class="block block-nice_menus block-header">
+  <div class="content">
+    <h2><span class="nice-menu-hide-title">Site Navigation</span></h2>    <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li id="menu-302" class="menuparent menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">PRACTICE</a><ul><li id="menu-303" class="menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">Easy</a></li>
+<li id="menu-304" class="menu-path-problems-medium"><a href="http://www.codechef.com/problems/medium" title="">Medium</a></li>
+<li id="menu-305" class="menu-path-problems-hard"><a href="http://www.codechef.com/problems/hard" title="">Hard</a></li>
+<li id="menu-1819" class="menu-path-problems-challenge"><a href="http://www.codechef.com/problems/challenge" title="">Challenge</a></li>
+<li id="menu-1376" class="menu-path-problems-extcontest"><a href="http://www.codechef.com/problems/extcontest" title="">Peer</a></li>
+<li id="menu-2602" class="menu-path-problems-school"><a href="http://www.codechef.com/problems/school" title="">School</a></li>
+</ul>
+</li>
+<li id="menu-309" class="menuparent menu-path-contests"><a href="http://www.codechef.com/contests" title="">COMPETE</a><ul><li id="menu-2203" class="menu-path-www.codechef.com-contests"><a href="http://www.codechef.com/contests" title="">All Contests</a></li>
+<li id="menu-4876" class="menu-path-www.codechef.com-JUNE14"><a href="http://www.codechef.com/JUNE14" title="">June Challenge 2014</a></li>
+<li id="menu-4875" class="menu-path-www.codechef.com-LTIME12"><a href="http://www.codechef.com/LTIME12" title="">May Lunchtime 2014</a></li>
+<li id="menu-4873" class="menu-path-www.codechef.com-COOK46"><a href="http://www.codechef.com/COOK46" title="">May Cook-Off 2014</a></li>
+</ul>
+</li>
+<li id="menu-138" class="menuparent menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">DISCUSS</a><ul><li id="menu-139" class="menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">Forums</a></li>
+<li id="menu-140" class="menu-path-blog.codechef.com-"><a href="http://blog.codechef.com/" title="">Blog</a></li>
+<li id="menu-920" class="menu-path-wiki-"><a href="http://www.codechef.com/wiki/" title="">Wiki</a></li>
+<li id="menu-2202" class="menu-path-https--www.facebook.com-CodeChef"><a href="https://www.facebook.com/CodeChef" title="">Facebook</a></li>
+<li id="menu-141" class="menu-path-www.twitter.com-codechef"><a href="http://www.twitter.com/codechef" title="">Twitter</a></li>
+</ul>
+</li>
+<li id="menu-143" class="menuparent menu-path-node-124098"><a href="http://www.codechef.com/community" title="">COMMUNITY</a><ul><li id="menu-733" class="menu-path-node-157517"><a href="http://www.codechef.com/hostyourcontest" title="Hosting Contest on CodeChef">Host your Contest</a></li>
+<li id="menu-2310" class="menu-path-www.codechef.com-goforgold"><a href="http://www.codechef.com/goforgold" title="">Go for Gold</a></li>
+<li id="menu-3830" class="menu-path-www.codechef.com-campus_chapter-about"><a href="http://www.codechef.com/campus_chapter/about" title="">Campus Chapter</a></li>
+</ul>
+</li>
+<li id="menu-147" class="menuparent menu-path-node-3"><a href="http://www.codechef.com/help" title="">HELP</a><ul><li id="menu-643" class="menu-path-www.codechef.com-wiki-faq"><a href="http://www.codechef.com/wiki/faq" title="">Frequently Asked Questions</a></li>
+<li id="menu-710" class="menu-path-www.codechef.com-wiki-faq-problem-setters"><a href="http://www.codechef.com/wiki/faq-problem-setters" title="">FAQ for problem setters</a></li>
+<li id="menu-1389" class="menu-path-node-313543"><a href="http://www.codechef.com/problemsetting" title="Codechef Problem Creation">Problem Setting</a></li>
+<li id="menu-850" class="menu-path-www.codechef.com-wiki-tutorials"><a href="http://www.codechef.com/wiki/tutorials" title="">Tutorials</a></li>
+<li id="menu-2200" class="menu-path-www.codechef.com-long-ranklist-AX"><a href="http://www.codechef.com/long/ranklist/AX" title="Long contest rankings list">Long Contest Ranks</a></li>
+<li id="menu-2199" class="menu-path-www.codechef.com-short-ranklist-AX"><a href="http://www.codechef.com/short/ranklist/AX" title="Short contest rankings list">Short Contest Ranks</a></li>
+<li id="menu-1820" class="menu-path-node-503865"><a href="http://www.codechef.com/event-calendar" title="Event Calendar">Event Calendar</a></li>
+<li id="menu-2372" class="menu-path-discuss.ww2.codechef.com-top-users-"><a href="http://discuss.ww2.codechef.com/top/users/" title="">Top Contributors on Discuss</a></li>
+</ul>
+</li>
+<li id="menu-150" class="menuparent menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">ABOUT</a><ul><li id="menu-151" class="menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">About CodeChef</a></li>
+<li id="menu-849" class="menu-path-node-178314"><a href="http://www.codechef.com/team" title="Team CodeChef">Team CodeChef</a></li>
+<li id="menu-708" class="menu-path-node-157468"><a href="http://www.codechef.com/press" title="Press Room">Press Room</a></li>
+<li id="menu-1312" class="menu-path-www.codechef.com-financials-"><a href="http://www.codechef.com/financials/" title="">CodeChef Financials</a></li>
+<li id="menu-1313" class="menu-path-www.codechef.com-sponsorships"><a href="http://www.codechef.com/sponsorships" title="">CodeChef Sponsorships</a></li>
+<li id="menu-709" class="menu-path-node-157470"><a href="http://www.codechef.com/ceoscorner" title="CEO&#39;s Corner">CEO's Corner</a></li>
+<li id="menu-1858" class="menu-path-node-614485"><a href="http://www.codechef.com/contactus" title="">Contact Us</a></li>
+<li id="menu-152" class="menu-path-www.directi.com-"><a href="http://www.directi.com/" title="">About Directi</a></li>
+</ul>
+</li>
+</ul>
+  </div>
+</div>
+		</div>
+
+      </div>
+    </div>
+    <!-- /HEADER -->
+	<center>
+	<table cellspacing="0" cellpadding="10" id="maintable" class="maintable">
+		<tbody><tr>
+			<td class="content" width="99%">
+				<div class="wrapper" id="content-regions">
+					<div class="inner-wrapper rounded-cr-body">
+						<div class="rounded-cr-header">
+							<div class="rounded-cr-footer">
+								<div id="breadcrumb"><div class="breadcrumb"><a href="http://www.codechef.com/">Home</a>&nbsp;»&nbsp;<a href="http://www.codechef.com/wiki">Wiki</a>&nbsp;»&nbsp;Tutorial for Dynamic Programming</div></div>
+								<div id="primary-colum-pad">
+									<div id="primary-colum-wrapper">
+									<img width="946px" class="content-wrapper-header" src="./Tutorial for Dynamic Programming   CodeChef_files/content-wrapper-top-big.gif">
+										<div id="problem-page">
+											<div class="prob">
+												<div class="primary-col-wrapper">
+												<table class="pagetitle-prob" width="100%">
+												    <tbody><tr>
+													<td><h1>Tutorial for Dynamic Programming </h1></td>
+													<td>
+																										<div id="tabs-wrapper" class="clear-block">													<ul class="button-list">
+<li class="active"><a href="./Tutorial for Dynamic Programming   CodeChef_files/Tutorial for Dynamic Programming   CodeChef.htm" class="active">View</a></li>
+<li><a href="http://www.codechef.com/node/214292/revisions">Revisions</a></li>
+</ul>
+</div>													</td>
+												    </tr>
+												</tbody></table>
+													
+										    
+
+																								        																										<div>
+														<div id="node-214292" class="node clear-block">
+
+  <div class="meta">
+  
+    </div>
+
+ <div class="content">
+    <p>&nbsp;</p>
+<script type="text/javascript">toc_collapse=0;</script><div class="toc" id="toc">
+<div class="toc-title">Table of Contents<span class="toc-toggle-message"> [<a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" class="toc-toggle">hide</a>]</span></div>
+<div class="toc-list">
+<ol>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Introduction">Introduction</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Cold_War_between_Systematic_Recursion_and_Dynamic_programming">Cold War between Systematic Recursion and Dynamic programming</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Problem_:_Minimum_Steps_to_One">Problem : Minimum Steps to One</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Identifying_the_State">Identifying the State</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Problem_:_Longest_Increasing_subsequence">Problem : Longest Increasing subsequence</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Problem_:_Longest_Common_Subsequence_LCS">Problem : Longest Common Subsequence (LCS)</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#header-1">
+
+</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Memory_Constrained_DP">Memory Constrained DP</a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Practice_Problems"><span><span>Practice Problems</span><b><span></span></b></span></a></li>
+	<li class="toc-level-1"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#Finding_nth_Finobacci_number_in_Olog_n">Finding n<sup>th</sup> Finobacci number in O(log n)</a></li>
+</ol>
+</div>
+</div>
+<h3 id="Introduction">Introduction</h3>
+<p>Dynamic programming (usually referred to as <b>DP</b> ) is a very powerful technique to solve a particular class of problems. It demands very elegant formulation of the approach and simple thinking and the coding part is very easy. The idea is very simple, If you have solved a problem with the given input, then save the result for future reference, so as to avoid solving the same problem again.. shortly <i>'Remember your Past'</i> :) .&nbsp; If the given problem can be broken up in to smaller sub-problems and these smaller subproblems are in turn divided in to still-smaller ones, and in this process, if you observe some over-lappping subproblems, then its a big hint for <a class="freelinking external" href="http://www.thelearningpoint.net/computer-science/dynamic-programming">DP</a>. Also, the optimal solutions to the subproblems contribute to the optimal solution of the given problem ( referred to as the <a href="http://en.wikipedia.org/wiki/Optimal_substructure" target="_blank">Optimal Substructure Property</a> ).</p>
+<p>There are two ways of doing this.</p>
+<p><b>1.) Top-Down : </b>Start solving the given problem by breaking it down. If you see that the problem has been solved already, then just return the saved answer. If it has not been solved, solve it and save the answer. This is usually easy to think of and very intuitive. This is referred to as <i><b>Memoization</b></i>.</p>
+<p><b>2.) Bottom-Up</b> <b>:</b> Analyze the problem and see the order in which the sub-problems are solved and start solving from the trivial subproblem, up towards the given problem. In this process, it is guaranteed that the subproblems are solved before solving the problem. This is referred to as <b><i>Dynamic Programming</i></b>.</p>
+<p>Note that divide and conquer is slightly a different technique. In that, we divide the problem in to non-overlapping subproblems and solve them independently, like in mergesort and quick sort.</p>
+<p> In case you are interested in seeing <a class="freelinking external" href="http://www.thelearningpoint.net/computer-science/dynamic-programming">visualizations related to Dynamic Programming try this out</a>.</p>
+<p>Complementary to Dynamic Programming are <a class="freelinking external" href="http://www.thelearningpoint.net/computer-science/greedy-algorithms">Greedy Algorithms</a> which make a decision once and for all every time they need to make a choice, in such a way that it leads to a near-optimal solution. A Dynamic Programming solution is based on the principal of <a class="freelinking external" href="http://www.thelearningpoint.net/home/mathematics/the-principle-of-mathematical-induction">Mathematical Induction</a> greedy algorithms require other kinds of proof.</p>
+<hr>
+<h3 id="Cold_War_between_Systematic_Recursion_and_Dynamic_programming">Cold War between Systematic Recursion and Dynamic programming</h3>
+<p>Recursion<span> uses the top-down approach to solve the problem i.e. It begin with core(main) problem then breaks it into subproblems and solve these subproblems similarily. In this approach same subproblem can occur multiple times and consume more CPU cycle ,hence increase the time complexity. Whereas in Dynamic programming same subproblem will not be solved multiple times but the prior result will be used to optimise the solution. eg. In <a class="freelinking external" href="http://www.thelearningpoint.net/computer-science/recursion">fibonacci series</a> :-</span></p>
+<p class="MsoNormal"><span><span> </span>Fib(4) = Fib(3) + Fib(2)</span></p>
+<p class="MsoNormal"><span><span> </span>= (Fib(2) + Fib(1)) + <span>Fib(2)</span></span></p>
+<p class="script type=">l"&gt;<span><span> </span>=((Fib(1) + Fib(0)) + <span>Fib(1)</span>) + <span>Fib(2)</span></span></p>
+<p class="MsoNormal"><span> </span>=((Fib(1) + Fib(0)) + <span>Fib(1)</span>) + (<span>Fib(1)</span> + <span>Fib(0)</span>)</p>
+<p class="MsoNormal">Here, call to Fib(1) and Fib(0) is made multiple times.In the<span> </span>case of Fib(100) these calls would be count for<span> </span>million times. Hence there is lots of wastage of resouces(CPU cycles &amp; Memory for storing information on stack).</p>
+<p class="MsoNormal"><span> </span>In <a class="freelinking external" href="http://www.thelearningpoint.net/computer-science/dynamic-programming">dynamic Programming</a> all the subproblems are solved even those which are not needed, but in recursion only required subproblem are solved. So solution by dynamic programming should be properly framed to remove this ill-effect.</p>
+<p class="MsoNormal">For ex. In&nbsp;combinatorics, C(n.m) = C(n-1,m) + C(n-1,m-1).</p>
+<pre><span>		</span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;  1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;  2&nbsp;  1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 3&nbsp;   3   1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 4&nbsp;  6    4   1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1&nbsp;&nbsp;5&nbsp;  10  10  <b>5</b>&nbsp;  1 </pre>
+<p class="MsoNormal">In simple solution, one would have to construct the whole pascal triangle to calcute C(5,4) but recursion could save a lot of time.</p>
+<p class="MsoNormal"><span> </span>Dynamic programming and recursion work in almost similar way in the case of non overlapping subproblem. In such problem other approaches could<span> </span>be used like “divide and conquer” .</p>
+<p class="MsoNormal">&nbsp;</p>
+<hr>
+<p class="MsoNormal">Even some of the high-rated coders go wrong in tricky DP problems many times. DP gurus suggest that DP is an art and its all about Practice. The more DP problems you solve, the easier it gets to relate a new problem to the one you solved already and tune your thinking very fast. It looks like a magic when you see some one solving a tricky DP so easily. Its time for you to learn some magic now :). Lets start with a very simple problem.</p>
+<h3 class="MsoNormal" id="Problem_:_Minimum_Steps_to_One">Problem : Minimum Steps to One</h3>
+<p class="MsoNormal"><b>Problem Statement:</b> On a positive integer, you can perform any one of the following 3 steps. <i><b>1.)</b></i> Subtract 1 from it. ( n = n - 1 )&nbsp; , <i><b>2.)</b></i> If its divisible by 2, divide by 2. ( if n % 2 == 0 , then n = n / 2&nbsp; )&nbsp; , <b><i>3.)</i></b> If its divisible by 3, divide by 3. ( if n % 3 == 0 , then n = n / 3&nbsp; ). Now the question is, given a positive integer <i>n</i>, find the minimum number of steps that takes <i>n</i> to 1</p>
+<p class="MsoNormal">eg: 1.)For n = 1 , output: 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.) For n = 4 , output: 2&nbsp; ( 4&nbsp;<b> /2</b> = 2&nbsp;<b> /2</b> = 1 )&nbsp;&nbsp;&nbsp; 3.)&nbsp; For n = 7 , output: 3&nbsp; (&nbsp; 7&nbsp;<b> -1</b> = 6&nbsp;&nbsp;<b> /3</b> = 2&nbsp;&nbsp; <b>/2</b> = 1 )</p>
+<p class="MsoNormal"><b>Approach / Idea:</b> One can think of greedily choosing the step, which makes <i>n</i> as low as possible and conitnue the same, till it reaches&nbsp; 1. If you observe carefully, the greedy strategy doesn't work here. Eg: Given <i>n</i> = 10 , Greedy --&gt; 10 /2 = 5&nbsp; -1 = 4&nbsp; /2 = 2&nbsp; /2 = 1&nbsp; ( 4 steps ). But the optimal way is --&gt; 10&nbsp; -1 = 9&nbsp; /3 = 3&nbsp; /3 = 1 ( 3 steps ). So, we need to try out all possible steps we can make for each possible value of <i>n</i> we encounter and choose the minimum of these possibilities.</p>
+<p class="MsoNormal">It all starts with recursion :).&nbsp; F(n) =&nbsp;&nbsp; 1 + min{&nbsp; F(n-1) ,&nbsp; F(n/2)&nbsp; ,&nbsp; F(n/3)&nbsp; }&nbsp; if (n&gt;1) , else 0&nbsp; ( i.e., F(1) = 0 ) . Now that we have our recurrence equation, we can right way start coding the recursion. Wait.., does it have over-lapping subproblems ?&nbsp; YES. Is the optimal solution to a given input depends on the optimal solution of its subproblems ? Yes... Bingo ! its DP :) So, we just store the solutions&nbsp; to the subproblems we solve and use them later on, as in memoization.. or we start from bottom and move up till the given <i>n</i>, as in dp. As its the very first problem we are looking at here, lets see both the codes.</p>
+<p><b><span>Memoization<br></span></b></p>
+<p>[code]</p>
+<p>int memo[n+1]; // we will initialize the elements to -1 ( -1 means, not solved it yet )</p>
+<p>int getMinSteps ( int n )</p>
+<p>{</p>
+<p>if ( n == 1 )&nbsp; return 0;&nbsp; // base case</p>
+<p>if( memo[n] != -1 ) return memo[n];&nbsp; // we have solved it already :)</p>
+<p>int r = 1 + getMinSteps( n - 1 );&nbsp; // '-1' step .&nbsp; 'r' will contain the optimal answer finally</p>
+<p>if( n%2 == 0 )&nbsp;&nbsp; r&nbsp; =&nbsp; min( r , 1 + getMinSteps( n / 2 ) ) ;&nbsp; //&nbsp; '/2' step</p>
+<p>if( n%3 == 0 )&nbsp;&nbsp; r&nbsp; =&nbsp; min( r , 1 + getMinSteps( n / 3 ) ) ;&nbsp; //&nbsp; '/3' step</p>
+<p>memo[n] = r ;&nbsp; // save the result. If you forget this step, then its same as plain recursion.</p>
+<p>return r;</p>
+<p>}</p>
+<p>[/code]</p>
+<p><b><span>Bottom-Up DP<br></span></b></p>
+<p class="MsoNormal">[code]</p>
+<p>int getMinSteps ( int n )</p>
+<p>{</p>
+<p>int dp[n+1] , i;</p>
+<p>dp[1] = 0;&nbsp; // trivial case</p>
+<p>for( i = 2 ; i &lt; = n ; i ++ )</p>
+<p>{</p>
+<p>dp[i] = 1 + dp[i-1];</p>
+<p>if(i%2==0) dp[i] = min( dp[i] , 1+ dp[i/2] );</p>
+<p>if(i%3==0) dp[i] = min( dp[i] , 1+ dp[i/3] );</p>
+<p>}</p>
+<p>return dp[n];</p>
+<p>}</p>
+<p>[/code]</p>
+<p class="MsoNormal">Both the approaches are fine. But one should also take care of the lot of over head involved in the function calls in Memoization, which may give StackOverFlow error or TLE rarely.</p>
+<hr>
+<h3 class="MsoNormal" id="Identifying_the_State">Identifying the State</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h3 id="Problem_:_Longest_Increasing_subsequence">Problem : Longest Increasing subsequence</h3>
+<p class="MsoNormal">The Longest Increasing Subsequence problem is to find the longest increasing subsequence of a given sequence. Given a sequence S=<span> </span>{a<sub>1</sub><span> </span>, a<sub>2</sub><span> </span>,<span> </span>a<sub>3</sub>,<span> </span>a<sub>4</sub>, <b>.............</b>, a<sub>n-1</sub>, a<sub>n </sub><span> </span>} we have to find a longest subset such that for all j and i,&nbsp; j&lt;i in the subset a<sub>j</sub>&lt;a<sub>i</sub>.</p>
+<p class="MsoNormal"> First of all we have to find the value of the longest subsequences(LS<sub>i</sub>) at every index i with last element of sequence being a<sub>i</sub>. Then largest LS<sub>i</sub> would be the longest subsequence in the given sequence. To begin LS<sub>i</sub> is assigned to be one since a<sub>i </sub>is element of the sequence(Last element). Then for all j such that j&lt;i and a<sub>j</sub>&lt;a<sub>i</sub> ,we find Largest LS<sub>j</sub> and add it to LS<sub>i</sub>. Then algorithm take O(n<sup>2</sup>) time.</p>
+<p class="MsoNormal">Pseudo-code for finding the length of the longest increasing subsequence:</p>
+<p class="MsoNormal">This algorithms complexity could be reduced by using better data structure rather than array. Storing <span><span>predecessor array and variable like largest_sequences_so_far and
+
+its index would save a lot time.</span></span></p>
+<p class="MsoNormal"><span><span>Similar concept could be applied in finding longest path in Directed acyclic graph.</span></span></p>
+<p class="MsoNormal"><span><span>---------------------------------------------------------------------------</span></span></p>
+<p class="MsoNormal"><span><span> </span></span></p>
+<pre>for i=0 to n-1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;LS[i]=1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for j=0 to i-1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[i] &gt;&nbsp; a[j] and LS[i]&lt;LS[j])</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;LS[i] = LS[j]+1</pre>
+<pre>&nbsp;for i=0 to n-1</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (largest &lt; LS[i])</pre>
+<pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;largest = LS[i]<br></pre>
+<p>&nbsp;</p>
+<hr>
+<h3 id="Problem_:_Longest_Common_Subsequence_LCS">Problem : Longest Common Subsequence (LCS)</h3>
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---longest-common-subsequence"> Longest Common Subsequence - Dynamic Programming - Tutorial and C Program Source code</a><br>
+<p>Given a sequence of elements, a subsequence of it can be obtained by removing zero or more elements from the sequence, preserving the relative order of the elements. Note that for a substring, the elements need to be contiguous in a given string, for a subsequence it need not be. Eg: S1="ABCDEFG" is the given string. "ACEG", "CDF" are subsequences, where as "AEC" is not. For a string of lenght <i>n</i> the total number of subsequences is 2<sup><i>n</i></sup> ( Each character can be taken or not taken ). Now the question is, what is the length of the longest subsequence that is common to the given two Strings S1 and S2. Lets denote length of S1 by N and length of S2 by M.</p>
+<p><b>BruteForce : </b>Consider each of the 2<sup>N</sup> subsequences of S1 and check if its also a subsequence of S2, and take the longest of all such subsequences. Clearly, very time consuming.</p>
+<p><b>Recursion : </b>Can we break the problem of finding the LCS of S1[1...N] and S2[1...M] in to smaller subproblems ?</p>
+<p>&nbsp;</p>
+<h3 id="header-1">
+<hr>
+</h3>
+<h3 id="Memory_Constrained_DP">Memory Constrained DP</h3>
+<p>[to do , fibonacci , LCS etc., ]</p>
+<p>&nbsp;</p>
+<hr>
+<h3 id="Practice_Problems"><span><span>Practice Problems</span><b><span><br></span></b></span></h3>
+<p class="MsoNormal">1. Other Classic DP problems : 
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---the-integer-knapsack-problem">0-1 KnapSack Problem  ( tutorial and C Program)</a>, <a href="http://www.thelearningpoint.net/algorithms-dynamic-programming---matrix-chain-multiplication">Matrix Chain Multiplication  ( tutorial and C Program)</a>, Subset sum, Coin change, <a href="http://www.thelearningpoint.net/computer-science/algorithms-all-to-all-shortest-paths-in-graphs---floyd-warshall-algorithm-with-c-program-source-code">All to all Shortest Paths in a Graph ( tutorial and C Program)</a>, <span>Assembly line joining or topographical sort</span></p>
+<p class="MsoNormal"><span>You can refer to some of these in the <a href="http://www.algorithmist.com/index.php/Dynamic_Programming" target="_blank">Algorithmist site</a><br></span></p>
+<p class="MsoNormal"><span><span>2. The lucky draw(June 09 Contest). <span><a href="http://www.codechef.com/problems/D2/">http://www.codechef.com/problems/D2/</a></span></span></span></p>
+<p class="MsoNormal"><span><span>3. Find the number of <span> </span>increasing subsequences in the given subsequence of length 1 or more.</span></span></p>
+<p class="MsoNormal"><span><span>4.SPOJ- </span></span></p>
+<p>To see problems on DP visit <a href="http://pt1989.22web.net/c0ding/spoj.php?search=dp">this link </a></p>
+<p class="MsoNormal"><span><span>5.TopCoder - <a href="http://www.topcoder.com/stat?c=problem_statement&pm=1259">ZigZag</a></span></span></p>
+<p class="MsoNormal"><span><span>6.TopCoder - <a class="freelinking external" href="http://www.topcoder.com/stat?c=problem_statement&pm=1889">AvoidRoads</a> - A simple and nice problem to practice</span></span></p>
+<p class="MsoNormal"><span><span>7. For more DP problems and different varieties, refer a very nice collection </span></span><span><a href="http://www.codeforces.com/blog/entry/325">http://www.codeforces.com/blog/entry/325</a></span></p>
+<p class="MsoNormal"><span>8.. <a href="http://www.topcoder.com/tc?module=ProblemArchive&sr=&er=&sc=&sd=&class=&cat=Dynamic+Programming&div1l=&div2l=&mind1s=&mind2s=&maxd1s=&maxd2s=&wr=" title="Topcoder Problem archive" target="_blank">TopCoder problem archive</a></span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><span><span><br></span></span></p>
+<p>&nbsp;</p>
+<hr>
+<hr>
+<p>This is not related to Dynamic Programming, but as 'finding the n<sup>th</sup> Fibonacci number' is discussed, it would be useful to know a very fast technique to solve the same.</p>
+<h3 id="Finding_nth_Finobacci_number_in_Olog_n">Finding n<sup>th</sup> Finobacci number in O(log n)</h3>
+<p>Note: The method described here for finding the n<sup>th</sup> Fibonacci number using dynamic programming runs in O(n) time. There is still a better method to find F(n), when n become as large as 10<sup>18</sup> ( as F(n) can be very huge, all we want is to find the F(N)%MOD , for a given MOD ).</p>
+<p>Consider the Fibonacci recurrence F(n+1) = F(n) + F(n-1). We can represent this in the form a matrix, we shown below.</p>
+<p><img src="./Tutorial for Dynamic Programming   CodeChef_files/4c16482bb348434607205f1703431237.png" alt="Fibonacci in log(N)" width="355" height="33"> Look at the matrix A = [&nbsp; [ 1 1 ]&nbsp; [ 1 0 ]&nbsp; ] . Multiplying A with [ F(n)&nbsp; F(n-1) ] gives us [ F(n+1)&nbsp; F(n) ] , so.. we</p>
+<p>start with [ F(1)&nbsp; F(0) ] , multiplying it with A<sup>n</sup> gives us [ F(n+1)&nbsp; F(n) ] , so all that is left is finding the n<sup>th</sup> power of the matrix A. Well, this can be computed in O(log n) time, by recursive doubling. The idea is, to find A<sup>n</sup> , we can do R = A<sup>n/2</sup> x A<sup>n/2</sup> and if n is odd, we need do multiply with an A at the end. The following pseudo code shows the same.</p>
+<p>[code]</p>
+<p>Matrix findNthPower( Matrix M , power n )</p>
+<p>{</p>
+<p>if( n == 1 )&nbsp; return M;</p>
+<p>Matrix R = findNthPower ( M , n/2 );</p>
+<p>R = RxR;&nbsp; // matrix multiplication</p>
+<p>if( n%2 == 1 ) R = RxM;&nbsp; // matrix multiplication</p>
+<p>return R;</p>
+<p>}</p>
+<p>[/code]</p>
+<p>You can read more about it <a href="http://en.wikipedia.org/wiki/Exponentiation_by_squaring#Squaring_algorithm" target="_blank">here</a></p>
+<p>This method is in general applicable to solving any Homogeneous Linear Recurrence Equations, eg: G(n) = a.G(n-1) + b.G(n-2) - c.G(n-3) , all we need to do is to solve it and find the Matrix A and apply the same technique.</p>
+<p>Tutorials and C Program Source Codes for Common Dynamic Programming problems</p>
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-all-to-all-shortest-paths-in-graphs---floyd-warshall-algorithm-with-c-program-source-code">Floyd Warshall Algorithm - Tutorial and C Program source code:http://www.thelearningpoint.net/computer-science/algorithms-all-to-all-shortest-paths-in-graphs---floyd-warshall-algorithm-with-c-program-source-code</a>
+<br>
+<br>
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---the-integer-knapsack-problem">Integer Knapsack Problem - Tutorial and C Program source code: http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---the-integer-knapsack-problem</a>
+<br>
+<br>
+<br>
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---longest-common-subsequence">Longest Common Subsequence - Tutorial and C Program source code : http://www.thelearningpoint.net/computer-science/algorithms-dynamic-programming---longest-common-subsequence</a>
+<br>
+<br>
+<br>
+<a href="http://www.thelearningpoint.net/algorithms-dynamic-programming---matrix-chain-multiplication">Matrix Chain Multiplication - Tutorial and C Program source code : http://www.thelearningpoint.net/algorithms-dynamic-programming---matrix-chain-multiplication</a>
+<br>
+<br>
+<a href="http://www.thelearningpoint.net/computer-science/algorithms-all-to-all-shortest-paths-in-graphs---floyd-warshall-algorithm-with-c-program-source-code">Floyd Warshall Algorithm - Tutorial and C Program source code: http://www.thelearningpoint.net/computer-science/algorithms-all-to-all-shortest-paths-in-graphs---floyd-warshall-algorithm-with-c-program-source-code</a> </div>
+
+ <hr>
+  <h2 style="text-decoration: none;">Comments</h2>
+  </div>
+
+<div id="comments">
+  <a id="comment-3292"></a>
+<div id="c3292" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-3292" class="active">Very nice additions to this</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/rosyish">rosyish</a></strong><span style="color:#828282"> @ 15 Nov 2009 08:45 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Very nice additions to this tutorial .</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/3292">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-3294"></a>
+<div id="c3294" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-3294" class="active">Thanks&nbsp;rosyish ,flying_ant</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/ankitjain0912">ankitjain0912</a></strong><span style="color:#828282"> @ 15 Nov 2009 10:31 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Thanks&nbsp;<span>rosyish ,flying_ant ,pr0ton for updating the content.</span></p>
+<p>&nbsp;</p>
+<p><span>I am delighted that my my content is read and updated. New content have information which was fruitful for me too.</span></p>
+<p>&nbsp;</p>
+<p><span><span><br></span></span></p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/3294">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-3298"></a>
+<div id="c3298" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-3298" class="active">Thank you both :) . . . I</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/flying_ant">flying_ant</a></strong><span style="color:#828282"> @ 16 Nov 2009 01:27 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Thank you both :) . . . I hope this will be useful for beginners a lot. I want to finish that&nbsp; part too, 'Memory constrained DP' .. will do it sometime soon.</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/3298">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-4886"></a>
+<div id="c4886" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-4886" class="active">very nice tutorial. . . keep</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Geniusguy">Geniusguy</a></strong><span style="color:#828282"> @ 16 Jan 2010 08:24 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>very nice tutorial. . . keep it up guys :)</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/4886">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-6953"></a>
+<div id="c6953" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-6953" class="active">Can same one explain how we</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sam83">sam83</a></strong><span style="color:#828282"> @ 27 Mar 2010 01:58 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Can same one explain how we can find Matrix for solving " Recurrence Equations, eg: G(n) = a.G(n-1) + b.G(n-2) - c.G(n-3)&nbsp; " please .......</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/6953">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-7717"></a>
+<div id="c7717" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-7717" class="active">i don't think you can</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sushilnath">sushilnath</a></strong><span style="color:#828282"> @ 7 Apr 2010 04:43 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>i don't think you can fibonnaci numbers in O(logn) running time.</p>
+<p>As the digits in the fibonnaci numbers grow It actually takes O(nlogn)time</p>
+<p>T(n)=T(n/2)+O(nlogn)</p>
+<p>T(n)=O(nlogn)</p>
+<p>As for normal iterative one running time is O(n*n) taking in account the time to add two numbers.....</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/7717">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-8287"></a>
+<div id="c8287" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-8287" class="active">I prefer treating 'sum of two</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/flying_ant">flying_ant</a></strong><span style="color:#828282"> @ 7 May 2010 01:56 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>I prefer treating 'sum of two numbers' as O(1), rather than O(log n)... and suggest you the same ;)</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/8287">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-11335"></a>
+<div id="c11335" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-11335" class="active">Great tutorial..guys!!</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/Vishnutej">Vishnutej</a></strong><span style="color:#828282"> @ 14 Oct 2010 12:58 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>Great tutorial..guys!!</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/11335">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-12827"></a>
+<div id="c12827" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-12827" class="active">well can&nbsp; u please give some</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/algomm">algomm</a></strong><span style="color:#828282"> @ 7 Jan 2011 01:50 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>well can&nbsp; u please give some more hint about calculating F(n) when n is of 10^15 range.<br>because number will be far greater than what a data_type can store.<br><br>For dividing , (a+b)%c=(a%c+b%c)%c this is one i know.<br>is there any other which i can use because i dont think this one will help here.</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/12827">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-12910"></a>
+<div id="c12910" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-12910" class="active">all flavours of</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/v_new.c">v_new.c</a></strong><span style="color:#828282"> @ 12 Jan 2011 07:27 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>all flavours of dp</p>
+<p><a href="http://forums.topcoder.com/?module=Thread&threadID=697369&start=0" title="http://forums.topcoder.com/?module=Thread&amp;threadID=697369&amp;start=0">http://forums.topcoder.com/?module=Thread&amp;threadID=697369&amp;start=0</a></p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/12910">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-13298"></a>
+<div id="c13298" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-13298" class="active">In the code for finding</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/illuminatus">illuminatus</a></strong><span style="color:#828282"> @ 28 Jan 2011 05:24 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>In the code for finding longest increasing subsequence</p>
+<p><span>
+</span></p><pre>1for i=0 to n-1</pre>
+<pre>2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;LS[i]=1</pre>
+<pre>3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for j=0 to i-1</pre>
+<pre>4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[i] &gt;&nbsp; a[j] and LS[i]&lt;LS[j])</pre>
+<pre>5&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;LS[i] = LS[j]+1</pre>
+<pre>6for i=0 to n-1</pre>
+<pre>7&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (largest &lt; LS[i])</pre>
+<pre>8&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;largest = LS[i]</pre>
+<pre><br></pre>
+<pre>the if statement at line 4 should check for LS[i]&lt;=LS[j] instead of LS[i]&lt;LS[j] ??</pre>
+<p></p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/13298">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-19524"></a>
+<div id="c19524" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-19524" class="active">It should be    LS[i]   &lt;  </a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/pankajb64">pankajb64</a></strong><span style="color:#828282"> @ 16 Oct 2011 04:47 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">It should be    LS[i]   &lt;   LS[j]   +    1
+
+That'll work</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/19524">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-26514"></a>
+<div id="c26514" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-26514" class="active">Can u add a twitter button</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/arti2011">arti2011</a></strong><span style="color:#828282"> @ 7 May 2012 07:45 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Can u add a twitter button please for the CodeChef site.</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/26514">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-26544"></a>
+<div id="c26544" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-26544" class="active">@arti2011: Can you be a more</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/admin">admin</a></strong><span style="color:#828282"> @ 8 May 2012 04:10 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body"><p>@<strong><a href="http://www.codechef.com/users/arti2011">arti2011</a><span>: </span></strong>Can you be a more elaborative about what you are trying to say.</p></div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/26544">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-26615"></a>
+<div id="c26615" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-26615" class="active">Hi admin,
+I mean to say add a</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/arti2011">arti2011</a></strong><span style="color:#828282"> @ 9 May 2012 03:23 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Hi admin,
+I mean to say add a tweet button to the CodeChef site so that if someone wants to share tutorials or maybe contest results etc.. on Twitter, they can do so. I think these tutorials are much easier to understand than by reading Cormen book as these are short and simple. To read Dynamic programming in Cormen takes lot of time (it's quite in detail) so your tutorials are good for novice as well as an expert to have a quick review of the concepts. If people enjoy reading them, they will also like to tweet them.
+
+By the way my photo is not visible on the profile may be it might not have got saved properly into the database. No issues as it is not necessary to display it because people are here to share their knowledge and horn their programming skills. So these things don’t matter. Rather you wouldn't have kept it.</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/26615">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-31601"></a>
+<div id="c31601" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-31601" class="active">is it possible to find dp[n]</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/abdukodir">abdukodir</a></strong><span style="color:#828282"> @ 5 Sep 2012 05:12 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">is it possible to find dp[n] in O(log n) using { Finding nth Finobacci number in O(log n) } algorithm if dp[i] = dp[i-1] + dp[i-2] + 3^i ???</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/31601">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-33667"></a>
+<div id="c33667" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-33667" class="active">V nice tutorial for</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/msehgal">msehgal</a></strong><span style="color:#828282"> @ 3 Nov 2012 02:23 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">V nice tutorial for begginers. Thanks:)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/33667">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-34732"></a>
+<div id="c34732" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-34732" class="active">very nice explaination.
+so</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/swpnlmehta">swpnlmehta</a></strong><span style="color:#828282"> @ 4 Dec 2012 07:26 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">very nice explaination.
+so much thanks
+:)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/34732">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-38620"></a>
+<div id="c38620" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-38620" class="active">Nice Tutorial....Thanks a</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/alimbubt">alimbubt</a></strong><span style="color:#828282"> @ 28 Feb 2013 10:27 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Nice Tutorial....Thanks a lot... :)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/38620">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-39990"></a>
+<div id="c39990" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-39990" class="active">haha, fibonacci is not</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sourcewizard">sourcewizard</a></strong><span style="color:#828282"> @ 21 Mar 2013 12:10 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">haha, fibonacci is not possible in O(logn) . u didn't read the article completely . it is just an illusion. :-)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/39990">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-39991"></a>
+<div id="c39991" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-39991" class="active">yup , its a classic</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/sourcewizard">sourcewizard</a></strong><span style="color:#828282"> @ 21 Mar 2013 12:11 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">yup , its a classic misconception.</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/39991">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-40231"></a>
+<div id="c40231" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-40231" class="active">great tutorial</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/govind285">govind285</a></strong><span style="color:#828282"> @ 3 Apr 2013 04:07 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">great tutorial</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/40231">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-46192"></a>
+<div id="c46192" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-46192" class="active">awesome tutorial..</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/pakhandi">pakhandi</a></strong><span style="color:#828282"> @ 17 Jun 2013 09:22 PM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">awesome tutorial..</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/46192">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-48340"></a>
+<div id="c48340" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-48340" class="active">Thank you codechef for this</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/shek8034">shek8034</a></strong><span style="color:#828282"> @ 11 Jul 2013 01:28 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Thank you codechef for this post. It helped me a lot to understand DP quiet well.</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/48340">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-68630"></a>
+<div id="c68630" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-68630" class="active">Why don't you guys add a</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/ishubhamch">ishubhamch</a></strong><span style="color:#828282"> @ 28 Dec 2013 02:06 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">Why don't you guys add a section with list of all dp problems on codechef? That'd be awesome :)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/68630">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<a id="comment-77128"></a>
+<div id="c77128" class="comment clear-block">
+  
+
+  <h3><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#comment-77128" class="active">@sam83
+
+Just multiply {{a, b,</a></h3>
+
+  <div class="submitted">
+    <strong><a href="http://www.codechef.com/users/affiszerv">affiszerv</a></strong><span style="color:#828282"> @ 27 Apr 2014 07:32 AM</span>  </div>
+
+  <div class="content">
+    <div class="comment-body">@sam83
+
+Just multiply {{a, b, -c}, {1, 0, 0}, {0, 1, 0}} by {{G(n-1)}, {G(n-2)}, {G(n-3)}} to get {G(n), {G(n-1)}, {G(n-2)}}} ;)</div>
+      
+    <div class="comment-moderation-links"><ul class="links"><li class="comment_reply first last"><a href="http://www.codechef.com/comment/reply/214292/77128">reply</a></li>
+</ul></div>
+  </div>
+  
+</div>
+<div class="box">
+  <h2 class="title"><hr></h2>  <div class="content"><span style="font-weight:bold;color:#777;">Need help? Post a comment. But before that please spare a moment to read the <a href="http://discuss.codechef.com/questions/855/what-kind-of-comment-should-i-post-on-the-problem-page" target="_blank">guidelines</a>.</span><form action="http://www.codechef.com/comment/reply/214292" accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item">
+ <label>Your name: </label>
+ Himansu Rathi
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <div class="resizable-textarea"><span><textarea cols="60" rows="5" name="comment" id="edit-comment" class="form-textarea resizable required textarea-processed"></textarea><div class="grippie" style="margin-right: -2px;"></div></span></div>
+</div>
+<input type="hidden" name="form_build_id" id="form-f12cb0b59c250a971987007d2de5f751" value="form-f12cb0b59c250a971987007d2de5f751">
+<input type="hidden" name="form_token" id="edit-form-token" value="3d17fdf86a45daa2dbb15b0c32590216">
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form">
+<input type="submit" name="op" id="edit-submit" value="Save" class="form-submit">
+
+</div></form>
+</div>
+</div>
+</div>
+													</div>
+												</div>
+											</div>
+											<img class="content-wrapper-header" src="./Tutorial for Dynamic Programming   CodeChef_files/content-wrapper-bootm-big.gif">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+
+        <div id="footer" class="wrapper">
+      <!--<div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>-->
+      <div class="content clear-block">
+        <!-- Footer Contents -->
+        <div id="block-block-13" class="block block-block block-header">
+  <div class="content">
+        <script language="javascript" type="text/javascript">
+function formatTime(ts) {
+  now = new Date(ts);
+ 
+  localtime = new Date();
+  hour = now.getHours();
+  min = now.getMinutes();
+  sec = now.getSeconds();
+  
+  if (min <= 9) {
+	 min = "0" + min;
+  }
+  if (sec <= 9) {
+	 sec = "0" + sec;
+  }
+  if (hour > 12) {
+	 hour = hour - 12;
+	 add = " PM";
+  } else {
+	 hour = hour;
+	 add = " AM";
+  }
+  if (hour == 12) {
+	 add = " PM";
+  }
+  if (hour == 00) {
+	 hour = "12";
+  }
+	
+  $('#server-time').html(((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add);
+  
+  nextSec = (now.getTime() + 1000);
+  
+  setTimeout("formatTime("+nextSec+")", 1000);
+}
+function getDtTimeZone() 
+{
+var rightNow = new Date();
+var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+var temp = toDay.toGMTString();
+var date2 = new Date(temp.substring(0, temp.lastIndexOf(" ") -1));
+var stdTime = (toDay - date2) / (1000 * 60 * 60);
+return stdTime;
+}
+/*var d=new Date();
+$.ajax({
+url: '/umtza',
+type:'POST',
+data: 'umtza='+d.toString(),
+});
+*/
+</script>
+<div id="disclaimer">CodeChef is a non-commercial competitive programming community</div>
+<div class="inner-wrapper">
+<div class="cols-2">
+<div id="secondary-nav">
+<ul>
+    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+    <li><a target="_blank" href="http://www.directi.com/">About Directi</a></li>
+    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+    <li><a href="http://www.codechef.com/c-programming">C-Programming</a></li>
+    <li><a href="http://www.codechef.com/Programming-Languages">Programming Languages</a></li>
+    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+</ul>
+</div>
+<div id="copyright" class="cols-2">© 2009 <a style="color: rgb(0, 0, 0);" href="http://www.directi.com/">Directi Group</a>.  All Rights Reserved.  CodeChef uses SPOJ © by <a style="color: rgb(0, 0, 0);" href="http://www.sphere-research.com/">Sphere Research Labs</a></div>
+<div id="copyright-msg">In order to report copyright violations of any kind, send in an email to <a href="mailto:copyright@codechef.com">copyright@codechef.com</a></div>
+</div>
+<div align="right" class="cols-2-right" style="float:right;">
+<div id="sponsor-strip"><a target="_blank" href="http://www.directi.com/"><img alt="CodeChef a product of Directi" src="./Tutorial for Dynamic Programming   CodeChef_files/footer-sponsor-strip.gif"></a><br>
+<span>The time now is: <span id="server-time">02:12:15 PM</span></span>
+				<script language="javascript">
+						formatTime('June 08, 2014 14:09:33');
+					</script></div>
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-53602-42']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- Google Code for Visitors that do not sign-up Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1066618556;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "gbUUCPTlhAIQvJ3N_AM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="./Tutorial for Dynamic Programming   CodeChef_files/saved_resource">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1066618556/?label=gbUUCPTlhAIQvJ3N_AM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<!-- Google Code for RM codechef Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 968176136;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "iDk7CPDZ7wMQiOTUzQM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="./Tutorial for Dynamic Programming   CodeChef_files/saved_resource(1)">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/968176136/?label=iDk7CPDZ7wMQiOTUzQM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<div class="cc-footer-seo">
+<span><a href="http://www.codechef.com/">CodeChef</a> - A Platform for Aspiring Programmers</span>
+<p>CodeChef was created as a platform to help programmers make it big in the world of algorithms, <strong>computer programming</strong> and <strong>programming contests</strong>. At CodeChef we work hard to revive the geek in you by hosting a <strong>programming contest</strong> at the start of the month and another smaller programming challenge in the middle of the month. We also aim to have training sessions and discussions related to <strong>algorithms, binary search</strong>, technicalities like <strong>array size</strong> and the likes. Apart from providing a platform for <strong>programming competitions</strong>, CodeChef also has various algorithm tutorials and forum discussions to help those who are new to the world of <strong>computer programming</strong>.</p>
+<p></p>
+<span><a href="http://www.codechef.com/problems/easy">Practice Section</a> - A Place to hone your 'Computer Programming Skills'</span>
+<p>Try your hand at one of our many practice problems and submit your solution in a language of your choice. Our <strong>programming contest</strong> judge accepts solutions in over 35+ programming languages. Preparing for coding contests were never this much fun! Receive points, and move up through the CodeChef ranks. Use our practice section to better prepare yourself for the multiple <strong>programming challenges</strong> that take place through-out the month on CodeChef. </p>
+<p></p>
+<span><a href="http://www.codechef.com/contests/">Compete</a> - Monthly Programming Contests and Cook-offs</span>
+<p>Here is where you can show off your <strong>computer programming</strong> skills. Take part in our 10 day long monthly <strong>coding contest</strong> and the shorter format Cook-off <strong>coding contest</strong>. Put yourself up for recognition and win great prizes. Our <strong>programming contests</strong> have prizes worth up to Rs.20,000 and $700lots more CodeChef goodies up for grabs. </p>
+<p></p>
+<span><a href="http://discuss.codechef.com/">Discuss</a></span>
+<p>Are you new to <strong>computer programming</strong>? Do you need help with algorithms? Then be a part of CodeChef's Forums and interact with all our programmers - they love helping out other programmers and sharing their ideas. Have discussions around <strong>binary search, array size, branch-and-bound, Dijkstra's algorithm, Encryption algorithm</strong> and more by visiting the CodeChef Forums and Wiki section.</p>
+<p></p>
+<span><a href="http://www.codechef.com/community">CodeChef Community</a></span>
+<p>As part of our Educational initiative, we give institutes the opportunity to associate with CodeChef in the form of Campus Chapters. Hosting <strong>online programming competitions</strong> is not the only feature on CodeChef. You can also host a <strong>coding contest</strong> for your institute on CodeChef, organize an <strong>algorithm</strong> event and be a guest author on our blog. </p>
+<p></p>
+<span><a href="http://www.codechef.com/goforgold">Go For Gold</a></span>
+<p>The Go for Gold Initiative was launched about a year after CodeChef was incepted, to help prepare Indian students for the <strong>ACM ICPC</strong> World Finals competition. In the run up to the <strong>ACM ICPC</strong> competition, the Go for Gold initiative uses CodeChef as a platform to train students for the <strong>ACM ICPC</strong> competition via multiple warm up contests. As an added incentive the Go for Gold initiative is also offering over Rs.8 lacs to the Indian team that beats the 29th position at the <strong>ACM ICPC</strong> world finals. Find out more about the Go for Gold and the <strong>ACM ICPC</strong> competition <a href="http://www.codechef.com/goforgold">here</a>.</p>
+</div>  </div>
+</div>
+<div id="block-block-48" class="block block-block block-header">
+  <div class="content">
+        <script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/jquery.cookie.js">  </script><script type="text/javascript" src="./Tutorial for Dynamic Programming   CodeChef_files/contest-notification.js">  </script>  </div>
+</div>
+      </div>
+    </div>
+              <div id="fb-root" class=" fb_reset"><script src="./Tutorial for Dynamic Programming   CodeChef_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Tutorial for Dynamic Programming   CodeChef_files/V80PAcvrynR.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Tutorial for Dynamic Programming   CodeChef_files/V80PAcvrynR(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+      <script type="text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId  : '191217060453',
+            status : true, // check login status
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml  : true,
+            logging: '0',
+            channelURL: 'http://www.codechef.com/sites/all/modules/fbconnect/channel.html',
+            oauth : true
+          });
+
+          jQuery(document).trigger('fb:init');
+        };
+
+        (function() {
+          var e = document.createElement('script');
+          e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+          e.async = true;
+          document.getElementById('fb-root').appendChild(e);
+        }());
+      </script>  </center>
+
+    
+
+</center><div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-orig-layout">        <div id="outerImageContainer" style="color: rgb(0, 0, 0); background-color: rgb(238, 237, 236);"><div id="modalContainer" style="display: none; padding: 10px;"></div><div id="frameContainer" style="display: none; padding: 10px;"></div><div id="imageContainer" style="display: none; padding: 10px;"><img id="lightboxImage" alt=""><div id="hoverNav"><a id="prevLink" title="Previous" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="padding-top: 10px;"></a><a id="nextLink" title="Next" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="padding-top: 10px;"></a></div></div><div id="loading"><a href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" id="loadingLink"></a></div></div>        <div id="imageDataContainer" class="clearfix" style="color: rgb(0, 0, 0); background-color: rgb(238, 237, 236);">          <div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><div id="frameHoverNav"><a id="framePrevLink" title="Previous" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="padding-top: 10px;"></a><a id="frameNextLink" title="Next" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="padding-top: 10px;"></a></div><a id="bottomNavClose" title="Close" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="color: rgb(0, 0, 0); background-color: rgb(238, 237, 236);"></a><a id="bottomNavZoom" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#"></a><a id="bottomNavZoomOut" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#"></a><a id="lightshowPause" title="Pause Slideshow" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="http://www.codechef.com/wiki/tutorial-dynamic-programming#" style="display: none;"></a></div></div>        </div>      </div></body></html>

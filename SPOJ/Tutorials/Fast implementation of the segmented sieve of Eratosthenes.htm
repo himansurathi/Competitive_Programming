@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0048)http://sweet.ua.pt/tos/software/prime_sieve.html -->
+<html><!-- Tomás Oliveira e Silva [2014] --><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Keywords" content="Segmented sieve of Eratosthenes, prime numbers">
+<meta name="Author" content="Tomás Oliveira e Silva">
+<link rel="stylesheet" type="text/css" href="./Fast implementation of the segmented sieve of Eratosthenes_files/style.css">
+<link rel="icon" type="image/gif" href="http://sweet.ua.pt/tos/icon.gif">
+<title>Fast implementation of the segmented sieve of Eratosthenes</title>
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+<body>
+<blockquote><hr></blockquote>
+<h1>Fast implementation of the<br>segmented sieve of Eratosthenes</h1>
+<blockquote><hr><div class="ac">&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#i">Introduction</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#a">Algorithm</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#I">Implementation</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#p">Performance</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#s">Software</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#n">New software</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software/prime_sieve.html#z">Contact</a>&nbsp;&nbsp;<a href="http://sweet.ua.pt/tos/software.html">[Up]</a>&nbsp;</div><hr></blockquote>
+<h2><a name="i"></a>Introduction</h2>
+<p>In order to verify as quickly as possible the <a href="http://sweet.ua.pt/tos/goldbach.html">Goldbach
+conjecture</a> in the vicinity of <i>10^17</i> (and higher) I implemented a cache-friendly
+segmented sieve of Eratosthenes. My implementation appears to be quite fast, specially when
+testing intervals near&nbsp;<i>10^18</i>. In this page I report the main ideas behind this
+implementation, present some speed measurements, and provide C&nbsp;source code of a
+proof-of-concept implementation of my ideas. In these (brief) explanations it is assumed that
+the reader has some experience with this subject.</p>
+<h2 class="a"><a name="a"></a>Description of the algorithm</h2>
+<p>In the classical sieve of Eratosthenes one starts with the numbers <i>2</i>, <i>3</i>,
+<i>4</i>, ..., <i>N</i>, and successively discard those that are multiples of the primes up to
+<i>sqrt(N)</i>; these primes will be called sieving primes. On a computer, the character of each
+integer (either prime or composite), or better yet, the character of each integer that is not a
+multiple of the very first primes (say, <i>2</i>, <i>3</i> and <i>5</i>), can be represented by
+one bit of information. Because each computer has a finite amount of physical memory, if <i>N</i>
+is too large one is forced to subdivide the interval <i>[2,N]</i> in manageable subintervals.
+This subdivision gives rise to the so-called segmented sieve of Eratosthenes.</p>
+<p>In order to identify all prime numbers in the subinterval <i>[P,Q]</i> it is necessary to
+discard all multiples of the sieving primes that belong to this subinterval. Assuming a constant
+memory access time, the amount of time required to do this is of the form
+<i>A&nbsp;(Q-P)&nbsp;log(log(Q))+B&nbsp;pi(sqrt(Q))</i> plus some less significant terms, where
+<i>pi(sqrt(Q))</i> is the number of sieving primes and <i>A</i> and <i>B</i> are positive
+constants. The first term is related to the number of expected multiples of the sieving primes
+belonging to <i>[P,Q]</i>, and the second is related to the overhead incurred in the computation
+of the first multiple, not smaller than <i>P</i>, of each sieving prime.</p>
+<p>If <i>Q</i> is large when compared to <i>Q-P</i>, the overhead term <i>B&nbsp;pi(sqrt(Q))</i> will
+dominate the execution time. To reduce its effect the popular approach is to increase the
+subinterval size, i.e., increase <i>Q-P</i>, so that each sieving prime will have a few multiples
+in the subinterval. When <i>Q</i> is quite large, say <i>Q=10^18</i>, this is currently not
+feasible, and the <i>B&nbsp;pi(sqrt(Q))</i> term will dominate the execution time. Furthermore, a
+large interval requires a large amount of memory, which will be accessed in an essentially random
+way. The cache of modern processors will thus not be used efficiently, making the <i>A</i>
+constant rather large.</p>
+<p>In&nbsp;<i>2001</i> I devised an <b>apparently new</b> (and fast) algorithm to generate primes,
+which is based on the observation that usually many consecutive subintervals will be sieved.
+The main idea is to keep, for each subinterval, a list of the sieving primes that have multiples
+in that subinterval. In an initialization phase, performed only once (at the start of the
+computation), the sieving primes are distributed among the lists. To do this, the first multiple
+(belonging to the interval being sieved) of each sieving prime is computed, the subinterval where
+this multiple lies is identified, and the prime and respective multiple are placed in the
+appropriate list. After the initialization, each subinterval is considered in turn. The list of
+primes of the current subinterval is processed, and its sieving primes are put into the lists of
+the next subintervals, according to the value of their next multiple. The computation stops after
+the last subinterval is processed.</p>
+<p>The amount of time spent in the initialization is of the form <i>C&nbsp;pi(sqrt(N))</i> plus
+less significant terms. The amount of time required to process each subinterval is of the form
+<i>D&nbsp;(Q-P)&nbsp;log(log(Q))</i> plus less significant terms. The amount of memory used in our new
+algorithm is proportional to the number of sieving primes. The size of each subinterval should be
+small, so that all important data can be kept in the processor' data caches.</p>
+<h2 class="a"><a name="I"></a>Implementation</h2>
+<p>In a practical implementation of these ideas, the number of lists is a fixed power
+of&nbsp;<i>2</i>, and the lists are used in a circular fashion (using modular arithmetic for the
+list number). Furthermore, each list is implemented using a linked list, each node of which
+having a size that is a multiple of the line size of the processor's level&nbsp;1 data cache
+and having addresses aligned on multiples of that size; each node of the linked list will thus
+hold information about several sieving primes. This is necessary to both reduce the storage
+overheads of the linked list and to use the processor' data caches more efficiently.</p>
+<p>Since the currently freely available implementations (that I am aware of) of the segmented
+sieve of Eratosthenes are not very efficient when processing intervals near <i>10^16</i> or
+higher, I have decided to offer two <a href="http://sweet.ua.pt/tos/software/prime_sieve.html#s">simple implementations</a> of the algorithm.
+For comparison purposes in each case two algorithms are offered: a "classical" segmented sieve
+and the new segmented sieve.</p>
+<h2 class="a"><a name="p"></a>Performance</h2>
+<p>To show the effectiveness of the algorithm, in the following table I present the time, in
+seconds, required to count the number of primes in an interval of <i>10^9</i> integers, starting
+at <i>10^n</i>. Three algorithms are considered:</p>
+<ul>
+<li>A1: the implementation of the "classical" segmented sieve mentioned above (version 1),</li>
+<li>A2: the implementation of the new segmented sieve, also mentioned above (version 1), and</li>
+<li>A3: an optimized implementation of the new segmented sieve, using a <i>mod&nbsp;30</i>
+wheel and assembly language, used in my <a href="http://sweet.ua.pt/tos/goldbach.html">Goldbach conjecture
+verification</a> project.</li>
+</ul>
+<p>I have not taken into consideration the initialization time, which is approximately equal for
+the three algorithms (less than one minute for an interval near <i>10^18</i>). In this way, to
+estimate the execution time for an interval of, say, <i>10^12</i> integers one just has to
+multiply the numbers given in the table by&nbsp;<i>1000</i>.</p>
+<table cellspacing="1" summary="Some timing results">
+<tbody><tr>
+<th>&nbsp;n&nbsp;</th>
+<th class="empty"></th>
+<th>&nbsp;A1&nbsp;</th>
+<th>&nbsp;A2&nbsp;</th>
+<th>&nbsp;A3&nbsp;</th>
+</tr>
+<tr>
+<td class="empty"></td>
+</tr>
+<tr>
+<td>&nbsp;12&nbsp;</td>
+<td class="empty"></td>
+<td>&nbsp;13.31&nbsp;</td>
+<td>&nbsp;14.08&nbsp;</td>
+<td>&nbsp;2.63&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;14&nbsp;</td>
+<td class="empty"></td>
+<td>&nbsp;25.79&nbsp;</td>
+<td>&nbsp;20.62&nbsp;</td>
+<td>&nbsp;4.05&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;16&nbsp;</td>
+<td class="empty"></td>
+<td>&nbsp;97.39&nbsp;</td>
+<td>&nbsp;26.26&nbsp;</td>
+<td>&nbsp;5.58&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;18&nbsp;</td>
+<td class="empty"></td>
+<td>&nbsp;208.13&nbsp;</td>
+<td>&nbsp;32.36&nbsp;</td>
+<td>&nbsp;9.61&nbsp;</td>
+</tr>
+</tbody></table>
+<p>The machine used was a 900MHz Athlon computer with 512Mbytes of CAS3 PC133 memory running
+GNU/Linux. For each sieving prime, A1 uses about 8&nbsp;bytes, A2 uses about 8.1&nbsp;bytes, and A3 uses
+about 6.5&nbsp;bytes. For the first two algorithms, more details are given in the source code. More
+timing results of algorithm A3 are available <a href="http://sweet.ua.pt/tos/goldbach/sieve_speed.pdf">elsewhere
+[22k, PDF]</a>.</p>
+<h2 class="a"><a name="s"></a>Software (version&nbsp;1) <small>(last update made on May&nbsp;3,&nbsp;2003)</small></h2>
+<p><a href="http://sweet.ua.pt/tos/software/prime_sieve.tgz">Simple single-threaded implementation [12k, gziped tar archive]</a>
+of the segmented sieve of Eratosthenes, released under the version&nbsp;2 (or any later version) of
+the <a href="http://www.gnu.org/">GNU</a> <a href="http://www.gnu.org/licenses/gpl.html">general
+public license</a>. Please do not ask for my help to fit this source code (and the one described
+below) to your own purposes. I will almost surely not help you. Please note that this is
+proof-of-concept code; production code, using a mod 30 wheel, would be at least twice as fast.</p>
+<h2 class="a"><a name="n"></a>New software (version&nbsp;2) <small>(last update made on September&nbsp;29,&nbsp;2010)</small></h2>
+<p><a href="http://sweet.ua.pt/tos/software/fast_sieve.tgz">A more refined single-threaded implementation [20k, gziped tar archive]</a>
+of the segmented sieve of Eratosthenes, released under the version&nbsp;2 (or any later version) of
+the <a href="http://www.gnu.org/">GNU</a> <a href="http://www.gnu.org/licenses/gpl.html">general
+public license</a>. On a 2.83GHz Intel Core2 Quad Q9550 processor, the new single-threaded
+implementation can generate all primes in an interval of <i>2^30</i> near <i>2^64</i> in
+<i>3</i>&nbsp;seconds using 1.6G&nbsp;bytes of memory. Please note that this is proof-of-concept code;
+production code, using a mod 30 wheel, would be at least twice as fast.</p>
+<hr>
+<div class="footer"><a name="z"></a>
+<table cellspacing="0" summary="Contact information">
+<tbody><tr>
+<td rowspan="2" colspan="3">
+<address>
+Tomás Oliveira e Silva<br>
+Departamento de Eletrónica, Telecomunicações e Informática<br>
+Universidade de Aveiro<br>
+3810-193 AVEIRO<br>
+PORTUGAL
+</address>
+</td>
+<td rowspan="4">
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td class="c">
+March 30, 2014
+</td>
+</tr>
+<tr>
+<td class="a" rowspan="3">
+<img src="./Fast implementation of the segmented sieve of Eratosthenes_files/tos_logo.gif" width="125" height="60" alt="My personal logo">
+</td>
+</tr>
+<tr>
+<td class="b">
+Phone: +351-234-370379<br>
+Fax: +351-234-370545
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td class="b" style="width: 90%">
+Phone (internal): 23013<br>
+Office: DETI 4.2.37
+</td>
+</tr>
+<tr>
+<td class="b" colspan="3">
+E-mail address: <a href="mailto:tos@ua.pt">tos@ua.pt</a><br>
+Home page: <a href="http://www.ieeta.pt/~tos/">http://www.ieeta.pt/~tos/</a>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+</body></html>

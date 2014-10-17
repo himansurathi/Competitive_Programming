@@ -1,0 +1,5343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0502)http://disqus.com/embed/comments/?base=default&disqus_version=7a601677&f=geeksforgeeks&t_i=12635%20http%3A%2F%2Fgeeksforgeeks.org%2F%3Fp%3D12635&t_u=http%3A%2F%2Fwww.geeksforgeeks.org%2Fdynamic-programming-set-1%2F&t_e=Dynamic%20Programming%20%7C%20Set%201%20(Overlapping%20Subproblems%20Property)&t_d=Dynamic%20Programming%20%7C%20Set%201%20(Overlapping%20Subproblems%20Property)%20%7C%20GeeksforGeeks&t_t=Dynamic%20Programming%20%7C%20Set%201%20(Overlapping%20Subproblems%20Property)&s_o=default&l=#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<style type="text/css"></style><link rel="stylesheet" href="http://a.disquscdn.com/next/styles/lounge.7533ef566663bc409d3f83743599eff7.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.e4a74d9879b8256217239ef94a8514c5.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.152d63363d0ab216b56194fd80f0191c.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://www.google-analytics.com/ga.js" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://b.scorecardresearch.com/beacon.js" src="beacon.js"></script><style id="css_1402392518174"></style><!--<base target="_parent" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/">--><base href="." target="_parent"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="highlight" src="highlight.0faa05361b05582ff85f4eff7fda997e.js"></script><script src="event.js" async="" charset="UTF-8"></script></head>
+<body style="">
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1402355965/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1402355965/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/7a601677"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{},"forum":{"name":"GeeksforGeeks","founder":"65619083","settings":{"canEnableSponsoredComments":false,"hasCustomAvatar":false,"allowAnonPost":true,"allowMedia":false,"moderatorText":"","typeface":"auto","promotedDiscoveryEnabled":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"organicDiscoveryEnabled":false,"backplaneEnabled":false,"discoveryThumbnailsEnabled":false,"colorScheme":"auto","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":false},"url":"http://www.geeksforgeeks.org/","favicon":{"permalink":"http://disqus.com/api/forums/favicons/geeksforgeeks.jpg","cache":"//a.disquscdn.com/1402355965/images/favicon-default.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/geeksforgeeks.jpg?size=32","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/geeksforgeeks.jpg?size=92","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"}},"pk":2480709,"id":"geeksforgeeks"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":34,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1402378508,"posts":[{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"dg","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Please give comparison between top down approach(memorization) and bottom up approach.\nAs in memorization(top down) we can avoid computation of some sub-problems(in some cases) on the other hand in bottom up approach we need to find solution of every sub problem.\nAnd how should we choose between Memoization and Tabulation?","createdAt":"2014-06-10T05:35:08","id":"1428025181","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Please give comparison between top down approach(memorization) and bottom up approach.\u003cbr>As in memorization(top down) we can avoid computation of some sub-problems(in some cases) on the other hand in bottom up approach we need to find solution of every sub problem.\u003cbr>And how should we choose between Memoization and Tabulation?\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"username":"disqus_nlu3YilkmR","about":"student","name":"ankit","url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"http://disqus.com/disqus_nlu3YilkmR/","reputation":1.232124,"location":"kolkata,India","isPrivate":false,"isPrimary":true,"joinedAt":"2014-04-10T15:23:12","id":"102621183","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_nlu3YilkmR.jpg","cache":"//a.disquscdn.com/uploads/users/10262/1183/avatar32.jpg?1397143406"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/disqus_nlu3YilkmR.jpg","cache":"//a.disquscdn.com/uploads/users/10262/1183/avatar92.jpg?1397143406","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_nlu3YilkmR.jpg","cache":"//a.disquscdn.com/uploads/users/10262/1183/avatar92.jpg?1397143406"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@GFG \nwhich approach is better bottom-up or top-down?","createdAt":"2014-04-10T15:23:25","id":"1329319978","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":true,"message":"\u003cp>@GFG \u003cbr>which approach is better bottom-up or top-down?\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"username":"disqus_1H9DWcTkS3","about":"","name":"Gaurav Kapoor","url":"","isAnonymous":false,"rep":1.2330059999999998,"profileUrl":"http://disqus.com/disqus_1H9DWcTkS3/","reputation":1.2330059999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-01-08T11:49:31","id":"89674202","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_1H9DWcTkS3.jpg","cache":"//a.disquscdn.com/uploads/users/8967/4202/avatar32.jpg?1389181778"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/disqus_1H9DWcTkS3.jpg","cache":"//a.disquscdn.com/uploads/users/8967/4202/avatar92.jpg?1389181778","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_1H9DWcTkS3.jpg","cache":"//a.disquscdn.com/uploads/users/8967/4202/avatar92.jpg?1389181778"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"With Normal recursion OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 11 microseconds and value is 832040\n\nWith Memorization OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 1647 microseconds and value is 832040\n\nWhy its taking less time in Recursion ?? It should be the reverse way","createdAt":"2014-01-08T11:49:37","id":"1191958933","thread":"1639775526","depth":0,"numReports":0,"likes":9,"isEdited":false,"message":"\u003cp>With Normal recursion OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 11 microseconds and value is 832040\u003c/p>\u003cp>With Memorization OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 1647 microseconds and value is 832040\u003c/p>\u003cp>Why its taking less time in Recursion ?? It should be the reverse way\u003c/p>","isSpam":false,"isHighlighted":false,"points":9},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"avidullu","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@GeeksforGeeks Can you please remove the link to web.iiit.ac.in/avidullu That page has been removed.","createdAt":"2014-01-03T08:53:04","id":"1185195560","thread":"1639775526","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>@GeeksforGeeks Can you please remove the link to \u003ca href=\"http://web.iiit.ac.in/avidullu\" rel=\"nofollow\">web.iiit.ac.in/avidullu\u003c/a> That page has been removed.\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"The Teacher","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"first Two links are giving 404 ERROR !!!!","createdAt":"2013-12-26T12:23:22","id":"1177142953","thread":"1639775526","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>first Two links are giving 404 ERROR !!!!\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"anjali","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"please give examples  for top-down and bottom-up?","createdAt":"2013-10-08T17:10:28","id":"1075159826","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>please give examples  for top-down and bottom-up?\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"username":"myth17","about":"","name":"myth17","url":"","isAnonymous":false,"rep":1.2407549999999998,"profileUrl":"http://disqus.com/myth17/","reputation":1.2407549999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-09-01T03:19:10","id":"31460832","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/myth17.jpg","cache":"//a.disquscdn.com/uploads/users/3146/832/avatar32.jpg?1383432592"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/myth17.jpg","cache":"//a.disquscdn.com/uploads/users/3146/832/avatar92.jpg?1383432592","large":{"permalink":"http://disqus.com/api/users/avatars/myth17.jpg","cache":"//a.disquscdn.com/uploads/users/3146/832/avatar92.jpg?1383432592"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"2 of the Reference links are hitting 404.","createdAt":"2013-08-31T17:03:21","id":"1024515097","thread":"1639775526","depth":0,"numReports":0,"likes":5,"isEdited":false,"message":"\u003cp>2 of the Reference links are hitting 404.\u003c/p>","isSpam":false,"isHighlighted":false,"points":5},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Ramprasad Meena","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"#include\n \nint unsigned long  fc(int n)\n{\n     int i;int unsigned  long previousFib = 0, currentFib = 1,newFib;\nif( n == 0)\n  return 0;\nelse for(i=1;i&#60;n;i++) // loop is skipped if n=1\n{\nnewFib= previousFib + currentFib;\npreviousFib = currentFib;\ncurrentFib = newFib;\n \n}\nreturn currentFib ;     \n}\n \nint main()\n{\n int val;\n printf(&#34;\\nEnter number you want to generate fb :&#34;);   \n scanf(&#34;%d&#34;,&#38;val);\n printf(&#34;new bottum to down :%lu&#34;,fc(val));\nreturn 0;\n}","createdAt":"2013-08-22T00:38:27","id":"1016409219","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>#include\u003c/p>\u003cp>int unsigned long  fc(int n)\u003cbr>{\u003cbr>     int i;int unsigned  long previousFib = 0, currentFib = 1,newFib;\u003cbr>if( n == 0)\u003cbr>  return 0;\u003cbr>else for(i=1;i&lt;n;i++) // loop is skipped if n=1\u003cbr>{\u003cbr>newFib= previousFib + currentFib;\u003cbr>previousFib = currentFib;\u003cbr>currentFib = newFib;\u003c/p>\u003cp>}\u003cbr>return currentFib ;     \u003cbr>}\u003c/p>\u003cp>int main()\u003cbr>{\u003cbr> int val;\u003cbr> printf(\"\\nEnter number you want to generate fb :\");   \u003cbr> scanf(\"%d\",&amp;val);\u003cbr> printf(\"new bottum to down :%lu\",fc(val));\u003cbr>return 0;\u003cbr>}\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Mitch Mitchell","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Thanks Guys! This is an awesome tutorial!","createdAt":"2013-05-21T21:23:42","id":"1016409215","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Thanks Guys! This is an awesome tutorial!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Gurpriya Singh","url":"http://www.facebook.com/gurpriya","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"thank you sir!","createdAt":"2013-05-19T04:28:42","id":"1016409210","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>thank you sir!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"anon","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"can any DP problem be solved by both top-down and bottom-up approach??","createdAt":"2013-05-01T17:51:13","id":"1016409195","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>can any DP problem be solved by both top-down and bottom-up approach??\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409195,"author":{"name":"geekguy","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Almost every problem can be solved by both top-down and bottom-up approach. :) \n\n\n\u003cpre> \u003ccode language=\"C\">\n/* Paste your code here (You may delete these lines if not writing code) */\n\u003c/code> \u003c/pre>","createdAt":"2013-06-27T19:44:51","id":"1016409203","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Almost every problem can be solved by both top-down and bottom-up approach. :)\u003c/p>\u003cp>\u003c/p>\u003cpre> \u003ccode>\u003cbr>/* Paste your code here (You may delete these lines if not writing code) */\u003cbr>\u003c/code> \u003c/pre>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Ejike Usulor","url":"http://www.facebook.com/sirvaliant.2005","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"This program is the bomb.","createdAt":"2013-04-02T01:04:57","id":"1016409207","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>This program is the bomb.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"mafia","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u003cpre> \u003ccode language=\"C\">\n/* /* function for nth Fibonacci number */\nint fib(int n)\n{\n   if(lookup[n] == NIL)\n   {\n    if ( n &#60;= 1 )\n      lookup[n] = n;//if(n==0) then lookup[n]=n;wrong??\n    else\n      lookup[n] = fib(n-1) + fib(n-2);\n   }\n \n   return lookup[n];\n}*/\n\u003c/code> \u003c/pre>\nhere if (n==0){lookup[n]==1;}","createdAt":"2013-01-06T15:24:47","id":"1016409194","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cpre> \u003ccode>\u003cbr>/* /* function for nth Fibonacci number */\u003cbr>int fib(int n)\u003cbr>{\u003cbr>   if(lookup[n] == NIL)\u003cbr>   {\u003cbr>    if ( n &lt;= 1 )\u003cbr>      lookup[n] = n;//if(n==0) then lookup[n]=n;wrong??\u003cbr>    else\u003cbr>      lookup[n] = fib(n-1) + fib(n-2);\u003cbr>   }\u003cbr> \u003cbr>   return lookup[n];\u003cbr>}*/\u003cbr>\u003c/code> \u003c/pre>\u003cp>\u003cbr>here if (n==0){lookup[n]==1;}\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409194,"author":{"name":"shiwakant.bharti","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@mafia \n1.> Please consider the series as 0 1 1 2 3 as rightly said by @Himani.\n2.> If you just the write the code to handle n==0 then it will break at n=1 as it will try to calculate it from n=0 and n=-1. This will end up in negative index of lookup. In Java you might get ArrayIndexOutOfBoundsException, in C/C++ (depends on versions) it might iterate and finally lead to segmentation fault/stackoverflow or something.","createdAt":"2013-08-16T12:33:48","id":"1016409205","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@mafia \u003cbr>1.&gt; Please consider the series as 0 1 1 2 3 as rightly said by @Himani.\u003cbr>2.&gt; If you just the write the code to handle n==0 then it will break at n=1 as it will try to calculate it from n=0 and n=-1. This will end up in negative index of lookup. In Java you might get ArrayIndexOutOfBoundsException, in C/C++ (depends on versions) it might iterate and finally lead to segmentation fault/stackoverflow or something.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409194,"author":{"name":"Himani","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"/* /* function for nth Fibonacci number */\nint fib(int n)\n{\n   if(lookup[n] == NIL)\n   {\n    if ( n &#60;= 1 )\n      lookup[n] = n;/*right if series goes on as 0 1 1 2 3 5 .. */\n    else\n      lookup[n] = fib(n-1) + fib(n-2);\n   }\n  \n   return lookup[n];\n}*/","createdAt":"2013-05-26T23:06:03","id":"1016409200","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>/* /* function for nth Fibonacci number */\u003cbr>int fib(int n)\u003cbr>{\u003cbr>   if(lookup[n] == NIL)\u003cbr>   {\u003cbr>    if ( n &lt;= 1 )\u003cbr>      lookup[n] = n;/*right if series goes on as 0 1 1 2 3 5 .. */\u003cbr>    else\u003cbr>      lookup[n] = fib(n-1) + fib(n-2);\u003cbr>   }\u003c/p>\u003cp>   return lookup[n];\u003cbr>}*/\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Pulkit","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Awesome Post..!!\n\n\u003cpre> \u003ccode language=\"C\">\n/* Paste your code here (You may delete these lines if not writing code) */\n\u003c/code> \u003c/pre>","createdAt":"2012-11-08T21:41:43","id":"1016409190","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Awesome Post..!!\u003c/p>\u003cp>\u003c/p>\u003cpre> \u003ccode>\u003cbr>/* Paste your code here (You may delete these lines if not writing code) */\u003cbr>\u003c/code> \u003c/pre>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Neol","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Which one is more efficient to store solutions of subproblems ? \nIn my view, Memoization will be efficient as we don't have to fill complete lookup table but in tabulation we have to fill all entries . Correct me if I am wrong.","createdAt":"2012-02-11T19:07:41","id":"1016409189","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Which one is more efficient to store solutions of subproblems ? \u003cbr>In my view, Memoization will be efficient as we don't have to fill complete lookup table but in tabulation we have to fill all entries . Correct me if I am wrong.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409189,"author":{"name":"jain.ankitk","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Its just in memoization stack size would be O(n) as the function will recurse till base case before starting to fill the solution for subproblems.\n\n\n\u003cpre> \u003ccode language=\"C\">\n/* Paste your code here (You may delete these lines if not writing code) */\n\u003c/code> \u003c/pre>","createdAt":"2013-07-28T18:43:42","id":"1016409204","thread":"1639775526","depth":1,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Its just in memoization stack size would be O(n) as the function will recurse till base case before starting to fill the solution for subproblems.\u003c/p>\u003cp>\u003c/p>\u003cpre> \u003ccode>\u003cbr>/* Paste your code here (You may delete these lines if not writing code) */\u003cbr>\u003c/code> \u003c/pre>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"shrikant","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"will changing the fib code from \nlookup[n] = fib(n-1) + fib(n-2)\nto\nlookup[n] = fib(n-2) + fib(n-1)\nnot make it better ?","createdAt":"2011-06-18T23:12:22","id":"1016409179","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>will changing the fib code from \u003cbr>lookup[n] = fib(n-1) + fib(n-2)\u003cbr>to\u003cbr>lookup[n] = fib(n-2) + fib(n-1)\u003cbr>not make it better ?\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409179,"author":{"name":"Praveen","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"I think its better to write \nlookup[n] = fib(n-2) + fib(n-1) \n\nthan \n\nlookup[n] = fib(n-1) + fib(n-2)\nnice comment..","createdAt":"2011-07-12T13:07:55","id":"1016409182","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>I think its better to write \u003cbr>lookup[n] = fib(n-2) + fib(n-1)\u003c/p>\u003cp>than\u003c/p>\u003cp>lookup[n] = fib(n-1) + fib(n-2)\u003cbr>nice comment..\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409182,"author":{"name":"Praveen","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"srry for above...\n\nIt doesn't matter about the order ...\n\nsince we each time look up for the table.","createdAt":"2011-07-12T13:11:07","id":"1016409185","thread":"1639775526","depth":2,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>srry for above...\u003c/p>\u003cp>It doesn't matter about the order ...\u003c/p>\u003cp>since we each time look up for the table.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409179,"author":{"name":"Anand","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"http://anandtechblog.blogspot.com/2010/07/optimise-code-for-fibonacci-series.html","createdAt":"2011-06-28T19:06:26","id":"1016423158","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>\u003ca href=\"http://anandtechblog.blogspot.com/2010/07/optimise-code-for-fibonacci-series.html\" rel=\"nofollow\">http://anandtechblog.blogspot....\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Anand","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u003ca href=\"http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html\u003c/a>","createdAt":"2011-06-10T20:29:08","id":"1016409175","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>\u003ca href=\"http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Anand","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u003ca href=\"http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html\u003c/a>","createdAt":"2011-06-07T07:51:08","id":"1016409171","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>\u003ca href=\"http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html\" rel=\"nofollow\">http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"shubh","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"You have written Memoization as Top Down, but standard books say that Dynamic Programming is Bottom Up.  Please explain.","createdAt":"2011-06-02T08:36:09","id":"1016409167","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>You have written Memoization as Top Down, but standard books say that Dynamic Programming is Bottom Up.  Please explain.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409167,"author":{"name":"GeeksforGeeks","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@shubh: CLRS book considers Memoization as a variation of Dynamic Programming that offers efficiency of Dynamic Programming while maintaining a top down strategy.","createdAt":"2011-06-02T10:38:45","id":"1016423157","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@shubh: CLRS book considers Memoization as a variation of Dynamic Programming that offers efficiency of Dynamic Programming while maintaining a top down strategy.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"Anand","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Here is blog that has all solved DP problem frequently asked in interviews.\r\n\u003ca href=\" http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\" rel=\"nofollow\">\r\nhttp://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\u003c/a>","createdAt":"2011-06-02T05:47:40","id":"1016409154","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Here is blog that has all solved DP problem frequently asked in interviews.\u003cbr>\u003ca href=\" http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\" rel=\"nofollow\">\u003cbr>http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"satya","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@geeksfoegeeks..Great Post &#38;  Gud Work Keep Posting  All Standerd DP Problems Please Keep it Up\n\nSatya","createdAt":"2011-06-01T18:46:42","id":"1016409165","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@geeksfoegeeks..Great Post &amp;  Gud Work Keep Posting  All Standerd DP Problems Please Keep it Up\u003c/p>\u003cp>Satya\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"SDiZ","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"I just realize how flawed the wikipedia page is.\nTraditional source (e.g. NIST DADS) say \n\n\u003cblockquote>\u003cstrong>Definition:\u003c/strong> Solve an optimization problem by caching subproblem solutions (memoization) rather than recomputing them.\u003c/blockquote>","createdAt":"2011-06-01T12:56:21","id":"1016409160","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>I just realize how flawed the wikipedia page is.\u003cbr>Traditional source (e.g. NIST DADS) say\u003c/p>\u003cp>\u003c/p>\u003cblockquote>\u003cstrong>Definition:\u003c/strong> Solve an optimization problem by caching subproblem solutions (memoization) rather than recomputing them.\u003c/blockquote>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409160,"author":{"name":"kartik","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@SDiZ: The Wikipedia page talks about general definition of Memoization in computer science as Memoization is not limited to algorithms. NIST DADS talks about algorithm specific definition.  Following is another link for algorithm specific definition.\r\n\r\n\u003ca href=\"http://www.algorithmist.com/index.php/Memoization\" rel=\"nofollow\">http://www.algorithmist.com/index.php/Memoization\u003c/a>","createdAt":"2011-06-01T13:35:09","id":"1016423152","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@SDiZ: The Wikipedia page talks about general definition of Memoization in computer science as Memoization is not limited to algorithms. NIST DADS talks about algorithm specific definition.  Following is another link for algorithm specific definition.\u003c/p>\u003cp>\u003ca href=\"http://www.algorithmist.com/index.php/Memoization\" rel=\"nofollow\">http://www.algorithmist.com/index.php/Memoization\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016423152,"author":{"name":"sid","url":"http://shashank7s.blogspot.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@GeeksForGeeks, Can You post the shortest path algo like bellmon ford , dijkshtra , all pair shortest path etc .\n\n\n\u003cpre> \u003ccode language=\"C\">\n/* Paste your code here (You may delete these lines if not writing code) */\n\u003c/code> \u003c/pre>","createdAt":"2011-11-20T16:43:17","id":"1016423160","thread":"1639775526","depth":2,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@GeeksForGeeks, Can You post the shortest path algo like bellmon ford , dijkshtra , all pair shortest path etc .\u003c/p>\u003cp>\u003c/p>\u003cpre> \u003ccode>\u003cbr>/* Paste your code here (You may delete these lines if not writing code) */\u003cbr>\u003c/code> \u003c/pre>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":null,"author":{"name":"SDiZ","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u003cblockquote>..  is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems ..\u003c/blockquote>\n\nThis is called \"divide and conquer\".\n\nDynamic Programming is about memorization.","createdAt":"2011-06-01T12:49:25","id":"1016409157","thread":"1639775526","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cblockquote>..  is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems ..\u003c/blockquote>\u003cp>\u003c/p>\u003cp>This is called \"divide and conquer\".\u003c/p>\u003cp>Dynamic Programming is about memorization.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"geeksforgeeks","parent":1016409157,"author":{"name":"GeeksforGeeks","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar32.png","cache":"//a.disquscdn.com/1402355965/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1402355965/images/noavatar92.png","cache":"//a.disquscdn.com/1402355965/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"@SDiZ: Both Dynamic Programming(DP) and Divide and Conquer(DC) solve problems by breaking them into subproblems. The key difference is:  In DP, results of subproblems are stored in a table as these results might be needed later.  In DC, results of subproblems are not stored. Memoization is one of the techniques to store results of subproblems.","createdAt":"2011-06-01T13:02:10","id":"1016409162","thread":"1639775526","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>@SDiZ: Both Dynamic Programming(DP) and Divide and Conquer(DC) solve problems by breaking them into subproblems. The key difference is:  In DP, results of subproblems are stored in a table as these results might be needed later.  In DC, results of subproblems are not stored. Memoization is one of the techniques to store results of subproblems.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"http://geeksforgeeks.disqus.com/dynamic_programming_set_1_overlapping_subproblems_property/latest.rss","uploadAdd":"//geeksforgeeks.disqus.com/thread/dynamic_programming_set_1_overlapping_subproblems_property/async_media_upload/","identifiers":["12635 http://geeksforgeeks.org/?p=12635"],"dislikes":0,"likes":0,"message":"","id":"1639775526","createdAt":"2013-08-24T20:33:43","category":"2517633","clean_title":"Dynamic Programming | Set 1 (Overlapping Subproblems Property)","userScore":0,"moderators":[65619083],"isDeleted":false,"hasStreaming":false,"uploadRemove":"//geeksforgeeks.disqus.com/thread/dynamic_programming_set_1_overlapping_subproblems_property/async_media_remove/","isClosed":false,"link":"http://www.geeksforgeeks.org/dynamic-programming-set-1/","slug":"dynamic_programming_set_1_overlapping_subproblems_property","forum":"geeksforgeeks","author":"65619083","posts":34,"userSubscription":false,"title":"Dynamic Programming | Set 1 (Overlapping Subproblems Property)","highlightedPost":null}},"order":"desc"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.js"></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="discovery-top" data-tracking-area="discovery-north"></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-role="post-count" class="publisher-nav-color" data-nav="conversation">
+
+<span class="comment-count">
+
+34 comments
+
+</span>
+
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="publisher-nav-color" data-nav="community" id="community-tab">
+
+
+<span class="community-name">
+
+<strong>GeeksforGeeks</strong>
+
+</span>
+
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout">
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+
+<span>
+Login
+</span>
+
+
+</span> <span class="caret"></span>
+</a>
+
+<ul class="dropdown-menu">
+
+
+
+
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="auth:google">Google</a>
+</li>
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="notification-menu" data-role="notification-menu">
+
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="notification-container" data-action="auth:disqus">
+<span class="notification-icon icon-disqus"></span>
+
+
+</a></li>
+</ul>
+</nav>
+
+</header>
+
+
+
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+
+<li data-role="post-sort" class="dropdown sorting">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+
+Sort by Newest
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="sort" data-sort="popular">Best</a>
+</li>
+
+<li class="selected">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="sort" data-sort="desc">Newest</a>
+</li>
+
+<li>
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="sort" data-sort="asc">Oldest</a>
+</li>
+</ul>
+</li>
+
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div class="thread-likes" data-role="vote-button">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a>
+</div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="posts">
+
+<div id="form"><form class="reply">
+<div class="alert error" style="display:none" role="alert">
+<a class="close" data-action="dismiss-alert" title="Dismiss">×</a>
+<span></span>
+</div>
+
+<div class="postbox">
+<div class="avatar">
+
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.d1dee965677e7cc8d58afe004a6d8282.png">
+</span>
+
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="-1" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;">
+<ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+
+
+</ul>
+
+
+</div>
+</div>
+
+
+<div data-role="login-form"><div>
+
+<section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+
+<ul data-role="login-menu" class="services login-buttons">
+
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+<li class="auth-signup">
+<button type="button" data-action="auth:disqus" title="Disqus">Sign up for Disqus</button>
+</li>
+</ul>
+
+</div>
+
+<div class="guest">
+<h6 class="guest-form-title">
+
+or pick a name
+
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" placeholder="Password" name="password">
+</p>
+
+<div class="guest-checkbox">
+<label>
+<input type="checkbox" name="author-guest">
+I'd rather post as guest
+</label>
+</div>
+
+
+</div>
+</div>
+<div class="proceed">
+
+<button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span></button>
+<button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span></button>
+
+</div>
+
+</section>
+
+
+
+
+</div></div>
+
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+
+</button>
+
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-1428025181">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">dg</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1428025181" data-role="relative-time" class="time-ago" title="Tuesday, June 10 2014 11:05 AM">
+4 hours ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Please give comparison between top down approach(memorization) and bottom up approach.<br>As in memorization(top down) we can avoid computation of some sub-problems(in some cases) on the other hand in bottom up approach we need to find solution of every sub problem.<br>And how should we choose between Memoization and Tabulation?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1428025181">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1428025181">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1329319978">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/disqus_nlu3YilkmR/" class="user" data-action="profile" data-user="102621183">
+<img data-role="user-avatar" data-user="102621183" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="profile" data-user="102621183" data-role="username">ankit</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1329319978" data-role="relative-time" class="time-ago" title="Thursday, April 10 2014 8:53 PM">
+2 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@GFG <br>which approach is better bottom-up or top-down?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1329319978">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1329319978">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1191958933">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/disqus_1H9DWcTkS3/" class="user" data-action="profile" data-user="89674202">
+<img data-role="user-avatar" data-user="89674202" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="profile" data-user="89674202" data-role="username">Gaurav Kapoor</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1191958933" data-role="relative-time" class="time-ago" title="Wednesday, January 8 2014 5:19 PM">
+5 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>With Normal recursion OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 11 microseconds and value is 832040</p><p>With Memorization OUTPUT for n=30 : time taken to calculate the fibonacci of 30 is 1647 microseconds and value is 832040</p><p>Why its taking less time in Recursion ?? It should be the reverse way</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-9" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">9</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1191958933">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1191958933">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1185195560">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">avidullu</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1185195560" data-role="relative-time" class="time-ago" title="Friday, January 3 2014 2:23 PM">
+5 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@GeeksforGeeks Can you please remove the link to <a href="http://web.iiit.ac.in/avidullu" rel="nofollow">web.iiit.ac.in/avidullu</a> That page has been removed.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1185195560">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1185195560">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1177142953">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">The Teacher</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1177142953" data-role="relative-time" class="time-ago" title="Thursday, December 26 2013 5:53 PM">
+6 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>first Two links are giving 404 ERROR !!!!</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1177142953">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1177142953">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1075159826">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">anjali</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1075159826" data-role="relative-time" class="time-ago" title="Tuesday, October 8 2013 10:40 PM">
+8 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>please give examples  for top-down and bottom-up?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1075159826">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1075159826">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1024515097">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/myth17/" class="user" data-action="profile" data-user="31460832">
+<img data-role="user-avatar" data-user="31460832" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="profile" data-user="31460832" data-role="username">myth17</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1024515097" data-role="relative-time" class="time-ago" title="Saturday, August 31 2013 10:33 PM">
+9 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>2 of the Reference links are hitting 404.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-5" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">5</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1024515097">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1024515097">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409219">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Ramprasad Meena</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409219" data-role="relative-time" class="time-ago" title="Thursday, August 22 2013 6:08 AM">
+10 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>#include</p><p>int unsigned long  fc(int n)<br>{<br>     int i;int unsigned  long previousFib = 0, currentFib = 1,newFib;<br>if( n == 0)<br>  return 0;<br>else for(i=1;i&lt;n;i++) // loop is skipped if n=1<br>{<br>newFib= previousFib + currentFib;<br>previousFib = currentFib;<br>currentFib = newFib;</p><p>}<br>return currentFib ;     <br>}</p><p>int main()<br>{<br> int val;<br> printf("\nEnter number you want to generate fb :");   <br> scanf("%d",&amp;val);<br> printf("new bottum to down :%lu",fc(val));<br>return 0;<br>}</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409219">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409219">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409215">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Mitch Mitchell</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409215" data-role="relative-time" class="time-ago" title="Wednesday, May 22 2013 2:53 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Thanks Guys! This is an awesome tutorial!</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409215">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409215">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409210">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Gurpriya Singh</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409210" data-role="relative-time" class="time-ago" title="Sunday, May 19 2013 9:58 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>thank you sir!</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409210">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409210">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409195">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">anon</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409195" data-role="relative-time" class="time-ago" title="Wednesday, May 1 2013 11:21 PM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>can any DP problem be solved by both top-down and bottom-up approach??</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409195">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409195">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409203">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">geekguy</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409195" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> anon</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409203" data-role="relative-time" class="time-ago" title="Friday, June 28 2013 1:14 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Almost every problem can be solved by both top-down and bottom-up approach. :)</p><p></p><pre> <code class="perl">/* Paste your code here (You may <span class="keyword">delete</span> these lines <span class="keyword">if</span> <span class="keyword">not</span> writing code) <span class="variable">*/</span>
+</code> </pre>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409203">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409203">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409207">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Ejike Usulor</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409207" data-role="relative-time" class="time-ago" title="Tuesday, April 2 2013 6:34 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>This program is the bomb.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409207">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409207">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409194">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">mafia</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409194" data-role="relative-time" class="time-ago" title="Sunday, January 6 2013 8:54 PM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<pre> <code class="xml">/* /* function for nth Fibonacci number */
+int fib(int n)
+{
+   if(lookup[n] == NIL)
+   {
+    if ( n <span class="tag">&lt;<span class="title">=</span> <span class="attribute">1</span> )
+      <span class="attribute">lookup</span>[<span class="attribute">n</span>] = <span class="attribute">n</span>;//<span class="attribute">if</span>(<span class="attribute">n</span>=<span class="value">=0)</span> <span class="attribute">then</span> <span class="attribute">lookup</span>[<span class="attribute">n</span>]=<span class="value">n;wrong??</span>
+    <span class="attribute">else</span>
+      <span class="attribute">lookup</span>[<span class="attribute">n</span>] = <span class="attribute">fib</span>(<span class="attribute">n-1</span>) + <span class="attribute">fib</span>(<span class="attribute">n-2</span>);
+   }
+ 
+   <span class="attribute">return</span> <span class="attribute">lookup</span>[<span class="attribute">n</span>];
+}*/
+</span></code> </pre><p><br>here if (n==0){lookup[n]==1;}</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409194">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409194">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409205">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">shiwakant.bharti</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409194" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> mafia</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409205" data-role="relative-time" class="time-ago" title="Friday, August 16 2013 6:03 PM">
+10 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@mafia <br>1.&gt; Please consider the series as 0 1 1 2 3 as rightly said by @Himani.<br>2.&gt; If you just the write the code to handle n==0 then it will break at n=1 as it will try to calculate it from n=0 and n=-1. This will end up in negative index of lookup. In Java you might get ArrayIndexOutOfBoundsException, in C/C++ (depends on versions) it might iterate and finally lead to segmentation fault/stackoverflow or something.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409205">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409205">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409200">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Himani</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409194" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> mafia</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409200" data-role="relative-time" class="time-ago" title="Monday, May 27 2013 4:36 AM">
+a year ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>/* /* function for nth Fibonacci number */<br>int fib(int n)<br>{<br>   if(lookup[n] == NIL)<br>   {<br>    if ( n &lt;= 1 )<br>      lookup[n] = n;/*right if series goes on as 0 1 1 2 3 5 .. */<br>    else<br>      lookup[n] = fib(n-1) + fib(n-2);<br>   }</p><p>   return lookup[n];<br>}*/</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409200">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409200">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409190">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Pulkit</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409190" data-role="relative-time" class="time-ago" title="Friday, November 9 2012 3:11 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Awesome Post..!!</p><p></p><pre> <code class="perl">/* Paste your code here (You may <span class="keyword">delete</span> these lines <span class="keyword">if</span> <span class="keyword">not</span> writing code) <span class="variable">*/</span>
+</code> </pre>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409190">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409190">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409189">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Neol</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409189" data-role="relative-time" class="time-ago" title="Sunday, February 12 2012 12:37 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Which one is more efficient to store solutions of subproblems ? <br>In my view, Memoization will be efficient as we don't have to fill complete lookup table but in tabulation we have to fill all entries . Correct me if I am wrong.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409189">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409189">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409204">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">jain.ankitk</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409189" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Neol</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409204" data-role="relative-time" class="time-ago" title="Monday, July 29 2013 12:13 AM">
+11 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Its just in memoization stack size would be O(n) as the function will recurse till base case before starting to fill the solution for subproblems.</p><p></p><pre> <code class="perl">/* Paste your code here (You may <span class="keyword">delete</span> these lines <span class="keyword">if</span> <span class="keyword">not</span> writing code) <span class="variable">*/</span>
+</code> </pre>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409204">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409204">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409179">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">shrikant</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409179" data-role="relative-time" class="time-ago" title="Sunday, June 19 2011 4:42 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>will changing the fib code from <br>lookup[n] = fib(n-1) + fib(n-2)<br>to<br>lookup[n] = fib(n-2) + fib(n-1)<br>not make it better ?</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409179">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409179">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409182">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Praveen</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409179" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> shrikant</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409182" data-role="relative-time" class="time-ago" title="Tuesday, July 12 2011 6:37 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>I think its better to write <br>lookup[n] = fib(n-2) + fib(n-1)</p><p>than</p><p>lookup[n] = fib(n-1) + fib(n-2)<br>nice comment..</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409182">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409182">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409185">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Praveen</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409182" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Praveen</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409185" data-role="relative-time" class="time-ago" title="Tuesday, July 12 2011 6:41 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>srry for above...</p><p>It doesn't matter about the order ...</p><p>since we each time look up for the table.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409185">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409185">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016423158">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anand</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409179" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> shrikant</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423158" data-role="relative-time" class="time-ago" title="Wednesday, June 29 2011 12:36 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p><a href="http://anandtechblog.blogspot.com/2010/07/optimise-code-for-fibonacci-series.html" rel="nofollow">http://anandtechblog.blogspot....</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423158">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016423158">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409175">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anand</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409175" data-role="relative-time" class="time-ago" title="Saturday, June 11 2011 1:59 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p><a href="http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html" rel="nofollow">http://anandtechblog.blogspot.com/2011/01/adobe-question-cuboidal-boxes.html</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409175">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409175">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409171">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anand</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409171" data-role="relative-time" class="time-ago" title="Tuesday, June 7 2011 1:21 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p><a href="http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html" rel="nofollow">http://anandtechblog.blogspot.com/2011/05/arra-y-problem.html</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409171">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409171">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409167">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">shubh</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409167" data-role="relative-time" class="time-ago" title="Thursday, June 2 2011 2:06 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>You have written Memoization as Top Down, but standard books say that Dynamic Programming is Bottom Up.  Please explain.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409167">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409167">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016423157">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">GeeksforGeeks</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409167" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> shubh</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423157" data-role="relative-time" class="time-ago" title="Thursday, June 2 2011 4:08 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@shubh: CLRS book considers Memoization as a variation of Dynamic Programming that offers efficiency of Dynamic Programming while maintaining a top down strategy.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423157">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016423157">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409154">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anand</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409154" data-role="relative-time" class="time-ago" title="Thursday, June 2 2011 11:17 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Here is blog that has all solved DP problem frequently asked in interviews.<br><a href="http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html" rel="nofollow"><br>http://anandtechblog.blogspot.com/2011/01/amazon-question-dynamic-programming.html</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409154">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409154">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409165">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">satya</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409165" data-role="relative-time" class="time-ago" title="Thursday, June 2 2011 12:16 AM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@geeksfoegeeks..Great Post &amp;  Gud Work Keep Posting  All Standerd DP Problems Please Keep it Up</p><p>Satya</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409165">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409165">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1016409160">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">SDiZ</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409160" data-role="relative-time" class="time-ago" title="Wednesday, June 1 2011 6:26 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>I just realize how flawed the wikipedia page is.<br>Traditional source (e.g. NIST DADS) say</p><p></p><blockquote><strong>Definition:</strong> Solve an optimization problem by caching subproblem solutions (memoization) rather than recomputing them.</blockquote>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409160">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409160">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016423152">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">kartik</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409160" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> SDiZ</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423152" data-role="relative-time" class="time-ago" title="Wednesday, June 1 2011 7:05 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@SDiZ: The Wikipedia page talks about general definition of Memoization in computer science as Memoization is not limited to algorithms. NIST DADS talks about algorithm specific definition.  Following is another link for algorithm specific definition.</p><p><a href="http://www.algorithmist.com/index.php/Memoization" rel="nofollow">http://www.algorithmist.com/index.php/Memoization</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423152">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016423152">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016423160">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">sid</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423152" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> kartik</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423160" data-role="relative-time" class="time-ago" title="Sunday, November 20 2011 10:13 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@GeeksForGeeks, Can You post the shortest path algo like bellmon ford , dijkshtra , all pair shortest path etc .</p><p></p><pre> <code class="perl">/* Paste your code here (You may <span class="keyword">delete</span> these lines <span class="keyword">if</span> <span class="keyword">not</span> writing code) <span class="variable">*/</span>
+</code> </pre>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016423160">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016423160">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-1016409157">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">SDiZ</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409157" data-role="relative-time" class="time-ago" title="Wednesday, June 1 2011 6:19 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<blockquote>..  is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems ..</blockquote><p></p><p>This is called "divide and conquer".</p><p>Dynamic Programming is about memorization.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409157">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409157">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1016409162">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">GeeksforGeeks</span>
+
+
+
+<span><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409157" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> SDiZ</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409162" data-role="relative-time" class="time-ago" title="Wednesday, June 1 2011 6:32 PM">
+3 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>@SDiZ: Both Dynamic Programming(DP) and Divide and Conquer(DC) solve problems by breaking them into subproblems. The key difference is:  In DP, results of subproblems are stored in a table as these results might be needed later.  In DC, results of subproblems are not stored. Memoization is one of the techniques to store results of subproblems.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#comment-1016409162">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1016409162">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" data-tracking-area="main" style="display:none" data-role="main" data-outbound-link="embed:community" class="loading">
+
+</section>
+
+<section id="dashboard" style="display:none" data-role="main" data-tracking-area="main">
+
+
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main" data-tracking-area="main">
+</section>
+
+<div id="discovery" data-tracking-area="discovery-south"></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://www.geeksforgeeks.org/dynamic-programming-set-1/#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=geeksforgeeks&utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

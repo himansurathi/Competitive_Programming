@@ -1,0 +1,478 @@
+BODY {background-color:white; font-family:Verdana,'Trebuchet MS', Lucida, Arial, Helvetica, sans-serif;}
+.normal {background-color:white; color:black; font-weight:normal; 
+        font-style:normal;font-family:Verdana,'Trebuchet MS', Lucida, Arial, Helvetica, sans-serif;}
+.norm {font-style:normal; color:#000; font-weight:normal;font-size:inherit;font-family:Verdana,'Trebuchet MS',
+     Lucida, Arial, Helvetica, sans-serif;}
+    
+.symb {font-family:Times,'Times New Roman',serif;font-size:120%}
+.fracsym {font-size:120%} /* for / [ ] in fractions */
+
+.calc {background-color:#ff9;color:#C63;border:2px #C90 solid;
+    max-width:100%;overflow:auto;
+    font-family:Verdana,Helvetica,sans-serif;margin:5px;padding-left:3px;padding-right:3px;}
+.calcbg {background-color:#ff9}
+.calctxt {font-family:Verdana,Helvetica,sans-serif;color:#C63;}      
+.resSPACEbtn ,
+.calcinner {background-color:#ffd;color:#C63;
+    font-family:Verdana,Helvetica,sans-serif;}
+.calccolor {color:#C63}
+ 
+.res {border:1px solid #999;     max-width:100%;overflow:auto;
+    text-align:left;font-family:Courier,'Courier New',Monaco,monospace;
+       background-color:#FFD;padding:2px;color:blue}
+.hideoflow {overflow:hidden}
+
+.showhidebtn {color:#954; border:2px solid #DA7; background-color:#FEE;
+   /* font-family:Arial,Verdana,Helvetica,sans-serif; */
+   font-family:Courier, Monaco,monospace;
+   /* padding:0.2em; */
+   margin:0em 0px 0px 3em;#D3D0FF
+   font-size:100%;text-align:center;font-stretch:expanded}
+.showhidebtnsmall {color:#888;  background-color:#Faf3e4;
+   /* font-family:Arial,Verdana,Helvetica,sans-serif; */
+   font-family:Courier, Monaco,monospace;
+   padding:1px; border:1px outset #988776;
+   font-size:80%;text-align:center;font-stretch:expanded;
+   box-shadow:2px 2px 2px #988776}
+
+   
+INPUT[type=button].showhidebtnsmall:hover 
+   {background-color:#999;color:#Faf3e4;box-shadow:2px 2px 2px #EEE}
+.showhidebtntxt {color:#3A00FF; 
+   /* font-family:Arial,Verdana,Helvetica,sans-serif; */
+   font-family:Courier, Monaco,monospace;
+   background-color:#EDF;
+   padding:1px; 
+   border:1px solid blue;
+   margin:0px; 
+   font-size:80%;text-align:center;font-stretch:expanded}
+.hiddeninfo {  border:1px dashed #930;
+   /* background-color:#FCF3F3; */
+   padding:5px;
+   margin:0px; 
+   display:none;}
+.displaynone {display:none}
+   
+
+#helpDIV { display:none;
+          position:fixed;top:0;height:auto;left:25%;right:25%;
+          background-color:lightyellow;
+          border:2px solid orange;
+          padding:4px;
+          z-index:2;
+          }
+#helpDIV table td {border:0px}
+
+.floatR {float:right}
+.floatL {float:left}
+
+/* bg EEB  bord 996 */
+
+H1,H2,H3,H4,H5 {color:#C00;text-align:center;}
+.hTOC {color:#C00;text-align:center;font-size:120%; margin:2em 0px 2em 0px;}
+/* SUP {line-height:130%;position:relative;top:-0.15em;font-size:40%} (* top is half value for SUB *)  */
+/* SUB {line-height:130%;position:relative;bottom:-0.3em;font-size:40%} */
+
+SUP {vertical-align:50%;font-size:70%;}
+.supx {vertical-align:35%;font-size:70%;}
+SUB {vertical-align:-40%;font-size:70%}
+
+/* INPUT[type=text] {text-align:right} */
+SELECT,
+BUTTON,
+INPUT[type=button]{ font-family:'Trebuchet MS', Lucida, Helvetica,Arial,Verdana,sans-serif;} 
+INPUT[type=reset]:hover,SELECT:hover,BUTTON:hover,INPUT[type=button]:hover 
+  {cursor:pointer;color:red} 
+BUTTON.pushme {color:magenta; background-color:yellow;border:2px solid magenta}
+
+.clear,
+INPUT[type=button].clear ,
+INPUT[type=reset]      {background-color: #CCC; color:white;font-size:90%;padding:1px}
+INPUT.btn     {color:blue;font-size:95%}
+INPUT.infobtn {text-shadow: -1px -1px white, 1px 1px #333;color:#CCC;   background-color:#33F; 
+               font:100% 'Times New Roman',Times,Palatino,serif;padding:0px;width:1.5em}
+INPUT.action {background-color:#993;padding:3px;color:#FF9}
+left,
+INPUT.left {text-align:left}
+right,
+INPUT.right {text-align:right}
+center,
+INPUT.center {text-align:center}
+
+FORM TEXTAREA {font-family:Courier,monospace;font-size:inherit;color:#000;}
+
+
+A:link {color:blue;}
+A:visited {color:navy;}
+A:hover {color:red;}
+A:active {color:green;}
+
+UL.contentsl1 A:link      {font-weight:bolder;}
+UL.contentsl1 A:visited   {font-weight:bolder;color:navy;background-color:white;}
+UL.contentsl1 {list-style-image:url(images/redsq.gif);list-style-type:disc;
+   color:#666;padding:0px; margin-left:3em;line-height:140%}
+
+UL.contentsl2 A:link       {font-weight:normal;}
+UL.contentsl2 A:visited   {font-weight:normal;color:navy;}
+UL.contentsl2 {list-style-image:url(images/goldsq.gif);list-style-type:square;
+   color:#666;padding:0px; margin-left:3em;line-height:140%}
+
+UL.contentsl3 A:link       {}
+UL.contentsl3 A:visited   {color:navy;background-color:white;}
+UL.contentsl3 {list-style-image:url(images/greensq.gif);list-style-type:circle;
+   font-size:95%;color:#666;padding:0px;margin-left:3em;line-height:140%}
+
+UL.contentsl4 A:link       {}
+UL.contentsl4 A:visited   {color:navy;}
+UL.contentsl4 {list-style-image:url(images/bluesq.gif);list-style-type:circle;
+   font-size:95%;color:#666;padding:0px;margin-left:3em;line-height:140%}
+
+
+UL.contentsCalc {list-style-image:url(images/calcicon.gif);list-style-type:circle;
+   font-size:95%;color:#666;font-style:italic;}
+   
+blockquote.lit {
+  font-family: serif;
+  font-style:italic;
+  line-height:130%;
+  padding: 8px;
+  background-color: #faebbc;
+  border-top: 1px solid #e1cc89;
+  border-bottom: 1px solid #e1cc89;
+  margin: 2% 12% 2% 5%;
+  }
+/* blockquote:before { content: open-quote; font-weight: bold; } */
+/* blockquote:after { content: close-quote; font-weight: bold; } */
+
+
+.transparent50 {zoom: 1;	filter: alpha(opacity=50);	opacity: 0.5;}
+.transparent30 {zoom: 1;	filter: alpha(opacity=30);	opacity: 0.3;}
+.spaced {letter-spacing:0.7em}
+
+.center, .centered {text-align:center;}
+.radic  {font-family:Arial,sans-serif}
+.overline,
+.overbar {text-decoration:overline;text-decoration-color:currentColor;width=100%}
+.underline, 
+.u       {border-bottom-width:1px;border-bottom-style: solid;border-color:currentColor}
+.uline   {border-bottom-width:1px;border-bottom-style: solid;border-color:black}
+.uu,
+.doubleunderline {border-style:none;border-bottom-style:double;border-color:black}
+.u2       {border-bottom:3px solid black;}
+.l       {border-left:1px solid black}
+.celloverline {border-top:1px solid}
+.inline {display:inline-block}
+
+.question {text-align:center;color:#960;background-color:white;font-style:italic;margin-bottom:10pt;margin-top:10pt;}
+
+.Zbagfreq {color:red}
+
+UL {margin-left:0px;}
+
+OL.typelowera, OL.typea {list-style-type: lower-alpha;}
+OL.typeupperA, OL.typeA {list-style-type: upper-alpha}
+OL.type1 {list-style-type: decimal}
+OL.typeloweri, OL.typei {list-style-type: lower-roman}
+OL.typeupperi, OL.typeI {list-style-type: upper-roman}
+
+DL.list DT {font-weight:bolder; color:#999;padding-top:1em;}
+
+.ttl {color:red;background-color:transparent;text-align:center;font-weight:bolder;font-size:larger;}
+
+
+.nonb {font-weight:normal}
+
+.popup {background-color:#3CF;text-align:left;border:2px solid black;padding:5px;position:relative;z-index:13;display:none;
+        font-size:70%;color:#006}
+.popupwin {background-color:#33C;text-align:left;font-size:90%;color:#FFF}
+
+/* use as <span data-descr="text to show in popUp">text to hover over</span> */
+    span[data-descr] {
+        position: relative;
+        text-decoration: underline;
+        color: #00F;
+        cursor: help;
+    }
+
+    span[data-descr]:hover::after {
+        content: attr(data-descr);
+        position: absolute;
+        left: 0;
+        top: 24px;
+        min-width: 200px;
+        border: 1px #aaaaaa solid;
+        border-radius: 10px;
+        background-color: #ffffcc;
+        padding: 12px;
+        color: #000000;
+        font-size: 14px;
+        z-index: 1;
+    }
+    
+
+.newprime {color:#0C0;background-color:white;}
+.prime {color:#F33;background-color:white;}
+.comp {color:#33C;font-family:Arial,Verdana,sans-serif;}
+
+.cancel, 
+.strike, 
+.xout    {text-decoration:line-through;}
+
+.orange  {color:#FC0;font-weight:bolder;}
+.red     {color:#F30;font-weight:bolder;}
+.magenta {color:#F0F;font-weight:bolder;}
+.purple  {color:#939;font-weight:bolder;}
+.brown   {color:#900;font-weight:bolder;}
+.blue    {color:#60F;font-weight:bolder;}
+.green   {color:#3C0;font-weight:bolder;}
+.cyan    {color:#0FF;font-weight:bolder;}
+.jade    {color:#3C6;font-weight:bolder;}
+.plum    {color:#C36;font-weight:bolder;}
+.skyblue {color:#36C;font-weight:bolder;}
+.yellow,
+.gold    {color:#FF3;font-weight:bolder;}
+.black   {color:#000;}
+.silver  {color:#CCC;}
+.grey, .gray    {color:#999;}
+.darkgrey, .darkgray {color:#666;}
+.black   {color:black}
+.white {color:white}
+
+.redyell {color:red;font-weight:bolder;background-color:yellow;}
+
+.tt {font-family:Courier,monospace;}
+.ttblue {color:blue;font-family:Courier,monospace;}
+.ttmagenta {color:#F0F;font-family:Courier,monospace;}
+.ttred {color:red;font-family:Courier,monospace;}
+.ttgreen {color:green;font-family:Courier,monospace;}
+
+.nbHR {color:#900;font-family:Courier,Monaco,monospace;background-color:#FF9;}
+.index {font-style:italic;}
+.paleindex {font-style:italic;color:#999;}
+.index1 {font-style:italic;font-size:smaller;}
+
+.center {text-align:center;}
+.centerPage {margin-left:auto;margin-right:auto;}
+.box {border:1px solid #99F;text-align:center;padding:3px}
+.boxblk    {border-width:1px;border-style:solid;border-color:#CCC;
+            margin:10px 6% 10px 6%;padding:10px;}
+.boxblkcol {margin:10px 6% 10px 6%;padding:10px;color:#333;
+    background-color:#FEE;}
+
+.bold {font-weight:bolder}
+.coords {font-family:monospace;font-size:smaller}
+.eulerstats {font-weight:bolder}
+.bkt {font-family:Symbol;font-size:250%;}
+.rulebg {background-color:#FFBEC7;}
+.rule {text-align:center;color:#063;background-color:#FFBEC7;padding:4px;
+        margin-bottom:14pt;font-family:Verdana, Arial, 
+       sans-serif;font-size:100%;}
+.rulebox {text-align:center;background-color:#3FF;padding:12px; color:#093;
+       margin-bottom:14pt;margin-top:14pt;font-family:Verdana, Arial, 
+       sans-serif;font-size:130%;border:#093 solid 2px;}
+.indentrule {color:#093;font-family:Verdana, Arial, sans-serif;margin:3% 3% 3% 5%;font-size:100%;}
+.indent {margin: 1% 1% 1% 5%}
+.indenttt {margin:1% 1% 1% 5%;font-family:Courier,monospace}
+.small {font-size:80%;}
+
+
+.mathcol {color:#00F;}
+.mathbg {background-color:#00F;}
+.math, 
+.maths    {font-family:Palatino,"Palatino Linotype","Times New Roman",serif;color:#00F; }
+.math0,
+.maths0   {font-family:Palatino,"Palatino Linotype","Times New Roman",serif;color:#00F; }
+.mathnocol   {font-family:Palatino,"Palatino Linotype","Times New Roman",serif;           }
+.math1    {font-family:Palatino,"Palatino Linotype","Times New Roman",serif;color:#00F; }
+.nomaths,
+.nomath {font-size:90%;color:black;font-family:Verdana,'Trebuchet MS', Lucida, Arial, Helvetica, sans-serif;font-style:normal}
+.mathsym  {font-family:Palatino,"Palatino Linotype","Times New Roman",serif;color:#00F; font-style:normal;}
+/* Use &Phi; and &phiv;= &#981; for small curly phi */
+
+.num {vertical-align:super;font-family:"Times New Roman",Palatino,serif;color:#00F;}
+.den {vertical-align:sub;font-family:"Times New Roman",Palatino,serif;color:#00F;}
+
+
+  
+.calcbg    {background-color:#FF9}
+.fromrat,
+.calcorange {background-color:#FC6}    
+.calcrose {background-color:#E68EA3}
+.calcbrown {background-color:#C96;}
+.calcred   {background-color:#F66}    
+.fromdec,
+.calcpeach {background-color:#F66}
+.calccyan  {background-color:#9FC}
+.calcjade  {background-color:#6F9}
+.calcolive {background-color:olive}
+.calckhaki {background-color:khaki}
+.calcsandybrown {background-color:sandybrown}
+.calclightgreen {background-color:lightgreen}
+.calcolivelite {background-color:#CC9}
+.calcgreen {background-color:#600}
+.calcgold {background-color:#FD4}
+.calcpink  {background-color:#E68EA3}
+.fontpink  {color:#F69}
+.calcmauve {background-color:#C6F}
+.calcblue  {background-color:#69F}
+.fontblue  {color:#69F}
+
+
+/* TABLE.biblio {align:left;text-align:left;}
+   TABLE.biblio TD {align:left;text-align:left;vertical-align:top;} */
+TABLE TD.icon {text-align:center;vertical-align:top;}
+TABLE.addr {width:100%;}
+TABLE.lalign {text-align:left;}
+TABLE.ralign {text-align:right;}
+TABLE.calign {text-align:center;}
+TABLE TR TH.rowline,TD.rowline {border-bottom:1px solid gray;}
+
+TABLE.slim TD {padding:0 3px}
+TABLE TR TD.vmid {vertical-align:middle}
+TABLE TR TD.vbot {vertical-align:bottom}
+TABLE TR TD.hcent {text-align:center}
+
+table.colborders td,
+table.colborders th {border-right:1px solid silver}
+table.nocolborders td,th {border-right:0px}
+
+table.paleBorder {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: #DDD;
+	border-collapse:collapse;
+	}
+table.paleBorder tr.u td {border-bottom:1px solid black;}
+
+table.paleBorder th {
+	border-width: 1px;
+	border-style:solid;
+	border-style: inset;
+	border-color: #BBB;
+	border-collapse:collapse;
+	empty-cells:show
+}
+table.paleBorder td {
+	border-width: 1px;
+	border-style:solid;
+	border-color: #DDD;
+	border-collapse:collapse;
+	empty-cells:show
+}
+
+table.collapse {border-collapse:collapse}
+
+TABLE.seprows td {border-style:solid;border-width:2px 0px 2px 0px;border-color:white}
+
+TABLE.fracTBL  {display:inline-table}
+TABLE.fracTBL td {text-align:center}
+
+TABLE.center {margin-left: auto ; margin-right: auto ;}
+
+TABLE tr td.borderR,th.borderR {border-right:1px solid silver}
+
+.ttdtitle {color:#393;background-color:#BFB;
+           font-family:Helvetica,Arial,'Lucida Grande','Trebuchet MS','Comic Sans MS',sans-serif;
+           margin:5px 0px 0px 0px;padding:5px}
+
+.ttd  {color:black;background-color:#EFE;
+       margin:  0px 0px 5px 0px; border:2px solid #BFB;
+       padding:5px 2% 5px 2%;line-height:120%;
+       font-family:Helvetica,Arial,'Lucida Grande','Trebuchet MS','Comic Sans MS',sans-serif;
+      } 
+.ttd OL {margin:0px 0% 8px 0%;list-style-type:decimal; border:0px;}
+.ttd OL LI {margin:0px 0% 8px 0%;}
+.ttd OL LI OL {margin:0px 0% 8px 0%;list-style-type:lower-latin}
+.ttd OL LI OL LI OL {list-style-type:lower-roman}
+UL.ttd LI  {text-align:left;background-color:#FD9;font-weight:normal;margin:0px 0% 8px 0%;}
+
+UL.biblio {}
+A.ttd:link {color:#930}
+A.ttd:hover {color:#963}
+A.ttd:active {color:#F93}
+A.ttd:visited {color:#C33}
+
+UL LI.book {list-style-image: url(images/book.gif);margin:0px 0px 3px 0px;}    /* relative to THIS global.css CSS file!!! */
+UL LI.paper  {list-style-image:url(images/openbook.gif);margin:0px 0px 3px 0px;}
+UL LI.link {list-style-image:url(images/compass.gif);margin:0px 0px 3px 0px;}
+UL LI.calc {list-style-image:url(images/calc.gif);margin:0px 0px 3px 0px;}
+UL LI.dvd,
+UL LI.cd   {list-style-image:url(images/cd.gif);margin:0px 0px 3px 0px;}
+
+.redbead  {list-style-image:url(images/beadred1.gif)}   /*RELATIVE TO THIS FILE!! */
+.jadebead {list-style-image:url(images/beadjade.gif)}
+.bluebead {list-style-image:url(images/beadblue1.gif)}
+.greenbead {list-style-image:url(images/beadgreen.gif)}
+.goldbead {list-style-image:url(images/beadgold.gif)}
+
+.orangebg {background-color:#FC6;}
+.F99bg {background-color:#F99;}
+.brownbg  {background-color:#C60;}
+.yellowbg {background-color:#FF0;}
+.lemonbg  {background-color:#FF6;}
+.redbg {background-color:red;}
+.whitebg {background-color:#FFF;}
+.greybg {background-color:#CCC;}
+.whitebg {background-color:white}
+
+.quote {font-family:"Lucida Grande",Arial,sans-serif;color:#C36;}
+.footnote {font-family:"Lucida Grande",Arial,sans-serif;font-size:smaller;}
+
+.cfPER {color:red;font-weight:bolder;}
+
+.qq {color:#E80;}  /* QUick Question */
+.qq0 {color:#E80;font-size:120%;font-weight:bolder}  /*First word or Can You... to start question*/
+
+.question {text-align:center;color:#309;font-style:italic;margin-bottom:10pt;margin-top:10pt;}
+.def {color:#936;margin-bottom:14pt;margin-top:14pt;margin-left:20px;}
+
+.tri {color:#C00; font-family:"Verdana",'Courier New Italic','Courier New',monospace;}
+.paletri {color:#F69; font-family:"Verdana",'Courier New Italic','Courier New',monospace;}
+.newtri {color:#F33; font-style:italic;font-family:"Verdana",'Courier New Italic','Courier New',monospace;}
+
+.outline {border:1px #CC0 solid;}
+.quote {font-family:"Lucida Grande",Arial,sans-serif;color:#C36;}
+.footnote {font-family:"Lucida Grande",Arial,sans-serif;font-size:smaller;}
+.shade {background-color:#CCC; padding:10px;margin:10px;}
+.border{border:2px solid gray;padding:3px 3px 3px 3px;}
+
+
+      
+.right {text-align:right;}
+.left {text-align:left;}
+.top {vertical-align:top}
+
+.hr {background-color:#990;height:1px}
+.small {font-size:smaller;}
+.dim {color:#999;}
+.mono {font-family:monospace;}
+.green {color:#090}
+.orange {color:#F63}
+.mauve {color:#F0C}
+
+.p {color:#33F;}
+.a {color:#F0C;}
+
+TABLE.nav   {background-color:#CCC;border:1px solid;
+        font-family:Verdana,'Trebuchet MS', Lucida, Arial, Helvetica, sans-serif;}
+.wtn /* What Now para */
+     {background-color:white;color:#C36;font-weight:bolder;text-align:center;}
+
+
+TABLE.right {text-align:right}
+TABLE.left  TD {text-align:left;}
+TABLE.mono {font-family:Courier,monospace;}
+TABLE.ref {text-align:left;}
+TABLE.ref TD {}
+
+
+.icanhide {position:relative;visibility:hidden;}
+.icanhideSHOW {position:relative;visibility:visible}
+
+
+.contentsCalc {list-style-image:url(../images/calcicon.gif);list-style-type:circle;
+   font-size:95%;color:#666;font-style:italic;}
+   
+
+ 

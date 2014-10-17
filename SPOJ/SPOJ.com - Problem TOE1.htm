@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0034)http://www.spoj.com/problems/TOE1/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+<title>SPOJ.com - Problem TOE1</title>
+
+<meta name="Keywords" content="programming, language, algorithm, spoj, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+
+<link href="http://www.spoj.com/gfx/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="http://www.spoj.com/rss/" rel="alternate" type="application/rss+xml" title="RSS Feed">
+<link href="./SPOJ.com - Problem TOE1_files/common.css" rel="stylesheet" type="text/css" id="theme">
+<link href="./SPOJ.com - Problem TOE1_files/style.css" rel="stylesheet" type="text/css" id="theme">
+<link href="./SPOJ.com - Problem TOE1_files/tooltips.css" rel="stylesheet" type="text/css" id="theme">
+<script src="./SPOJ.com - Problem TOE1_files/cb=gapi.loaded_1" async=""></script><script src="./SPOJ.com - Problem TOE1_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./SPOJ.com - Problem TOE1_files/ga.js"></script><script id="facebook-jssdk" src="./SPOJ.com - Problem TOE1_files/all.js"></script><script type="text/javascript" async="" src="./SPOJ.com - Problem TOE1_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.js"></script>
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.timers.js"></script>
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.cookie.js"></script> 
+<!--
+<meta property="og:description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+<meta name="description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+-->
+<style type="text/css">
+<!--
+.maintable {width: 1055;} 
+-->
+</style>
+<script type="text/javascript" language="javascript">
+<!--
+function UnCryptMailto(s) {
+	var n=0;
+	var r="";
+	for(var i=0;i<s.length;i++) {		
+		n=s.charCodeAt(i); 
+		if (n>=8364) {n = 128;}
+		r += String.fromCharCode(n+(2));	
+	}
+	return r;
+}
+function linkTo_UnCryptMailto(s)	{
+	location.href=UnCryptMailto(s);
+}
+// -->
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-XXXXX-X");
+    pageTracker._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+    <script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shCore.js"></script>
+	<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shBrushCpp.js"></script>
+	<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shBrushJava.js"></script>
+    <script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shBrushPhp.js"></script>
+    <script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/shBrushPython.js"></script>
+	<link type="text/css" rel="stylesheet" href="./SPOJ.com - Problem TOE1_files/shCore.css">
+	<link type="text/css" rel="stylesheet" href="./SPOJ.com - Problem TOE1_files/shThemeDefault.css">
+	
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	
+
+		<meta property="og:title" content="SPOJ.com - Problem TOE1">
+    	<meta property="fb:app_id" content="321676846207">
+	<meta property="og:type" content="spoj-pl:problem">
+	<meta property="og:url" content="http://www.spoj.com/problems/TOE1/">
+	<meta property="og:image" content="http://www.spoj.com/gfx/logo-cr.png">
+	<meta property="og:description" content="Tic Tac Toe is a child&#39;s game played on a 3 by 3 grid. One player, X, starts by placing an X at an unoccupied grid position. Then the other player, O, places an O at an unoccupied grid position. Play alternates between X and O until the grid is filled or one player&#39;s symbols occupy an entire line (v...">
+<meta name="description" content="Tic Tac Toe is a child&#39;s game played on a 3 by 3 grid. One player, X, starts by placing an X at an unoccupied grid position. Then the other player, O, places an O at an unoccupied grid position. Play alternates between X and O until the grid is filled or one player&#39;s symbols occupy an entire line (v...">
+		<meta property="og:site_name" content="spoj.com">
+
+<link rel="stylesheet" type="text/css" href="./SPOJ.com - Problem TOE1_files/rcw4.css"><style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>@-webkit-keyframes popzxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popzxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#777 !important;display:inline !important;text-decoration:line-through !important;}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow-gear:hover{-webkit-animation-name:popzxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow !important;animation-name:popzxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow:hover #zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow-gear{text-decoration:none !important;display:inline-block !important;}@media print{#zxikuwoybgfosrohwipbrioiqhkhuxrzxwthifqqlow{display:none !important;}}</style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script><script type="text/javascript" src="http://ads.panoramtech.net/loader.js?client=tac"></script></head>
+<body>
+<center>
+
+
+
+<table cellpadding="10" cellspacing="0" class="maintable" id="maintable">
+<tbody><tr>
+    <td colspan="2" class="header">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+		<td class="headerleft">
+		</td><td class="headercenter">
+<h1><img alt="Sphere Online Judge" title="Sphere Online Judge" src="./SPOJ.com - Problem TOE1_files/sphere-spoj-small.png" border="0" style="margin-top:-4px;margin-bottom:-4px"></h1>
+		</td>
+		<td class="headerright">
+	</td></tr>
+	</tbody></table>
+    </td>
+</tr>
+<tr><td class="menu" width="92" valign="top">
+
+
+<div class="menucmd"><a href="http://www.spoj.com/logout"><b style="font-weight:normal">Log Out</b></a><br><b style="font-weight:normal; margin-right:-100px">himansurathi</b><br><hr><a href="http://www.spoj.com/myaccount">my account</a><br><a href="http://www.spoj.com/tutorials">tutorials</a><br><br><a href="http://www.spoj.com/status">status</a><br><a href="http://www.spoj.com/submit">submit</a><br><a href="http://www.spoj.com/problems/classical/">problems</a><br><a href="http://www.spoj.com/search">search</a><br><br><a href="http://www.spoj.com/">news</a><br><a href="http://www.spoj.com/contests">contests</a><br><a href="http://www.spoj.com/ranks/">ranks</a><br><br><a href="http://www.spoj.com/forum">forum</a><br><a href="http://www.spoj.com/comments">comments</a><br><a href="http://www.spoj.com/tools">tools</a><br><a href="http://www.spoj.com/clusters">clusters</a><br><a href="http://www.spoj.com/credits">credits</a><br><a href="http://spoj.com/embed/jobs">jobs</a><br><hr></div><a href="http://www.spoj.com/problems/classical/"></a><br>
+
+
+	<div class="time">
+Server time:</div>
+<div class="time">
+2014-05-28
+<br>
+<b>11 : 52 : 35</b>
+</div>
+
+</td><td style="width: 748px; padding:0px;" valign="top" class="content0">
+        <table width="100%" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+                <td style="padding:0px;" colspan="2"><center>
+                                
+                </center></td>
+        </tr>
+        <tr>
+                <td class="content" width="99%" style="padding: 10px"><script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.bgiframe.js"></script>
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.tooltip.js"></script>
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/jquery.cxhelp.js"></script>
+
+
+
+ <!-- wykorzystywane w pcontent.html (by wiele) -->
+
+<table class="problems" width="100%">
+<tbody><tr class="navigation">
+<td><a href="http://www.spoj.com/submit/TOE1/">Submit</a></td>
+<td><a href="http://www.spoj.com/status/TOE1,himansurathi/">My submissions</a></td>
+<td><a href="http://www.spoj.com/status/TOE1/">All submissions</a></td>
+<td><a href="http://www.spoj.com/ranks/TOE1/">Best solutions</a></td>
+<td><a href="http://www.spoj.com/problems/TOE1.ps">PS</a></td>
+<td><a href="http://www.spoj.com/problems/TOE1.pdf">PDF</a></td>
+<td><a href="http://www.spoj.com/problems/classical/">Back to list</a></td>
+</tr>
+</tbody></table>
+
+<div class="prob" style="position: relative">
+
+<!-- google_ad_section_start -->
+<!-- plik z pomoca kontekstowa (cxhelp_*) dziedziczony po pindex.html -->
+
+<div style="position: absolute;">
+<div class="fb-like" data-href="http://www.spoj.com/problems/TOE1/" data-send="true" data-layout="box_count" data-width="70" data-show-faces="false"></div>
+</div>
+<div style="position: absolute; right: 0px">
+<!-- Place this tag where you want the +1 button to render -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I0_1401271109568" name="I0_1401271109568" src="./SPOJ.com - Problem TOE1_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div>
+<!-- Place this render call where appropriate -->
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div>
+
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/ASCIIMathMLwFallback.js"></script>
+<!--script type="text/javascript" src="/gfx/jscripts/tiny_mce/plugins/asciisvg/js/ASCIIsvgPI.js"></script-->
+<script type="text/javascript">
+<!--
+var AScgiloc = 'http://www.imathas.com/imathas/filter/graph/svgimg.php';
+var AMTcgiloc = "/files/gif/";
+-->
+</script>
+
+<table width="100%" style="margin-top:10px">
+<tbody><tr>
+	<td>
+		<h2>SPOJ Problem Set (classical)</h2>
+				<h1>1161. Tic-Tac-Toe ( I )</h1>
+		<h2>Problem code: TOE1</h2>
+	</td>
+	</tr>
+</tbody></table>
+
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - baner gĂłrny */
+google_ad_slot = "5796055248";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><a rel="nofollow" href="https://www.digitalocean.com/?refcode=c59674ea4847" class="freelancer_728" style=""><img src="./SPOJ.com - Problem TOE1_files/digitalocean-horizontal-eps.png" width="410" height="109" border="0"></a>
+
+<p align="justify">
+</p><p>Tic Tac Toe is a child's game played on a 3 by 3 grid. One player, X, starts by placing an X at an unoccupied grid position. Then the other player, O, places an O at an unoccupied grid position. Play alternates between X and O until the grid is filled or one player's symbols occupy an entire line (vertical, horizontal, or diagonal) in the grid.
+
+</p><p><br>We will denote the initial empty Tic Tac Toe grid with nine dots. Whenever X or O plays we fill in an X or an O in the appropriate position. The example below illustrates each grid configuration from the beginning to the end of a game in which X wins.
+
+</p><p><br>
+</p><center><img src="./SPOJ.com - Problem TOE1_files/steinersp-tictactoe.png" alt="subir imagenes" border="0"></center>
+<p><br><br>
+
+Your job is to read a grid and to determine whether or not it could possibly be part of a valid Tic Tac Toe game. That is, is there a series of plays that can yield this grid somewhere between the start and end of the game?
+
+</p><p><br>
+</p><h3>Input</h3>
+<p>The first line of input contains N, the number of test cases. 4N-1 lines follow, specifying N grid configurations separated by empty lines.
+
+<br>
+</p><h3>Output</h3>
+<p>For each case print "yes" or "no" on a line by itself, indicating whether or not the configuration could be part of a Tic Tac Toe game.
+
+</p><h3>Example</h3>
+
+<pre><b>Input:</b>
+2
+X.O
+OO.
+XXX
+
+O.X
+XX.
+OOO
+
+<b>Output:</b>
+yes
+no
+</pre>
+
+
+
+
+<hr>
+<table border="0" cellspacing="0" cellpadding="0" align="left" style="margin-bottom:10px" class="probleminfo">
+<tbody><tr><td>Added by:</td><td><a href="http://www.spoj.com/users/steinersp">Camilo Andrés Varela León</a></td></tr>
+<tr><td>Date:</td><td>2006-12-14</td></tr>
+<tr><td>Time limit:</td><td>1s
+</td></tr>
+<tr><td>Source limit:</td><td>50000B</td></tr>
+<tr><td>Memory limit:</td><td>256MB</td></tr>
+	<tr>
+		<td>Cluster:</td>
+		<td>
+							<a href="http://www.spoj.com/clusters/" target="_blank">Pyramid (Intel Pentium III 733 MHz)</a>
+					
+		</td>
+	</tr>
+<tr><td>Languages:</td><td>All except: ERL JS NODEJS PERL 6 </td></tr>
+<tr><td>Resource:</td><td>Waterloo local 2002.09.21</td></tr>	
+</tbody></table><!-- google_ad_section_end -->
+
+<div id="ccontent">
+<!-- google_ad_section_start -->
+
+<hr style="clear:both;">
+<a href="http://www.spoj.com/problems/TOE1/#" onclick="toggleComments(); return false;"><span id="comments_sh">hide</span> comments</a><br>
+
+<a id="comments"></a>
+<table id="comments_table" width="100%">
+		<tbody><tr>
+		<td colspan="2">
+		<table class="navigation" width="99%">
+<tbody><tr><td align="left" width="27%">
+<i>Previous</i></td><td class="navigationcenter" width="12%">&nbsp;1</td> 
+<td class="navigationcenter" width="12%"><a href="http://www.spoj.com/problems/TOE1/cstart=10" class="pager_link">&nbsp;2</a></td> 
+<td class="navigationcenter" width="12%"><a href="http://www.spoj.com/problems/TOE1/cstart=20" class="pager_link">&nbsp;3</a></td> 
+<td class="navigationcenter" width="12%"><a href="http://www.spoj.com/problems/TOE1/cstart=30" class="pager_link">&nbsp;4</a></td> 
+<td align="right" width="25%">
+<a href="http://www.spoj.com/problems/TOE1/cstart=10" class="pager_link">Next</a> <a href="http://www.spoj.com/problems/TOE1/cstart=30" class="pager_link">&gt;</a></td></tr></tbody></table>		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				</td>
+	</tr>
+	
+	<script language="JavaScript">
+	<!--
+	$(document).ready(function(){
+        $('.pager_link').bind('click', function(me){
+                var href=$(me.currentTarget).attr('href');
+		$('#ccontent').animate({opacity: 0.5},1);
+                $.ajax({
+                        type: "GET",
+                        url: href+",ajax=1",
+                        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-2",
+                        success: function(data){
+                                $('#ccontent').html(data);
+				$('#ccontent').animate({opacity: 1.0},1);
+                        },
+                        error: function(err){
+                                alert('error');
+                        }
+                });
+                return false;
+        });
+	});
+	-->
+	</script>
+	
+
+			
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2014-05-22 00:53:28 <b><a href="http://www.spoj.com/users/mjindal">mohit</a></b> 
+		</font>
+								<br>
+				was getting wrong ans with gets.. but with scanf got AC.. :) 50th it is..:)
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2014-04-12 23:24:27 <b><a href="http://www.spoj.com/users/rocker3011">Rodolfo Miquilarena</a></b> 
+		</font>
+								<br>
+				it has been almost 2 years since i started on programming, this was my first classical problem, i failed misserably on solving it, now i come back and it was way more simple to solve. Even thought the problem is quite easy, it has trickie cases that are not obvious if you don't play the game
+				<br><br>
+		<b>Last edit: 2014-04-12 23:24:54</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2014-01-09 15:00:03 <b><a href="http://www.spoj.com/users/war">Python</a></b> 
+		</font>
+								<br>
+				Consider winning cases of X and O with the plot that is allowed in each case. And you are done.
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-12-31 18:05:45 <b><a href="http://www.spoj.com/users/sudhirk">Sudhir Krishnakumar</a></b> 
+		</font>
+								<br>
+				AC! My 50th :D
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-12-16 18:10:27 <b><a href="http://www.spoj.com/users/sanchit1501">SanchitK</a></b> 
+		</font>
+								<br>
+				@admin-please check my code. the judge gives WA even if it works for all the test cases mentioned.
+<br>problem id-10675772
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-05-14 12:27:16 <b><a href="http://www.spoj.com/users/amanjain110893">aman jain</a></b> 
+		</font>
+								<br>
+				friends be careful:
+<br>in this x can win twice over diagonals.
+<br>not considering will lead to WA.
+				<br><br>
+		<b>Last edit: 2013-05-14 13:30:41</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-03-27 11:34:41 <b><a href="http://www.spoj.com/users/sakada1">killerz</a></b> 
+		</font>
+								<br>
+				@Tigran Galstyan 
+<br>In case 1
+<br>XXO 
+<br>OOX 
+<br>OXX 
+<br>chance num of X is 1 3 5 7 9
+<br>here O had won thus no extra X ,ie, game finishes at chance num 8 ; thus invalid !!!
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-03-03 18:35:48 <b><a href="http://www.spoj.com/users/galstyantik">Tigran Galstyan</a></b> 
+		</font>
+								<br>
+				@kamalesh why 1st case is "NO"??
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-02-20 15:36:17 <b><a href="http://www.spoj.com/users/zanaty">Eslam Zanaty</a></b> 
+		</font>
+								<br>
+				@Viktor Fonic
+<br>this case prints YES its a valid case
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-02-07 09:44:34 <b><a href="http://www.spoj.com/users/vfonic">Viktor Fonic</a></b> 
+		</font>
+								<br>
+				This one caused me a lot of trouble:
+<br>XOX
+<br>OXX
+<br>OOX
+<br>no
+						</td>
+	</tr>
+			
+</tbody></table>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function getCookieVal (offset) {
+        var endstr = document.cookie.indexOf (";", offset);
+        if (endstr == -1) { 
+                endstr = document.cookie.length; 
+        }
+        return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg) {
+      return getCookieVal (j);
+      }
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break; 
+    }
+  return null;
+}
+
+function toggleComments() {
+        var a = document.getElementById('comments_table');
+        var d = a.style.display;
+        if( d == "" || d == "block" ){
+                d = "none";
+                document.getElementById('comments_sh').innerHTML = 'show';
+        } else {
+                d = "block";
+                document.getElementById('comments_sh').innerHTML = 'hide';
+        }
+        a.style.display = d;
+        document.cookie="comments_table="+d+"; path=/;";
+}
+
+if( GetCookie('comments_table') == 'none' ){
+        document.getElementById('comments_sh').innerHTML = 'show';
+        document.getElementById('comments_table').style.display = 'hide';
+}
+
+-->
+</script>
+
+
+<!-- google_ad_section_end -->
+</div>
+<table width="100%">
+                <tbody><tr>
+                <td colspan="2" height="20px"></td>
+        </tr>
+        <form method="post" action="http://www.spoj.com/comment/TOE1/add/"></form>
+        <tr> <td style="padding-left:5px;" colspan="2">Leave a Comment</td> </tr>
+        <tr>
+                <td valign="top"></td>
+                <td><textarea name="content" cols="40" rows="3"></textarea></td>
+        </tr>
+                <tr>
+                <td colspan="2" style="padding-left: 5px;">
+                        <input type="submit" value="Publish">
+                        <input type="hidden" name="pcode" value="TOE1">
+                </td>
+        </tr>
+<tr>
+<td colspan="2" class="smallgrey" style="padding-left:5px;">
+Notes:
+<br>1. Don't post any source code here.
+<br>2. Please be careful, leave short comments only. Don't spam here.
+<br>3. For more discussion (hints, ideas, solutions) please visit our <a href="http://www.spoj.com/forum">forum</a>.
+<br>4. Authors of the problems are allowed to delete the post and use html code here (e.g. to provide some useful links).
+</td>
+</tr>
+        
+        </tbody></table>
+
+</div>
+        </td>
+</tr><tr>
+        <td style="padding:0px" colspan="2"><center>
+                
+</center></td>
+</tr>
+</tbody></table>
+</td>
+
+
+<td width="200" class="ad-r__"><div><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - wiezowiec */
+google_ad_slot = "2703472077";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><div>
+<style>
+.ad-r__{
+        vertical-align: top;
+}
+.ad-r__ > div.fixed{
+        top: 10px;
+        position: fixed;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	/*
+        $(window).scroll(function() {
+                if($(this).scrollTop() > 100) {
+                        $(".ad-r__>div").addClass('fixed');
+                } else {
+                        $(".ad-r__>div").removeClass('fixed');
+                }
+        });
+	*/
+	if ($('.ad-r__>div').height() == 0){
+		//console.log('adblocker');
+		_gaq.push(['_trackEvent', 'ads', 'adblock']);
+		$(".freelancer_728").show();
+		//$(".ad-r__").append('<script type="text/javascript"><!--amazon_ad_tag = "httpsphereres-20"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_border = "hide"; amazon_ad_discount = "remove"; amazon_color_background = "EEEEEE";//--><'+'/script><script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"><'+'/script>');
+	}
+});
+</script>
+</div></div></td>
+
+
+</tr>
+
+<tr>
+<td colspan="2" class="footer">
+<div class="a-footer"></div>
+<script language="javascript" type="text/javascript">
+<!--
+function swapSheet(sheet, caller) {
+    document.getElementById('theme').href=sheet;
+    document.cookie="css_0="+sheet+"; path=/;";
+    caller.href="#bottom";
+}
+
+function setWidth(w, caller) {
+    document.getElementById('maintable').style.width=w;
+    document.cookie="res="+w+"; path=/;";
+    caller.href="#bottom";
+}
+
+
+
+//-->
+
+</script>
+        <table width="100%">
+    <tbody><tr>
+	<td align="left" width="10%" class="cfooter">
+	<a href="http://www.spoj.com/info/">About SPOJ</a>
+	</td>
+	<td align="center" class="cfooter">
+	    width:
+	    <a href="http://www.spoj.com/?rsl=855px" onclick="setWidth(&#39;855px&#39;, this)">900</a>
+	    <a href="http://www.spoj.com/?rsl=980px" onclick="setWidth(&#39;980px&#39;, this)">1024</a>
+	    <a href="http://www.spoj.com/?rsl=100%" onclick="setWidth(&#39;100%&#39;, this)">Full</a>
+	    &nbsp;&nbsp;
+	    theme:
+	    <a href="http://www.spoj.com/?css=/themes/skin1.css" onclick="swapSheet(&#39;/themes/skin1.css&#39;, this)">olive</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin2.css" onclick="swapSheet(&#39;/themes/skin2.css&#39;, this)">banana</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin3.css" onclick="swapSheet(&#39;/themes/skin3.css&#39;, this)">plum</a>
+	    <a href="http://www.spoj.com/?css=/themes/hspl.css" onclick="swapSheet(&#39;/themes/hspl.css&#39;, this)">hspl</a>
+	</td>
+		<td align="center" class="cfooter">
+		 <span title="The discussion channel of the Sphere Online Judge community.">
+		 <a href="irc://irc.freenode.net/spoj"><b>#spoj</b> at freenode</a>
+		 </span>
+	</td>
+		<td width="10%" class="cfooter" style="text-align:right">
+		<a href="http://www.spoj.com/rss/"><img src="./SPOJ.com - Problem TOE1_files/rss10x10.gif" border="0">&nbsp;RSS</a>&nbsp;
+	
+	</td>
+    </tr>
+    </tbody></table>
+    </td></tr></tbody></table>
+</center>
+<div class="a-header"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1&appId=321676846207";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>-->
+
+<img src="./SPOJ.com - Problem TOE1_files/ipdb.php" style="width: 0px; height: 0px;">
+<div style="font-size:10px; margin-top:4px; color: rgb(85,80,95); text-align: center">
+	 Spoj.com. All Rights Reserved. Spoj uses <a href="http://sphere-engine.com/" style="color:black">Sphere Engine</a>&#8482;  by <a href="http://sphere-research.com/" style="color:black">Sphere Research Labs</a>.
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10507872-1']);
+    _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                      })();
+                      </script>
+                      
+<script type="text/javascript" src="./SPOJ.com - Problem TOE1_files/w4loader.js"></script><div id="rcv4_widget"><a href="" id="rcv4_handle_a"><div id="rcv4_handle"><span>Time for a new job?</span></div></a><div id="rcv4_content"></div><div id="rcv4_footer">Powered by <a href="http://recruitcoders.com/" target="_blank">Recruit Coders</a>&#8482;</div></div>
+
+<iframe name="oauth2relay851960260" id="oauth2relay851960260" src="./SPOJ.com - Problem TOE1_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rdbIndicator" width="100%" height="270" border="0" src="./SPOJ.com - Problem TOE1_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>

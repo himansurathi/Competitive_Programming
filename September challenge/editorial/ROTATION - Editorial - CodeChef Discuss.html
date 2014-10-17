@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0062)http://discuss.codechef.com/questions/50957/rotation-editorial -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ROTATION - Editorial - CodeChef Discuss</title>
+        <meta name="description" content="Problem link : Contest PracticeDifficulty : CakeWalkPre-requisites : basic language data structuresSolution:At first, let&#39;s note that if we rotate the array by K units anticlockwise, it&#39;s the same as the rotation by N-K units clockwise. So, from now on, we will consider only clockwise rotations.">
+        <meta name="keywords" content="sept14,editorial,adhoc,cakewalk">
+        
+        <link rel="canonical" href="./ROTATION - Editorial - CodeChef Discuss_files/ROTATION - Editorial - CodeChef Discuss.html">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://discuss.codechef.com/questions/50957/rotation-editorial?type=rss">
+
+        
+        
+        <link rel="shortcut icon" href="http://discuss.codechef.com/upfiles/favicon_1.ico">
+        <link href="./ROTATION - Editorial - CodeChef Discuss_files/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="./ROTATION - Editorial - CodeChef Discuss_files/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./ROTATION - Editorial - CodeChef Discuss_files/jquery-ui.css">
+        <!--[if IE 6]>
+        <style type="text/css">
+        img, div, a { behavior: url(/m/default/media/iepngfix/iepngfix.htc) }
+        </style>
+        <![endif]-->
+        
+
+        <script type="text/javascript" async="" src="./ROTATION - Editorial - CodeChef Discuss_files/atrk.js"></script><script src="./ROTATION - Editorial - CodeChef Discuss_files/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+        /*<![CDATA[*/
+            google.load("jquery", "1.4.2");
+            google.load("jqueryui", "1", {autoload:true});
+
+            var i18nLang = 'en';
+            var appUrl = 'http://discuss.codechef.com'
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: 'Himansu Rathi',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok",
+                matching_tags_url: "/matching_tags/",
+                word: "word",
+                words: "words",
+                character: "character",
+                characters: "characters"
+            }
+        /*]]>*/
+        </script><script src="./ROTATION - Editorial - CodeChef Discuss_files/jquery.min.js" type="text/javascript"></script><script src="./ROTATION - Editorial - CodeChef Discuss_files/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/osqa.main.js"></script>
+        
+        
+        
+        
+        
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/osqa.question.js"></script>
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/jquery.caret.js"></script>
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/showdown.js"></script>
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/wmd.js"></script>
+        <link rel="stylesheet" type="text/css" href="./ROTATION - Editorial - CodeChef Discuss_files/wmd.css">
+
+        
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/viewbox_min.js"></script>
+        <script type="text/javascript" src="./ROTATION - Editorial - CodeChef Discuss_files/youtube.js"></script>
+        <link rel="stylesheet" type="text/css" href="./ROTATION - Editorial - CodeChef Discuss_files/viewbox.css">
+        
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+
+        function submitClicked(e, f) {
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            window.removeEventListener('beforeunload', beforeUnload, true);
+            if (f) {
+                f.submit();
+            }
+        }
+
+        function beforeUnload(e) {
+
+            if($("textarea#editor")[0].value != "") {
+                return yourWorkWillBeLost(e);
+            }
+
+            var commentBoxes = $("textarea.commentBox");
+            for(var index = 0; index < commentBoxes.length; index++) {
+                if(commentBoxes[index].value != "") {
+                    return yourWorkWillBeLost(e);
+                }
+            }
+        }
+        window.addEventListener('beforeunload', beforeUnload, true);
+        </script>
+        <noscript>
+            &lt;style&gt;
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            &lt;/style&gt;
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="http://discuss.codechef.com/opensearch.xml" title="CodeChef Discuss Search">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+        
+        <!-- template header.html -->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        initSearchBoxValue();
+    })
+
+
+    function initSearchBoxValue()
+    {
+        var searchKeyword= $("#keywords").val();
+            if (searchKeyword=="")
+            {
+                $("#keywords").val("Search Here...");
+            }
+   }
+
+    function searchBoxOnBlur(){
+        $("#keyword").className="searchInput";
+        if ($("#keywords").val()=="")
+                $("#keywords").val("Search Here...");
+    }
+
+    function searchBoxOnFocus(){
+        $("#keyword").className="searchInputFocused";
+        if ($("#keywords").val()=="Search Here...")
+            $("#keywords").val("");
+   }
+
+    function about(){
+        if (document.URL=="http://osqa.codechef.local/about/")
+        {
+            $("")
+        }
+    }
+
+</script>
+
+
+
+ 
+
+	<div id="roof">
+
+
+
+		<div id="logo">
+			<a href="http://discuss.codechef.com/">
+				<img src="./ROTATION - Editorial - CodeChef Discuss_files/site-logo_21.png" title="back to home page" alt="CodeChef Discuss logo">
+			</a>
+		</div>
+	  
+		<div id="top">
+		     <a href="http://discuss.codechef.com/users/38996/himansu-rathi">Himansu Rathi</a> <span class="score" title="1 karma">1</span> <a href="http://discuss.codechef.com/logout/">Log Out</a> 
+
+            <div id="nav">
+                <a id="nav_questions" class="on" href="http://discuss.codechef.com/questions/">questions</a><a id="nav_tags" href="http://discuss.codechef.com/tags/">tags</a><a id="nav_users" href="http://discuss.codechef.com/users/">users</a><a id="nav_badges" href="http://discuss.codechef.com/badges/">badges</a><a id="nav_unanswered" href="http://discuss.codechef.com/questions/unanswered/">unanswered</a>
+                <a id="horiSeparator">
+                </a><a id="nav_ask" href="http://discuss.codechef.com/questions/ask/" class="special">ask a question</a>
+                <a id="nav_about" href="http://discuss.codechef.com/about" class="off" onclick="about()">about</a>
+                <a id="nav_faq" href="http://discuss.codechef.com/faq">faq</a>
+
+            </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="clear"></div>
+	<div id="searchBar">
+
+
+
+
+        <table id="searchBarTable">
+            <tbody><tr>
+                <td class="left">
+                    CodeChef Discussion
+                </td>
+                <td class="right">
+                    <form action="http://discuss.codechef.com/search/" method="get">
+                    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <input type="text" class="searchInput" value="" name="q" id="keywords" onfocus="searchBoxOnFocus()" onblur="searchBoxOnBlur()">
+                                </td>
+                                <td>
+                                    <div class="options">
+                                        <input id="type-question" type="radio" value="question" name="t" checked="checked"><label for="type-question">questions</label>
+                                        <input id="type-tag" type="radio" value="tag" name="t"><label for="type-tag">tags</label>
+                                        <input id="type-user" type="radio" value="user" name="t"><label for="type-user">users</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </form>
+                </td>
+            </tr>
+        </tbody></table>
+        <h1 id="separator">
+        </h1>
+	</div>
+
+
+	
+
+<!-- end template header.html -->
+
+        
+
+
+
+<div id="wrapper">
+    
+    
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1>ROTATION - Editorial</h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table">
+                <tbody><tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-50957-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50957/up/" rel="nofollow"> </a>
+<div id="post-50957-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-50957-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50957/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)" class="ajax-command favorite-mark " href="http://discuss.codechef.com/mark_favorite/50957/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   
+</div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <p><strong>Problem link</strong> : <a href="http://www.codechef.com/SEPT14/problems/ROTATION/">Contest</a> <a href="http://www.codechef.com/problems/ROTATION/">Practice</a></p>
+<p><strong>Difficulty</strong> : CakeWalk</p>
+<p><strong>Pre-requisites</strong> : basic language data structures</p>
+<p><strong>Solution</strong>:</p>
+<p>At first, let's note that if we rotate the array by <strong>K</strong> units anticlockwise, it's the same as the rotation by <strong>N-K</strong> units clockwise. So, from now on, we will consider only clockwise rotations. In case we have any anticlockwise rotation query, it can be reduced to the clockwise one.</p>
+<p>When we rotate the array by <strong>K</strong> units anticlockwise, its' first element becomes equal to the <strong>K mod N+1</strong>-th element of the initial array. The second element of this rotated array will be equal to <strong>(K+1) mod N+1-th</strong> element of the initial array, the third will be equal to the <strong>(K+2) mod N+1</strong>-th one, and so on (of course, we use 1-indexation in our considerations). So, using this facts one can simply get the <strong>M</strong>-th element of the array after a rotation.</p>
+<p>What happens when we have several rotations? One can note that the rotations are "additive", so we only need to maintain is the current "shift" variable that points to the first element of the current array after all the rotations. If this "shift" variable equals to <strong>R</strong> before some clockwise turn, it will be equal to <strong>(R+K) mod N</strong> after this turn. Basically, like it is described in the previous paragraph, we can get the <strong>M</strong>-th element of the current array as <strong>A[(R+M-1) mod N]</strong>, where <strong>A</strong> is the array that was given initially.</p>
+<p>In this solution we don't actually rotate the array, we only operate with out "shift" variable (<strong>R</strong> above). So each operation is performed in <strong>O(1)</strong> time, so we get the total complexity of <strong>O(N+Q)</strong> where <strong>N</strong> is the size of the array and <strong>Q</strong> is the number of queries.</p>
+<p><strong>Setter's solution:</strong> <a href="http://www.codechef.com/download/Solutions/2014/September/Setter/ROTATION.cpp">link</a></p>
+<p><strong>Tester's solution:</strong> <a href="http://www.codechef.com/download/Solutions/2014/September/Tester/ROTATION.cpp">link</a></p>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="http://discuss.codechef.com/tags/sept14/" class="post-tag tag-link-sept14" title="see questions tagged &#39;sept14&#39;" rel="tag">sept14</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/editorial/" class="post-tag tag-link-editorial" title="see questions tagged &#39;editorial&#39;" rel="tag">editorial</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/adhoc/" class="post-tag tag-link-adhoc" title="see questions tagged &#39;adhoc&#39;" rel="tag">adhoc</a>
+                                
+                                    <a href="http://discuss.codechef.com/tags/cakewalk/" class="post-tag tag-link-cakewalk" title="see questions tagged &#39;cakewalk&#39;" rel="tag">cakewalk</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">
+                                
+
+                                
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        asked
+        <strong>7 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./ROTATION - Editorial - CodeChef Discuss_files/4d2e2cb3a637b8923ab5bdb95e54b08e.jpg" alt="xcwgf666&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/10879/xcwgf666">xcwgf666 ♦♦</a><br>
+    <span class="score" title="359 karma">359</span><span title="37 badges"><span class="badge1">●</span><span class="badgecount">37</span></span><span title="48 badges"><span class="silver">●</span><span class="badgecount">48</span></span><span title="56 badges"><span class="bronze">●</span><span class="badgecount">56</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="xcwgf666 has no accepted answers">0%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="http://discuss.codechef.com/revisions/50957/">
+                edited
+                <strong>7 hours ago</strong>
+            </a>
+        </p>
+        
+            <img class="gravatar" width="32" height="32" src="./ROTATION - Editorial - CodeChef Discuss_files/2fad4a5d870e2f1f3558bce1e55fccc9.jpg" alt="pushkarmishra&#39;s gravatar image">
+            <p><a href="http://discuss.codechef.com/users/8082/pushkarmishra">pushkarmishra</a><br>
+            <span class="score" title="554 karma">554</span><span title="12 badges"><span class="badge1">●</span><span class="badgecount">12</span></span><span title="25 badges"><span class="silver">●</span><span class="badgecount">25</span></span><span title="29 badges"><span class="bronze">●</span><span class="badgecount">29</span></span></p>
+        
+    </div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-50957">
+    
+</div>
+<div id="comment-tools-50957" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50957/rotation-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50957-form-container" class="comment-form-container">
+    
+    <form id="comment-50957-form" method="post" action="http://discuss.codechef.com/comment/50957/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" id="csrfmiddlewaretoken" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50957-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50957">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+            
+            
+                <hr>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    2 Answers:
+                    </div>
+                    
+<div class="tabsA"><a href="http://discuss.codechef.com/questions/50957/rotation-editorial?sort=oldest" title="oldest answers will be shown first">oldest</a><a href="http://discuss.codechef.com/questions/50957/rotation-editorial?sort=newest" title="newest answers will be shown first">newest</a><a href="http://discuss.codechef.com/questions/50957/rotation-editorial?sort=votes" class="on" title="most voted answers will be shown first">most voted</a></div>
+
+                </div>
+                
+
+                
+                    <a name="50985"></a>
+                    <div id="answer-container-50985" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-50985-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/50985/up/" rel="nofollow"> </a>
+<div id="post-50985-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-50985-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/50985/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>import java.io.BufferedReader;
+import java.io.InputStreamReader;</p>
+<p>class ROTATION {</p>
+<pre><code>public static void main(String[] args) throws Exception{
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(<a href="http://system.in/">System.in</a>));
+    String input[] = in.readLine().split(" ");
+    int n =   Integer.parseInt(input[0],10);
+    int m =   Integer.parseInt(input[1],10);
+    int arr[] = new int[n];
+    input  = in.readLine().split(" ");
+
+    for(int i = 0;i&lt;n;i++)      arr[i] =   Integer.parseInt(input[i],10);
+    input = null;
+    int index=0;
+    int tempIndex = 0;
+    while(m--&gt;0)
+    {
+        input  = in.readLine().split(" ");
+        char c[] = input[0].toCharArray();
+        char a = c[0];
+
+        if(a=='C')
+        {
+            index = index + Integer.parseInt(input[1],10) ;
+            if(index&gt;=n) index = index -n;
+
+        }
+        else if(a=='A')
+        {
+            index = index - Integer.parseInt(input[1],10) ;
+            if(index&lt;0) index = index + n;
+        }
+        else if(a=='R')
+        {
+            tempIndex = index;
+            tempIndex = tempIndex + Integer.parseInt(input[1],10) -1;
+            if(tempIndex&gt;=n) tempIndex = tempIndex-n;
+            if(tempIndex&lt;0) tempIndex = tempIndex + n;
+            System.out.println(arr[tempIndex]);
+        }
+
+    }
+
+}
+</code></pre>
+<p>}</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/50985/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to ankurjain727" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/63818/answer/50985/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>6 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./ROTATION - Editorial - CodeChef Discuss_files/default.jpg" alt="ankurjain727&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/63818/ankurjain727">ankurjain727</a><br>
+    <span class="score" title="1 karma">1</span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ankurjain727 has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-50985">
+    
+</div>
+<div id="comment-tools-50985" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50957/rotation-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-50985-form-container" class="comment-form-container">
+    
+    <form id="comment-50985-form" method="post" action="http://discuss.codechef.com/comment/50985/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-50985-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-50985">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="51038"></a>
+                    <div id="answer-container-51038" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-51038-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="http://discuss.codechef.com/vote/51038/up/" rel="nofollow"> </a>
+<div id="post-51038-score" class="post-score" title="current number of votes">
+    0
+</div>
+<a id="post-51038-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="http://discuss.codechef.com/vote/51038/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>where I'm getting Wrong in this answer :\</p>
+<p><code>#include&lt;stdio.h&gt;
+int main()
+{
+    int n,m,i,start=1,inp,index;
+    char ch[1];
+    static int a[100001];
+    scanf("%d %d",&amp;n,&amp;m);
+    for(i=1;i&lt;=n;i++)
+        scanf("%d",&amp;a[i]);
+    for(i=1;i&lt;=m;i++)
+    {
+            scanf("%s %d",&amp;ch,&amp;inp);
+            if(ch[0]=='C')
+            {
+                start=(start+inp);
+                if(start&gt;n)
+                    start-=n;
+            }
+            else if(ch[0]=='A')
+            {
+                start=(start-inp);
+                if(start&lt;1)
+                    start+=n;
+            }
+            else
+            {
+                index=start+inp-1;
+                if(index&gt;n)
+                    index-=n;
+                if(index&lt;1)
+                    index+=n;
+                printf("%d\n",a[index]);
+            }
+    }
+    return 0;
+}</code></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="http://discuss.codechef.com/answer_link/51038/">link</a></span><span class="action-link-separator">|</span><span class="action-link"><a rel="nofollow" title="award points to rajarshi369" class="ajax-command withprompt  " href="http://discuss.codechef.com/award_points/user/3698/answer/51038/">award points</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>2 hours ago</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./ROTATION - Editorial - CodeChef Discuss_files/default.jpg" alt="rajarshi369&#39;s gravatar image">
+    <p><a href="http://discuss.codechef.com/users/3698/rajarshi369">rajarshi369</a><br>
+    <span class="score" title="25 karma">25</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="4 badges"><span class="silver">●</span><span class="badgecount">4</span></span><span title="8 badges"><span class="bronze">●</span><span class="badgecount">8</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="rajarshi369 has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-51038">
+    
+</div>
+<div id="comment-tools-51038" class="comment-tools">
+    
+    
+        <a href="http://discuss.codechef.com/questions/50957/rotation-editorial#" class="add-comment-link">add new comment</a>
+    
+</div>
+<div id="comment-51038-form-container" class="comment-form-container">
+    
+    <form id="comment-51038-form" method="post" action="http://discuss.codechef.com/comment/51038/" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+        <div class="comment-form-widgets-container">
+            <textarea name="comment" class="commentBox" id="comment" style="padding-top: 0px; padding-bottom: 0px; resize: none; overflow: hidden; height: 80px;"></textarea>
+            <div class="comment-form-buttons">
+                <span id="comment-51038-chars-left" class="comment-chars-left">
+                    <span class="comments-char-left-count">10</span>
+                    <span class="comments-chars-togo-msg">characters needed</span>
+                    <span class="comments-chars-left-msg" style="display: none;">characters left</span>
+                </span>
+                <input type="submit" class="comment-submit" value=" comment" disabled="">
+                <input type="submit" class="comment-cancel" value=" cancel">
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        <script type="text/html" class="new-comment-skeleton" id="new-comment-skeleton-51038">
+            <div class="comment not_top_scorer" id="comment-%ID%">
+                <div id="post-%ID%-score" class="comment-score"></div>
+                <div class="comment-text">%COMMENT%</div>
+                <div class="comment-info" id="comment-%ID%-info">
+                    <a id="comment-%ID%-edit" href="%EDIT_URL%" title="Edit comment"
+                        class="comment-edit" rel="nofollow"> </a>
+                    <a id="comment-%ID%-delete" href="%DELETE_URL%" title="Delete comment"
+                        class="ajax-command comment-delete confirm" rel="nofollow"> </a>
+                    <a rel="nofollow" id="comment-%ID%-convert" style="display:none;" href="%CONVERT_URL%" title="Convert comment to answer"
+                        class="ajax-command comment-convert confirm" rel="nofollow"> </a>
+
+                    <span class="comment-age">(just now)</span>
+                    <a class="comment-user" href="%PROFILE_URL%">%USERNAME%</a>
+                    
+                        
+                    
+                </div>
+             </div>
+        </script>
+    </form>
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    
+                </div>
+            
+        <form id="fmanswer" action="http://discuss.codechef.com/questions/50957/answer/" method="post"><div style="display:none;"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="7e6a0742ef6fb87b45f08d90f1a55986"></div>
+            <div style="clear:both">
+            </div>
+
+            
+                <div style="padding:10px 0 0 0;">
+                    <div class="headNormal">
+                        
+                            Your answer
+                        
+                    </div>
+                </div>
+                
+
+                <div id="description" class="">
+                    <div id="wmd-button-bar" class="wmd-panel"><ul id="wmd-button-row"><li class="wmd-button" id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl+B" style="background-position: 0px 0px;"></li><li class="wmd-button" id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl+I" style="background-position: -20px 0px;"></li><li class="wmd-spacer" id="wmd-spacer1"></li><li class="wmd-button" id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl+L" style="background-position: -40px 0px;"></li><li class="wmd-button" id="wmd-quote-button" title="Blockquote &lt;blockquote&gt; Ctrl+Q" style="background-position: -60px 0px;"></li><li class="wmd-button" id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" style="background-position: -80px 0px;"></li><li class="wmd-button" id="wmd-image-button" title="Image &lt;img&gt; Ctrl+G" style="background-position: -100px 0px;"></li><li class="wmd-spacer" id="wmd-spacer2"></li><li class="wmd-button" id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl+O" style="background-position: -120px 0px;"></li><li class="wmd-button" id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl+U" style="background-position: -140px 0px;"></li><li class="wmd-button" id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" style="background-position: -160px 0px;"></li><li class="wmd-button" id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl+R" style="background-position: -180px 0px;"></li><li class="wmd-spacer" id="wmd-spacer3"></li><li class="wmd-button" id="wmd-undo-button" title="Undo - Ctrl+Z" style="background-position: -200px -20px;"></li><li class="wmd-button" id="wmd-redo-button" title="Redo - Ctrl+Y" style="background-position: -220px -20px;"></li><li class="wmd-button" id="wmd-help-button" style="background-position: -240px 0px;"><a href="http://wmd-editor.com/" target="_blank" title="WMD website"></a></li></ul></div>
+                    <div class="resizable-textarea"><span><textarea rows="10" cols="40" name="text" id="editor" class="processed"></textarea><div class="grippie" style="margin-right: -6px;"></div></span></div>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tbody><tr>
+                                <td>
+                                    <span id="pre-collapse" title="Toggle the real time Markdown editor preview">[hide preview]</span>
+                                </td>
+                                <td style="text-align: right;" id="editor-metrics"></td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki">
+                                    <span style="font-weight:normal;cursor:help" title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+
+                        </tbody></table>
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>
+                </div>
+
+	            
+
+                <p><span class="form-error"></span></p>
+                
+                <input type="button" value="Post Your Answer" class="submit" style="float:left" onclick="submitClicked(event, this.form)">
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    <h3 class="subtitle">Follow this question</h3><strong>By Email:</strong><div class="subscription-status"><p>You are not subscribed to this question.</p></div><p><a class="ajax-command sidebar_button subscription_switch" href="http://discuss.codechef.com/subscribe/50957/">
+        
+            subscribe me
+        
+    </a></p><p>
+        
+            (you can adjust your notification settings on your <a href="http://discuss.codechef.com/users/38996/himansu-rathi/subscriptions/">profile</a>)
+        
+    </p><strong>By RSS:</strong><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/50957/rotation-editorial?type=rss" title="subscribe to answers"></a>
+    Answers
+</p><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="http://discuss.codechef.com/questions/50957/rotation-editorial?type=rss&comments=yes" title="subscribe to comments and answers"></a>
+    Answers and Comments
+</p>
+
+</div>
+
+
+<div class="boxC" id="editor_side_bar" style="display: none;">
+    <p class="subtitle darkred">Markdown Basics</p>
+    <ul class="list-item">
+        <li>
+            *italic* or _italic_
+        </li>
+        <li>
+			**bold** or __bold__
+        </li>
+        <li>
+            <b>link</b>:[text](http://url.com/ "title")
+
+        </li>
+
+        <li>
+            <b>image</b>?![alt text](/path/img.jpg "title")
+
+        </li>
+        <li>
+			numbered list:
+            1.  Foo
+            2.  Bar
+        </li>
+        <li>
+			to add a line break simply add two spaces to where you would like the new line to be.
+        </li>
+        <li>
+			basic HTML tags are also supported
+        </li>
+    </ul>
+    <p class="info-box-follow-up-links">
+        <a href="http://discuss.codechef.com/markdown_help/" target="_blank">learn more about Markdown </a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags">
+        
+        	<a href="http://discuss.codechef.com/tags/editorial/" class="tag-link-editorial" title="see questions tagged&#39;editorial&#39;using tags" rel="tag">editorial</a> <span class="tag-number">×13,392</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/sept14/" class="tag-link-sept14" title="see questions tagged&#39;sept14&#39;using tags" rel="tag">sept14</a> <span class="tag-number">×5,595</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/adhoc/" class="tag-link-adhoc" title="see questions tagged&#39;adhoc&#39;using tags" rel="tag">adhoc</a> <span class="tag-number">×2,695</span><br>
+        
+        	<a href="http://discuss.codechef.com/tags/cakewalk/" class="tag-link-cakewalk" title="see questions tagged&#39;cakewalk&#39;using tags" rel="tag">cakewalk</a> <span class="tag-number">×983</span><br>
+        
+    </p>
+    <p>
+        Asked: <strong title="Sept. 15, 2014, 3:44 p.m.">7 hours ago</strong>
+    </p>
+    <p>
+     	Seen: <strong>309 times</strong>
+    </p>
+    <p>
+        Last updated: <strong title="Sept. 15, 2014, 9:14 p.m.">2 hours ago</strong>
+    </p>
+</div>
+
+
+
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50949/cheflr-editorial" title="Problem link : contest practiceDifficulty : SimplePre-requisites : basic mathSolution :The problem is one of the easiest in the set. The solution is as follows.When we have an odd-length string S, we can make one turn and set some flag the the answer is even. Otherwise, we should keep in mind t">CHEFLR - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50953/floori4-editorial" title="Problem link : contest practiceDifficulty : EasyPre-requisites : AD-hoc problems experienceSolution :At first, the formula for the sum of 14+24+...+n4 is n(1+n)(1+2n)(-1+3n+3n2)/30. The level of the problem is EASY, so the formula can be found on the internet. At second, there are only sqrt(n) ">FLOORI4 - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/50959/uaseq-editorial" title="Problem link : Contest PracticeDifficulty : EasyPre-requisites : basic language data structuresSolution:The key thing is to note that K is not greater than 10. So, we can easily brute-force the first and the last term of the sequence that won&#39;t change. There won&#39;t be more than K2 variants, but a">UASEQ - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/1946/lebombs-editorial" title="PROBLEM LINK:PracticeContestDIFFICULTY:Cake walkPREREQUISITES:NonePROBLEM:You&#39;re given an array of houses some of which have a bomb and others don&#39;t. These bombs will explode simultaneously and when bomb in ith house explodes, it destroys adjacent houses. Your task is to find out the number ">LEBOMBS - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/37914/smhte-editorial" title="PROBLEM LINK:http://www.codechef.com/SMHT2014/problems/SMHTEDIFFICULTY:CAKEWALKPREREQUISITES:None.EXPLANATIONThis problem can be solved by Brute Force. Dividing the number by 2 in a loop and checking for remainder would suffice. But the trick is with smaller source code.A common BIT-TRICK">SMHTE - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/9712/name2-editorial" title="PROBLEM LINKSPracticeContestDIFFICULTYCAKEWALKPREREQUISITESAd-HocPROBLEMGiven two strings, say A and B, find whether A is a sub-sequence of B, or whether B is a sub-sequence of A.A sub-sequence is defined as a string obtained from another string, say S, by deleting one or more characters fo">NAME2 - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/38106/bit-editorial" title="PROBLEM LINK:ContestDIFFICULTY:CAKEWALKPROBLEM:Print sum of set bits of all numbers from 1 to N.QUICK EXPLANATION:Simple simulation. For each number we count set bits and add them to the final answer.To count set bits convert the number to base 2 and count the number of 1s.Complexity: N log">BIT - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/24632/rrcode-editorial" title="Problem Link:PracticeContestAuthor: Roman RubanenkoTester/Editorialist: Utkarsh LathDifficulty:CakewalkPre-requisites:understanding of bitwise operatorsProblem:Given a list of numbers A, and integers K, Ans, and function op, predict the outcome of following functionint F(K, Ans, op, A[N]">RRCODE - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/17887/chrect-editorial" title="PROBLEM LINKPracticeContestDIFFICULTYCAKEWALKPREREQUISITESAd HocPROBLEMYou are given a grid of R rows and C columns. The rows are numbered from 1 to R from top to bottom. The columns are numbered from 1 to C from left to right.You wish to move K times from the cell numbered (1,1) to the cel">CHRECT - Editorial</a>
+        </p>
+        
+        <p>
+            <a href="http://discuss.codechef.com/questions/28737/johny-editorial" title="PROBLEM LINK:PracticeContestDIFFICULTY:CAKEWALKPREREQUISITES:NonePROBLEM:Given an unsorted array of unique elements, find the position of a specified elements in array’s sorted form.QUICK EXPLANATION:Count the number of elements in an unsorted array which are smaller than the given element">JOHNY - Editorial</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            
+            <div id="ground">
+                
+                    <p>
+
+<link rel="stylesheet" type="text/css" href="./ROTATION - Editorial - CodeChef Discuss_files/cc.css">
+</p>
+<div id="cc-footer" class="cc-wrapper">
+    <div class="cc-inner-wrapper">
+        <!-- SECOND NAV -->
+        <div class="cc-cols-2">
+            <div id="cc-secondary-nav">
+                <ul>
+                    <!-- <li><a href="http://blog.corp.pw/" target="_blank">.pw Corp Blog</a></li>
+                    <li><a href="http://start.pw/" target="_blank">Vision</li> -->
+                    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+                    <li><a href="http://www.directi.com/" target="_blank">About Directi</a></li>
+                    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+                    <!-- <li><a href="http://wiki.directi.com/" target="_blank">Wiki</a></li>
+                    <li><a href="http://wiki.directi.com/display/corp/Home" target="_blank">About</a></li> -->
+                </ul>
+                <ul>
+                    <li><a href="http://www.codechef.com/campus/">CodeChef Campus Chapters</a></li>
+                    <li><a href="http://www.codechef.com/school/">CodeChef For Schools</a></li>
+                    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="cc-fineprint">
+                <p>© 2009, Directi Group. All Rights Reserved.</p>
+                <p><small>Powered by OSQA<br> </small></p>
+            </div>
+        </div>
+        <!-- /SECOND NAV -->
+        <!-- LEGAL & COPYRIGHT -->
+        <div>
+            <div id="cc-sponsor-strip">
+                <a href="http://www.directi.com/" target="_blank"><img src="./ROTATION - Editorial - CodeChef Discuss_files/footer-sponsor-strip.gif" alt="Sponsors" title="Sponsors"></a>
+            </div>
+        </div>
+        <!-- /LEGAL & COPYRIGHT -->
+    </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./ROTATION - Editorial - CodeChef Discuss_files/ga.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4090524-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"q16Cj1a8gN00iz", domain:"codechef.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+
+<noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=q16Cj1a8gN00iz" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+
+<!-- End Alexa Certify Javascript -->
+                
+            </div>
+            
+        
+        
+
+        
+        </div>
+
+        <!-- Put all elements with fixed position here, IE6 fixed position fix: http://ryanfait.com/position-fixed-ie6/ -->
+        <div class="notify" style="display:none">
+            
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">×</a>
+        </div>
+
+    
+
+<!-- end template base_content.html -->
+</body></html>
